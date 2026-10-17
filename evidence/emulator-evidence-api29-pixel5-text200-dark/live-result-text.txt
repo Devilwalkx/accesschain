@@ -1,0 +1,8 @@
+Back
+Plan a journey
+Live information is only trusted for 15 minutes. If part of it failed, that part is shown as not checked, never as fine.
+Check again
+Change where I start
+Choose a different place
+Transport information: Powered by TfL Open Data.
+Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights 2019.

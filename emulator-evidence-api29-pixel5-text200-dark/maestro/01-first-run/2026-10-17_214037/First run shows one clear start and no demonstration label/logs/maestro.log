@@ -1,0 +1,26 @@
+21:40:46.171 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Define variables RUNNING
+21:40:46.175 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Define variables COMPLETED
+21:40:46.175 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Apply configuration RUNNING
+21:40:46.176 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Apply configuration COMPLETED
+21:40:46.176 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Launch app "app.devilwalkx.accesschain" with clear state RUNNING
+21:40:46.177 [ INFO] maestro.Maestro.clearAppState$lambda$8: Clearing app state app.devilwalkx.accesschain
+21:40:47.609 [ INFO] maestro.Maestro.launchApp$lambda$5: Launching app app.devilwalkx.accesschain
+21:40:47.610 [ INFO] maestro.Maestro.launchApp$lambda$5: Stopping app.devilwalkx.accesschain app during launch
+21:40:47.789 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Launch app "app.devilwalkx.accesschain" with clear state COMPLETED
+21:40:47.789 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that "Tell us what you need" is visible RUNNING
+21:40:49.923 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that "Tell us what you need" is visible COMPLETED
+21:40:49.925 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until "Plan a journey" is visible with speed 30, visibility percentage 100%, timeout 30000 ms, with centering disabled RUNNING
+21:40:50.054 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2340
+21:40:50.058 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=240, y=1642, width=703, height=149)
+21:40:50.059 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+21:40:50.081 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=Plan a journey, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=30000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+21:40:50.081 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+21:40:50.082 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until "Plan a journey" is visible with speed 30, visibility percentage 100%, timeout 30000 ms, with centering disabled COMPLETED
+21:40:50.082 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that "Plan a journey" is visible RUNNING
+21:40:50.227 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that "Plan a journey" is visible COMPLETED
+21:40:50.227 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that "Demonstration.*" is not visible RUNNING
+21:40:51.151 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that "Demonstration.*" is not visible COMPLETED
+21:40:51.152 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot 01-first-run RUNNING
+21:40:51.154 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+21:40:51.157 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+21:40:51.550 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot 01-first-run COMPLETED
