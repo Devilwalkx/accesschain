@@ -1,0 +1,97 @@
+== upgrade check
+UPGRADE: installed over previous release: Performing Streamed Install Success 
+== install
+Performing Streamed Install
+Success
+== baseline launch
+== flow 02-main-task-demo.yaml
+Anonymous analytics enabled. To opt out, set MAESTRO_CLI_NO_ANALYTICS environment variable to any value before running Maestro.
+
+
+Waiting for flows to complete...
+[Failed] MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts (57s) (No visible element found: "Getting to Fictional Hall")
+
+1/1 Flow Failed
+
+== FLOW FAILED: 02-main-task-demo.yaml
+== flow 01-first-run.yaml
+
+Waiting for flows to complete...
+[Passed] First run shows one clear start and no demonstration label (4m 46s)
+
+1/1 Flow Passed in 4m 46s
+
+== flow 04-back-navigation.yaml
+
+Waiting for flows to complete...
+[Failed] System Back steps backwards through the journey flow, then Home, then leaves the app (1m 17s) (No visible element found: "Tate Modern")
+
+1/1 Flow Failed
+
+== FLOW FAILED: 04-back-navigation.yaml
+== flow 05-keyboard-needs.yaml
+
+Waiting for flows to complete...
+[Passed] With the keyboard open the field and the Save button stay reachable (29s)
+
+1/1 Flow Passed in 29s
+
+== flow 06-settings-display.yaml
+
+Waiting for flows to complete...
+[Passed] Settings - colours, text size and the build identity (23s)
+
+1/1 Flow Passed in 23s
+
+== info flow 03-live-journey.yaml
+
+Waiting for flows to complete...
+[Failed] INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked (52s) (No visible element found: "Where do you want to go\?")
+
+1/1 Flow Failed
+
+== INFORMATIONAL FLOW DID NOT PASS: 03-live-journey.yaml
+== info flow 07-location-denied.yaml
+
+Waiting for flows to complete...
+[Failed] INFORMATIONAL - location permission refused (also permanently), a clear message and a way forward (1m 18s) (No visible element found: "Tate Modern")
+
+1/1 Flow Failed
+
+== INFORMATIONAL FLOW DID NOT PASS: 07-location-denied.yaml
+== offline live flow
+== info flow 03-live-journey.yaml
+
+Waiting for flows to complete...
+[Failed] INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked (51s) (No visible element found: "Where do you want to go\?")
+
+1/1 Flow Failed
+
+== INFORMATIONAL FLOW DID NOT PASS: 03-live-journey.yaml
+== flow 08-profile-survives-kill-write.yaml
+
+Waiting for flows to complete...
+[Failed] Save needs and choose the demonstration, then leave the app (the script kills the process) (53s) (No visible element found: "Getting to Fictional Hall")
+
+1/1 Flow Failed
+
+== FLOW FAILED: 08-profile-survives-kill-write.yaml
+== flow 09-profile-survives-kill-check.yaml
+
+Waiting for flows to complete...
+[Failed] After process death the saved needs and the chosen mode are still there (20s) (Assertion is false: "My needs" is visible)
+
+1/1 Flow Failed
+
+== FLOW FAILED: 09-profile-survives-kill-check.yaml
+== rotation
+== startup
+== memory and scroll
+== flow 10-open-long-screen.yaml
+
+Waiting for flows to complete...
+[Passed] Open the longest screen (the demonstration journey) so scrolling can be measured (6s)
+
+1/1 Flow Passed in 6s
+
+== done fail=1
