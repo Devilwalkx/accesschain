@@ -56,8 +56,10 @@ jobs:
         working-directory: apps/mobile
         run: |
           grep "uses-permission" android/app/src/main/AndroidManifest.xml
-          ! grep -E 'name="android.permission.(RECORD_AUDIO|CAMERA|ACCESS_FINE_LOCATION|ACCESS_BACKGROUND_LOCATION|READ_EXTERNAL_STORAGE|WRITE_EXTERNAL_STORAGE)"/>' android/app/src/main/AndroidManifest.xml | grep -v 'tools:node="remove"' || true
-      - name: Build release APK (signed with the Android debug key: for testing only)
+          if grep -E 'uses-permission android:name="android.permission.(RECORD_AUDIO|CAMERA|ACCESS_FINE_LOCATION|ACCESS_BACKGROUND_LOCATION|READ_EXTERNAL_STORAGE|WRITE_EXTERNAL_STORAGE)"' android/app/src/main/AndroidManifest.xml | grep -v 'tools:node="remove"'; then
+            echo "Forbidden permission requested"; exit 1
+          fi
+      - name: "Build release APK (signed with the Android debug key, for testing only)"
         working-directory: apps/mobile/android
         run: ./gradlew assembleRelease --no-daemon
       - uses: actions/upload-artifact@v4
