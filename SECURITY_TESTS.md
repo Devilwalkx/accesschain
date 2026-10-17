@@ -2,7 +2,7 @@
 
 Reference standard: OWASP MASVS for the mobile client and a suitable backend verification standard. Passing this list is **not** a certification. Each row says what actually ran.
 
-Legend: **Automated** = runs in `npm test` (67 tests: 60 in `packages/core`, 7 in `packages/db`); **Not run** = needs a real device, service or reviewer; **Not built** = the feature does not exist yet.
+Browser tests run with `npm run e2e` (39 tests). Legend: **Automated** = runs in `npm test` (67 tests: 60 in `packages/core`, 7 in `packages/db`); **Not run** = needs a real device, service or reviewer; **Not built** = the feature does not exist yet.
 
 Mutation checks were also run once: deliberately breaking expiry handling, unknown-handling, AAD binding, partner withdrawal rules and the RLS policy each made tests fail (so those tests do detect regressions). This is a one-off manual check, not a CI job.
 
@@ -35,11 +35,13 @@ Mutation checks were also run once: deliberately breaking expiry handling, unkno
 | T-25 | Verification badge validity, lapse, self-report labelling | facts.test.ts | Automated |
 | T-26 | Dependency review | `npm audit` | Run once: core runtime deps 0 findings; 22 findings (15 high, 7 moderate, 0 critical) in Expo/React Native build tooling (metro, node-forge, braces, uuid…). No SBOM, signing or secret scanning yet |
 | T-27 | Encrypted-traffic inspection proving no plaintext private content on the wire | – | **Not run** (this build sends nothing) |
-| T-28 | Real-device accessibility: screen readers (TalkBack/VoiceOver), large text, switch access, disabled-user testers | – | **Not run** |
+| T-28 | Real-device accessibility: screen readers (TalkBack/VoiceOver), large text, switch access, disabled-user testers. (Automated axe scan exists, see T-35; it finds only a minority of real accessibility problems) | – | **Not run** |
 | T-29 | Offline conflicts and pending actions | – | **Not built** |
 | T-30 | Restore/delete drill, backup expiry | – | **Not run** |
 | T-31 | Key loss/recovery on real devices; new-device enrolment | – | **Not run / not built** |
 | T-32 | Malicious partner edits at the API/UI level, moderator workflow | – | **Not built** (rules tested at library and DB level) |
+| T-35 | Browser build on three phone viewports (Pixel 7 emulation, 390 px, 320 px): end-to-end verdicts incl. stale lift; profile encrypted at rest (no plaintext keys in localStorage, verified to fail when plaintext is deliberately leaked); lost key fails closed; recovery secret format; erase; report PII hold; zero third-party network requests; no horizontal overflow; touch targets ≥ 44 px; tab labels do not wrap; keyboard operation; axe WCAG 2 A/AA scan on every screen; PWA manifest/icons served; no service worker; refuses to run without WebCrypto | `e2e/tests/app.spec.ts` (13 tests × 3 viewports = 39) | Automated in headless Chromium only. **Not Safari/Firefox, not real phones, not screen readers** |
+| T-36 | Android release APK builds and requested permissions contain no forbidden entries | `.github/workflows/build.yml` | Runs in GitHub Actions; see STATUS.md for the latest result |
 | T-33 | Independent cryptographic and privacy/security review, penetration test | – | **Not done** |
 | T-34 | Native permission manifests: `expo prebuild` run for Android and iOS; Android requests only coarse location + internet (background/fine/mic/camera/storage removed), iOS only when-in-use location, photo-library description. `app.json` asserted in `core/test/appconfig.test.ts`. Release-build permissions (e.g. `SYSTEM_ALERT_WINDOW`, a dev-tooling default still present) not reviewed | `core/test/appconfig.test.ts` | Config automated; release build **not reviewed** |
 

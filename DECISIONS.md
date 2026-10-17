@@ -41,3 +41,12 @@ Text-first itinerary is the primary view; the map is a future addition. Meaning 
 
 ## D-014 What this repo does not decide
 Lawful bases, controller/processor roles, retention periods, supplier terms, DPIA outcome, product claims wording and pricing are **open** and listed in PRIVACY_REGISTER §7. Pricing for institutional payers is untested and nothing in this build assumes a price.
+
+## D-015 Phone delivery: Android APK and web/PWA, no service worker
+The app is one Expo codebase for Android, iOS and web. Delivered to phones via GitHub Actions: a debug-signed Android release APK (testing only) and a static web build installable as a PWA. iOS has no installable artifact without an Apple Developer account, signing and (for TestFlight) App Store Connect; the web build is the iPhone route for now. **No service worker**: offline caching of access information needs an explicit staleness policy first, otherwise a cached "all clear" could outlive its evidence.
+
+## D-016 Web key protection and HTTPS requirement
+Browsers have no Keychain/Keystore. The web client keeps the content key in IndexedDB wrapped by a non-extractable WebCrypto AES-GCM key. This resists copying storage contents, not malicious script in the page or a compromised browser profile, and clearing site data permanently destroys the key (the recovery secret is the backup). WebCrypto exists only in secure contexts, so the app refuses to start on plain HTTP with a clear message and stores nothing. `navigator.storage.persist()` is requested to reduce eviction; browsers may refuse.
+
+## D-017 Ciphertext in localStorage on web
+Only ciphertext envelopes and non-secrets go in `localStorage`; keys never do. An e2e test fails if plaintext profile fields appear there (and was verified to fail when one was deliberately leaked).

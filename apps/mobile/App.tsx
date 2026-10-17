@@ -3,6 +3,7 @@ import { SafeAreaView, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import type { RequirementsProfile } from "@accesschain/core";
 import { installSecureRandom } from "./src/secureRandom";
+import { platformBlocker } from "./src/platformCheck";
 import { expoKeyStore } from "./src/keystore";
 import { ProfileRepo } from "./src/profileRepo";
 import { PlanScreen } from "./src/screens/PlanScreen";
@@ -15,11 +16,13 @@ import { s } from "./src/theme";
 type Tab = "plan" | "needs" | "report" | "privacy";
 const TABS: Array<[Tab, string]> = [["plan", "Plan"], ["needs", "Needs"], ["report", "Report"], ["privacy", "Privacy"]];
 
-let randomError: string | null = null;
-try {
-  installSecureRandom();
-} catch (e) {
-  randomError = e instanceof Error ? e.message : "Secure random unavailable";
+let randomError: string | null = platformBlocker();
+if (!randomError) {
+  try {
+    installSecureRandom();
+  } catch (e) {
+    randomError = e instanceof Error ? e.message : "Secure random unavailable";
+  }
 }
 
 export default function App() {
@@ -38,7 +41,7 @@ export default function App() {
     return (
       <SafeAreaView style={s.screen}>
         <Text style={s.h1} accessibilityRole="header">Cannot start safely</Text>
-        <Text style={s.p}>This device did not provide a secure random source, so private storage is disabled: {randomError}</Text>
+        <Text style={s.p}>Private storage is disabled on this device: {randomError}</Text>
       </SafeAreaView>
     );
   }

@@ -147,6 +147,16 @@ test.describe("AccessChain on a phone-sized browser", () => {
     expect(await page.evaluate(async () => (await navigator.serviceWorker?.getRegistrations?.())?.length ?? 0)).toBe(0);
   });
 
+  test("refuses to run without WebCrypto (e.g. plain http on a LAN address) instead of storing unprotected", async ({ page }) => {
+    await page.addInitScript(() => {
+      Object.defineProperty(window.crypto, "subtle", { value: undefined, configurable: true });
+    });
+    await page.goto("/");
+    await expect(page.getByRole("heading", { name: "Cannot start safely" })).toBeVisible();
+    await expect(page.getByText("not served over HTTPS", { exact: false })).toBeVisible();
+    expect(await page.evaluate(() => localStorage.length)).toBe(0);
+  });
+
   test("keyboard operable: Tab reaches buttons and Enter activates them", async ({ page }) => {
     await goto(page);
     await tab(page, "Plan").focus();
