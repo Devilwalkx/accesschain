@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="1" time="20.754" timestamp="2026-10-17T17:13:40">
+    <testcase id="Settings - colours, text size and the build identity" name="Settings - colours, text size and the build identity" classname="Settings - colours, text size and the build identity" file="/home/runner/work/accesschain/accesschain/android-tests/flows/06-settings-display.yaml" time="20.74" timestamp="2026-10-17T17:13:40" status="ERROR">
+      <failure>Element not found: Text matching regex: Settings</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

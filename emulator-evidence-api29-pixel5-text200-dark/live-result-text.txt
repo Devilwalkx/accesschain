@@ -1,0 +1,6 @@
+Back
+Plan a journey
+Use live information?
+To check real routes, this app asks two public services:
+• TfL (Transport for London): your start (a station, your rough location, or a postcode you type) and where the place is.
+• OpenStreetMap: the name of the place.
