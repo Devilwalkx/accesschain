@@ -8,4 +8,9 @@ name: Open the longest screen (the demonstration journey) so scrolling can be me
     timeout: 60000
     speed: 60
 - tapOn: "Plan a journey"
+- scrollUntilVisible:
+    element: "Getting to Fictional Hall"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Getting to Fictional Hall"

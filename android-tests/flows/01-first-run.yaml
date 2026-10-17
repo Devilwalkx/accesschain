@@ -4,6 +4,11 @@ name: First run shows one clear start and no demonstration label
 - launchApp:
     clearState: true
 - assertVisible: "Tell us what you need"
+- scrollUntilVisible:
+    element: "Plan a journey"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Plan a journey"
 - assertNotVisible: "Demonstration.*"
 - takeScreenshot: 01-first-run

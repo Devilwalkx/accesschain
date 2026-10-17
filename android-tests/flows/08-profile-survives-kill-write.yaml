@@ -21,5 +21,10 @@ name: Save needs and choose the demonstration, then leave the app (the script ki
     timeout: 60000
     speed: 60
 - tapOn: "No, use the demonstration instead"
+- scrollUntilVisible:
+    element: "Getting to Fictional Hall"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Getting to Fictional Hall"
 - pressKey: home

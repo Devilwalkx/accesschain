@@ -21,6 +21,11 @@ name: INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies;
     timeout: 60000
     speed: 60
 - tapOn: "Yes, use live information"
+- scrollUntilVisible:
+    element: "Where do you want to go\\?"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Where do you want to go\\?"
 - takeScreenshot: 10-live-places
 - scrollUntilVisible:
@@ -29,6 +34,11 @@ name: INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies;
     timeout: 60000
     speed: 60
 - tapOn: "Tate Modern"
+- scrollUntilVisible:
+    element: "Where are you starting from\\?"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Where are you starting from\\?"
 - takeScreenshot: 11-live-start
 - scrollUntilVisible:
@@ -43,14 +53,14 @@ name: INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies;
     timeout: 90000
 - takeScreenshot: 12-live-result-top
 - scrollUntilVisible:
-    element: "What answered"
-    direction: DOWN
-    timeout: 90000
-    speed: 40
-- takeScreenshot: 14-live-what-answered
-- scrollUntilVisible:
     element: "Correct entrance"
     direction: DOWN
     timeout: 60000
     speed: 40
 - takeScreenshot: 13-live-entrance
+- scrollUntilVisible:
+    element: "What answered"
+    direction: DOWN
+    timeout: 90000
+    speed: 40
+- takeScreenshot: 14-live-what-answered

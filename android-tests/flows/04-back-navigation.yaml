@@ -21,6 +21,11 @@ name: System Back steps backwards through the journey flow, then Home, then leav
     timeout: 60000
     speed: 60
 - tapOn: "Tate Modern"
+- scrollUntilVisible:
+    element: "Where are you starting from\\?"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Where are you starting from\\?"
 - scrollUntilVisible:
     element: "London Bridge"
@@ -29,10 +34,25 @@ name: System Back steps backwards through the journey flow, then Home, then leav
     speed: 60
 - tapOn: "London Bridge"
 - pressKey: back
+- scrollUntilVisible:
+    element: "Where are you starting from\\?"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Where are you starting from\\?"
 - pressKey: back
+- scrollUntilVisible:
+    element: "Where do you want to go\\?"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Where do you want to go\\?"
 - pressKey: back
+- scrollUntilVisible:
+    element: "Find out if you can get there.*"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Find out if you can get there.*"
 - pressKey: back
 - assertNotVisible: "Find out if you can get there.*"

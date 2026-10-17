@@ -9,6 +9,11 @@ name: Settings - colours, text size and the build identity
     timeout: 60000
     speed: 60
 - tapOn: "Settings"
+- scrollUntilVisible:
+    element: "Display"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Display"
 - scrollUntilVisible:
     element: "Large text"
@@ -23,5 +28,10 @@ name: Settings - colours, text size and the build identity
     timeout: 60000
     speed: 60
 - assertVisible: "App ID app.devilwalkx.accesschain"
+- scrollUntilVisible:
+    element: "Version 0.2.0.*"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Version 0.2.0.*"
 - takeScreenshot: 31-about-build

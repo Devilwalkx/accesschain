@@ -23,6 +23,11 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
     timeout: 60000
     speed: 60
 - tapOn: "Tate Modern"
+- scrollUntilVisible:
+    element: "Your phone will ask permission once.*"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Your phone will ask permission once.*"
 - scrollUntilVisible:
     element: "Where I am now"
@@ -33,6 +38,11 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
 - tapOn:
     text: "Don't allow|Deny|DENY"
     optional: true
+- scrollUntilVisible:
+    element: "Location was not allowed.*|Location is switched off.*|We couldn't find where you are.*"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Location was not allowed.*|Location is switched off.*|We couldn't find where you are.*"
 - takeScreenshot: 40-location-denied-1
 - scrollUntilVisible:
@@ -53,6 +63,16 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
 - tapOn:
     text: "Don't allow|Deny|DENY"
     optional: true
+- scrollUntilVisible:
+    element: "London Bridge"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "London Bridge"
+- scrollUntilVisible:
+    element: "Use this postcode"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Use this postcode"
 - takeScreenshot: 41-location-denied-3

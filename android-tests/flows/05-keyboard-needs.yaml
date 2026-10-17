@@ -15,6 +15,12 @@ name: With the keyboard open the field and the Save button stay reachable
     timeout: 60000
     speed: 60
 - tapOn: "Walking and doorway details.*"
+- scrollUntilVisible:
+    element:
+      id: "field-longest-walk-in-metres"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn:
     id: "field-longest-walk-in-metres"
 - inputText: "400"
@@ -26,4 +32,9 @@ name: With the keyboard open the field and the Save button stay reachable
     timeout: 60000
     speed: 85
 - tapOn: "Save and see my routes"
+- scrollUntilVisible:
+    element: "Use live information\\?"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Use live information\\?"

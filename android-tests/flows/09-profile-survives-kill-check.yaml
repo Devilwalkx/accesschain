@@ -9,6 +9,16 @@ name: After process death the saved needs and the chosen mode are still there
     timeout: 60000
     speed: 60
 - tapOn: "Plan a journey"
+- scrollUntilVisible:
+    element: "Getting to Fictional Hall"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Getting to Fictional Hall"
+- scrollUntilVisible:
+    element: "Checked against your needs:"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Checked against your needs:"
 - takeScreenshot: 50-restored

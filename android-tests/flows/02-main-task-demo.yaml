@@ -9,6 +9,11 @@ name: MAIN TASK (demonstration places) - say what you need, then read a journey 
     timeout: 60000
     speed: 60
 - tapOn: "Tell us what you need"
+- scrollUntilVisible:
+    element: "What do you need\\?"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "What do you need\\?"
 - takeScreenshot: 02-needs
 - scrollUntilVisible:
@@ -17,6 +22,11 @@ name: MAIN TASK (demonstration places) - say what you need, then read a journey 
     timeout: 60000
     speed: 85
 - tapOn: "Save and see my routes"
+- scrollUntilVisible:
+    element: "Use live information\\?"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Use live information\\?"
 - takeScreenshot: 03-consent
 - scrollUntilVisible:
@@ -25,7 +35,17 @@ name: MAIN TASK (demonstration places) - say what you need, then read a journey 
     timeout: 60000
     speed: 60
 - tapOn: "No, use the demonstration instead"
+- scrollUntilVisible:
+    element: "Getting to Fictional Hall"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Getting to Fictional Hall"
+- scrollUntilVisible:
+    element: "Demonstration.*"
+    direction: DOWN
+    timeout: 30000
+    speed: 60
 - assertVisible: "Demonstration.*"
 - takeScreenshot: 04-journey-top
 - scrollUntilVisible:
@@ -48,6 +68,11 @@ name: MAIN TASK (demonstration places) - say what you need, then read a journey 
     element: "Correct entrance"
     direction: DOWN
     timeout: 60000
+    speed: 60
+- scrollUntilVisible:
+    element: "What is missing"
+    direction: DOWN
+    timeout: 30000
     speed: 60
 - assertVisible: "What is missing"
 - takeScreenshot: 06-correct-entrance
