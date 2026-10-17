@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="1" time="89.873" timestamp="2026-10-17T21:30:50">
+    <testcase id="INFORMATIONAL - location permanently denied (revoked with the do-not-ask-again flag by the script), a clear message and a manual start" name="INFORMATIONAL - location permanently denied (revoked with the do-not-ask-again flag by the script), a clear message and a manual start" classname="INFORMATIONAL - location permanently denied (revoked with the do-not-ask-again flag by the script), a clear message and a manual start" file="/home/runner/work/accesschain/accesschain/android-tests/flows/07-location-denied.yaml" time="89.86" timestamp="2026-10-17T21:30:50" status="ERROR">
+      <failure>No visible element found: "Location is switched off.*|Location was not allowed.*|We couldn't find where you are.*"</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

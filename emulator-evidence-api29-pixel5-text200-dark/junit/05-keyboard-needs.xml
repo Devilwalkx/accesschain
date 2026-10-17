@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="35.46" timestamp="2026-10-17T20:39:22">
+    <testcase id="With the keyboard open the field and the Save button stay reachable" name="With the keyboard open the field and the Save button stay reachable" classname="With the keyboard open the field and the Save button stay reachable" file="/home/runner/work/accesschain/accesschain/android-tests/flows/05-keyboard-needs.yaml" time="35.439" timestamp="2026-10-17T20:39:22" status="SUCCESS"/>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,104 @@
+== upgrade check
+UPGRADE: installed over previous release: Performing Streamed Install Success 
+== install
+Performing Streamed Install
+Success
+== baseline launch
+== flow 02-main-task-demo.yaml
+Anonymous analytics enabled. To opt out, set MAESTRO_CLI_NO_ANALYTICS environment variable to any value before running Maestro.
+
+
+Waiting for flows to complete...
+[Passed] MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts (1m 15s)
+
+1/1 Flow Passed in 1m 15s
+
+== flow 01-first-run.yaml
+
+Waiting for flows to complete...
+[Passed] First run shows one clear start and no demonstration label (7s)
+
+1/1 Flow Passed in 7s
+
+== flow 04-back-navigation.yaml
+
+Waiting for flows to complete...
+[Passed] System Back steps backwards through the journey flow, then Home, then leaves the app (36s)
+
+1/1 Flow Passed in 36s
+
+== flow 05-keyboard-needs.yaml
+
+Waiting for flows to complete...
+[Passed] With the keyboard open the field and the Save button stay reachable (35s)
+
+1/1 Flow Passed in 35s
+
+== flow 06-settings-display.yaml
+
+Waiting for flows to complete...
+[Passed] Settings - colours, text size and the build identity (28s)
+
+1/1 Flow Passed in 28s
+
+== flow 15-encryption-check.yaml
+
+Waiting for flows to complete...
+[Passed] The on-phone encryption check runs the real encryption code and passes (including refusing a tampered copy) (36s)
+
+1/1 Flow Passed in 36s
+
+== info flow 03-live-journey.yaml
+
+Waiting for flows to complete...
+[Failed] INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked (56s) (Assertion is false: ".*(Walk about|Tube|Train|Bus|DLR|Overground|Elizabeth|No step-free route found|couldn't|could not|too slow|not usable).*" is visible)
+
+1/1 Flow Failed
+
+== INFORMATIONAL FLOW DID NOT PASS: 03-live-journey.yaml
+== location permission permanently denied
+== info flow 07-location-denied.yaml
+
+Waiting for flows to complete...
+[Failed] INFORMATIONAL - location permanently denied (revoked with the do-not-ask-again flag by the script), a clear message and a manual start (2m) (No visible element found: "Location is switched off.*|Location was not allowed.*|We couldn't find where you are.*")
+
+1/1 Flow Failed
+
+== INFORMATIONAL FLOW DID NOT PASS: 07-location-denied.yaml
+== offline live flow
+== info flow 11-offline-live.yaml
+
+Waiting for flows to complete...
+[Failed] INFORMATIONAL - airplane mode ON (set by the script), live journey ends in the not-checked state with no invented route (56s) (Assertion is false: "OpenStreetMap \(the place\): no answer.*" is visible)
+
+1/1 Flow Failed
+
+== INFORMATIONAL FLOW DID NOT PASS: 11-offline-live.yaml
+== flow 08-profile-survives-kill-write.yaml
+
+Waiting for flows to complete...
+[Passed] Save needs and choose the demonstration, then leave the app (the script kills the process) (31s)
+
+1/1 Flow Passed in 31s
+
+== signing consequence check (throw-away key)
+== flow 09-profile-survives-kill-check.yaml
+
+Waiting for flows to complete...
+[Passed] After process death the saved needs and the chosen mode are still there (9s)
+
+1/1 Flow Passed in 9s
+
+== rotation
+== startup
+== memory and scroll
+== flow 10-open-long-screen.yaml
+
+Waiting for flows to complete...
+[Passed] Open the longest screen (the demonstration journey) so scrolling can be measured (10s)
+
+1/1 Flow Passed in 10s
+
+== TalkBack experiment (non-gating)
+TalkBack is not installed on this emulator image: NOT TESTED
+== done fail=0
