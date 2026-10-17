@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="1" time="64.992" timestamp="2026-10-17T19:26:05">
+    <testcase id="INFORMATIONAL - location permission refused (also permanently), a clear message and a way forward" name="INFORMATIONAL - location permission refused (also permanently), a clear message and a way forward" classname="INFORMATIONAL - location permission refused (also permanently), a clear message and a way forward" file="/home/runner/work/accesschain/accesschain/android-tests/flows/07-location-denied.yaml" time="64.976" timestamp="2026-10-17T19:26:05" status="ERROR">
+      <failure>No visible element found: "London Bridge"</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
