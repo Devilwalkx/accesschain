@@ -14,50 +14,54 @@ jobs:
     timeout-minutes: 10
     env:
       UA: "AccessChainProbe/0.1 (research prototype; contact via GitHub Devilwalkx/accesschain)"
+      BROWSER: "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Mobile Safari/537.36"
     steps:
-      - name: A1 lift disruptions v2
+      - name: P1 Overpass with fallbacks (venues with wheelchair tag near Tate Modern)
         continue-on-error: true
         run: |
-          code=$(curl -sS -m 40 -A "$UA" -o lifts.json -w "%{http_code}" "https://api.tfl.gov.uk/Disruptions/Lifts/v2" || true); echo "HTTP $code bytes $(wc -c < lifts.json)"
-          head -c 900 lifts.json; echo
-          jq -c 'if type=="array" then {count:length, keys:(.[0]|keys), sample:.[0:2]} else {keys:keys} end' lifts.json | head -c 1500
-      - name: A2 swagger summary
-        continue-on-error: true
-        run: |
-          curl -sS -m 40 -A "$UA" https://api.tfl.gov.uk/swagger/docs/v1 -o swagger.json -w "HTTP %{http_code} bytes %{size_download}\n"
-          jq -r '.paths | keys[] | select(test("Lift|Disruptions/Lifts|JourneyResults"))' swagger.json | head
-          jq -c '.paths["/Journey/JourneyResults/{from}/to/{to}"].get.parameters[] | {n:.name, enum:(.enum // .items.enum // null)}' swagger.json
-      - name: A3 journey leg detail (obstacles, path, disruptions)
-        continue-on-error: true
-        run: |
-          u="https://api.tfl.gov.uk/Journey/JourneyResults/940GZZLULNB/to/51.5076,-0.0994?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow"
-          curl -sS -m 60 -A "$UA" "$u" -o j.json -w "HTTP %{http_code}\n"
-          jq -c '{njourneys:(.journeys|length), maxAge:.recommendedMaxAgeMinutes, crit:.searchCriteria}' j.json
-          jq -c '.journeys[0].legs[] | {mode:.mode.id, sum:.instruction.summary, dist:.distance, dur:.duration, from:.departurePoint.commonName, fromId:(.departurePoint.naptanId // .departurePoint.icsCode), to:.arrivalPoint.commonName, toId:(.arrivalPoint.naptanId // .arrivalPoint.icsCode), lat:.arrivalPoint.lat, lon:.arrivalPoint.lon, obstacles:.obstacles, disr:(.disruptions|length), pathStops:(.path.stopPoints|length), steps:(.instruction.steps|length), types:([.instruction.steps[]?.trackType]|unique)}' j.json
-          echo "--- first walking leg full steps"; jq -c '[.journeys[0].legs[]|select(.mode.id=="walking")][0].instruction.steps[0:6]' j.json
-          echo "--- journeys summary"; jq -c '.journeys[] | {dur:.duration, legs:[.legs[]|.mode.id]}' j.json
-      - name: A4 journey tube-based (Waterloo to Tate Modern coords, no pref vs step-free)
-        continue-on-error: true
-        run: |
-          for pref in "" "&accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform"; do
-            u="https://api.tfl.gov.uk/Journey/JourneyResults/940GZZLUHBN/to/51.5076,-0.0994?walkingSpeed=Slow$pref"
-            echo "== $pref"; curl -sS -m 60 -A "$UA" "$u" -o j.json -w "HTTP %{http_code}\n"
-            jq -c '.journeys[0:2][] | {dur:.duration, legs:[.legs[]|{m:.mode.id, d:.distance, f:.departurePoint.commonName, t:.arrivalPoint.commonName, ob:(.obstacles|length)}]}' j.json | head -c 1800; echo
+          q='[out:json][timeout:25];nwr["wheelchair"]["name"](around:700,51.5076,-0.0994);out tags center meta 150;'
+          for ep in https://overpass-api.de/api/interpreter https://overpass.kumi.systems/api/interpreter https://overpass.private.coffee/api/interpreter https://maps.mail.ru/osm/tools/overpass/api/interpreter; do
+            echo "== $ep"; code=$(curl -sS -m 45 -A "$UA" --data-urlencode "data=$q" "$ep" -o osm.json -w "%{http_code}" || true); echo "HTTP $code bytes $(wc -c < osm.json)"
+            if [ "$code" = "200" ] && jq -e '.elements' osm.json >/dev/null 2>&1; then
+              jq -c '{count:(.elements|length), wheelchair:([.elements[].tags.wheelchair]|group_by(.)|map({v:.[0],n:length})), withCheckDate:([.elements[]|select(.tags["check_date:wheelchair"])]|length), withDesc:([.elements[]|select(.tags["wheelchair:description"])]|length)}' osm.json
+              jq -c '[.elements[]|select(.tags.name)][0:8][] | {t:.type, id, ts:.timestamp, name:.tags.name, wc:.tags.wheelchair, desc:.tags["wheelchair:description"], kind:(.tags.tourism // .tags.amenity // .tags.shop // .tags.leisure), lat:(.lat // .center.lat), lon:(.lon // .center.lon)}' osm.json
+              echo "ages(years):"; jq -c '[.elements[]|select(.timestamp)|((now - (.timestamp|fromdateiso8601))/31557600)|floor]|group_by(.)|map({y:.[0],n:length})' osm.json
+              break
+            fi
           done
-      - name: B1 OpenStreetMap wheelchair tags near Bankside
+      - name: P2 Nominatim venue lookup with extratags
         continue-on-error: true
         run: |
-          q='[out:json][timeout:30];(nwr["wheelchair"]["name"](around:900,51.5045,-0.1000););out tags center meta 400;'
-          curl -sS -m 60 -A "$UA" --data-urlencode "data=$q" https://overpass-api.de/api/interpreter -o osm.json -w "HTTP %{http_code} bytes %{size_download}\n"
-          jq -c '{count:(.elements|length), wheelchair:([.elements[].tags.wheelchair]|group_by(.)|map({v:.[0],n:length})), withCheckDate:([.elements[]|select(.tags["check_date:wheelchair"] or .tags.check_date)]|length), withDesc:([.elements[]|select(.tags["wheelchair:description"])]|length), kinds:([.elements[].tags|(.tourism // .amenity // .shop // .leisure // "other")]|group_by(.)|map({k:.[0],n:length})|sort_by(-.n)|.[0:10])}' osm.json
-          echo "--- sample"; jq -c '[.elements[]|select(.tags.name)][0:8][] | {t:.type, id, ts:.timestamp, name:.tags.name, wc:.tags.wheelchair, desc:.tags["wheelchair:description"], kind:(.tags.tourism // .tags.amenity // .tags.shop // .tags.leisure), lat:(.lat // .center.lat), lon:(.lon // .center.lon)}' osm.json
-          echo "--- ages (years since last edit)"; jq -c '[.elements[]|select(.timestamp)|((now - (.timestamp|fromdateiso8601))/31557600)|floor]|group_by(.)|map({y:.[0],n:length})' osm.json
-          echo "--- names"; jq -r '[.elements[].tags.name]|unique|.[0:30]|join(" | ")' osm.json
-      - name: C1 licence and terms text
+          for name in "Tate Modern" "Shakespeare's Globe" "Southbank Centre" "Borough Market" "Imperial War Museum London"; do
+            echo "== $name"
+            curl -sS -m 30 -A "$UA" -G "https://nominatim.openstreetmap.org/search" --data-urlencode "q=$name" --data-urlencode "format=jsonv2" --data-urlencode "extratags=1" --data-urlencode "limit=2" --data-urlencode "viewbox=-0.25,51.60,0.10,51.40" --data-urlencode "bounded=1" -o n.json -w "HTTP %{http_code}\n"
+            jq -c '.[] | {name, type, osm:"\(.osm_type)/\(.osm_id)", lat, lon, wc:.extratags.wheelchair, desc:.extratags["wheelchair:description"], checked:(.extratags["check_date:wheelchair"]), updated:.extratags.check_date}' n.json
+            sleep 1.2
+          done
+      - name: P3 CORS headers (needed for the web build)
         continue-on-error: true
         run: |
-          for u in "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service" "https://www.openstreetmap.org/copyright"; do
+          for u in "https://api.tfl.gov.uk/Journey/JourneyResults/HUBWAT/to/51.5076,-0.0994" "https://api.tfl.gov.uk/Disruptions/Lifts/v2" "https://api.tfl.gov.uk/StopPoint/940GZZLUSWK" "https://nominatim.openstreetmap.org/search?q=tate+modern&format=json" "https://overpass-api.de/api/status"; do
+            echo "== $u"; curl -sS -m 30 -A "$UA" -D - -o /dev/null -H "Origin: https://example.com" "$u" | grep -iE "^HTTP|access-control-allow-origin|access-control-allow-headers" ; done
+      - name: P4 TfL licence / data terms (browser UA)
+        continue-on-error: true
+        run: |
+          for u in "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service" "https://tfl.gov.uk/info-for/open-data-users/" "https://api-portal.tfl.gov.uk/" "https://tfl.gov.uk/info-for/open-data-users/our-open-data"; do
             echo "=== $u"
-            code=$(curl -sSL -m 40 -A "$UA" -o page.html -w "%{http_code}" "$u" || true); echo "HTTP $code bytes $(wc -c < page.html)"
-            sed -e 's/<script[^>]*>[^<]*<\/script>//g' -e 's/<[^>]*>/ /g' page.html | tr -s ' \n\t' ' ' | fold -w 200 | grep -iE "licen[cs]e|attribut|redistribut|powered by|rate limit|app_key|commercial|ODbL|share|derivative" | head -14
+            code=$(curl -sSL -m 40 -A "$BROWSER" -H "Accept: text/html" -o page.html -w "%{http_code}" "$u" || true); echo "HTTP $code bytes $(wc -c < page.html)"
+            sed -e 's/<script[^>]*>[^<]*<\/script>//g' -e 's/<[^>]*>/ /g' page.html | tr -s ' \n\t' ' ' | fold -w 220 | grep -iE "licen[cs]e|attribut|powered by|rate limit|app_key|commercial|open government|redistribut" | head -10
+          done
+      - name: P5 Hub ids and journeys from candidate start stations
+        continue-on-error: true
+        run: |
+          for id in HUBWAT HUBLBG 940GZZLUSWK 940GZZLUBGH 940GZZLUBKF HUBZBF; do
+            u="https://api.tfl.gov.uk/Journey/JourneyResults/$id/to/51.5076,-0.0994?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow"
+            curl -sS -m 60 -A "$UA" "$u" -o j.json -w "$id HTTP %{http_code} "; jq -c 'if .journeys then {from:.journeys[0].legs[0].departurePoint.commonName, n:(.journeys|length), first:[.journeys[0].legs[]|{m:.mode.id, d:.distance, ob:([.obstacles[]?.type]|unique)}]} else {err:(.message // .httpStatusCode // "other"), disambig:(.toLocationDisambiguation.matchStatus // .fromLocationDisambiguation.matchStatus)} end' j.json
+          done
+      - name: P6 Station accessibility via StopPoint (London Bridge, Waterloo, Borough)
+        continue-on-error: true
+        run: |
+          for id in 940GZZLULNB 940GZZLUWLO 940GZZLUBGH HUBLBG HUBWAT; do
+            echo "== $id"; curl -sS -m 40 -A "$UA" "https://api.tfl.gov.uk/StopPoint/$id" -o sp.json -w "HTTP %{http_code}\n"
+            jq -c '{name:.commonName, cats:([.additionalProperties[]?.category]|unique), acc:[.additionalProperties[]?|select(.category=="Accessibility")|{(.key):.value}]|add, lifts:([.additionalProperties[]?|select(.key=="Lifts")|.value]|first), children:(.children|length)}' sp.json
           done
