@@ -1,0 +1,8 @@
+{
+  "name": "@accesschain/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "vitest run" },
+  "devDependencies": { "@electric-sql/pglite": "^0.3.0", "vitest": "^3.2.0", "typescript": "~5.9.0", "@types/node": "^22.0.0" }
+}

@@ -2,9 +2,12 @@
   "name": "accesschain",
   "private": true,
   "version": "0.0.0",
-  "workspaces": ["packages/*", "apps/*"],
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "test": "npm test -w @accesschain/core",
+    "test": "npm test -w @accesschain/core -w @accesschain/db",
     "typecheck": "npm run typecheck -w @accesschain/core && npm run typecheck -w @accesschain/mobile",
     "demo": "npm run demo -w @accesschain/core"
   }
