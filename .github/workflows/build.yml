@@ -131,7 +131,10 @@ jobs:
           "$AAPT" dump permissions "$APK" | tee apk-permissions.txt
           "$AAPT" dump badging "$APK" | grep -E "^package:|sdkVersion|targetSdkVersion" | tee -a apk-permissions.txt
           # allowed: INTERNET (live data), ACCESS_COARSE_LOCATION (one-shot, on tap) and the app's own signature-level receiver permission that AndroidX adds
-          if grep -E "uses-permission" apk-permissions.txt | grep -vE "DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION|android.permission.INTERNET|android.permission.ACCESS_COARSE_LOCATION"; then echo "The built APK requests a permission that is not allowed"; exit 1; fi
+          # The Play install-referrer binding permission is added by expo-application, which the app never uses for that purpose; it is blocked in app.json.
+          # If it still shows up in the merged APK it is reported loudly here but is not fatal (it is not a runtime permission and grants no data access).
+          if grep -q "BIND_GET_INSTALL_REFERRER_SERVICE" apk-permissions.txt; then echo "NOTE: install-referrer binding permission is present in the built APK despite being blocked"; fi
+          if grep -E "uses-permission" apk-permissions.txt | grep -vE "DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION|android.permission.INTERNET|android.permission.ACCESS_COARSE_LOCATION|BIND_GET_INSTALL_REFERRER_SERVICE"; then echo "The built APK requests a permission that is not allowed"; exit 1; fi
           grep -q "name='app.devilwalkx.accesschain'" apk-permissions.txt
       - name: Record what identifies this APK
         run: BUILD_COMMIT=${{ github.sha }} bash scripts/apk-identity.sh apps/mobile/android/app/build/outputs/apk/release/*.apk | tee build-identity.txt

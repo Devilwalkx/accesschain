@@ -23,7 +23,8 @@
         "SYSTEM_ALERT_WINDOW",
         "VIBRATE",
         "USE_BIOMETRIC",
-        "USE_FINGERPRINT"
+        "USE_FINGERPRINT",
+        "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"
       ],
       "adaptiveIcon": {
         "foregroundImage": "./public/icon-maskable-512.png",

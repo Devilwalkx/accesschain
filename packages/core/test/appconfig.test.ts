@@ -5,7 +5,7 @@ const cfg = JSON.parse(readFileSync(new URL("../../../apps/mobile/app.json", imp
 
 describe("mobile app config (permissions minimised; verified once by `expo prebuild`)", () => {
   it("Android blocks background/fine location, microphone, camera, broad storage, overlay and vibrate permissions", () => {
-    for (const p of ["ACCESS_BACKGROUND_LOCATION", "ACCESS_FINE_LOCATION", "RECORD_AUDIO", "CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "SYSTEM_ALERT_WINDOW", "VIBRATE", "USE_BIOMETRIC", "USE_FINGERPRINT"]) {
+    for (const p of ["ACCESS_BACKGROUND_LOCATION", "ACCESS_FINE_LOCATION", "RECORD_AUDIO", "CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE", "SYSTEM_ALERT_WINDOW", "VIBRATE", "USE_BIOMETRIC", "USE_FINGERPRINT", "com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"]) {
       expect(cfg.android.blockedPermissions).toContain(p);
     }
     expect(cfg.android.permissions).toEqual(["ACCESS_COARSE_LOCATION"]);
