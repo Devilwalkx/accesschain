@@ -1,7 +1,9 @@
 appId: app.devilwalkx.accesschain
 name: "INFORMATIONAL - location permanently denied (revoked with the do-not-ask-again flag by the script), a clear message and a manual start"
 ---
-- launchApp
+- launchApp:
+    permissions:
+      location: deny
 - scrollUntilVisible:
     element: "Tell us what you need"
     direction: DOWN

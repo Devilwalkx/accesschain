@@ -176,7 +176,7 @@ adb shell dumpsys meminfo $PKG | grep -E "TOTAL PSS|TOTAL:|Java Heap|Native Heap
 
 # ---- TalkBack experiment (non-gating): the real TalkBack ships on some emulator images. Claim only that the experiment ran and what was recorded.
 log "TalkBack experiment (non-gating)"
-bash android-tests/talkback-experiment.sh 2>&1 | tail -5 | tee -a "$OUT/log.txt" || true
+PKG=$PKG OUT=$OUT bash android-tests/talkback-experiment.sh 2>&1 | tail -5 | tee -a "$OUT/log.txt" || true
 
 adb logcat -d -t 3000 | grep -E "ReactNative|AndroidRuntime|FATAL|$PKG" | tail -200 > "$OUT/logcat-excerpt.txt"
 log "done fail=$FAIL"
