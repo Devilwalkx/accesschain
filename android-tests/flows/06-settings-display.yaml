@@ -1,0 +1,17 @@
+appId: app.devilwalkx.accesschain
+name: Settings - colours, text size and the build identity
+---
+- launchApp:
+    clearState: true
+- tapOn: "Settings"
+- assertVisible: "Display"
+- tapOn: "Large text"
+- takeScreenshot: 30-settings-large
+- scrollUntilVisible:
+    element: "About this build"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
+- assertVisible: "App ID app.devilwalkx.accesschain"
+- assertVisible: "Version 0.2.0.*"
+- takeScreenshot: 31-about-build

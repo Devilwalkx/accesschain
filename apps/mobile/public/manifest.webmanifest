@@ -1,11 +1,11 @@
 {
-  "name": "AccessChain (synthetic demo)",
+  "name": "AccessChain",
   "short_name": "AccessChain",
-  "description": "Access-information journey planner. Synthetic demonstration data only.",
+  "description": "Step-free journey information for London, with a clearly labelled demonstration.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#f3f6fb",
   "theme_color": "#0b3d91",
   "lang": "en-GB",
   "icons": [

@@ -38,5 +38,7 @@ export const STATIONS: Station[] = [
 
 export const ATTRIBUTION = [
   "Transport information: Powered by TfL Open Data.",
-  "Place information: © OpenStreetMap contributors, available under the Open Database Licence (openstreetmap.org/copyright)."
+  "Contains OS data © Crown copyright and database rights 2016 and Geomni UK Map data © and database rights 2019.",
+  "Place information: © OpenStreetMap contributors, available under the Open Database Licence (openstreetmap.org/copyright).",
+  "AccessChain is not run, checked or endorsed by TfL or OpenStreetMap."
 ];

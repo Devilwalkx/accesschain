@@ -40,8 +40,9 @@ Partners authenticate (to be built), may add `venue_report` observations under t
 
 ## F6 – Backup, recovery, deletion
 
-- Recovery secret: 256-bit random, shown once as 13 groups of 4. It wraps the content key (HKDF-SHA256 + XChaCha20-Poly1305, bound to account). The server holds only the wrapped blob.
-- A password reset yields no key material; if all trusted devices **and** the recovery secret are lost, private content is permanently unrecoverable. The UI says so.
+- **Recovery (as built in the Android app): none.** The app used to show a "recovery code" but never stored the wrapped key or built a restore, so the code could not restore anything; the screen was removed (DECISIONS D-026). The answers live only in this phone's secure store and are not backed up (`allowBackup=false`). If the phone or key is lost, the answers are gone and the person answers the questions again. The app says so in Privacy and help.
+- *Design intent for a future server (not built):* a 256-bit recovery secret wrapping the content key (HKDF-SHA256 + XChaCha20-Poly1305, bound to the account), the server holding only the wrapped blob. The core functions exist and are unit-tested; no app screen uses them.
+- A password reset yields no key material; if all trusted devices **and** any recovery secret are lost, private content is permanently unrecoverable.
 - Deletion writes a tombstone. Restore ignores tombstoned items and entries belonging to other accounts. Backups expire on a schedule to be set; restore/delete drills are not yet run.
 - Revocation/deletion cannot remove copies a user exported or screenshotted.
 
@@ -54,7 +55,7 @@ Support sees non-content diagnostics only. No routine access to ciphertext; no s
 Itinerary sharing is intentional and per item. It needs an authenticated recipient-key design that has not been reviewed, so it is **not built**; see DECISIONS D-005.
 
 ## F9 – Live place information (implemented)
-1. After consent (screen explains what is sent), the app asks OpenStreetMap's Nominatim service for the venue by **name** (browser or phone), and on the phone also the OSM API for the object's last-edit date.
-2. It asks TfL for step-free journeys from the chosen station id (or a location rounded to ~100 m) to the venue's coordinates, and for TfL's list of lift problems.
+1. After consent (screen explains what is sent), the app asks OpenStreetMap's Nominatim service for the venue by **name** (browser or phone), at most once per second and cached for 30 minutes. The OSM editing API is **not** called (OSMF policy: not for read-only use; D-024).
+2. It asks TfL for step-free journeys from the chosen station id, a location rounded to ~100 m, or a UK postcode the person typed (sent to TfL as typed, never to OpenStreetMap) to the venue's coordinates, and for TfL's list of lift problems.
 3. Responses are validated, converted to observations with source, date and 15-minute (TfL) or two-year (community) expiry, and matched **on the device** against the private needs profile.
 4. Nothing from the profile, and no results, are sent anywhere. The services see the device's IP address. Requests are visible in the browser's network tools; the test suite asserts their content.

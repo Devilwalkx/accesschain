@@ -1,0 +1,9 @@
+appId: app.devilwalkx.accesschain
+name: First run shows one clear start and no demonstration label
+---
+- launchApp:
+    clearState: true
+- assertVisible: "Tell us what you need"
+- assertVisible: "Plan a journey"
+- assertNotVisible: "Demonstration.*"
+- takeScreenshot: 01-first-run

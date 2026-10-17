@@ -1,0 +1,28 @@
+appId: app.devilwalkx.accesschain
+name: INFORMATIONAL - location permission refused (also permanently): a clear message and a way forward
+---
+- launchApp:
+    clearState: true
+    permissions:
+      location: deny
+- tapOn: "Plan a journey"
+- tapOn: "Yes, use live information"
+- tapOn: "Tate Modern"
+- assertVisible: "Your phone will ask permission once.*"
+- tapOn: "Where I am now"
+- tapOn:
+    text: "Don't allow|Deny|DENY"
+    optional: true
+- assertVisible: "Location was not allowed.*|Location is switched off.*|We couldn't find where you are.*"
+- takeScreenshot: 40-location-denied-1
+- tapOn: "Where I am now"
+- tapOn:
+    text: "Don't allow|Deny|DENY"
+    optional: true
+- tapOn: "Where I am now"
+- tapOn:
+    text: "Don't allow|Deny|DENY"
+    optional: true
+- assertVisible: "London Bridge"
+- assertVisible: "Use this postcode"
+- takeScreenshot: 41-location-denied-3

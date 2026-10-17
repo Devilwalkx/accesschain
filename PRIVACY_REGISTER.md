@@ -9,12 +9,12 @@ This is a working draft. It is **not** legal advice or a compliance certificatio
 | P1 | Private requirements profile | Travellers | Mobility/access preferences (may reveal health) | User | None (device); ciphertext to backup store | Client-side encrypted |
 | P2 | Saved trips | Travellers | Origins, destinations, times | User | None; ciphertext only if backed up | Client-side encrypted |
 | P3 | Route lookup (live mode, implemented) | Travellers | Start station id or location rounded to ~100 m; venue coordinates; the device's IP address (seen by the services) | Device | TfL (api.tfl.gov.uk) | Third party sees data |
-| P3b | Place lookup (live mode, implemented) | Travellers | Venue name (not personal); IP address | Device | OpenStreetMap Nominatim / OSM API | Third party sees data |
+| P3b | Place lookup (live mode, implemented) | Travellers | Venue name (not personal); IP address | Device | OpenStreetMap Nominatim | Third party sees data |
 | P4 | Account and security | Account holders | Identifier, device records, session data | User | Auth provider (**TBD**) | Provider-managed |
 | P5 | Community reports | Contributors; incidental third parties in photos/notes | Pseudonym, observation, optional note/photo | User | Moderators; public after approval | Public after moderation |
 | P6 | Partner/moderator accounts | Staff of venues and of us | Name/work email, role, actions | User | Admins | Provider-managed |
 | P7 | Public venue facts | None intended | Venue/entrance facts, source types | Feeds, partners, verifiers | Public | Public |
-| P8 | Backups and recovery blobs | Account holders | Ciphertext | Device | Storage provider (**TBD**) | Ciphertext only |
+| P8 | Backups and recovery blobs (**not built; the Android app has no backup and no recovery**) | Account holders | Ciphertext | Device | Storage provider (**TBD**) | Ciphertext only |
 | P9 | Audit/history | Staff, contributors | Actor id, action, time | System | Admins | Provider-managed |
 | P10 | Support | Account holders | Diagnostics (no content) | System | Support staff | Restricted |
 

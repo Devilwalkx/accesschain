@@ -11,8 +11,9 @@ const tags = [
   '<meta name="theme-color" content="#0b3d91" />',
   '<meta name="apple-mobile-web-app-capable" content="yes" />',
   '<meta name="apple-mobile-web-app-title" content="AccessChain" />',
-  '<meta name="mobile-web-app-capable" content="yes" />'
+  '<meta name="mobile-web-app-capable" content="yes" />',
+  '<meta name="application-id" content="app.devilwalkx.accesschain" />'
 ];
-if (!html.includes('rel="manifest"')) html = html.replace("</head>", `${tags.join("\n")}\n</head>`);
+if (!html.includes('name="application-id"')) html = html.replace("</head>", `${tags.join("\n")}\n</head>`);
 writeFileSync(file, html);
 console.log("PWA metadata added");

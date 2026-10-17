@@ -50,3 +50,17 @@ Authorisation is enforced **server-side on every endpoint, file, job, websocket 
 ## Status
 
 Rules 2 and 3 and the partner/moderator limits are implemented in `core/facts.ts` and the DB triggers and tested. **Authentication, session management, MFA and the API layer that would enforce this matrix are not built.** The matrix is a requirement, not a claim of implementation.
+
+
+## What the Android app asks the phone for (as built, build 0.2.0)
+
+| Android permission | Requested? | Why |
+|---|---|---|
+| `INTERNET` | Yes (Expo adds it; not blocked) | Live data from TfL and OpenStreetMap, only after the consent screen. The demonstration and everything else work without it. |
+| `ACCESS_COARSE_LOCATION` | Yes, asked in context | Only when the person taps "Where I am now", after the screen explains it. One-shot, rounded to about 100 m, never stored. Refusal (including "don't ask again") is handled: a clear message, a button to the phone's settings, and the station and postcode alternatives. |
+| `ACCESS_FINE_LOCATION`, `ACCESS_BACKGROUND_LOCATION` | Blocked | Not needed. |
+| `CAMERA`, `RECORD_AUDIO` | Blocked | Not needed. The photo picker for reports needs no permission. |
+| `READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE` | Blocked | Not needed. |
+| `SYSTEM_ALERT_WINDOW`, `VIBRATE` | Blocked | Not needed. |
+
+CI fails if any blocked permission appears in the generated manifest (`.github/workflows/build.yml`, job `android-apk`). Cloud backup is off (`allowBackup=false`), so the encrypted answers are not copied to Google Drive. Predictive back is on.

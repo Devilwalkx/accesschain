@@ -8,7 +8,7 @@ import { entranceSegment } from "./osm.js";
  *  - GET /Journey/JourneyResults/{from}/to/{to}?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow
  *  - GET /Disruptions/Lifts/v2  (lists ONLY lifts with problems; a station that is absent means "no problem reported")
  * Everything is validated; anything unexpected is dropped and becomes "insufficient evidence", never a pass.
- * Licence: the TfL terms pages could not be fetched from the build environment, so the licence text is NOT verified.
+ * Licence: TfL's Transport Data Service terms were read from an archived copy (the live page blocks automated readers); see docs/SERVICE_TERMS_AUDIT.md.
  */
 
 const nul = <T extends z.ZodTypeAny>(t: T) => t.nullable().optional();
@@ -85,8 +85,8 @@ export function parseLiftFeed(status: number, body: unknown): LiftOutages | null
   return out;
 }
 
-const PLANNER: Source = { kind: "operator_feed", id: "tfl-journey-planner", verifierType: "operator", licence: "Powered by TfL Open Data (terms not verified here)" };
-const LIFTS: Source = { kind: "operator_feed", id: "tfl-lift-disruptions", verifierType: "operator", licence: "Powered by TfL Open Data (terms not verified here)" };
+const PLANNER: Source = { kind: "operator_feed", id: "tfl-journey-planner", verifierType: "operator", licence: "Powered by TfL Open Data (TfL Transport Data Service licence; see docs/SERVICE_TERMS_AUDIT.md)" };
+const LIFTS: Source = { kind: "operator_feed", id: "tfl-lift-disruptions", verifierType: "operator", licence: "Powered by TfL Open Data (TfL Transport Data Service licence; see docs/SERVICE_TERMS_AUDIT.md)" };
 
 /** Live data is only trusted briefly. */
 export const LIVE_TTL_MS = 15 * 60 * 1000;

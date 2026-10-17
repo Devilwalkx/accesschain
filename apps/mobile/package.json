@@ -1,32 +1,38 @@
 {
   "name": "@accesschain/mobile",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "private": true,
   "main": "index.ts",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "start": "expo start",
-    "build:web": "expo export --platform web --output-dir dist-web && node scripts/postweb.mjs"
+    "start": "expo start --port 8391",
+    "build:web": "expo export --platform web --output-dir dist-web && node scripts/postweb.mjs",
+    "test": "vitest run"
   },
   "dependencies": {
     "@accesschain/core": "*",
     "@expo/metro-runtime": "~58.0.14",
     "@noble/ciphers": "^2.4.0",
     "expo": "^58.0.14",
+    "expo-application": "^58.1.2",
+    "expo-constants": "^58.0.12",
     "expo-crypto": "~58.0.7",
     "expo-image-manipulator": "~58.0.14",
     "expo-image-picker": "~58.0.10",
     "expo-location": "~58.0.17",
     "expo-secure-store": "~58.0.2",
     "expo-status-bar": "~58.0.3",
+    "expo-system-ui": "~58.0.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "react-native": "^0.88.0",
     "react-native-safe-area-context": "~5.10.1",
+    "react-native-svg": "^15.16.0",
     "react-native-web": "^0.21.4"
   },
   "devDependencies": {
     "@types/react": "^19.3.0",
-    "typescript": "~5.9.0"
+    "typescript": "~5.9.0",
+    "vitest": "^5.0.5"
   }
 }

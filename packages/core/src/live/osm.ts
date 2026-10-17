@@ -34,6 +34,29 @@ export interface VenueFacts {
   toiletWheelchair: "yes" | "no" | "unknown";
   /** A real check date from the tags, if any ("YYYY-MM-DD"). */
   checkDate: string | null;
+  /** Contact details exactly as listed by OpenStreetMap contributors (not verified by us). Only plausible shapes are kept. */
+  phone: string | null;
+  website: string | null;
+}
+
+/** A phone number is kept only if it looks like one; anything else is dropped (never reformatted or guessed). */
+export function plausiblePhone(v: string | undefined): string | null {
+  if (!v) return null;
+  const first = v.split(";")[0]!.trim();
+  return /^\+?[0-9][0-9 ()\-]{5,19}$/.test(first) && first.replace(/\D/g, "").length >= 7 ? first : null;
+}
+
+/** A website is kept only if it is an http(s) URL with a host. */
+export function plausibleWebsite(v: string | undefined): string | null {
+  if (!v) return null;
+  const first = v.split(";")[0]!.trim();
+  if (first.length > 200 || /\s/.test(first)) return null;
+  try {
+    const u = new URL(first);
+    return (u.protocol === "https:" || u.protocol === "http:") && u.hostname.includes(".") ? u.toString() : null;
+  } catch {
+    return null;
+  }
 }
 
 const clean = (s: string | undefined) => (s ? s.replace(/\s+/g, " ").trim().slice(0, 300) : null);
@@ -62,7 +85,9 @@ export function parseNominatim(status: number, body: unknown, query: string): Ve
     wheelchair: wc === "yes" || wc === "limited" || wc === "no" ? wc : "unknown",
     description: clean(t["wheelchair:description"]),
     toiletWheelchair: tw === "yes" || tw === "no" ? tw : "unknown",
-    checkDate: cd && /^\d{4}-\d{2}-\d{2}$/.test(cd) ? cd : null
+    checkDate: cd && /^\d{4}-\d{2}-\d{2}$/.test(cd) ? cd : null,
+    phone: plausiblePhone(t["contact:phone"] ?? t["phone"]),
+    website: plausibleWebsite(t["contact:website"] ?? t["website"])
   };
 }
 

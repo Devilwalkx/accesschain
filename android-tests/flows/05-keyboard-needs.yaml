@@ -1,0 +1,19 @@
+appId: app.devilwalkx.accesschain
+name: With the keyboard open the field and the Save button stay reachable
+---
+- launchApp:
+    clearState: true
+- tapOn: "Tell us what you need"
+- tapOn: "Walking and doorway details.*"
+- tapOn:
+    id: "field-longest-walk-in-metres"
+- inputText: "400"
+- takeScreenshot: 20-keyboard-open
+- hideKeyboard
+- scrollUntilVisible:
+    element: "Save and see my routes"
+    direction: DOWN
+    timeout: 60000
+    speed: 85
+- tapOn: "Save and see my routes"
+- assertVisible: "Use live information\\?"

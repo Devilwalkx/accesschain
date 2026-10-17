@@ -1,0 +1,18 @@
+appId: app.devilwalkx.accesschain
+name: System Back steps backwards through the journey flow, then Home, then leaves the app
+---
+- launchApp:
+    clearState: true
+- tapOn: "Plan a journey"
+- tapOn: "Yes, use live information"
+- tapOn: "Tate Modern"
+- assertVisible: "Where are you starting from\\?"
+- tapOn: "London Bridge"
+- pressKey: back
+- assertVisible: "Where are you starting from\\?"
+- pressKey: back
+- assertVisible: "Where do you want to go\\?"
+- pressKey: back
+- assertVisible: "Find out if you can get there.*"
+- pressKey: back
+- assertNotVisible: "Find out if you can get there.*"

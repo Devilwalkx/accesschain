@@ -1,0 +1,6 @@
+appId: app.devilwalkx.accesschain
+name: Open the longest screen (the demonstration journey) so scrolling can be measured
+---
+- launchApp
+- tapOn: "Plan a journey"
+- assertVisible: "Getting to Fictional Hall"

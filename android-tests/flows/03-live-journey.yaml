@@ -1,0 +1,29 @@
+appId: app.devilwalkx.accesschain
+name: INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked
+---
+- launchApp:
+    clearState: true
+- tapOn: "Tell us what you need"
+- scrollUntilVisible:
+    element: "Save and see my routes"
+    direction: DOWN
+    timeout: 60000
+    speed: 85
+- tapOn: "Save and see my routes"
+- tapOn: "Yes, use live information"
+- assertVisible: "Where do you want to go\\?"
+- takeScreenshot: 10-live-places
+- tapOn: "Tate Modern"
+- assertVisible: "Where are you starting from\\?"
+- takeScreenshot: 11-live-start
+- tapOn: "London Bridge"
+- extendedWaitUntil:
+    visible: "What answered"
+    timeout: 90000
+- takeScreenshot: 12-live-result-top
+- scrollUntilVisible:
+    element: "Correct entrance"
+    direction: DOWN
+    timeout: 60000
+    speed: 40
+- takeScreenshot: 13-live-entrance

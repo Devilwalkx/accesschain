@@ -25,7 +25,7 @@ Likelihood/impact are qualitative (L/M/H) and unvalidated. "Evidence" shows what
 |---|---|---|---|---|---|---|
 | S1 | Crypto composition flaw | L | H | Audited primitives, AAD binding, no fallback | Unit tests + mutation checks | **Needs independent cryptographic review** |
 | S2 | Weak RNG on a device | L | H | Fail closed | Code | Not verified on real iOS/Android (T-12) |
-| S3 | Key loss ⇒ permanent data loss | M | M | User-held recovery secret, honest UI | Tested wrap/unwrap | Real usability of the secret untested |
+| S3 | Key loss ⇒ permanent data loss | M | M | Honest UI: the Android app says answers cannot be restored (no recovery code is offered); re-entering takes about a minute | `e2e` lost-key test (T-41) | A designed, tested restore is not built (D-026) |
 | S4 | Trusted-device/key substitution on enrol/share | M | H | Sharing not built | – | Design must exist before any sharing (D-005) |
 | S5 | No authentication/authorisation service yet | – | H | Matrix defined; RLS tested | DB only | **Not built; cannot claim access control** |
 | S6 | Third-party route provider sees location | H | M | Coarse origin, disclosure | Code | Provider not chosen; transfers unassessed |
@@ -58,3 +58,12 @@ Likelihood/impact are qualitative (L/M/H) and unvalidated. "Evidence" shows what
 ## Not claimed
 
 No accuracy percentage, no "accessible/safe" claim, no GDPR-compliance claim, no "production ready" claim is made about this build.
+
+## Added in the Android pass (2026-10-17)
+
+| ID | Risk | L | I | Response | Evidence today | Residual / owner |
+|---|---|---|---|---|---|---|
+| N1 | Public Nominatim server used without a proxy: policy requires being able to switch service without an app update and counts all users together; it also has a clause on code written with AI assistants | H (for any real user base) | M | 1 request/s, cache, no autocomplete, UA, fixed list of ten places | Unit tests (T-44) | No proxy; owner decision (docs/SERVICE_TERMS_AUDIT.md) |
+| N2 | TfL licence applies "from the date of registration"; the app calls the API anonymously and bundles no key; the current licence page could not be read (bot check), an archived copy was | M | M | Attribution shown; two calls per trip | Audit document | Owner to register/ask TfL; branding guidelines unread |
+| N3 | Community place notes are old or wrong and could be read as a promise | H | H | Dated or not counted; "not checked by us"; next steps point to the venue | T-38, T-46 | No field verification |
+| N4 | Older users misread "not confirmed" as "no" or "yes" | M | H | Journey-first layout, four parts, plain words, icon + words | Not testable without people | Usability sessions NOT RUN (docs/USABILITY_SESSION_PLAN.md) |

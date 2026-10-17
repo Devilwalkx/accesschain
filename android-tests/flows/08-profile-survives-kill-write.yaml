@@ -1,0 +1,15 @@
+appId: app.devilwalkx.accesschain
+name: Save needs and choose the demonstration, then leave the app (the script kills the process)
+---
+- launchApp:
+    clearState: true
+- tapOn: "Tell us what you need"
+- scrollUntilVisible:
+    element: "Save and see my routes"
+    direction: DOWN
+    timeout: 60000
+    speed: 85
+- tapOn: "Save and see my routes"
+- tapOn: "No, use the demonstration instead"
+- assertVisible: "Getting to Fictional Hall"
+- pressKey: home

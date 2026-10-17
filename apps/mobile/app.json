@@ -2,14 +2,14 @@
   "expo": {
     "name": "AccessChain",
     "slug": "accesschain",
-    "version": "0.0.0",
+    "version": "0.2.0",
     "orientation": "default",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "bundleIdentifier": "invalid.placeholder.accesschain"
+      "bundleIdentifier": "app.devilwalkx.accesschain"
     },
     "android": {
-      "package": "invalid.placeholder.accesschain",
+      "package": "app.devilwalkx.accesschain",
       "permissions": [
         "ACCESS_COARSE_LOCATION"
       ],
@@ -17,9 +17,19 @@
         "ACCESS_BACKGROUND_LOCATION",
         "ACCESS_FINE_LOCATION",
         "RECORD_AUDIO",
+        "CAMERA",
         "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE"
-      ]
+        "WRITE_EXTERNAL_STORAGE",
+        "SYSTEM_ALERT_WINDOW",
+        "VIBRATE"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./public/icon-maskable-512.png",
+        "backgroundColor": "#0b3d91"
+      },
+      "predictiveBackGestureEnabled": true,
+      "allowBackup": false,
+      "softwareKeyboardLayoutMode": "resize"
     },
     "plugins": [
       "expo-secure-store",
@@ -46,9 +56,9 @@
     "web": {
       "bundler": "metro",
       "output": "single",
-      "name": "AccessChain (synthetic demo)",
+      "name": "AccessChain",
       "shortName": "AccessChain",
-      "backgroundColor": "#ffffff",
+      "backgroundColor": "#f3f6fb",
       "themeColor": "#0b3d91",
       "lang": "en-GB"
     },
@@ -56,6 +66,7 @@
       "ios",
       "android",
       "web"
-    ]
+    ],
+    "icon": "./public/icon-512.png"
   }
 }

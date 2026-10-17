@@ -1,0 +1,43 @@
+appId: app.devilwalkx.accesschain
+name: MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts
+---
+- launchApp:
+    clearState: true
+- tapOn: "Tell us what you need"
+- assertVisible: "What do you need\\?"
+- takeScreenshot: 02-needs
+- scrollUntilVisible:
+    element: "Save and see my routes"
+    direction: DOWN
+    timeout: 60000
+    speed: 85
+- tapOn: "Save and see my routes"
+- assertVisible: "Use live information\\?"
+- takeScreenshot: 03-consent
+- tapOn: "No, use the demonstration instead"
+- assertVisible: "Getting to Fictional Hall"
+- assertVisible: "Demonstration.*"
+- takeScreenshot: 04-journey-top
+- scrollUntilVisible:
+    element: "Transport"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
+- scrollUntilVisible:
+    element: "Transfers"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
+- scrollUntilVisible:
+    element: "Final approach"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
+- takeScreenshot: 05-final-approach
+- scrollUntilVisible:
+    element: "Correct entrance"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
+- assertVisible: "What is missing"
+- takeScreenshot: 06-correct-entrance

@@ -7,7 +7,7 @@ Personalised access-information journey planner for **one London area and 50 fie
 ## Run it on a phone
 
 **Start with [GETTING_STARTED.md](GETTING_STARTED.md)**: a step-by-step guide for people new to GitHub. Short version: on an Android phone open
-`https://github.com/Devilwalkx/accesschain/releases/tag/latest-test-build` (signed in), download `AccessChain-test.apk` and install it. A new build appears there automatically a few minutes after each update. There is no iPhone app yet; a web version exists (`AccessChain-web.zip`, needs HTTPS hosting). Everything on screen is synthetic demonstration data.
+`https://github.com/Devilwalkx/accesschain/releases/tag/latest-test-build` (signed in), download `AccessChain-test.apk` and install it. A new build appears there automatically a few minutes after each update. There is no iPhone app yet; a web version exists (`AccessChain-web.zip`, needs HTTPS hosting). The app offers live TfL / OpenStreetMap information (after a consent screen) or a clearly labelled demonstration; the new application id means a one-time uninstall of any older test build.
 
 ## Layout
 
@@ -18,18 +18,23 @@ Personalised access-information journey planner for **one London area and 50 fie
 | `apps/mobile` | Expo / React Native client for Android, iOS and web/PWA (synthetic data, text-first itinerary, encrypted local profile) |
 | `e2e` | Playwright tests of the web build at Pixel 7, 390 px and 320 px widths, with axe accessibility scans |
 | `docs/DEMO.md` | Generated synthetic walkthrough |
+| `docs/ANDROID_PASS_REPORT.md` | The Android product-quality pass: what is tested, on what, and what is not |
+| `docs/SERVICE_TERMS_AUDIT.md` `docs/SCREEN_DECISIONS.md` `docs/USABILITY_SESSION_PLAN.md` | Terms of the outside services as read on 2026-10-17; the decision behind every screen; the (not yet run) usability session plan |
+| `android-tests` | Maestro flows and the script that runs them on the CI emulator |
 | `SPEC.md` `DATA_FLOWS.md` `THREAT_MODEL.md` `PERMISSIONS.md` `PRIVACY_REGISTER.md` `RETENTION.md` `RISK_REGISTER.md` `SECURITY_TESTS.md` `DECISIONS.md` | Design and risk documents (drafts for review, not legal certification) |
 
 ## Commands
 
 ```bash
 npm install
-npm test            # 67 automated tests (core + database)
-npm run e2e         # 51 browser tests on phone-sized viewports (needs Chromium)
+npm test            # core, database and app unit tests
+npm run e2e         # browser tests on phone-sized viewports (needs Chromium); dedicated port 4391
 npm run typecheck
 npm run demo        # regenerate docs/DEMO.md
 cd apps/mobile && npx expo export --platform android   # bundling check (no device needed)
 ```
+
+**Not built: a map.** The primary view is a readable text itinerary; there is no map and none is faked.
 
 ## Principles
 

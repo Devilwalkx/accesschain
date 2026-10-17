@@ -1,0 +1,9 @@
+appId: app.devilwalkx.accesschain
+name: After process death the saved needs and the chosen mode are still there
+---
+- launchApp
+- assertVisible: "My needs"
+- tapOn: "Plan a journey"
+- assertVisible: "Getting to Fictional Hall"
+- assertVisible: "Checked against your needs:"
+- takeScreenshot: 50-restored

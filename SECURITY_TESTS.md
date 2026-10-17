@@ -38,7 +38,7 @@ Mutation checks were also run once: deliberately breaking expiry handling, unkno
 | T-28 | Real-device accessibility: screen readers (TalkBack/VoiceOver), large text, switch access, disabled-user testers. (Automated axe scan exists, see T-35; it finds only a minority of real accessibility problems) | – | **Not run** |
 | T-29 | Offline conflicts and pending actions | – | **Not built** |
 | T-30 | Restore/delete drill, backup expiry | – | **Not run** |
-| T-31 | Key loss/recovery on real devices; new-device enrolment | – | **Not run / not built** |
+| T-31 | Key loss/recovery on real devices; new-device enrolment | – | **Not built.** The app has no recovery path and says so (D-026). Browser test T-41 checks that a deleted key fails closed with an honest message. |
 | T-32 | Malicious partner edits at the API/UI level, moderator workflow | – | **Not built** (rules tested at library and DB level) |
 | T-35 | Browser build on three phone viewports (Pixel 7 emulation, 390 px, 320 px): end-to-end verdicts incl. stale lift; profile encrypted at rest (no plaintext keys in localStorage, verified to fail when plaintext is deliberately leaked); lost key fails closed; recovery secret format; erase; report PII hold; zero third-party network requests; no horizontal overflow; touch targets ≥ 44 px; tab labels do not wrap; keyboard operation; axe WCAG 2 A/AA scan on every screen; PWA manifest/icons served; no service worker; refuses to run without WebCrypto | `e2e/tests/app.spec.ts` (17 tests × 3 viewports = 51) | Automated in headless Chromium only. **Not Safari/Firefox, not real phones, not screen readers** |
 | T-36 | Android release APK builds and requested permissions contain no forbidden entries | `.github/workflows/build.yml` | Runs in GitHub Actions; see STATUS.md for the latest result |
@@ -48,14 +48,23 @@ Mutation checks were also run once: deliberately breaking expiry handling, unkno
 | T-40 | Mutation checks on live safeguards: undated community data counted as evidence; unavailable lift feed treated as fine; pavement assumed step-free: each made tests fail | manual, one-off | Done once |
 | T-33 | Independent cryptographic and privacy/security review, penetration test | – | **Not done** |
 | T-34 | Native permission manifests: `expo prebuild` run for Android and iOS; Android requests only coarse location + internet (background/fine/mic/camera/storage removed), iOS only when-in-use location, photo-library description. `app.json` asserted in `core/test/appconfig.test.ts`. Release-build permissions (e.g. `SYSTEM_ALERT_WINDOW`, a dev-tooling default still present) not reviewed | `core/test/appconfig.test.ts` | Config automated; release build **not reviewed** |
+| T-41 | Lost key: the app fails closed, says the answers "cannot be recovered", offers no recovery code; deleting everything also removes the install id | `e2e/tests/app.spec.ts` | Browser only |
+| T-42 | `busy` cannot stick: a lookup that throws clears the busy state and shows an error; a late answer after a newer request or after leaving the screen is ignored | `apps/mobile/src/tripRunner.test.ts` | Automated (unit) |
+| T-43 | Each install has its own random account id; older data still opens under the legacy id; a damaged id is replaced | `apps/mobile/src/accountId.test.ts` | Automated (unit) |
+| T-44 | Service politeness: Nominatim at most 1 request per second; found place cached 30 min, "no match" 10 min; identical simultaneous requests merged; a typed postcode goes to TfL only; the OSM editing API is never called; `planTrip` never throws | `packages/core/test/live.test.ts`, `e2e/tests/live.spec.ts` | Automated |
+| T-45 | Partial failure per service (OpenStreetMap down, TfL down, lift list down, slow) is shown per service, with no invented answer | `packages/core/test/live.test.ts`, `e2e/tests/live.spec.ts` | Automated (mocked network) |
+| T-46 | Journey brief: four separate parts; a walk's distance never confirms step-free access; contact next steps use only data that is present; a comparison is offered only between routes in the same result | `packages/core/test/brief.test.ts` | Automated |
+| T-47 | App identity: package id, version, no backup, predictive back, forbidden permissions blocked; the web page carries `application-id`; ports 4391/8391 | `packages/core/test/appconfig.test.ts`, CI job `android-apk` | Automated |
+| T-48 | Colour contrast (7:1 for text) in light and dark; 18 sp body, nothing under 16 sp, 56 dp targets | `apps/mobile/src/design/tokens.test.ts`, `e2e/tests/helpers.ts` `auditLayout` | Automated |
+| T-49 | Android emulator (API 36 and API 29, 200% text, dark): flows for first run, the main task, Back, keyboard, settings, location refusal, offline, process death, upgrade check; startup, memory, scroll jank | `android-tests/`, CI job `android-emulator` | CI only; **emulators are not physical devices; TalkBack was not run** |
 
 ## How to run
 
 ```bash
 npm install
-npm test            # 67 automated tests
+npm test            # core, database and app unit tests
 npm run typecheck   # core and mobile
 npm run demo        # regenerates docs/DEMO.md
 ```
 
-Mobile bundling (`npx expo export --platform android|ios` in `apps/mobile`) succeeded in this environment; the app has **never been run on a device or simulator**.
+Mobile bundling (`npx expo export --platform android|ios` in `apps/mobile`) succeeded in this environment; the app has **never been run on a physical device**; the CI emulator job (T-49) runs it on Android emulators only.
