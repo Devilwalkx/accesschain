@@ -10,10 +10,18 @@ badge=$("$bt/aapt2" dump badging "$apk" | head -1)
 pkg=$(sed -n "s/.*package: name='\([^']*\)'.*/\1/p" <<<"$badge")
 vcode=$(sed -n "s/.*versionCode='\([^']*\)'.*/\1/p" <<<"$badge")
 vname=$(sed -n "s/.*versionName='\([^']*\)'.*/\1/p" <<<"$badge")
-cert=$("$bt/apksigner" verify --print-certs "$apk" | sed -n 's/^Signer #1 certificate SHA-256 digest: //p')
+signer_out=$("$bt/apksigner" verify --print-certs "$apk" 2>&1 || true)
+cert=$(sed -n 's/^Signer #1 certificate SHA-256 digest: //p' <<<"$signer_out" | head -1)
 DEBUG_CERT=fac61745dc0903786fb9ede62a962b399f7348f0bb6f899b8332667591033b9c
-kind="PRIVATE release key (owner-controlled)"
-[ "$cert" = "$DEBUG_CERT" ] && kind="PUBLIC Android debug key: test signing only, anyone can sign an APK with this key"
+if [ -z "$cert" ]; then
+  # never guess: an unreadable certificate must not be labelled as a private key
+  kind="UNKNOWN: the signing certificate could not be read (apksigner said: $(head -c 300 <<<"$signer_out" | tr '\n' ' '))"
+  cert="UNREADABLE"
+elif [ "$cert" = "$DEBUG_CERT" ]; then
+  kind="PUBLIC Android debug key: test signing only, anyone can sign an APK with this key"
+else
+  kind="PRIVATE release key (owner-controlled)"
+fi
 echo "package:          $pkg"
 echo "versionName:      $vname"
 echo "versionCode:      $vcode"
