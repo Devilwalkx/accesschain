@@ -1,0 +1,8 @@
+    versionCode=33 minSdk=24 targetSdk=36
+    versionName=0.2.0
+    requested permissions:
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.INTERNET
+      android.permission.INTERNET: granted=true
+      app.devilwalkx.accesschain.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+    seq=3, package=com.google.android.permissioncontroller
