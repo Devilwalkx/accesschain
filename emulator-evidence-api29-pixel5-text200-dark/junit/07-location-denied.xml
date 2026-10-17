@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="59.851" timestamp="2026-10-17T21:46:26">
+    <testcase id="INFORMATIONAL - location permanently denied (revoked with the do-not-ask-again flag by the script), a clear message and a manual start" name="INFORMATIONAL - location permanently denied (revoked with the do-not-ask-again flag by the script), a clear message and a manual start" classname="INFORMATIONAL - location permanently denied (revoked with the do-not-ask-again flag by the script), a clear message and a manual start" file="/home/runner/work/accesschain/accesschain/android-tests/flows/07-location-denied.yaml" time="59.837" timestamp="2026-10-17T21:46:26" status="SUCCESS"/>
+  </testsuite>
+</testsuites>
