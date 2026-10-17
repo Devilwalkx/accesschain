@@ -170,6 +170,21 @@ test.describe("AccessChain on a phone-sized browser", () => {
     expect(await page.evaluate(() => localStorage.length)).toBe(0);
   });
 
+  test("system bars: content and tab bar stay clear of the status bar and navigation buttons (simulated Android insets)", async ({ page }) => {
+    await page.goto("/?insets=44,48");
+    await expect(page.getByText("Synthetic demonstration data", { exact: false }).first()).toBeVisible();
+    const vh = await page.evaluate(() => window.innerHeight);
+    const banner = await page.getByText("Synthetic demonstration data", { exact: false }).first().boundingBox();
+    expect(banner!.y, "first content starts below the status bar").toBeGreaterThanOrEqual(44);
+    for (const t of ["Plan", "Needs", "Report", "Privacy"]) {
+      const box = await tab(page, t).boundingBox();
+      expect(box!.y + box!.height, `tab "${t}" ends above the navigation buttons`).toBeLessThanOrEqual(vh - 48 + 1);
+    }
+    // and every tab is still reachable
+    await tab(page, "Privacy").click();
+    await expect(page.getByRole("heading", { name: "Privacy and recovery" })).toBeVisible();
+  });
+
   test("keyboard operable: Tab reaches buttons and Enter activates them", async ({ page }) => {
     await goto(page);
     await tab(page, "Plan").focus();

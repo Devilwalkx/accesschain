@@ -1,7 +1,10 @@
 # AccessChain – Status report
 
-## Phone delivery update (latest)
-- **CI (GitHub Actions, run 2 on commit 94bb3fd): passed.** Typecheck, 67 unit/database tests, web build, 36 browser tests (before the HTTPS guard was added) and the Android release build all succeeded on GitHub's runners. Artifacts produced: `accesschain-android-test-apk` (28 MB, debug-signed, testing only) and `accesschain-web`. Locally the browser suite is now 42 tests; the commit adding the last 3 is pushed after this note and is covered by the next CI run.
+## First real-phone result (Android) and fix
+The user installed the APK on a real Android phone: it installed and ran, but the status bar covered the top of the screen and the system navigation buttons covered the tab bar, making the app unusable. Cause: Android draws apps edge-to-edge and React Native's built-in `SafeAreaView` does nothing on Android. Fix: `react-native-safe-area-context` with real system insets; guarded by a browser test using simulated insets (verified to fail without the fix). **Not yet re-verified on the phone.**
+
+## Phone delivery update
+- **CI (GitHub Actions, run 2 on commit 94bb3fd): passed.** Typecheck, 67 unit/database tests, web build, 36 browser tests (before the HTTPS guard was added) and the Android release build all succeeded on GitHub's runners. Artifacts produced: `accesschain-android-test-apk` (28 MB, debug-signed, testing only) and `accesschain-web`. Locally the browser suite is now 45 tests; the commit adding the last 3 is pushed after this note and is covered by the next CI run.
 - **Never run on a physical phone.** The APK builds but nobody has installed or launched it yet; native modules (secure store, secure random, image picker, location) are unproven on a device. iPhone: web version only; no installable iOS build.
 - **Simplified usage:** plain-English `GETTING_STARTED.md`; first-run "Start here" card, quick-start presets and one-step "Save and see journeys" in the app; every push to `main` republishes a single always-newest GitHub Release with a plain `.apk`.
 - **Test fix:** CI run 4 failed because one of my vault tests asserted random ciphertext did not contain the text "150", which random hex can contain by chance. Replaced with a collision-proof check and run 40 times without failure.

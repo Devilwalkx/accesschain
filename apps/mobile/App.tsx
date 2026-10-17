@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import { Text, View } from "react-native";
+import { SafeAreaInsetsContext, SafeAreaProvider, SafeAreaView, initialWindowMetrics, type EdgeInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import type { RequirementsProfile } from "@accesschain/core";
 import { installSecureRandom } from "./src/secureRandom";
@@ -25,7 +26,35 @@ if (!randomError) {
   }
 }
 
+/**
+ * Android draws edge-to-edge, so the status bar and the navigation bar (3-button or gesture) overlap
+ * the app unless we pad by the real system insets. React Native's own SafeAreaView does nothing on
+ * Android; this library does. On web, `?insets=<top>,<bottom>` simulates insets for automated tests.
+ */
+function testInsets(): EdgeInsets | undefined {
+  if (typeof window === "undefined" || !window.location?.search) return undefined;
+  const m = /[?&]insets=(\d{1,3}),(\d{1,3})/.exec(window.location.search);
+  return m ? { top: Number(m[1]), bottom: Number(m[2]), left: 0, right: 0 } : undefined;
+}
+
 export default function App() {
+  const simulated = testInsets();
+  // Simulated insets bypass the provider because on web it re-measures from CSS and would overwrite them.
+  if (simulated) {
+    return (
+      <SafeAreaInsetsContext.Provider value={simulated}>
+        <Root />
+      </SafeAreaInsetsContext.Provider>
+    );
+  }
+  return (
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+      <Root />
+    </SafeAreaProvider>
+  );
+}
+
+function Root() {
   const [tab, setTab] = useState<Tab>("plan");
   const [profile, setProfile] = useState<RequirementsProfile | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -39,7 +68,7 @@ export default function App() {
 
   if (randomError) {
     return (
-      <SafeAreaView style={s.screen}>
+      <SafeAreaView style={s.screen} edges={["top", "bottom", "left", "right"]}>
         <Text style={s.h1} accessibilityRole="header">Cannot start safely</Text>
         <Text style={s.p}>Private storage is disabled on this device: {randomError}</Text>
       </SafeAreaView>
@@ -47,7 +76,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#ffffff" }} edges={["top", "bottom", "left", "right"]}>
       <StatusBar style="auto" />
       {loadError && <Text style={s.p} accessibilityRole="alert">{loadError}</Text>}
       <View style={{ flex: 1 }}>
