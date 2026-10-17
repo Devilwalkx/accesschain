@@ -65,6 +65,10 @@ jobs:
   android-apk:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    env:
+      # the Gradle bundling step re-reads app.config.js, so the build identity must be visible to the whole job, not just to expo prebuild
+      BUILD_COMMIT: ${{ github.sha }}
+      BUILD_TIME: ${{ github.event.head_commit.timestamp }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

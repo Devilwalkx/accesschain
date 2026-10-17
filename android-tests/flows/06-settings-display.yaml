@@ -34,4 +34,10 @@ name: Settings - colours, text size and the build identity
     timeout: 30000
     speed: 30
 - assertVisible: "Version 0.2.0.*"
+- scrollUntilVisible:
+    element: "Commit [0-9a-f]{7}.*"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- assertVisible: "Commit [0-9a-f]{7}.*"
 - takeScreenshot: 31-about-build
