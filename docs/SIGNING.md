@@ -30,5 +30,9 @@ I did **not** create the key in the cloud session: a key that exists only inside
 * The CI "signing dry run" re-signs the built test APK with a throw-away key created inside that CI job (not a real key, destroyed with the job), installs it over the test build on an emulator, and records that Android refuses it and that the data of the existing installation survives. See the evidence for the run in `docs/ANDROID_PASS_REPORT.md` (file `signing-consequence.txt` in the emulator evidence).
 * **Not tested:** a build signed with a real private key (none exists), Play App Signing, key rotation.
 
+## Status of the CI signing check (runs 48 and 49, commit 3056285)
+* Run 49 `android-apk`: the key-detection step ran and found no key, so the build stayed a test build (`Point Gradle release build...` was skipped).
+* Both emulator jobs: the differently signed APK was refused (`INSTALL_FAILED_UPDATE_INCOMPATIBLE`) and the existing data survived (`signing-consequence.txt`, flows 08/09). No private key exists, and nothing was tested with one.
+
 ## Play Store note (not planned)
 If the app is ever published on Google Play, use Play App Signing: Google holds the app signing key and you hold only an *upload* key, which can be reset if lost. Sideloaded APKs from GitHub have no such safety net.
