@@ -80,7 +80,7 @@ jobs:
         run: |
           grep "uses-permission" android/app/src/main/AndroidManifest.xml
           # INTERNET is expected (live TfL/OpenStreetMap data); anything else beyond coarse location must not appear.
-          if grep -E 'uses-permission android:name="android.permission.(RECORD_AUDIO|CAMERA|ACCESS_FINE_LOCATION|ACCESS_BACKGROUND_LOCATION|READ_EXTERNAL_STORAGE|WRITE_EXTERNAL_STORAGE|SYSTEM_ALERT_WINDOW|VIBRATE)"' android/app/src/main/AndroidManifest.xml | grep -v 'tools:node="remove"'; then
+          if grep -E 'uses-permission android:name="android.permission.(RECORD_AUDIO|CAMERA|ACCESS_FINE_LOCATION|ACCESS_BACKGROUND_LOCATION|READ_EXTERNAL_STORAGE|WRITE_EXTERNAL_STORAGE|SYSTEM_ALERT_WINDOW|VIBRATE|USE_BIOMETRIC|USE_FINGERPRINT)"' android/app/src/main/AndroidManifest.xml | grep -v 'tools:node="remove"'; then
             echo "Forbidden permission requested"; exit 1
           fi
           grep -q 'android.permission.ACCESS_COARSE_LOCATION' android/app/src/main/AndroidManifest.xml

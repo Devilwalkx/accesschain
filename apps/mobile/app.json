@@ -21,7 +21,9 @@
         "READ_EXTERNAL_STORAGE",
         "WRITE_EXTERNAL_STORAGE",
         "SYSTEM_ALERT_WINDOW",
-        "VIBRATE"
+        "VIBRATE",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT"
       ],
       "adaptiveIcon": {
         "foregroundImage": "./public/icon-maskable-512.png",

@@ -62,5 +62,6 @@ Rules 2 and 3 and the partner/moderator limits are implemented in `core/facts.ts
 | `CAMERA`, `RECORD_AUDIO` | Blocked | Not needed. The photo picker for reports needs no permission. |
 | `READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE` | Blocked | Not needed. |
 | `SYSTEM_ALERT_WINDOW`, `VIBRATE` | Blocked | Not needed. |
+| `USE_BIOMETRIC`, `USE_FINGERPRINT` | Blocked | The secure-storage library adds them by default (the emulator run of an earlier build listed them as requested and granted). The app never asks for biometric authentication, so they are blocked from the next build. |
 
 CI fails if any blocked permission appears in the generated manifest (`.github/workflows/build.yml`, job `android-apk`). Cloud backup is off (`allowBackup=false`), so the encrypted answers are not copied to Google Drive. Predictive back is on.
