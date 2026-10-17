@@ -1,0 +1,101 @@
+== upgrade check
+UPGRADE: NOT TESTED. No previous APK was available.
+== install
+Performing Streamed Install
+Success
+== baseline launch
+== flow 02-main-task-demo.yaml
+Anonymous analytics enabled. To opt out, set MAESTRO_CLI_NO_ANALYTICS environment variable to any value before running Maestro.
+
+
+Waiting for flows to complete...
+[Passed] MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts (1m 12s)
+
+1/1 Flow Passed in 1m 12s
+
+== flow 01-first-run.yaml
+
+Waiting for flows to complete...
+[Passed] First run shows one clear start and no demonstration label (6s)
+
+1/1 Flow Passed in 6s
+
+== flow 04-back-navigation.yaml
+
+Waiting for flows to complete...
+[Passed] System Back steps backwards through the journey flow, then Home, then leaves the app (34s)
+
+1/1 Flow Passed in 34s
+
+== flow 05-keyboard-needs.yaml
+
+Waiting for flows to complete...
+[Passed] With the keyboard open the field and the Save button stay reachable (33s)
+
+1/1 Flow Passed in 33s
+
+== flow 06-settings-display.yaml
+
+Waiting for flows to complete...
+[Passed] Settings - colours, text size and the build identity (27s)
+
+1/1 Flow Passed in 27s
+
+== flow 15-encryption-check.yaml
+
+Waiting for flows to complete...
+[Passed] The on-phone encryption check runs the real encryption code and passes (including refusing a tampered copy) (34s)
+
+1/1 Flow Passed in 34s
+
+== info flow 03-live-journey.yaml
+
+Waiting for flows to complete...
+[Passed] INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked (2m 5s)
+
+1/1 Flow Passed in 2m 5s
+
+== location permission permanently denied
+== info flow 07-location-denied.yaml
+
+Waiting for flows to complete...
+[Passed] INFORMATIONAL - location permanently denied (revoked with the do-not-ask-again flag by the script), a clear message and a manual start (1m 1s)
+
+1/1 Flow Passed in 1m 1s
+
+== offline live flow
+== info flow 11-offline-live.yaml
+
+Waiting for flows to complete...
+[Passed] INFORMATIONAL - airplane mode ON (set by the script), live journey ends in the not-checked state with no invented route (35s)
+
+1/1 Flow Passed in 35s
+
+== flow 08-profile-survives-kill-write.yaml
+
+Waiting for flows to complete...
+[Passed] Save needs and choose the demonstration, then leave the app (the script kills the process) (26s)
+
+1/1 Flow Passed in 26s
+
+== signing consequence check (throw-away key)
+== flow 09-profile-survives-kill-check.yaml
+
+Waiting for flows to complete...
+[Passed] After process death the saved needs and the chosen mode are still there (8s)
+
+1/1 Flow Passed in 8s
+
+== rotation
+== startup
+== memory and scroll
+== flow 10-open-long-screen.yaml
+
+Waiting for flows to complete...
+[Passed] Open the longest screen (the demonstration journey) so scrolling can be measured (7s)
+
+1/1 Flow Passed in 7s
+
+== TalkBack experiment (non-gating)
+TalkBack is not installed on this emulator image: NOT TESTED
+== done fail=0

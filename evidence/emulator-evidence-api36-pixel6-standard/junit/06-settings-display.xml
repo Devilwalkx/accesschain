@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="15.154" timestamp="2026-10-17T21:02:59">
+    <testcase id="Settings - colours, text size and the build identity" name="Settings - colours, text size and the build identity" classname="Settings - colours, text size and the build identity" file="/home/runner/work/accesschain/accesschain/android-tests/flows/06-settings-display.yaml" time="15.137" timestamp="2026-10-17T21:02:59" status="SUCCESS"/>
+  </testsuite>
+</testsuites>
