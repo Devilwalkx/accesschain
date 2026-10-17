@@ -1,0 +1,11 @@
+{
+  "name": "accesschain",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "test": "npm test -w @accesschain/core",
+    "typecheck": "npm run typecheck -w @accesschain/core && npm run typecheck -w @accesschain/mobile",
+    "demo": "npm run demo -w @accesschain/core"
+  }
+}
