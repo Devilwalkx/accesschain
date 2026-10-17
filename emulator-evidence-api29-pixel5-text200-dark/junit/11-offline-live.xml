@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="37.799" timestamp="2026-10-17T21:46:56">
+    <testcase id="INFORMATIONAL - airplane mode ON (set by the script), live journey ends in the not-checked state with no invented route" name="INFORMATIONAL - airplane mode ON (set by the script), live journey ends in the not-checked state with no invented route" classname="INFORMATIONAL - airplane mode ON (set by the script), live journey ends in the not-checked state with no invented route" file="/home/runner/work/accesschain/accesschain/android-tests/flows/11-offline-live.yaml" time="37.78" timestamp="2026-10-17T21:46:56" status="SUCCESS"/>
+  </testsuite>
+</testsuites>
