@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="6.794" timestamp="2026-10-17T18:32:39">
+    <testcase id="After process death the saved needs and the chosen mode are still there" name="After process death the saved needs and the chosen mode are still there" classname="After process death the saved needs and the chosen mode are still there" file="/home/runner/work/accesschain/accesschain/android-tests/flows/09-profile-survives-kill-check.yaml" time="6.783" timestamp="2026-10-17T18:32:39" status="SUCCESS"/>
+  </testsuite>
+</testsuites>
