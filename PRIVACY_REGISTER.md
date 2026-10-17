@@ -8,7 +8,8 @@ This is a working draft. It is **not** legal advice or a compliance certificatio
 |---|---|---|---|---|---|---|
 | P1 | Private requirements profile | Travellers | Mobility/access preferences (may reveal health) | User | None (device); ciphertext to backup store | Client-side encrypted |
 | P2 | Saved trips | Travellers | Origins, destinations, times | User | None; ciphertext only if backed up | Client-side encrypted |
-| P3 | Route lookup | Travellers | Approximate origin, destination venue | Device | Route provider (**TBD**) | Third party sees data |
+| P3 | Route lookup (live mode, implemented) | Travellers | Start station id or location rounded to ~100 m; venue coordinates; the device's IP address (seen by the services) | Device | TfL (api.tfl.gov.uk) | Third party sees data |
+| P3b | Place lookup (live mode, implemented) | Travellers | Venue name (not personal); IP address | Device | OpenStreetMap Nominatim / OSM API | Third party sees data |
 | P4 | Account and security | Account holders | Identifier, device records, session data | User | Auth provider (**TBD**) | Provider-managed |
 | P5 | Community reports | Contributors; incidental third parties in photos/notes | Pseudonym, observation, optional note/photo | User | Moderators; public after approval | Public after moderation |
 | P6 | Partner/moderator accounts | Staff of venues and of us | Name/work email, role, actions | User | Admins | Provider-managed |
@@ -62,7 +63,7 @@ Needed: hosting (PostgreSQL, storage, jobs), authentication, email/push, route p
 | ID | Decision | Owner | Blocks |
 |---|---|---|---|
 | PR-1 | Art 6/9 basis per operation incl. whether device-only profile is "processed" by us | Counsel | Any real-user pilot |
-| PR-2 | Route provider terms and controller/processor role | Counsel + engineering | Real routing |
+| PR-2 | TfL and OpenStreetMap service terms, fair-use limits, and controller/processor/transfer position (both are now contacted in live mode; IP addresses are exposed; TfL terms text could not be read) | Counsel + engineering | Wider use of live mode |
 | PR-3 | Contributor/photo bystander approach | Counsel + moderation lead | Public reports |
 | PR-4 | Retention periods (RETENTION.md) | Privacy owner | Pilot |
 | PR-5 | Supplier selection and contracts | Founder | Backend build |

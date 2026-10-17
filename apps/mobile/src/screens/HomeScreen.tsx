@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView, Text, View } from "react-native";
-import { Button, SyntheticBanner } from "../ui";
+import { Button, ModeBanner } from "../ui";
 import { LEVEL_LABEL, useS, useTextSize, type TextLevel } from "../settings";
 
 export function HomeScreen(props: { hasNeeds: boolean; go: (screen: "plan" | "needs" | "report" | "privacy") => void }) {
@@ -8,7 +8,7 @@ export function HomeScreen(props: { hasNeeds: boolean; go: (screen: "plan" | "ne
   const { level, setLevel } = useTextSize();
   return (
     <ScrollView style={s.screen} contentContainerStyle={s.content} accessibilityLabel="Home">
-      <SyntheticBanner />
+      <ModeBanner />
       <Text style={s.wordmark} accessibilityRole="header">AccessChain</Text>
       <Text style={s.p}>Find out if you can get there, before you set off.</Text>
 

@@ -20,7 +20,7 @@ Server sees: account id, item id, version, ciphertext size, timestamps. Metadata
 4. The provider learns an approximate origin and the destination. This is disclosed in the UI and is **not** claimed to be private or zero-knowledge.
 5. Candidates return to the device; the profile is matched locally. Failure ⇒ visible "unavailable"; no cached all-clear.
 
-*Not implemented:* no real provider (DECISIONS D-006). Controller/processor roles and transfer position for the provider are open.
+*Implemented (D-019):* the provider is TfL's Unified API. Controller/processor roles and the transfer position for TfL and for OpenStreetMap services are still **open** (PRIVACY_REGISTER).
 
 ## F3 – Public venue facts and feeds
 
@@ -52,3 +52,9 @@ Support sees non-content diagnostics only. No routine access to ciphertext; no s
 ## F8 – Sharing (not in MVP)
 
 Itinerary sharing is intentional and per item. It needs an authenticated recipient-key design that has not been reviewed, so it is **not built**; see DECISIONS D-005.
+
+## F9 – Live place information (implemented)
+1. After consent (screen explains what is sent), the app asks OpenStreetMap's Nominatim service for the venue by **name** (browser or phone), and on the phone also the OSM API for the object's last-edit date.
+2. It asks TfL for step-free journeys from the chosen station id (or a location rounded to ~100 m) to the venue's coordinates, and for TfL's list of lift problems.
+3. Responses are validated, converted to observations with source, date and 15-minute (TfL) or two-year (community) expiry, and matched **on the device** against the private needs profile.
+4. Nothing from the profile, and no results, are sent anywhere. The services see the device's IP address. Requests are visible in the browser's network tools; the test suite asserts their content.

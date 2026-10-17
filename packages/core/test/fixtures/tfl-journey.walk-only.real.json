@@ -1,0 +1,56 @@
+{
+ "journeys": [
+  {
+   "startDateTime": "2026-10-17T15:44:00",
+   "arrivalDateTime": "2026-10-17T15:58:00",
+   "duration": 14,
+   "legs": [
+    {
+     "mode": {
+      "id": "walking"
+     },
+     "distance": 928.0,
+     "duration": 14,
+     "isDisrupted": false,
+     "instruction": {
+      "summary": "Walk to 25 SUMNER STREET",
+      "steps": [
+       {
+        "description": "London Bridge Street for 23 metres",
+        "streetName": "London Bridge Street",
+        "distance": 23,
+        "turnDirection": "STRAIGHT",
+        "trackType": "None"
+       },
+       {
+        "description": "on to Borough High Street, continue for 20 metres",
+        "streetName": "Borough High Street",
+        "distance": 20,
+        "turnDirection": "LEFT",
+        "trackType": "None"
+       }
+      ]
+     },
+     "departurePoint": {
+      "commonName": null,
+      "naptanId": null,
+      "hubNaptanCode": null,
+      "icsCode": null,
+      "lat": null,
+      "lon": null
+     },
+     "arrivalPoint": {
+      "commonName": null,
+      "naptanId": null,
+      "hubNaptanCode": null,
+      "icsCode": null,
+      "lat": null,
+      "lon": null
+     },
+     "obstacles": [],
+     "disruptions": []
+    }
+   ]
+  }
+ ]
+}

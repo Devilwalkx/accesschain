@@ -7,7 +7,8 @@ import { installSecureRandom } from "./src/secureRandom";
 import { platformBlocker } from "./src/platformCheck";
 import { expoKeyStore } from "./src/keystore";
 import { ProfileRepo } from "./src/profileRepo";
-import { PlanScreen } from "./src/screens/PlanScreen";
+import { PlanFlow } from "./src/screens/PlanFlow";
+import { LiveModeProvider } from "./src/live";
 import { NeedsScreen } from "./src/screens/NeedsScreen";
 import { ReportScreen } from "./src/screens/ReportScreen";
 import { PrivacyScreen } from "./src/screens/PrivacyScreen";
@@ -56,7 +57,9 @@ export default function App() {
 function Root() {
   return (
     <TextSizeProvider>
-      <Shell />
+      <LiveModeProvider>
+        <Shell />
+      </LiveModeProvider>
     </TextSizeProvider>
   );
 }
@@ -104,7 +107,7 @@ function Shell() {
       <StatusBar style="dark" />
       {loadError && <Text style={s.p} accessibilityRole="alert">{loadError}</Text>}
       {screen === "home" && <HomeScreen hasNeeds={!!profile} go={setScreen} />}
-      {screen === "plan" && <PlanScreen profile={profile} onHome={home} onNeeds={() => setScreen("needs")} />}
+      {screen === "plan" && <PlanFlow profile={profile} onHome={home} onNeeds={() => setScreen("needs")} />}
       {screen === "needs" && (
         <NeedsScreen profile={profile} onHome={home} onSave={async (p) => { await repo.save(p); setProfile(p); }} onSaved={() => setScreen("plan")} />
       )}

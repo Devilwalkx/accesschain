@@ -26,7 +26,7 @@ export function ReportScreen({ onHome }: { onHome: () => void }) {
   return (
     <ScrollView style={s.screen} contentContainerStyle={s.content} accessibilityLabel="Tell us about a problem">
       <BackBar onHome={onHome} />
-      <SyntheticBanner />
+      <SyntheticBanner text="Practice only. Nothing is sent from this app." />
       <Text style={s.h1} accessibilityRole="header">What did you see?</Text>
       <Text style={s.p}>Pick the closest one. Please don't include your name, address, health or phone number.</Text>
       {OPTIONS.map((o, i) => <Button key={o.label} label={o.label} selected={i === choice} onPress={() => setChoice(i)} />)}

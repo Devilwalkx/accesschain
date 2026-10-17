@@ -33,6 +33,26 @@ jobs:
           path: apps/mobile/dist-web
           retention-days: 14
 
+  live-smoke:
+    # Informational: talks to the REAL TfL and OpenStreetMap services from a browser. May fail if a service is down.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      - run: npm run build:web -w @accesschain/mobile
+      - run: npx playwright install --with-deps chromium
+      - name: Live smoke test (real services)
+        run: LIVE_SMOKE=1 npx playwright test tests/live.real.spec.ts --project=android-phone
+        working-directory: e2e
+
   android-apk:
     runs-on: ubuntu-latest
     timeout-minutes: 45

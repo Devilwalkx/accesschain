@@ -1,13 +1,25 @@
 import React from "react";
 import { Pressable, Text, View } from "react-native";
 import { useS } from "./settings";
+import { useLive } from "./live";
 
-export function SyntheticBanner() {
+export function SyntheticBanner({ text }: { text?: string }) {
   const s = useS();
   return (
     <View style={s.banner} accessible accessibilityRole="alert">
-      <Text style={s.bannerText}>Demonstration only. The places and information are made up.</Text>
+      <Text style={s.bannerText}>{text ?? "Demonstration only. The places and information are made up."}</Text>
     </View>
+  );
+}
+
+/** Tells the person which kind of information they are looking at. Nothing before they choose. */
+export function ModeBanner() {
+  const { mode } = useLive();
+  if (mode === "unset") return null;
+  return mode === "demo" ? (
+    <SyntheticBanner />
+  ) : (
+    <SyntheticBanner text="Live information from TfL and OpenStreetMap. Notes written by the public can be out of date." />
   );
 }
 

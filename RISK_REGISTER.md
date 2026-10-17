@@ -33,6 +33,18 @@ Likelihood/impact are qualitative (L/M/H) and unvalidated. "Evidence" shows what
 | S8 | Photo bystanders/faces | M | M | Warning, moderation | Policy | No automated face handling (and none planned: no face recognition) |
 | S9 | Moderator/partner account takeover | M | H | MFA, audit | Audit schema | Auth not built |
 
+## Live-data risks (added when real data was connected)
+
+| ID | Risk | Response | Residual |
+|---|---|---|---|
+| L1 | Community notes are wrong, vandalised or old | Date required; 2-year limit (unvalidated); shown as "written by contributors"; never presented as checked | Even a recent wrong edit would be believed. Needs field checks |
+| L2 | Users read "We can't be sure yet" as useless and ignore the app | The card lists what *was* checked; plain advice to phone the venue | Needs user testing with older people |
+| L3 | Users read "No lift problem reported" as "lift working" | Wording is exactly "No lift problem reported"; feed outage = unchecked | Feed completeness unknown |
+| L4 | TfL/OSM change formats, block the app, or rate-limit anonymous use | Validation → "insufficient evidence"; visible notices; CI live-smoke job; no app key bundled | A shared anonymous quota could fail under real use |
+| L5 | Terms of use not met (TfL licence unread; Nominatim policy for apps; ODbL) | Attribution shown; no bundling; cache; identifying User-Agent on the phone | **Must be checked by a person** |
+| L6 | Location/IP exposure to third parties | Consent screen; rounded location; no needs sent; disclosure in Privacy | IP exposure cannot be removed |
+| L7 | Venue is far from stations offered; only a handful of venues and 5 stations | Scope is deliberately small | No real coverage claim |
+
 ## Business risks
 
 | ID | Risk | Response |

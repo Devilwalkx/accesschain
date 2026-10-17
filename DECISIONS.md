@@ -15,7 +15,7 @@ Proposal: managed PostgreSQL with row-level security, managed authentication wit
 ## D-005 No sharing or multi-device key exchange in MVP
 Encrypted sharing and new-device enrolment require authenticated recipient/device keys so the server cannot substitute keys. No defensible, reviewed design exists in this build, so it is **not built** and the UI does not offer it. Backup/restore relies on the recovery secret instead.
 
-## D-006 No route provider implemented
+## D-006 (superseded by D-019) No route provider implemented
 `core/routes.ts` defines the adapter contract, minimised coordinates, timeout, schema validation and failure states. A real adapter (TfL Unified API or other) must be written from the provider's actual documentation and licence, which could not be read (D-001). Fixtures are labelled synthetic and the UI shows a synthetic banner.
 
 ## D-007 Output is three states, no score
@@ -53,3 +53,21 @@ Only ciphertext envelopes and non-secrets go in `localStorage`; keys never do. A
 
 ## D-018 Senior-friendly interface (AccessChain only)
 AccessChain is intended for older people as well as everyone else, so: one level of navigation (Home + Back), no tab bar; large type and generous targets; in-app text size plus honouring the system font size; plain words ("Does not suit your needs", "We can't be sure yet") with a symbol and colour, never colour alone; detail behind "Why?"; confirmation for destructive actions; no jargon on the main path. The honest three-state result is unchanged (unknown is never a pass); only the wording changed. Accessibility is validated by axe and a layout audit in a desktop browser; real testing with older users and screen-reader users has not happened and is still required.
+
+## D-019 Live data sources (TfL, OpenStreetMap), verified by probing from CI
+The build sandbox cannot reach these sites, so adapters were written against responses recorded by a read-only workflow (`probe.yml`) on GitHub's runners on 2026-10-17. Used: TfL `Journey/JourneyResults` with `accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform`; TfL `Disruptions/Lifts/v2`; OpenStreetMap Nominatim search with `extratags=1`; OSM API for last-edit date. Not used: Overpass (slow and unreliable in the probe), TfL StopPoint accessibility fields (inconsistent between stations). All responses are validated with zod; anything unexpected is dropped and becomes "insufficient evidence". Recorded fixtures live in `packages/core/test/fixtures` (one is explicitly *assembled* from observed field shapes, not a single verbatim response).
+
+## D-020 What the live data can and cannot prove
+- TfL's planner returning a step-free journey is recorded as TfL's statement about **transport legs**, valid 15 minutes. It says nothing about kerbs, crossings or pavement, so **walking legs never get a "step-free" observation**; the pavement stays unknown. Consequence: for people who must avoid steps, real results are usually "We can't be sure yet", with a plain list of what was and wasn't checked. They never reach "Suits your needs" unless the pavement is evidenced (not possible from these sources).
+- The TfL lift feed lists only **broken** lifts. "No problem reported" is the strongest statement available, and is worded that way. If the feed cannot be loaded, lifts are unchecked, not fine.
+- Walking distance and stairs/lift obstacles in TfL's route are real and can produce a certain "known barrier".
+- "No journey found" (HTTP 404) means TfL has no step-free journey: shown as such.
+
+## D-021 Community (OpenStreetMap) information policy
+Tags `wheelchair=yes|no` count as evidence only with a **date**: `check_date:wheelchair`/`check_date` if present, else the object's last-edit time, and only if under two years old (730 days, an unvalidated policy choice). `limited` and missing tags give no evidence (shown in words). The OSM API that gives edit dates is blocked for browsers (no CORS), so the **web build treats undated notes as unknown**; the Android app can read dates. Notes are always shown with their age and the words "written by OpenStreetMap contributors". OSM data is fetched live and never bundled or redistributed (ODbL attribution displayed).
+
+## D-022 Privacy of live requests
+Requests carry only: a start station id or a location rounded to ~100 m, the venue's public coordinates, and the venue name. The needs profile never leaves the device (test asserts no request contains profile fields). TfL and OpenStreetMap services can see the device's IP address and request time; this is disclosed on a consent screen before the first request and in Privacy. The choice (live/demo) is stored as a non-secret setting. Venue lookups are cached in memory for 10 minutes to respect Nominatim's usage policy.
+
+## D-023 Licences and terms: NOT verified
+TfL's terms pages returned 403 to automated fetching; the TfL API portal text mentions application keys but was not read in full. Attribution ("Powered by TfL Open Data", "© OpenStreetMap contributors", ODbL) is displayed, but **the TfL open data licence and fair-use limits, and Nominatim's usage policy for apps, must be checked by a person before any wider use**. No TfL app key is bundled; anonymous rate limits apply.

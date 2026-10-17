@@ -1,0 +1,131 @@
+{
+ "_note": "ASSEMBLED from field shapes and values observed in real TfL responses on 2026-10-17; not a verbatim single response.",
+ "journeys": [
+  {
+   "startDateTime": "2026-10-17T15:34:00",
+   "arrivalDateTime": "2026-10-17T15:53:00",
+   "duration": 19,
+   "legs": [
+    {
+     "mode": {
+      "id": "walking"
+     },
+     "distance": 348.0,
+     "duration": 7,
+     "isDisrupted": false,
+     "instruction": {
+      "summary": "Transfer to London Bridge Station",
+      "steps": [
+       {
+        "description": "Tooley Street/Duke Street Hill for 172 metres",
+        "streetName": "Tooley Street/Duke Street Hill",
+        "distance": 172,
+        "turnDirection": "STRAIGHT",
+        "trackType": "None"
+       },
+       {
+        "description": "for 176 metres",
+        "streetName": "",
+        "distance": 176,
+        "turnDirection": "SHARP_LEFT",
+        "trackType": "None"
+       }
+      ]
+     },
+     "departurePoint": {
+      "commonName": "London Bridge Station",
+      "naptanId": null,
+      "hubNaptanCode": "HUBLBG",
+      "icsCode": "1000139",
+      "lat": 51.505,
+      "lon": -0.0864
+     },
+     "arrivalPoint": {
+      "commonName": "London Bridge Rail Station",
+      "naptanId": "910GLNDNBDC",
+      "hubNaptanCode": "HUBLBG",
+      "icsCode": "1000139",
+      "lat": 51.505132574005,
+      "lon": -0.085438826335
+     },
+     "obstacles": [
+      {
+       "type": "LIFT",
+       "incline": "UP",
+       "stopId": 1000139,
+       "position": "IDEST"
+      }
+     ],
+     "disruptions": []
+    },
+    {
+     "mode": {
+      "id": "national-rail"
+     },
+     "distance": 22.0,
+     "duration": 5,
+     "isDisrupted": false,
+     "instruction": {
+      "summary": "Thameslink to Blackfriars",
+      "steps": []
+     },
+     "departurePoint": {
+      "commonName": "London Bridge Rail Station",
+      "naptanId": "910GLNDNBDC",
+      "hubNaptanCode": "HUBLBG",
+      "icsCode": "1000139",
+      "lat": 51.505132574005,
+      "lon": -0.085438826335
+     },
+     "arrivalPoint": {
+      "commonName": "London Blackfriars Rail Station",
+      "naptanId": "910GBLFR",
+      "hubNaptanCode": null,
+      "icsCode": "1000023",
+      "lat": 51.511061217367,
+      "lon": -0.103305444468
+     },
+     "obstacles": [],
+     "disruptions": []
+    },
+    {
+     "mode": {
+      "id": "walking"
+     },
+     "distance": 917.0,
+     "duration": 7,
+     "isDisrupted": false,
+     "instruction": {
+      "summary": "Walk to 25 SUMNER STREET, LONDON",
+      "steps": []
+     },
+     "departurePoint": {
+      "commonName": "London Blackfriars Rail Station",
+      "naptanId": "910GBLFR",
+      "hubNaptanCode": null,
+      "icsCode": "1000023",
+      "lat": 51.511061217367,
+      "lon": -0.103305444468
+     },
+     "arrivalPoint": {
+      "commonName": "25 SUMNER STREET, LONDON",
+      "naptanId": null,
+      "hubNaptanCode": null,
+      "icsCode": null,
+      "lat": 51.5078878,
+      "lon": -0.0994744
+     },
+     "obstacles": [
+      {
+       "type": "LIFT",
+       "incline": "DOWN",
+       "stopId": 1000023,
+       "position": "BEFORE"
+      }
+     ],
+     "disruptions": []
+    }
+   ]
+  }
+ ]
+}

@@ -1,14 +1,8 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
+import { btn, goto, layoutProblems, radio } from "./helpers";
 
-const btn = (page: Page, name: string | RegExp) => page.getByRole("button", { name, exact: typeof name === "string" });
-const radio = (page: Page, name: string) => page.getByRole("radio", { name, exact: true });
 const SCREENS = ["Plan a journey", "My needs", "Tell us about a problem", "Privacy and help"] as const;
-
-async function goto(page: Page, query = "") {
-  await page.goto(`/${query}`);
-  await expect(page.getByRole("heading", { name: "AccessChain" })).toBeVisible();
-}
 
 async function saveNeeds(page: Page) {
   await btn(page, /Tell us what you need|My needs/).first().click();
@@ -16,64 +10,9 @@ async function saveNeeds(page: Page) {
   await page.getByLabel("Longest walk in metres", { exact: true }).fill("400");
   await page.getByLabel("Narrowest doorway in millimetres", { exact: true }).fill("800");
   await btn(page, "Save and see my routes").click();
+  await expect(page.getByRole("heading", { name: "Use live information?" })).toBeVisible();
+  await btn(page, "No, use the demonstration instead").click();
   await expect(page.getByRole("heading", { name: "Getting to Fictional Hall" })).toBeVisible();
-}
-
-/** Layout audit: text must stay inside its button, nothing interactive may overlap, no stray text under a button. */
-async function layoutProblems(page: Page): Promise<string[]> {
-  return page.evaluate(() => {
-    const problems: string[] = [];
-    const vis = (e: Element) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
-    const inter = [...document.querySelectorAll('[role="button"],[role="switch"],[role="radio"],input,textarea')].filter(vis);
-    const rects = inter.map((e) => e.getBoundingClientRect());
-    const name = (e: Element) => (e.getAttribute("aria-label") || (e as HTMLElement).innerText || e.tagName).slice(0, 40);
-    for (let i = 0; i < inter.length; i++) {
-      for (let j = i + 1; j < inter.length; j++) {
-        if (inter[i]!.contains(inter[j]!) || inter[j]!.contains(inter[i]!)) continue;
-        const a = rects[i]!, b = rects[j]!;
-        const w = Math.min(a.right, b.right) - Math.max(a.left, b.left);
-        const h = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
-        if (w > 1 && h > 1) problems.push(`overlap: "${name(inter[i]!)}" and "${name(inter[j]!)}"`);
-      }
-    }
-    const textRects = (root: Node) => {
-      const out: DOMRect[] = [];
-      const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-      for (let n = w.nextNode(); n; n = w.nextNode()) {
-        if (!n.textContent?.trim()) continue;
-        const r = document.createRange();
-        r.selectNodeContents(n);
-        out.push(...[...r.getClientRects()].filter((q) => q.width > 0 && q.height > 0));
-      }
-      return out;
-    };
-    inter.forEach((e, i) => {
-      if (e.tagName === "INPUT" || e.tagName === "TEXTAREA") return;
-      const b = rects[i]!;
-      for (const t of textRects(e)) {
-        if (t.left < b.left - 1 || t.right > b.right + 1 || t.top < b.top - 1 || t.bottom > b.bottom + 1) problems.push(`text outside button: "${name(e)}"`);
-      }
-    });
-    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    for (let n = w.nextNode(); n; n = w.nextNode()) {
-      if (!n.textContent?.trim()) continue;
-      const parent = n.parentElement;
-      if (!parent || parent.closest('[role="button"],[role="switch"],[role="radio"]')) continue;
-      const r = document.createRange();
-      r.selectNodeContents(n);
-      for (const q of r.getClientRects()) {
-        if (q.width < 1 || q.height < 1) continue;
-        rects.forEach((b, i) => {
-          if (inter[i]!.tagName === "INPUT" || inter[i]!.tagName === "TEXTAREA") return;
-          const ww = Math.min(q.right, b.right) - Math.max(q.left, b.left);
-          const hh = Math.min(q.bottom, b.bottom) - Math.max(q.top, b.top);
-          if (ww > 2 && hh > 2) problems.push(`text under button "${name(inter[i]!)}": "${n.textContent!.trim().slice(0, 30)}"`);
-        });
-      }
-    }
-    if (document.documentElement.scrollWidth - document.documentElement.clientWidth > 1) problems.push("horizontal scroll");
-    return [...new Set(problems)];
-  });
 }
 
 async function eachScreen(page: Page, fn: (name: string) => Promise<void>) {
@@ -88,7 +27,7 @@ async function eachScreen(page: Page, fn: (name: string) => Promise<void>) {
 test.describe("AccessChain on a phone-sized browser", () => {
   test("home: a few big buttons, a clear starting point and a text size choice", async ({ page }) => {
     await goto(page);
-    await expect(page.getByText("Demonstration only", { exact: false })).toBeVisible();
+    await expect(page.getByText("Demonstration only", { exact: false })).toHaveCount(0); // nothing chosen yet
     await expect(btn(page, "Tell us what you need")).toBeVisible();
     for (const t of ["Normal text", "Large text", "Extra large text"]) await expect(radio(page, t)).toBeVisible();
     expect(await page.getByRole("button").count()).toBeLessThanOrEqual(9);
@@ -116,6 +55,8 @@ test.describe("AccessChain on a phone-sized browser", () => {
   test("first run guides you: Start here leads to needs, then routes", async ({ page }) => {
     await goto(page);
     await btn(page, "Plan a journey").first().click();
+    await expect(page.getByRole("heading", { name: "Use live information?" })).toBeVisible();
+    await btn(page, "No, use the demonstration instead").click();
     await expect(page.getByText("First, tell us what you need", { exact: false })).toBeVisible();
     await btn(page, "Tell us what you need").click();
     await expect(page.getByRole("heading", { name: "What do you need?" })).toBeVisible();
@@ -123,7 +64,7 @@ test.describe("AccessChain on a phone-sized browser", () => {
     await expect(page.getByRole("switch", { name: "I need an accessible toilet" })).toHaveAttribute("aria-checked", "true");
     expect(await page.evaluate(() => localStorage.getItem("ac.profile"))).toBeNull(); // nothing saved until you press save
     await btn(page, "Save and see my routes").click();
-    await expect(page.getByRole("heading", { name: "Getting to Fictional Hall" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Getting to Fictional Hall" })).toBeVisible(); // demonstration was chosen a moment ago
     expect(await page.evaluate(() => localStorage.getItem("ac.profile"))).not.toBeNull();
   });
 
@@ -235,7 +176,7 @@ test.describe("AccessChain on a phone-sized browser", () => {
   test("system bars: nothing sits under the status bar or the navigation buttons (simulated Android insets)", async ({ page }) => {
     await goto(page, "?insets=44,48");
     const vh = await page.evaluate(() => window.innerHeight);
-    const top = await page.getByText("Demonstration only", { exact: false }).boundingBox();
+    const top = await page.getByRole("heading", { name: "AccessChain" }).boundingBox();
     expect(top!.y, "first content starts below the status bar").toBeGreaterThanOrEqual(44);
     await btn(page, "Privacy and help").click();
     const last = btn(page, "Delete my answers from this phone");

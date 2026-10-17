@@ -2,7 +2,7 @@
 
 Personalised access-information journey planner for **one London area and 50 field-checked destinations** (target). It joins transport, the final pavement approach and the correct venue entrance, and shows what is **missing, stale or disputed**. It never turns unknown into "accessible".
 
-> **Status: early build on synthetic data.** No real access information, no real users, no server, never run on a physical device. See [STATUS.md](STATUS.md) for exactly what is implemented, tested, simulated, reviewed and blocked.
+> **Status: early build.** The app can use **live public data** (TfL step-free journeys and lift notices, OpenStreetMap place notes) or a made-up demonstration. No server, no field-checked venues, no independent review. See [STATUS.md](STATUS.md) for exactly what is implemented, tested, simulated, reviewed and blocked.
 
 ## Run it on a phone
 

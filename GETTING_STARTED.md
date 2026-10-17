@@ -26,17 +26,22 @@ You only need a phone and a GitHub login. You never have to use code, a command 
 The app is designed to be calm and simple: one thing at a time, big buttons, plain words. You can't get lost: every screen has a big **‹ Back to home** button at the top (and the phone's own back button also goes Home).
 
 1. On **Home**, tap **Tell us what you need**.
-2. Tap anything that applies, for example **I can't manage steps**. Each line shows ☑ Yes or ☐ No. Tap **Save and see my routes**.
-3. You will see two routes to the fictional hall, each with a clear answer:
-   - **✖ Does not suit your needs** (the main entrance has steps)
-   - **? We can't be sure yet** (the side entrance looks fine, but nobody has checked the pavement, so the app says so instead of guessing)
-   - **✔ Suits your needs** would appear when everything you asked for has been checked recently.
-4. Tap **Why?** under a route to see the reasons in plain sentences.
-5. Want everything bigger? On Home, under **Text size**, choose **Large text** or **Extra large text**. The app remembers.
-6. Want to see the main idea? Tap **Demonstration options**, then switch on **Pretend 45 minutes have passed**. The station lift's information is now out of date, so the answer changes to "We can't be sure yet" instead of showing an old all-clear.
-7. Other buttons on Home:
-   - **Tell us about a problem**: practise reporting what you saw. Try typing a phone number in the note and tap **Check my report**: the app holds it back to protect your privacy. Nothing is sent anywhere.
-   - **Privacy and help**: make a **recovery code** (shown once, write it down) or **delete everything** from the phone (it asks you to confirm first).
+2. Tap anything that applies, for example **I can't manage steps**. Each line shows ☑ Yes or ☐ No. For a walking limit, tap **Walking and doorway details** and type a number of metres. Then tap **Save and see my routes**.
+3. The app asks **Use live information?** Read it, then choose:
+   - **Yes, use live information**: the app asks TfL (Transport for London) and OpenStreetMap about real places and routes. They can see your internet address, and the place you're going. **Your needs are never sent.**
+   - **No, use the demonstration instead**: made-up places only, nothing leaves your phone.
+4. With live information: pick a place (for example **Tate Modern**), then pick the nearest station (or **Where I am now**; your location is rounded to about 100 metres first).
+5. You will see:
+   - **About the place**: what OpenStreetMap contributors have written about its accessibility, **and how old that note is**. It is written by the public and has not been checked by us.
+   - One or more routes, each with an honest answer:
+     - **✔ Suits your needs**: everything you asked for was checked and is fine.
+     - **✖ Does not suit your needs**: a real problem was found (for example the walk is longer than you said you can manage).
+     - **? We can't be sure yet**: something could not be checked. The card says what *was* checked and what *wasn't*. Today this usually means **the pavement between the station and the place**, because nobody publishes that. Please phone the venue.
+   - Tap **What was checked?** for the ✔ ✖ ? list, and **Show the directions** for TfL's turn-by-turn steps.
+6. Want everything bigger? On Home, under **Text size**, choose **Large text** or **Extra large text**.
+7. **Privacy and help**: switch between live and demonstration information, see where the information comes from, make a **recovery code**, or **delete everything** from the phone (it asks first).
+
+**Good to know:** the live information is real, but it is not a guarantee. TfL's route planner is asked for step-free routes; lift problems come from TfL's own list of broken lifts (so "no problem reported" is not the same as "checked working"); venue notes come from volunteers and may be years old. If something is missing, too old or disputed, the app says "We can't be sure yet" and never guesses.
 
 ## Part 3: Getting a newer version
 

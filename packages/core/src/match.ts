@@ -110,7 +110,7 @@ function liftChecks(seg: Segment, p: RequirementsProfile, now: string): Check[] 
   }
   const lift = resolveAttribute(seg, "liftInService", now);
   const v = boolValue(lift);
-  if (v === true) return [{ requirement: "lift", verdict: "known_fit", detail: "Lift reported in service.", evidence: evidenceIds(lift) }];
+  if (v === true) return [{ requirement: "lift", verdict: "known_fit", detail: "No lift problem reported.", evidence: evidenceIds(lift) }];
   if (v === false) return [{ requirement: "lift", verdict: "known_barrier", detail: "Lift reported out of service.", evidence: evidenceIds(lift) }];
   return [{ requirement: "lift", verdict: "insufficient_evidence", detail: unknownDetail(lift, "lift status"), evidence: evidenceIds(lift) }];
 }

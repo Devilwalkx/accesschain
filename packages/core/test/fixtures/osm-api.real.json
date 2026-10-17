@@ -1,0 +1,41 @@
+{
+ "way/24642569": {
+  "elements": [
+   {
+    "type": "way",
+    "id": 24642569,
+    "version": 99,
+    "timestamp": "2026-09-20T15:36:16Z",
+    "tags": {
+     "wheelchair": "yes"
+    }
+   }
+  ]
+ },
+ "relation/1239793": {
+  "elements": [
+   {
+    "type": "relation",
+    "id": 1239793,
+    "version": 26,
+    "timestamp": "2025-12-20T11:22:20Z",
+    "tags": {
+     "wheelchair": "limited"
+    }
+   }
+  ]
+ },
+ "way/24282400": {
+  "elements": [
+   {
+    "type": "way",
+    "id": 24282400,
+    "version": 26,
+    "timestamp": "2026-09-04T23:24:13Z",
+    "tags": {
+     "wheelchair": "yes"
+    }
+   }
+  ]
+ }
+}

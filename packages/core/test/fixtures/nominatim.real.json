@@ -1,0 +1,70 @@
+{
+ "tate": [
+  {
+   "name": "Tate Modern",
+   "type": "arts_centre",
+   "osm_type": "way",
+   "osm_id": 24642569,
+   "lat": "51.5074293",
+   "lon": "-0.0993416",
+   "extratags": {
+    "wheelchair": "yes",
+    "toilets:wheelchair": "yes",
+    "wheelchair:description": "Step-free entrances, ramp down to Turbine Hall. Lifts to all levels including Switch House panorama level 10. Many accessible toilets.",
+    "check_date": "2026-09-20"
+   }
+  }
+ ],
+ "globe": [
+  {
+   "name": "Shakespeare's Globe",
+   "type": "theatre",
+   "osm_type": "relation",
+   "osm_id": 1239793,
+   "lat": "51.5081214",
+   "lon": "-0.0971864",
+   "extratags": {
+    "wheelchair": "limited",
+    "wheelchair:description": "Small lift from east entrance (power door) atrium to this level. Step-free from courtyard to standing area, no access to gallery seating. [Nearest accessible toilet was under repair on my visit]"
+   }
+  }
+ ],
+ "hayward": [
+  {
+   "name": "Hayward Gallery",
+   "type": "gallery",
+   "osm_type": "way",
+   "osm_id": 25913653,
+   "lat": "51.5061682",
+   "lon": "-0.1155049",
+   "extratags": {}
+  }
+ ],
+ "oldvic": [
+  {
+   "name": "The Old Vic",
+   "type": "theatre",
+   "osm_type": "way",
+   "osm_id": 23486376,
+   "lat": "51.5020248",
+   "lon": "-0.1092736",
+   "extratags": {
+    "wheelchair": "no",
+    "wheelchair:description": "so many steps. disabled access is back off the building but needs booking"
+   }
+  }
+ ],
+ "borough": [
+  {
+   "name": "Borough Market",
+   "type": "marketplace",
+   "osm_type": "way",
+   "osm_id": 24282400,
+   "lat": "51.5055264",
+   "lon": "-0.0904380",
+   "extratags": {
+    "wheelchair": "yes"
+   }
+  }
+ ]
+}

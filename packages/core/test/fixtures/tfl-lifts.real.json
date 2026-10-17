@@ -1,0 +1,16 @@
+[
+ {
+  "stationUniqueId": "940GZZLUWYP",
+  "disruptedLiftUniqueIds": [
+   "940GZZLUWYP-Lift-5"
+  ],
+  "message": "WEMBLEY PARK STATION: From Monday 10 March until Autumn 2026, no lift service between the street (Wembley Way / car park) and ticket hall. Step-free access is still available by using the entrance/exit on Bridge Road."
+ },
+ {
+  "stationUniqueId": "HUBCAW",
+  "disruptedLiftUniqueIds": [
+   "HUBCAW-Lift-DLR S3"
+  ],
+  "message": "Canary Wharf: No Step Free Access - Step free access is not available between North Colonnade / the station concourse and DLR platforms 2 and 3 due to a faulty lift."
+ }
+]

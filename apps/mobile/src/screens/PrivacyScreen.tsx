@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Platform, ScrollView, Text } from "react-native";
 import { generateRecoverySecret } from "@accesschain/core";
 import type { ProfileRepo } from "../profileRepo";
+import { ATTRIBUTION } from "@accesschain/core";
+import { useLive } from "../live";
 import { BackBar, Button, ConfirmCard } from "../ui";
 import { useS } from "../settings";
 
@@ -11,6 +13,7 @@ export function PrivacyScreen({ repo, onErased, onHome }: { repo: ProfileRepo; o
   const [msg, setMsg] = useState("");
   const [asking, setAsking] = useState(false);
   const web = Platform.OS === "web";
+  const { mode, setMode } = useLive();
 
   return (
     <ScrollView style={s.screen} contentContainerStyle={s.content} accessibilityLabel="Privacy and help">
@@ -37,8 +40,21 @@ export function PrivacyScreen({ repo, onErased, onHome }: { repo: ProfileRepo; o
       {secret && <Text style={s.mono} selectable accessibilityLabel="Recovery code, shown once">{secret}</Text>}
       {msg !== "" && <Text style={s.muted}>{msg}</Text>}
 
-      <Text style={s.h2} accessibilityRole="header">Good to know</Text>
-      <Text style={s.p}>In this demonstration nothing leaves your phone. A real service would send a rough start point and the venue name to a route provider, which is not private from that provider.</Text>
+      <Text style={s.h2} accessibilityRole="header">Live information</Text>
+      <Text style={s.p}>
+        {mode === "live"
+          ? "Live information is on. The app asks TfL for routes and lift news (your start station or rough location, rounded to about 100 metres, and the place's position) and OpenStreetMap for the place's name and notes. They can see your internet address. Your needs are never sent."
+          : "Live information is off. Nothing leaves your phone. The demonstration places are made up."}
+      </Text>
+      {mode === "live" ? (
+        <Button label="Switch to the demonstration places" onPress={() => setMode("demo")} />
+      ) : (
+        <Button label="Use live information (contacts TfL and OpenStreetMap)" onPress={() => setMode("live")} />
+      )}
+
+      <Text style={s.h2} accessibilityRole="header">Where the information comes from</Text>
+      {ATTRIBUTION.map((a) => <Text key={a} style={s.p}>{a}</Text>)}
+      <Text style={s.p}>Notes written by the public have not been checked by us and can be wrong or out of date. Always confirm with the venue.</Text>
 
       <Text style={s.h2} accessibilityRole="header">Delete everything</Text>
       {!asking ? (

@@ -28,7 +28,7 @@ Sociability and AccessNow provide venue access information; TfL publishes step-f
 |---|---|---|---|
 | 1 | Local needs profile, no diagnosis | `core/profile.ts`, `mobile/NeedsScreen` | Implemented, tested |
 | 2 | Manual origin; optional foreground location only | `mobile/location.ts` (one-shot, coarse, no background permission) | Implemented, **not device-tested** |
-| 3 | Candidates from licensed service; never invented | `core/routes.ts` (contract, validation, failure states). **No concrete provider.** | Contract only; provider blocked (D-006) |
+| 3 | Candidates from licensed service; never invented | `core/live/tfl.ts` + `live/client.ts`: **TfL Unified API** journey planner (step-free preference) and lift disruptions, validated against recorded responses (D-019). Licence text **not verified** | Implemented, tested (mocked + live smoke) |
 | 4 | Segments: arrival/transfer/approach/entrance with source, observed/retrieved/expiry, conflicts | `core/types.ts`, `evidence.ts` | Implemented, tested |
 | 5 | Deterministic matching; unknown ≠ pass; no score | `core/match.ts` | Implemented, tested (24 cases + mutation checks) |
 | 6 | Recheck freshness before travel; alternatives only if evidence-backed; outage ⇒ unknown | `match.ts` `evidenceBackedAlternatives`, `itinerary.ts` `liveChanges`, `routes.ts` | Implemented, tested. Scheduled pre-departure recheck/notification **not built** |

@@ -1,0 +1,6 @@
+{
+ "$type": "Tfl.Api.Presentation.Entities.ApiError, Tfl.Api.Presentation.Entities",
+ "exceptionType": "EntityNotFoundException",
+ "httpStatusCode": 404,
+ "message": "No journey found for your inputs."
+}

@@ -55,6 +55,12 @@ export interface Segment {
 
 export interface RouteCandidate {
   id: string;
+  /** Short plain-English name, e.g. "Walk about 930 m". Display only. */
+  title?: string;
+  /** Extra messages from the data source (e.g. a lift outage notice). Display only. */
+  notes?: string[];
+  /** Turn-by-turn text from the data source. Display only. */
+  directions?: string[];
   /** Where the candidate came from, e.g. a licensed routing service. Never invented locally. */
   provider: string;
   segments: Segment[];

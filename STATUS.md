@@ -1,5 +1,13 @@
 # AccessChain – Status report
 
+## Real data (latest)
+- **Real now:** TfL step-free journey planning (routes, walking distances, lifts and stairs on the route, turn-by-turn steps), TfL's list of broken lifts, and OpenStreetMap place notes for 10 South Bank venues (looked up live, shown with their age and author type).
+- **Not real / not claimed:** nothing has been field-checked by us; the pavement between a station and a venue is never evidenced (so results are usually "We can't be sure yet" with a plain checked / not-checked list); venue notes are community-written and often undated or old; only 5 start stations and 10 venues.
+- **Checked against reality:** adapters were written from responses recorded on GitHub's servers on 2026-10-17 (the sandbox cannot reach these sites). Unit/e2e tests use those recordings (one fixture is assembled from observed shapes and is labelled). A CI job (`live-smoke`) calls the real services from a browser; it is informational.
+- **Unverified:** TfL data licence and API terms, Nominatim usage policy for apps, anonymous rate limits. **Needs a person to read them.**
+- **Privacy changed:** live mode contacts TfL and OpenStreetMap (they see the IP address and the request). A consent screen precedes the first request; the needs profile is never sent.
+
+
 ## Senior-friendly redesign (after real-phone feedback)
 Second real-phone feedback: buttons usable but some text overlapped buttons. Redesign for older users: no bottom tab bar; Home screen with big buttons and a ‹ Back to home button everywhere; in-app Text size (Normal/Large/Extra large) that also respects Android's font size; answers in plain words with a symbol (✔ / ✖ / ?), reasons behind "Why?"; demo controls behind "Demonstration options"; confirmation before deleting; soft rounded design. New generic layout audit in the browser tests (text clipped inside buttons, overlapping buttons, text under buttons, sideways scroll) runs on every screen at normal and 2x text, and fails if a fixed height is reintroduced (verified). The audit also exposed missing `aria-checked` state on switches, now fixed. **Not yet re-verified on the phone.**
 
