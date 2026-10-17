@@ -1,0 +1,5 @@
+TotalTime: 529 WaitTime: 532 
+TotalTime: 626 WaitTime: 627 
+TotalTime: 685 WaitTime: 688 
+TotalTime: 570 WaitTime: 579 
+TotalTime: 699 WaitTime: 711 
