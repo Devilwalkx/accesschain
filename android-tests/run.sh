@@ -56,7 +56,7 @@ adb shell am force-stop $PKG
 run_flow() {
   local f=$1
   log "flow $f"
-  ( cd "$OUT/shots" && timeout 420 maestro test --no-ansi --format junit --output "../junit/$(basename "$f" .yaml).xml" "$GITHUB_WORKSPACE/android-tests/flows/$f" ) 2>&1 | tail -40 | tee -a "$OUT/log.txt"
+  ( cd "$OUT/shots" && timeout 420 maestro test --no-ansi --format junit --output "../junit/$(basename "$f" .yaml).xml" --test-output-dir "$OUT/maestro/$(basename "$f" .yaml)" "$GITHUB_WORKSPACE/android-tests/flows/$f" ) 2>&1 | tail -40 | tee -a "$OUT/log.txt"
   local rc=${PIPESTATUS[0]}
   if [ "$rc" != "0" ]; then FAIL=1; log "FLOW FAILED: $f"; adb exec-out screencap -p > "$OUT/shots/FAILED-$(basename "$f" .yaml).png"; fi
   return $rc
@@ -65,7 +65,7 @@ run_flow() {
 run_info_flow() {
   local f=$1
   log "info flow $f"
-  ( cd "$OUT/shots" && timeout 300 maestro test --no-ansi --format junit --output "../junit/$(basename "$f" .yaml).xml" "$GITHUB_WORKSPACE/android-tests/flows/$f" ) 2>&1 | tail -40 | tee -a "$OUT/log.txt"
+  ( cd "$OUT/shots" && timeout 300 maestro test --no-ansi --format junit --output "../junit/$(basename "$f" .yaml).xml" --test-output-dir "$OUT/maestro/$(basename "$f" .yaml)" "$GITHUB_WORKSPACE/android-tests/flows/$f" ) 2>&1 | tail -40 | tee -a "$OUT/log.txt"
   local rc=${PIPESTATUS[0]}
   echo "$f exit=$rc" >> "$OUT/informational-results.txt"
   if [ "$rc" != "0" ]; then log "INFORMATIONAL FLOW DID NOT PASS: $f"; adb exec-out screencap -p > "$OUT/shots/INFO-FAILED-$(basename "$f" .yaml).png"; fi
