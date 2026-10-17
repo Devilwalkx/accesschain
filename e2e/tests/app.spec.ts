@@ -12,15 +12,28 @@ async function saveNeeds(page: Page) {
   await tab(page, "Needs").click();
   await page.getByLabel("Longest walk in metres", { exact: true }).fill("400");
   await page.getByLabel("Minimum clear width in millimetres", { exact: true }).fill("800");
-  await page.getByRole("button", { name: "Save encrypted on this device" }).click();
-  await expect(page.getByText("Saved.")).toBeVisible();
+  await page.getByRole("button", { name: "Save and see journeys" }).click();
+  await expect(page.getByRole("heading", { name: /Journey to Fictional Hall/ })).toBeVisible();
 }
 
 test.describe("AccessChain on a phone-sized browser", () => {
   test("loads with the synthetic banner and asks for requirements first", async ({ page }) => {
     await goto(page);
     await expect(page.getByRole("heading", { name: /Journey to Fictional Hall/ })).toBeVisible();
-    await expect(page.getByText("Set your requirements first", { exact: false })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Start here" })).toBeVisible();
+  });
+
+  test("first run: Start here card leads to Needs; quick starts fill the form but save nothing until you press save", async ({ page }) => {
+    await goto(page);
+    await page.getByRole("button", { name: "Set my needs" }).click();
+    await expect(page.getByRole("heading", { name: "Your requirements" })).toBeVisible();
+    await page.getByRole("button", { name: "Short walks (200 m)" }).click();
+    await expect(page.getByLabel("Longest walk in metres", { exact: true })).toHaveValue("200");
+    expect(await page.evaluate(() => localStorage.getItem("ac.profile"))).toBeNull();
+    await page.getByRole("button", { name: "Save and see journeys" }).click();
+    await expect(page.getByRole("heading", { name: "How to read the results" }).or(page.getByLabel("How to read the results"))).toBeVisible();
+    await expect(page.getByRole("heading", { name: /route-main/ })).toBeVisible();
+    expect(await page.evaluate(() => localStorage.getItem("ac.profile"))).not.toBeNull();
   });
 
   test("end to end: save needs, see known barrier / insufficient evidence, never a false pass, stale lift", async ({ page }) => {

@@ -67,3 +67,34 @@ jobs:
           name: accesschain-android-test-apk
           path: apps/mobile/android/app/build/outputs/apk/release/*.apk
           retention-days: 14
+
+  publish-release:
+    # Keeps a single, always-newest test build on the repo's Releases page (plain .apk, no zip).
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [test-and-web, android-apk]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: accesschain-android-test-apk
+          path: out
+      - uses: actions/download-artifact@v4
+        with:
+          name: accesschain-web
+          path: web
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -e
+          mv out/*.apk AccessChain-test.apk
+          (cd web && zip -qr ../AccessChain-web.zip .)
+          gh release delete latest-test-build --cleanup-tag --yes || true
+          gh release create latest-test-build AccessChain-test.apk AccessChain-web.zip \
+            --target "${{ github.sha }}" --prerelease \
+            --title "AccessChain test build (synthetic data)" \
+            --notes "Install AccessChain-test.apk on an Android phone. Synthetic demonstration data only. Debug-signed, for testing, not the Play Store. Step by step: GETTING_STARTED.md in the repo. Built from commit ${{ github.sha }}."

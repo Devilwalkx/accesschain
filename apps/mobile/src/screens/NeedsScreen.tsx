@@ -6,7 +6,7 @@ import { s } from "../theme";
 
 const num = (t: string): number | undefined => (t.trim() === "" ? undefined : Number(t));
 
-export function NeedsScreen(props: { profile: RequirementsProfile | null; onSave: (p: RequirementsProfile) => Promise<void> }) {
+export function NeedsScreen(props: { profile: RequirementsProfile | null; onSave: (p: RequirementsProfile) => Promise<void>; onSaved: () => void }) {
   const p0 = props.profile;
   const [avoidSteps, setAvoid] = useState(p0?.avoidSteps ?? true);
   const [toilet, setToilet] = useState(p0?.needsAccessibleToilet ?? false);
@@ -16,6 +16,13 @@ export function NeedsScreen(props: { profile: RequirementsProfile | null; onSave
   const [width, setWidth] = useState(p0?.minClearWidthMm?.toString() ?? "");
   const [rest, setRest] = useState(p0?.maxRestGapM?.toString() ?? "");
   const [msg, setMsg] = useState("");
+
+  // Quick starts only fill the form; nothing is saved until you press the save button, and you can edit everything.
+  const presets: Array<[string, () => void]> = [
+    ["No steps", () => { setAvoid(true); setLift(true); }],
+    ["Short walks (200 m)", () => { setWalk("200"); setRest("100"); }],
+    ["Wide doorways (800 mm)", () => setWidth("800")]
+  ];
 
   const toggles: Array<[string, boolean, (v: boolean) => void]> = [
     ["Avoid steps", avoidSteps, setAvoid],
@@ -28,6 +35,10 @@ export function NeedsScreen(props: { profile: RequirementsProfile | null; onSave
     <ScrollView style={s.screen}>
       <Text style={s.h1} accessibilityRole="header">Your requirements</Text>
       <Text style={s.muted}>No diagnosis is asked for. These are stored encrypted on this device and matched here; they are not sent to a server in this build.</Text>
+      <Text style={s.h2} accessibilityRole="header">Quick start (optional)</Text>
+      <Text style={s.muted}>Tap to fill in common needs, then change anything you like.</Text>
+      {presets.map(([text, apply]) => <Button key={text} label={text} onPress={apply} />)}
+      <Text style={s.h2} accessibilityRole="header">Your needs</Text>
       {toggles.map(([text, value, set]) => (
         <View key={text} style={s.row}>
           <Text style={[s.p, { flex: 1 }]}>{text}</Text>
@@ -41,7 +52,7 @@ export function NeedsScreen(props: { profile: RequirementsProfile | null; onSave
       <Text style={s.p}>Longest gap between resting points in metres (optional)</Text>
       <TextInput style={s.input} keyboardType="numeric" value={rest} onChangeText={setRest} accessibilityLabel="Longest gap between resting points in metres" />
       <Button
-        label="Save encrypted on this device"
+        label="Save and see journeys"
         onPress={async () => {
           try {
             const profile = parseProfile({
@@ -52,6 +63,7 @@ export function NeedsScreen(props: { profile: RequirementsProfile | null; onSave
             });
             await props.onSave(profile);
             setMsg("Saved.");
+            props.onSaved();
           } catch {
             setMsg("Not saved: check the numbers you entered.");
           }

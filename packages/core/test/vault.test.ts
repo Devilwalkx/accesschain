@@ -13,8 +13,11 @@ describe("vault", () => {
     const s = sealItem(k, secretText, ctx);
     expect(openItem(k, s, ctx)).toBe(secretText);
     const blob = JSON.stringify(s);
+    // Compare against the plaintext as text and as hex; a 3-character number like "150" can appear in random hex by chance.
+    const asHex = Array.from(new TextEncoder().encode(secretText), (b) => b.toString(16).padStart(2, "0")).join("");
     expect(blob).not.toContain("avoidSteps");
-    expect(blob).not.toContain("150");
+    expect(blob).not.toContain(asHex.slice(0, 16));
+    expect(blob).not.toContain(secretText);
   });
   it("wrong key, tampered ciphertext, tampered nonce all throw (no plaintext fallback)", () => {
     const k = generateContentKey();

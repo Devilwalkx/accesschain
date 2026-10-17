@@ -51,8 +51,8 @@ export default function App() {
       <StatusBar style="auto" />
       {loadError && <Text style={s.p} accessibilityRole="alert">{loadError}</Text>}
       <View style={{ flex: 1 }}>
-        {tab === "plan" && <PlanScreen profile={profile} />}
-        {tab === "needs" && <NeedsScreen profile={profile} onSave={async (p) => { await repo.save(p); setProfile(p); }} />}
+        {tab === "plan" && <PlanScreen profile={profile} onSetNeeds={() => setTab("needs")} />}
+        {tab === "needs" && <NeedsScreen profile={profile} onSave={async (p) => { await repo.save(p); setProfile(p); }} onSaved={() => setTab("plan")} />}
         {tab === "report" && <ReportScreen />}
         {tab === "privacy" && <PrivacyScreen repo={repo} onErased={() => setProfile(null)} />}
       </View>

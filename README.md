@@ -6,14 +6,8 @@ Personalised access-information journey planner for **one London area and 50 fie
 
 ## Run it on a phone
 
-Two routes, both built by GitHub Actions on every push (`.github/workflows/build.yml`):
-
-| Route | How | Notes |
-|---|---|---|
-| **Android app (APK)** | Open the latest successful run in the repo's **Actions** tab, download artifact `accesschain-android-test-apk`, unzip, copy the `.apk` to your phone and open it (allow "install unknown apps" for your file manager/browser when asked). | Signed with the Android *debug* key: **testing only**, not for the Play Store. Never run on a device by us yet: you are the first tester. |
-| **Phone browser / iPhone** | Artifact `accesschain-web` is a static site (`index.html`, `manifest.webmanifest`, icons). Host it on any **HTTPS** static host, open the URL on the phone, then *Add to Home Screen*. Locally: `npm run build:web -w @accesschain/mobile && npx serve apps/mobile/dist-web`, then open `http://localhost:3000` **on the same machine only**. | Browsers refuse WebCrypto on plain `http://<LAN address>`, so the app shows "Cannot start safely" instead of storing anything unprotected. Browser key storage is weaker than the native app (see Privacy screen). iPhone has no installable build without an Apple Developer account and signing. |
-
-Everything on screen is **synthetic demonstration data** with a banner saying so.
+**Start with [GETTING_STARTED.md](GETTING_STARTED.md)**: a step-by-step guide for people new to GitHub. Short version: on an Android phone open
+`https://github.com/Devilwalkx/accesschain/releases/tag/latest-test-build` (signed in), download `AccessChain-test.apk` and install it. A new build appears there automatically a few minutes after each update. There is no iPhone app yet; a web version exists (`AccessChain-web.zip`, needs HTTPS hosting). Everything on screen is synthetic demonstration data.
 
 ## Layout
 
@@ -31,7 +25,7 @@ Everything on screen is **synthetic demonstration data** with a banner saying so
 ```bash
 npm install
 npm test            # 67 automated tests (core + database)
-npm run e2e         # 39 browser tests on phone-sized viewports (needs Chromium)
+npm run e2e         # 42 browser tests on phone-sized viewports (needs Chromium)
 npm run typecheck
 npm run demo        # regenerate docs/DEMO.md
 cd apps/mobile && npx expo export --platform android   # bundling check (no device needed)

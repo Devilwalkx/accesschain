@@ -11,7 +11,7 @@ const DEMO_TIMES = [
   { label: "Demo time: +45 min (lift feed expired)", at: new Date(Date.parse(T0) + 45 * 60_000).toISOString() }
 ];
 
-export function PlanScreen({ profile }: { profile: RequirementsProfile | null }) {
+export function PlanScreen({ profile, onSetNeeds }: { profile: RequirementsProfile | null; onSetNeeds: () => void }) {
   const [timeIx, setTimeIx] = useState(0);
   const [open, setOpen] = useState<string | null>(null);
   const at = DEMO_TIMES[timeIx]!.at;
@@ -25,7 +25,22 @@ export function PlanScreen({ profile }: { profile: RequirementsProfile | null })
       <Text style={s.h1} accessibilityRole="header">Journey to Fictional Hall</Text>
       <Text style={s.muted}>Start: Example Road station (fictional). Choose a demo time to see how expired live data changes the answer.</Text>
       {DEMO_TIMES.map((d, i) => <Button key={d.at} label={d.label} selected={i === timeIx} onPress={() => setTimeIx(i)} />)}
-      {!profile && <Text style={s.p}>Set your requirements first (Needs tab). They are matched on this device only.</Text>}
+      {!profile && (
+        <View style={s.card}>
+          <Text style={s.h2} accessibilityRole="header">Start here</Text>
+          <Text style={s.p}>1. Tell the app what you need (steps, distance, doorway width). It stays encrypted on this phone.</Text>
+          <Text style={s.p}>2. See how each route to the venue matches your needs.</Text>
+          <Text style={s.p}>3. Read the result. The app says "insufficient evidence" instead of guessing.</Text>
+          <Button label="Set my needs" onPress={onSetNeeds} />
+        </View>
+      )}
+      {profile && (
+        <View style={s.card} accessible accessibilityLabel="How to read the results">
+          <Text style={s.muted}>Known fit: every need you set has fresh evidence it is met.</Text>
+          <Text style={s.muted}>Known barrier: a need is known not to be met.</Text>
+          <Text style={s.muted}>Insufficient evidence: something is missing, out of date or disputed. Not a pass.</Text>
+        </View>
+      )}
       {results.map(({ r, a }) => (
         <View key={r.id} style={s.card}>
           <Text style={s.h2} accessibilityRole="header">{r.id}: {label(a.verdict)}</Text>

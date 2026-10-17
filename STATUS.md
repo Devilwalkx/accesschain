@@ -1,8 +1,10 @@
 # AccessChain – Status report
 
 ## Phone delivery update (latest)
-- **CI (GitHub Actions, run 2 on commit 94bb3fd): passed.** Typecheck, 67 unit/database tests, web build, 36 browser tests (before the HTTPS guard was added) and the Android release build all succeeded on GitHub's runners. Artifacts produced: `accesschain-android-test-apk` (28 MB, debug-signed, testing only) and `accesschain-web`. Locally the browser suite is now 39 tests; the commit adding the last 3 is pushed after this note and is covered by the next CI run.
+- **CI (GitHub Actions, run 2 on commit 94bb3fd): passed.** Typecheck, 67 unit/database tests, web build, 36 browser tests (before the HTTPS guard was added) and the Android release build all succeeded on GitHub's runners. Artifacts produced: `accesschain-android-test-apk` (28 MB, debug-signed, testing only) and `accesschain-web`. Locally the browser suite is now 42 tests; the commit adding the last 3 is pushed after this note and is covered by the next CI run.
 - **Never run on a physical phone.** The APK builds but nobody has installed or launched it yet; native modules (secure store, secure random, image picker, location) are unproven on a device. iPhone: web version only; no installable iOS build.
+- **Simplified usage:** plain-English `GETTING_STARTED.md`; first-run "Start here" card, quick-start presets and one-step "Save and see journeys" in the app; every push to `main` republishes a single always-newest GitHub Release with a plain `.apk`.
+- **Test fix:** CI run 4 failed because one of my vault tests asserted random ciphertext did not contain the text "150", which random hex can contain by chance. Replaced with a collision-proof check and run 40 times without failure.
 - Details: README "Run it on a phone", DECISIONS D-015 to D-017, SECURITY_TESTS T-35/T-36.
 
 
