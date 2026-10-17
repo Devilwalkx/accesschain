@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="14.471" timestamp="2026-10-17T20:38:42">
+    <testcase id="The on-phone encryption check runs the real encryption code and passes (including refusing a tampered copy)" name="The on-phone encryption check runs the real encryption code and passes (including refusing a tampered copy)" classname="The on-phone encryption check runs the real encryption code and passes (including refusing a tampered copy)" file="/home/runner/work/accesschain/accesschain/android-tests/flows/15-encryption-check.yaml" time="14.46" timestamp="2026-10-17T20:38:42" status="SUCCESS"/>
+  </testsuite>
+</testsuites>
