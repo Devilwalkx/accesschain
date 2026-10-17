@@ -3,12 +3,22 @@ name: Settings - colours, text size and the build identity
 ---
 - launchApp:
     clearState: true
+- scrollUntilVisible:
+    element: "Settings"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Settings"
 - assertVisible: "Display"
+- scrollUntilVisible:
+    element: "Large text"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Large text"
 - takeScreenshot: 30-settings-large
 - scrollUntilVisible:
-    element: "About this build"
+    element: "App ID app.devilwalkx.accesschain"
     direction: DOWN
     timeout: 60000
     speed: 60

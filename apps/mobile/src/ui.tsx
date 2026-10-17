@@ -10,6 +10,9 @@ export const TextScaleContext = createContext<number>(1);
 export function useScale() { return useContext(TextScaleContext); }
 export function factorFor(size: TextSize, query: number): number { return TEXT_FACTOR[size] * query; }
 
+/** A very long word (for example "Shakespeare's") may break across lines instead of running out of its box. Android does this by itself; on web it needs the style. */
+const WRAP: object = Platform.OS === "web" ? { wordBreak: "break-word", overflowWrap: "anywhere" } : {};
+
 type Legacy = "h1" | "h2";
 const alias: Record<Legacy, Variant> = { h1: "title", h2: "heading" };
 
@@ -26,7 +29,7 @@ export function Txt(p: { v?: Variant | Legacy; children: React.ReactNode; color?
       accessibilityLabel={p.label}
       accessibilityLiveRegion={p.live ? "polite" : undefined}
       selectable={p.selectable}
-      style={[{ color: p.color ?? c.text, fontSize: t.size * f, lineHeight: t.line * f, fontWeight: t.weight, textAlign: p.align }, p.style]}
+      style={[{ color: p.color ?? c.text, fontSize: t.size * f, lineHeight: t.line * f, fontWeight: t.weight, textAlign: p.align }, WRAP, p.style]}
     >{p.children}</Text>
   );
 }
@@ -73,7 +76,7 @@ export function Btn(p: { label: string; onPress: () => void; kind?: ButtonKind; 
       }, (kind === "secondary" && !(p.selected && p.role === "radio")) ? { borderWidth: 3, borderColor: c.primary } : null]}
     >
       {p.icon ? <Icon name={p.icon} size={(p.big ? 28 : 24) * Math.min(f, 1.5)} color={fg} /> : null}
-      <Text style={{ color: fg, fontSize: (p.big ? 20 : type.body.size) * f, lineHeight: (p.big ? 27 : 25) * f, fontWeight: "700", textAlign: p.align === "left" ? "left" : "center", flexShrink: 1 }}>{p.label}</Text>
+      <Text style={{ color: fg, fontSize: (p.big ? 20 : type.body.size) * f, lineHeight: (p.big ? 27 : 25) * f, fontWeight: "700", textAlign: p.align === "left" ? "left" : "center", flexShrink: 1, ...WRAP }}>{p.label}</Text>
     </Pressable>
   );
 }

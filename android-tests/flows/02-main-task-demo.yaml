@@ -3,6 +3,11 @@ name: MAIN TASK (demonstration places) - say what you need, then read a journey 
 ---
 - launchApp:
     clearState: true
+- scrollUntilVisible:
+    element: "Tell us what you need"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Tell us what you need"
 - assertVisible: "What do you need\\?"
 - takeScreenshot: 02-needs
@@ -14,6 +19,11 @@ name: MAIN TASK (demonstration places) - say what you need, then read a journey 
 - tapOn: "Save and see my routes"
 - assertVisible: "Use live information\\?"
 - takeScreenshot: 03-consent
+- scrollUntilVisible:
+    element: "No, use the demonstration instead"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "No, use the demonstration instead"
 - assertVisible: "Getting to Fictional Hall"
 - assertVisible: "Demonstration.*"

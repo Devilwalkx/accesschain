@@ -3,7 +3,17 @@ name: With the keyboard open the field and the Save button stay reachable
 ---
 - launchApp:
     clearState: true
+- scrollUntilVisible:
+    element: "Tell us what you need"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Tell us what you need"
+- scrollUntilVisible:
+    element: "Walking and doorway details.*"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Walking and doorway details.*"
 - tapOn:
     id: "field-longest-walk-in-metres"

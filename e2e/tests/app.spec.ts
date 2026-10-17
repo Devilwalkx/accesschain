@@ -202,7 +202,7 @@ test.describe("AccessChain on a phone-sized browser", () => {
     await goto(page);
     await expect(btn(page, "Back")).toHaveCount(0); // Home has nothing to go back to
     for (const s of SCREENS) {
-      await btn(page, s).first().click();
+      await (s === "My needs" ? btn(page, /^(My needs|Tell us what you need)$/) : btn(page, s)).first().click(); // before any answers are saved the button says "Tell us what you need"
       await expect(btn(page, "Back")).toBeVisible();
       await btn(page, "Back").click();
       await expect(page.getByText("Find out if you can get there", { exact: false })).toBeVisible();

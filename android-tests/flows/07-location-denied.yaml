@@ -1,24 +1,54 @@
 appId: app.devilwalkx.accesschain
-name: INFORMATIONAL - location permission refused (also permanently): a clear message and a way forward
+name: "INFORMATIONAL - location permission refused (also permanently), a clear message and a way forward"
 ---
 - launchApp:
     clearState: true
     permissions:
       location: deny
+- scrollUntilVisible:
+    element: "Plan a journey"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Plan a journey"
+- scrollUntilVisible:
+    element: "Yes, use live information"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Yes, use live information"
+- scrollUntilVisible:
+    element: "Tate Modern"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Tate Modern"
 - assertVisible: "Your phone will ask permission once.*"
+- scrollUntilVisible:
+    element: "Where I am now"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Where I am now"
 - tapOn:
     text: "Don't allow|Deny|DENY"
     optional: true
 - assertVisible: "Location was not allowed.*|Location is switched off.*|We couldn't find where you are.*"
 - takeScreenshot: 40-location-denied-1
+- scrollUntilVisible:
+    element: "Where I am now"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Where I am now"
 - tapOn:
     text: "Don't allow|Deny|DENY"
     optional: true
+- scrollUntilVisible:
+    element: "Where I am now"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Where I am now"
 - tapOn:
     text: "Don't allow|Deny|DENY"

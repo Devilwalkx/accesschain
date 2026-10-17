@@ -3,6 +3,11 @@ name: After process death the saved needs and the chosen mode are still there
 ---
 - launchApp
 - assertVisible: "My needs"
+- scrollUntilVisible:
+    element: "Plan a journey"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Plan a journey"
 - assertVisible: "Getting to Fictional Hall"
 - assertVisible: "Checked against your needs:"

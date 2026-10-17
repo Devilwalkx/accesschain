@@ -3,6 +3,11 @@ name: Save needs and choose the demonstration, then leave the app (the script ki
 ---
 - launchApp:
     clearState: true
+- scrollUntilVisible:
+    element: "Tell us what you need"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Tell us what you need"
 - scrollUntilVisible:
     element: "Save and see my routes"
@@ -10,6 +15,11 @@ name: Save needs and choose the demonstration, then leave the app (the script ki
     timeout: 60000
     speed: 85
 - tapOn: "Save and see my routes"
+- scrollUntilVisible:
+    element: "No, use the demonstration instead"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "No, use the demonstration instead"
 - assertVisible: "Getting to Fictional Hall"
 - pressKey: home

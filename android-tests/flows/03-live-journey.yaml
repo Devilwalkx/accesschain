@@ -3,6 +3,11 @@ name: INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies;
 ---
 - launchApp:
     clearState: true
+- scrollUntilVisible:
+    element: "Tell us what you need"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Tell us what you need"
 - scrollUntilVisible:
     element: "Save and see my routes"
@@ -10,17 +15,39 @@ name: INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies;
     timeout: 60000
     speed: 85
 - tapOn: "Save and see my routes"
+- scrollUntilVisible:
+    element: "Yes, use live information"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Yes, use live information"
 - assertVisible: "Where do you want to go\\?"
 - takeScreenshot: 10-live-places
+- scrollUntilVisible:
+    element: "Tate Modern"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Tate Modern"
 - assertVisible: "Where are you starting from\\?"
 - takeScreenshot: 11-live-start
+- scrollUntilVisible:
+    element: "London Bridge"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "London Bridge"
+# the "Checking the latest information" line goes away when every service has answered or failed (answers vary; nothing is asserted about content)
 - extendedWaitUntil:
-    visible: "What answered"
+    notVisible: "Checking the latest information.*"
     timeout: 90000
 - takeScreenshot: 12-live-result-top
+- scrollUntilVisible:
+    element: "What answered"
+    direction: DOWN
+    timeout: 90000
+    speed: 40
+- takeScreenshot: 14-live-what-answered
 - scrollUntilVisible:
     element: "Correct entrance"
     direction: DOWN

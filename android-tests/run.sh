@@ -59,6 +59,7 @@ run_flow() {
   ( cd "$OUT/shots" && timeout 420 maestro test --no-ansi --format junit --output "../junit/$(basename "$f" .yaml).xml" "$GITHUB_WORKSPACE/android-tests/flows/$f" ) 2>&1 | tail -40 | tee -a "$OUT/log.txt"
   local rc=${PIPESTATUS[0]}
   if [ "$rc" != "0" ]; then FAIL=1; log "FLOW FAILED: $f"; adb exec-out screencap -p > "$OUT/shots/FAILED-$(basename "$f" .yaml).png"; fi
+  return $rc
 }
 # informational flows touch the real internet or the permission dialog: their result is recorded but never fails the job
 run_info_flow() {
@@ -134,7 +135,9 @@ done
 # memory + scrolling jank on the longest screen (the demonstration journey)
 log "memory and scroll"
 adb shell am force-stop $PKG
-run_flow 10-open-long-screen.yaml
+sleep 3
+SAVE_FAIL=$FAIL
+run_flow 10-open-long-screen.yaml || { FAIL=$SAVE_FAIL; log "retrying 10-open-long-screen once"; sleep 5; run_flow 10-open-long-screen.yaml; }
 adb shell dumpsys gfxinfo $PKG reset >/dev/null
 for i in 1 2 3 4 5 6; do adb shell input swipe 540 1700 540 500 250; adb shell input swipe 540 500 540 1700 250; done
 adb shell dumpsys gfxinfo $PKG | grep -E "Total frames rendered|Janky frames|50th|90th|95th|99th" | tr -d '\r' > "$OUT/scroll-gfxinfo.txt"

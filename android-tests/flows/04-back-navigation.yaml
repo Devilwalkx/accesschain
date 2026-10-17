@@ -3,10 +3,30 @@ name: System Back steps backwards through the journey flow, then Home, then leav
 ---
 - launchApp:
     clearState: true
+- scrollUntilVisible:
+    element: "Plan a journey"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Plan a journey"
+- scrollUntilVisible:
+    element: "Yes, use live information"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Yes, use live information"
+- scrollUntilVisible:
+    element: "Tate Modern"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "Tate Modern"
 - assertVisible: "Where are you starting from\\?"
+- scrollUntilVisible:
+    element: "London Bridge"
+    direction: DOWN
+    timeout: 60000
+    speed: 60
 - tapOn: "London Bridge"
 - pressKey: back
 - assertVisible: "Where are you starting from\\?"
