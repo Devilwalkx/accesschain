@@ -15,6 +15,8 @@ export const s = StyleSheet.create({
   buttonSelected: { backgroundColor: colors.accent },
   buttonText: { fontSize: 16, color: colors.accent, fontWeight: "600" },
   buttonTextSelected: { color: "#ffffff" },
+  tabButton: { paddingHorizontal: 2, alignItems: "center" },
+  tabText: { fontSize: 15, textAlign: "center" },
   row: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", minHeight: 48 },
   input: { minHeight: 48, borderWidth: 2, borderColor: colors.border, paddingHorizontal: 10, fontSize: 16, color: colors.text, marginVertical: 4 },
   card: { borderWidth: 1, borderColor: colors.border, padding: 12, marginVertical: 8 },

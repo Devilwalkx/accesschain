@@ -4,11 +4,13 @@
   "version": "0.0.0",
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/*",
+    "e2e"
   ],
   "scripts": {
     "test": "npm test -w @accesschain/core -w @accesschain/db",
     "typecheck": "npm run typecheck -w @accesschain/core && npm run typecheck -w @accesschain/mobile",
-    "demo": "npm run demo -w @accesschain/core"
+    "demo": "npm run demo -w @accesschain/core",
+    "e2e": "npm run build:web -w @accesschain/mobile && npm test -w @accesschain/e2e"
   }
 }

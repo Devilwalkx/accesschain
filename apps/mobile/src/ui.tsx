@@ -11,17 +11,17 @@ export function SyntheticBanner() {
   );
 }
 
-export function Button(props: { label: string; onPress: () => void; selected?: boolean; hint?: string }) {
+export function Button(props: { label: string; onPress: () => void; selected?: boolean; hint?: string; role?: "button" | "tab" }) {
   return (
     <Pressable
-      accessibilityRole="button"
+      accessibilityRole={props.role ?? "button"}
       accessibilityLabel={props.label}
       accessibilityHint={props.hint}
       accessibilityState={{ selected: !!props.selected }}
       onPress={props.onPress}
-      style={[s.button, props.selected && s.buttonSelected]}
+      style={[s.button, props.role === "tab" && s.tabButton, props.selected && s.buttonSelected]}
     >
-      <Text style={[s.buttonText, props.selected && s.buttonTextSelected]}>{props.label}</Text>
+      <Text numberOfLines={props.role === "tab" ? 1 : undefined} style={[s.buttonText, props.role === "tab" && s.tabText, props.selected && s.buttonTextSelected]}>{props.label}</Text>
     </Pressable>
   );
 }

@@ -42,6 +42,20 @@
           "isAndroidForegroundServiceEnabled": false
         }
       ]
+    ],
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "name": "AccessChain (synthetic demo)",
+      "shortName": "AccessChain",
+      "backgroundColor": "#ffffff",
+      "themeColor": "#0b3d91",
+      "lang": "en-GB"
+    },
+    "platforms": [
+      "ios",
+      "android",
+      "web"
     ]
   }
 }

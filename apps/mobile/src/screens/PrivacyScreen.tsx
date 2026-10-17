@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, Text } from "react-native";
+import { Platform, ScrollView, Text } from "react-native";
 import { generateRecoverySecret } from "@accesschain/core";
 import type { ProfileRepo } from "../profileRepo";
 import { Button } from "../ui";
@@ -12,7 +12,12 @@ export function PrivacyScreen({ repo, onErased }: { repo: ProfileRepo; onErased:
   return (
     <ScrollView style={s.screen}>
       <Text style={s.h1} accessibilityRole="header">Privacy and recovery</Text>
-      <Text style={s.p}>Your requirements are encrypted on this device with a key held in the phone's secure storage. We do not hold that key and cannot read them or reset access to them.</Text>
+      <Text style={s.p}>Your requirements are encrypted on this device. {Platform.OS === "web" ? "The key is kept in this browser's storage." : "The key is held in the phone's secure storage."} We do not hold that key and cannot read your requirements or reset access to them.</Text>
+      {Platform.OS === "web" && (
+        <Text style={s.p} accessibilityRole="alert">
+          You are using the browser version. Browsers have no hardware-backed key storage, so protection is weaker than the phone app: the key is kept in this browser's storage and clearing site data deletes it permanently. Create a recovery secret and keep it safe.
+        </Text>
+      )}
       <Text style={s.h2} accessibilityRole="header">Recovery secret</Text>
       <Text style={s.p}>If you lose this phone and have no recovery secret, your saved requirements are permanently unrecoverable. Write the secret down and keep it somewhere safe. Anyone who has it can decrypt a backup.</Text>
       <Button

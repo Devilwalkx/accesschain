@@ -1,4 +1,4 @@
-import * as SecureStore from "expo-secure-store";
+import { storage } from "./storage";
 import {
   generateContentKey, openItem, parseProfile, sealItem,
   wrapKeyForRecovery,
@@ -7,7 +7,7 @@ import {
 
 /**
  * The requirements profile is stored only as ciphertext, bound to account/item/version.
- * LIMITATION: ciphertext is kept in the secure store, which is size-limited; saved trips will need
+ * LIMITATION: ciphertext is kept via `storage` (native: secure store, size-limited; web: localStorage); saved trips will need
  * an encrypted file store (not built; needs device testing). There is no plaintext copy anywhere.
  */
 const KEY_NAME = "content";
@@ -29,7 +29,7 @@ export class ProfileRepo {
     const current = await this.readEnvelope();
     const version = (current?.version ?? 0) + 1;
     const sealed = sealItem(await this.key(), JSON.stringify(valid), { accountId: this.accountId, itemId: ITEM, version });
-    await SecureStore.setItemAsync("ac.profile", JSON.stringify({ version, sealed }));
+    await storage.set("ac.profile", JSON.stringify({ version, sealed }));
   }
 
   async load(): Promise<RequirementsProfile | null> {
@@ -46,12 +46,12 @@ export class ProfileRepo {
   }
 
   async erase(): Promise<void> {
-    await SecureStore.deleteItemAsync("ac.profile");
+    await storage.delete("ac.profile");
     await this.keys.delete(KEY_NAME);
   }
 
   private async readEnvelope(): Promise<{ version: number; sealed: SealedItem } | null> {
-    const raw = await SecureStore.getItemAsync("ac.profile");
+    const raw = await storage.get("ac.profile");
     return raw ? (JSON.parse(raw) as { version: number; sealed: SealedItem }) : null;
   }
 }

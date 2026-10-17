@@ -53,10 +53,10 @@ export default function App() {
         {tab === "report" && <ReportScreen />}
         {tab === "privacy" && <PrivacyScreen repo={repo} onErased={() => setProfile(null)} />}
       </View>
-      <View accessibilityRole="tablist" style={{ flexDirection: "row", flexWrap: "wrap", paddingHorizontal: 8 }}>
+      <View accessibilityRole="tablist" style={{ flexDirection: "row", paddingHorizontal: 4 }}>
         {TABS.map(([id, text]) => (
-          <View key={id} style={{ flex: 1, minWidth: 80 }}>
-            <Button label={text} selected={tab === id} onPress={() => setTab(id)} />
+          <View key={id} style={{ flex: 1, minWidth: 0 }}>
+            <Button role="tab" label={text} selected={tab === id} onPress={() => setTab(id)} />
           </View>
         ))}
       </View>
