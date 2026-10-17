@@ -188,7 +188,7 @@ test.describe("live information (TfL and OpenStreetMap, mocked with recorded rea
     await expect(page.getByText("TfL lift notice: London Bridge: the lift to the street is out of service.")).toBeVisible();
     await expect(page.getByText("Does not suit your needs").first()).toBeVisible();
     await expect(page.getByText("A problem was found: Transfers.")).toBeVisible();
-    await expect(page.getByText("TfL reports the lift is out of service.").first()).toBeVisible();
+    await expect(page.getByText("TfL: the lift is reported out of service.").first()).toBeVisible();
     await expect(page.getByText("Check again just before you leave.", { exact: false }).first()).toBeVisible();
   });
 

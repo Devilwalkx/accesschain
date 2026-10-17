@@ -118,8 +118,15 @@ function missingFor(r: Reason, part: PartId): string | null {
   return typeof m === "string" ? m : m[part];
 }
 
+/** Plain name of where a fact came from. Internal ids are never shown to the person. */
 const who = (src: { id: string; kind: string }) =>
-  src.id.startsWith("tfl-") ? "TfL" : src.id === "openstreetmap-contributors" ? "OpenStreetMap contributors" : `source “${src.id}”`;
+  src.id.startsWith("tfl-") ? "TfL"
+  : src.id === "openstreetmap-contributors" ? "OpenStreetMap contributors"
+  : src.kind === "field_verification" ? "A field check"
+  : src.kind === "venue_report" ? "The venue"
+  : src.kind === "operator_feed" ? "The transport operator"
+  : src.kind === "user_report" ? "Other travellers"
+  : "A reported source";
 
 function factLines(seg: Segment, part: PartId, nowIso: string): { known: string[]; missing: string[] } {
   const known: string[] = [];
@@ -140,13 +147,13 @@ function factLines(seg: Segment, part: PartId, nowIso: string): { known: string[
     const v = res.value;
     switch (a) {
       case "stepFree":
-        if (part === "entrance") known.push(v ? `${src} say the place is wheelchair accessible.` : `${src} say the place is not wheelchair accessible.`);
-        else if (v) known.push(`${src} plans this leg step-free to and from the vehicle.`);
-        else known.push(seg.walking ? `${src} reports stairs on this walk.` : `${src} reports steps here.`);
+        if (part === "entrance") known.push(v ? `${src}: the place is wheelchair accessible.` : `${src}: the place is not wheelchair accessible.`);
+        else if (v) known.push(`${src}: this leg is planned step-free to and from the vehicle.`);
+        else known.push(seg.walking ? `${src}: stairs are reported on this walk.` : `${src}: steps are reported here.`);
         break;
       case "walkLengthM": known.push(`Walk of about ${v} m (${src}).`); break;
-      case "liftInService": known.push(v ? `${src} reports no problem with the lift.` : `${src} reports the lift is out of service.`); break;
-      case "accessibleToilet": known.push(v ? `${src} say there is an accessible toilet.` : `${src} say there is no accessible toilet.`); break;
+      case "liftInService": known.push(v ? `${src}: no problem is reported with the lift.` : `${src}: the lift is reported out of service.`); break;
+      case "accessibleToilet": known.push(v ? `${src}: there is an accessible toilet.` : `${src}: there is no accessible toilet.`); break;
       case "clearWidthMm": known.push(`Clear width ${v} mm (${src}).`); break;
       case "restingPointSpacingM": known.push(`Somewhere to rest about every ${v} m (${src}).`); break;
       case "assistanceAvailable": known.push(v ? "Help is reported as available, and has to be arranged." : "No help is reported as available."); break;

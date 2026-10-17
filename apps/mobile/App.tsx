@@ -145,7 +145,7 @@ function Root() {
               style={{ flex: 1, color: c.text, fontSize: 20 * Math.min(factor, 1.4), lineHeight: 27 * Math.min(factor, 1.4), fontWeight: "700", paddingHorizontal: 4, paddingVertical: 8 }}
             >{S === "home" ? "AccessChain" : TITLES[S]}</Text>
           </View>
-          <ScrollView ref={scroller} contentContainerStyle={{ padding: space.m, paddingBottom: space.xl }} keyboardShouldPersistTaps="handled" keyboardDismissMode={Platform.OS === "ios" ? "interactive" : "on-drag"}>
+          <ScrollView key={`${S}-${app.navNonce}`} ref={scroller} contentContainerStyle={{ padding: space.m, paddingBottom: space.xl }} keyboardShouldPersistTaps="handled" keyboardDismissMode={Platform.OS === "ios" ? "interactive" : "on-drag"}>
             <Transition key={`${S}-${app.navNonce}`} id={`${S}-${app.navNonce}`}>
               {S === "home" ? <HomeScreen /> : S === "plan" ? <PlanFlow /> : S === "needs" ? <NeedsScreen /> : S === "report" ? <ReportScreen /> : S === "privacy" ? <PrivacyScreen /> : <SettingsScreen />}
             </Transition>

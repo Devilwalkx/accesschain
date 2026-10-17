@@ -36,7 +36,7 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
     speed: 60
 - tapOn: "Where I am now"
 - tapOn:
-    text: "Don't allow|Deny|DENY"
+    text: "Don.t allow|Deny|DENY"
     optional: true
 - scrollUntilVisible:
     element: "Location was not allowed.*|Location is switched off.*|We couldn't find where you are.*"
@@ -52,7 +52,7 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
     speed: 60
 - tapOn: "Where I am now"
 - tapOn:
-    text: "Don't allow|Deny|DENY"
+    text: "Don.t allow|Deny|DENY"
     optional: true
 - scrollUntilVisible:
     element: "Where I am now"
@@ -61,7 +61,7 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
     speed: 60
 - tapOn: "Where I am now"
 - tapOn:
-    text: "Don't allow|Deny|DENY"
+    text: "Don.t allow|Deny|DENY"
     optional: true
 - scrollUntilVisible:
     element: "London Bridge"

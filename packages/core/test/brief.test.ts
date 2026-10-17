@@ -49,7 +49,7 @@ describe("journey brief: four separate parts", () => {
     const [a, b] = buildBriefs([out, ok], [assessRoute(out, steps, NOW), assessRoute(ok, steps, NOW)], ctx());
     expect(a!.parts[0]!.status).toBe("confirmed");
     expect(a!.parts[1]!.status).toBe("problem");
-    expect(a!.parts[1]!.known.join(" ")).toMatch(/lift is out of service/);
+    expect(a!.parts[1]!.known.join(" ")).toMatch(/lift is reported out of service/);
     expect(a!.headline).toMatch(/A problem was found: Transfers/);
     // the other route in the same result is offered as an evidence-backed comparison, nothing is invented
     expect(a!.parts[1]!.nextSteps.some((s) => s.kind === "compare")).toBe(true);
@@ -92,6 +92,9 @@ describe("journey brief: four separate parts", () => {
     expect(briefs[0]!.parts[3]!.nextSteps.some((s) => s.kind === "compare")).toBe(true);
     expect(briefs[0]!.parts.every((p) => !p.nextSteps.some((s) => s.phone || s.url))).toBe(true);
     expect(briefs[0]!.parts[3]!.age).toMatch(/Demonstration information/);
+    // internal source ids must never reach the screen
+    const all = briefs.flatMap((b) => b.parts.flatMap((p) => [...p.known, ...p.missing, ...p.nextSteps.map((n) => n.text)])).join(" ");
+    expect(all).not.toMatch(/synthetic-|tfl-journey|source “/);
   });
 
   it("no needs set: nothing is checked and the brief says so", () => {
