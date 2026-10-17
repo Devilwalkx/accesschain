@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="1" time="59.958" timestamp="2026-10-17T18:01:14">
+    <testcase id="MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts" name="MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts" classname="MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts" file="/home/runner/work/accesschain/accesschain/android-tests/flows/02-main-task-demo.yaml" time="59.937" timestamp="2026-10-17T18:01:14" status="ERROR">
+      <failure>No visible element found: "Getting to Fictional Hall"</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
