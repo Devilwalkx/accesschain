@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="1" time="42.953" timestamp="2026-10-17T17:40:08">
+    <testcase id="MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts" name="MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts" classname="MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts" file="/home/runner/work/accesschain/accesschain/android-tests/flows/02-main-task-demo.yaml" time="42.94" timestamp="2026-10-17T17:40:08" status="ERROR">
+      <failure>Assertion is false: "Getting to Fictional Hall" is visible</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

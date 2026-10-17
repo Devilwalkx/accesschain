@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="1" time="80.145" timestamp="2026-10-17T17:45:42">
+    <testcase id="INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked" name="INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked" classname="INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked" file="/home/runner/work/accesschain/accesschain/android-tests/flows/03-live-journey.yaml" time="80.125" timestamp="2026-10-17T17:45:42" status="ERROR">
+      <failure>No visible element found: "Correct entrance"</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

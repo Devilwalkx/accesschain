@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="6.031" timestamp="2026-10-17T17:48:17">
+    <testcase id="Open the longest screen (the demonstration journey) so scrolling can be measured" name="Open the longest screen (the demonstration journey) so scrolling can be measured" classname="Open the longest screen (the demonstration journey) so scrolling can be measured" file="/home/runner/work/accesschain/accesschain/android-tests/flows/10-open-long-screen.yaml" time="6.021" timestamp="2026-10-17T17:48:17" status="SUCCESS"/>
+  </testsuite>
+</testsuites>
