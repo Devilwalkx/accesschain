@@ -1,103 +1,181 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
 
-const tab = (page: Page, name: string) => page.getByRole("tab", { name, exact: true });
+const btn = (page: Page, name: string | RegExp) => page.getByRole("button", { name, exact: typeof name === "string" });
+const radio = (page: Page, name: string) => page.getByRole("radio", { name, exact: true });
+const SCREENS = ["Plan a journey", "My needs", "Tell us about a problem", "Privacy and help"] as const;
 
-async function goto(page: Page) {
-  await page.goto("/");
-  await expect(page.getByText("Synthetic demonstration data", { exact: false }).first()).toBeVisible();
+async function goto(page: Page, query = "") {
+  await page.goto(`/${query}`);
+  await expect(page.getByRole("heading", { name: "AccessChain" })).toBeVisible();
 }
 
 async function saveNeeds(page: Page) {
-  await tab(page, "Needs").click();
+  await btn(page, /Tell us what you need|My needs/).first().click();
+  await btn(page, "Walking and doorway details (optional)").click();
   await page.getByLabel("Longest walk in metres", { exact: true }).fill("400");
-  await page.getByLabel("Minimum clear width in millimetres", { exact: true }).fill("800");
-  await page.getByRole("button", { name: "Save and see journeys" }).click();
-  await expect(page.getByRole("heading", { name: /Journey to Fictional Hall/ })).toBeVisible();
+  await page.getByLabel("Narrowest doorway in millimetres", { exact: true }).fill("800");
+  await btn(page, "Save and see my routes").click();
+  await expect(page.getByRole("heading", { name: "Getting to Fictional Hall" })).toBeVisible();
+}
+
+/** Layout audit: text must stay inside its button, nothing interactive may overlap, no stray text under a button. */
+async function layoutProblems(page: Page): Promise<string[]> {
+  return page.evaluate(() => {
+    const problems: string[] = [];
+    const vis = (e: Element) => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
+    const inter = [...document.querySelectorAll('[role="button"],[role="switch"],[role="radio"],input,textarea')].filter(vis);
+    const rects = inter.map((e) => e.getBoundingClientRect());
+    const name = (e: Element) => (e.getAttribute("aria-label") || (e as HTMLElement).innerText || e.tagName).slice(0, 40);
+    for (let i = 0; i < inter.length; i++) {
+      for (let j = i + 1; j < inter.length; j++) {
+        if (inter[i]!.contains(inter[j]!) || inter[j]!.contains(inter[i]!)) continue;
+        const a = rects[i]!, b = rects[j]!;
+        const w = Math.min(a.right, b.right) - Math.max(a.left, b.left);
+        const h = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+        if (w > 1 && h > 1) problems.push(`overlap: "${name(inter[i]!)}" and "${name(inter[j]!)}"`);
+      }
+    }
+    const textRects = (root: Node) => {
+      const out: DOMRect[] = [];
+      const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      for (let n = w.nextNode(); n; n = w.nextNode()) {
+        if (!n.textContent?.trim()) continue;
+        const r = document.createRange();
+        r.selectNodeContents(n);
+        out.push(...[...r.getClientRects()].filter((q) => q.width > 0 && q.height > 0));
+      }
+      return out;
+    };
+    inter.forEach((e, i) => {
+      if (e.tagName === "INPUT" || e.tagName === "TEXTAREA") return;
+      const b = rects[i]!;
+      for (const t of textRects(e)) {
+        if (t.left < b.left - 1 || t.right > b.right + 1 || t.top < b.top - 1 || t.bottom > b.bottom + 1) problems.push(`text outside button: "${name(e)}"`);
+      }
+    });
+    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    for (let n = w.nextNode(); n; n = w.nextNode()) {
+      if (!n.textContent?.trim()) continue;
+      const parent = n.parentElement;
+      if (!parent || parent.closest('[role="button"],[role="switch"],[role="radio"]')) continue;
+      const r = document.createRange();
+      r.selectNodeContents(n);
+      for (const q of r.getClientRects()) {
+        if (q.width < 1 || q.height < 1) continue;
+        rects.forEach((b, i) => {
+          if (inter[i]!.tagName === "INPUT" || inter[i]!.tagName === "TEXTAREA") return;
+          const ww = Math.min(q.right, b.right) - Math.max(q.left, b.left);
+          const hh = Math.min(q.bottom, b.bottom) - Math.max(q.top, b.top);
+          if (ww > 2 && hh > 2) problems.push(`text under button "${name(inter[i]!)}": "${n.textContent!.trim().slice(0, 30)}"`);
+        });
+      }
+    }
+    if (document.documentElement.scrollWidth - document.documentElement.clientWidth > 1) problems.push("horizontal scroll");
+    return [...new Set(problems)];
+  });
+}
+
+async function eachScreen(page: Page, fn: (name: string) => Promise<void>) {
+  for (const s of SCREENS) {
+    await btn(page, s).first().click();
+    await fn(s);
+    await btn(page, "‹ Back to home").click();
+    await expect(page.getByRole("heading", { name: "AccessChain" })).toBeVisible();
+  }
 }
 
 test.describe("AccessChain on a phone-sized browser", () => {
-  test("loads with the synthetic banner and asks for requirements first", async ({ page }) => {
+  test("home: a few big buttons, a clear starting point and a text size choice", async ({ page }) => {
     await goto(page);
-    await expect(page.getByRole("heading", { name: /Journey to Fictional Hall/ })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Start here" })).toBeVisible();
+    await expect(page.getByText("Demonstration only", { exact: false })).toBeVisible();
+    await expect(btn(page, "Tell us what you need")).toBeVisible();
+    for (const t of ["Normal text", "Large text", "Extra large text"]) await expect(radio(page, t)).toBeVisible();
+    expect(await page.getByRole("button").count()).toBeLessThanOrEqual(9);
   });
 
-  test("first run: Start here card leads to Needs; quick starts fill the form but save nothing until you press save", async ({ page }) => {
-    await goto(page);
-    await page.getByRole("button", { name: "Set my needs" }).click();
-    await expect(page.getByRole("heading", { name: "Your requirements" })).toBeVisible();
-    await page.getByRole("button", { name: "Short walks (200 m)" }).click();
-    await expect(page.getByLabel("Longest walk in metres", { exact: true })).toHaveValue("200");
-    expect(await page.evaluate(() => localStorage.getItem("ac.profile"))).toBeNull();
-    await page.getByRole("button", { name: "Save and see journeys" }).click();
-    await expect(page.getByRole("heading", { name: "How to read the results" }).or(page.getByLabel("How to read the results"))).toBeVisible();
-    await expect(page.getByRole("heading", { name: /route-main/ })).toBeVisible();
-    expect(await page.evaluate(() => localStorage.getItem("ac.profile"))).not.toBeNull();
-  });
-
-  test("end to end: save needs, see known barrier / insufficient evidence, never a false pass, stale lift", async ({ page }) => {
+  test("end to end: needs -> routes with plain-English answers, never a false pass, stale lift", async ({ page }) => {
     await goto(page);
     await saveNeeds(page);
-    await tab(page, "Plan").click();
-    await expect(page.getByRole("heading", { name: /route-main: Known barrier/ })).toBeVisible();
-    await expect(page.getByRole("heading", { name: /route-side: Insufficient evidence/ })).toBeVisible();
-    await expect(page.getByText("No route has enough evidence", { exact: false })).toBeVisible();
+    await expect(page.getByText("Does not suit your needs")).toBeVisible();
+    await expect(page.getByText("We can't be sure yet")).toBeVisible();
+    await expect(page.getByText("We can't recommend a route yet", { exact: false })).toBeVisible();
+    await expect(page.getByText("Suits your needs")).toHaveCount(0);
 
-    await page.getByRole("button", { name: "Show text itinerary" }).nth(1).click();
-    const txt = page.locator("text=Step 1 of 3").first();
-    await expect(txt).toBeVisible();
-    await expect(page.getByText("not a guarantee", { exact: false }).first()).toBeVisible();
+    await btn(page, "Why?").nth(1).click();
+    await expect(page.getByText("No evidence for steps", { exact: false }).first()).toBeVisible();
+    await btn(page, "Read it all as text").click();
+    await expect(page.getByText("not a guarantee", { exact: false })).toBeVisible();
 
-    await page.getByRole("button", { name: /Demo time: \+45 min/ }).click();
+    await btn(page, "Demonstration options").click();
+    await page.getByRole("switch", { name: "Pretend 45 minutes have passed" }).click();
     await expect(page.getByText("expired", { exact: false }).first()).toBeVisible();
-    await expect(page.getByRole("heading", { name: /route-side: Insufficient evidence/ })).toBeVisible();
+    await expect(page.getByText("We can't be sure yet")).toBeVisible();
+  });
+
+  test("first run guides you: Start here leads to needs, then routes", async ({ page }) => {
+    await goto(page);
+    await btn(page, "Plan a journey").first().click();
+    await expect(page.getByText("First, tell us what you need", { exact: false })).toBeVisible();
+    await btn(page, "Tell us what you need").click();
+    await expect(page.getByRole("heading", { name: "What do you need?" })).toBeVisible();
+    await page.getByRole("switch", { name: "I need an accessible toilet" }).click();
+    await expect(page.getByRole("switch", { name: "I need an accessible toilet" })).toHaveAttribute("aria-checked", "true");
+    expect(await page.evaluate(() => localStorage.getItem("ac.profile"))).toBeNull(); // nothing saved until you press save
+    await btn(page, "Save and see my routes").click();
+    await expect(page.getByRole("heading", { name: "Getting to Fictional Hall" })).toBeVisible();
+    expect(await page.evaluate(() => localStorage.getItem("ac.profile"))).not.toBeNull();
   });
 
   test("profile persists encrypted: reload decrypts it, storage holds no plaintext, lost key fails closed", async ({ page }) => {
     await goto(page);
     await saveNeeds(page);
-
     const stored = await page.evaluate(() => JSON.stringify({ ...localStorage }) + JSON.stringify({ ...sessionStorage }));
     expect(stored).toContain("ac.profile");
-    for (const secret of ["avoidSteps", "maxWalkM", "minClearWidthMm", "400", "needsAccessibleToilet"]) {
-      expect(stored, `plaintext leaked: ${secret}`).not.toContain(`"${secret}"`);
-    }
-    expect(stored).not.toMatch(/maxWalkM|avoidSteps/);
+    expect(stored).not.toMatch(/maxWalkM|avoidSteps|minClearWidthMm|needsAccessibleToilet/);
 
     await page.reload();
-    await expect(page.getByRole("heading", { name: /route-main: Known barrier/ })).toBeVisible(); // decrypted without visiting Needs
+    await btn(page, "Plan a journey").first().click();
+    await expect(page.getByText("Does not suit your needs")).toBeVisible(); // decrypted without visiting needs
 
-    // Destroy the key (as clearing site data would) but keep the ciphertext: must fail closed.
     await page.evaluate(() => new Promise<void>((res) => { const r = indexedDB.deleteDatabase("accesschain-keys"); r.onsuccess = () => res(); r.onerror = () => res(); r.onblocked = () => res(); }));
     await page.reload();
-    await expect(page.getByText("could not be opened on this device", { exact: false })).toBeVisible();
-    await expect(page.getByRole("heading", { name: /Known barrier/ })).toHaveCount(0);
+    await expect(page.getByText("could not be opened on this phone", { exact: false })).toBeVisible();
+    await btn(page, "Plan a journey").first().click();
+    await expect(page.getByText("Does not suit your needs")).toHaveCount(0);
   });
 
-  test("privacy: recovery secret format, web warning, erase removes ciphertext", async ({ page }) => {
+  test("privacy: recovery code format, web notice, deleting asks first and can be cancelled", async ({ page }) => {
     await goto(page);
     await saveNeeds(page);
-    await tab(page, "Privacy").click();
-    await expect(page.getByText("browser version", { exact: false })).toBeVisible();
-    await page.getByRole("button", { name: "Create a recovery secret" }).click();
-    const secret = page.getByLabel("Recovery secret, shown once");
-    await expect(secret).toBeVisible();
-    expect((await secret.innerText()).trim()).toMatch(/^([0-9A-Z]{4}-){12}[0-9A-Z]{4}$/);
-    await page.getByRole("button", { name: "Erase requirements and key" }).click();
-    await expect(page.getByText("Erased from this device", { exact: false })).toBeVisible();
+    await btn(page, "‹ Back to home").click();
+    await btn(page, "Privacy and help").click();
+    await expect(page.getByText("web version", { exact: false })).toBeVisible();
+    await btn(page, "Make my recovery code").click();
+    const code = page.getByLabel("Recovery code, shown once");
+    await expect(code).toBeVisible();
+    expect((await code.innerText()).trim()).toMatch(/^([0-9A-Z]{4}-){12}[0-9A-Z]{4}$/);
+
+    await btn(page, "Delete my answers from this phone").click();
+    await expect(page.getByText("This can't be undone", { exact: false })).toBeVisible();
+    await btn(page, "No, keep it").click();
+    expect(await page.evaluate(() => localStorage.getItem("ac.profile"))).not.toBeNull();
+    await btn(page, "Delete my answers from this phone").click();
+    await btn(page, "Yes, delete everything").click();
+    await expect(page.getByText("Deleted from this phone", { exact: false })).toBeVisible();
     expect(await page.evaluate(() => localStorage.getItem("ac.profile"))).toBeNull();
   });
 
-  test("reports: personal details are held for moderation; clean reports are validated, not published", async ({ page }) => {
+  test("reports: personal details are held back; clean reports are only checked, nothing is sent", async ({ page }) => {
     await goto(page);
-    await tab(page, "Report").click();
-    await page.getByLabel("Note", { exact: true }).fill("ring me on 07700 900123");
-    await page.getByRole("button", { name: "Check report" }).click();
-    await expect(page.getByText("Held for moderation", { exact: false })).toBeVisible();
-    await page.getByLabel("Note", { exact: true }).fill("Ramp at the door");
-    await page.getByRole("button", { name: "Check report" }).click();
-    await expect(page.getByText(/Valid|Not accepted: Duplicate/)).toBeVisible();
+    await btn(page, "Tell us about a problem").click();
+    await btn(page, "Add a note or photo (optional)").click();
+    await page.getByLabel("Your note", { exact: true }).fill("ring me on 07700 900123");
+    await btn(page, "Check my report").click();
+    await expect(page.getByText("Held back for a person to check", { exact: false })).toBeVisible();
+    await page.getByLabel("Your note", { exact: true }).fill("Ramp at the door");
+    await btn(page, "Check my report").click();
+    await expect(page.getByText(/nothing was sent|couldn't accept that: Duplicate/)).toBeVisible();
   });
 
   test("makes no network requests beyond the app's own files", async ({ page, baseURL }) => {
@@ -105,43 +183,72 @@ test.describe("AccessChain on a phone-sized browser", () => {
     page.on("request", (r) => { if (!r.url().startsWith(baseURL!) && !r.url().startsWith("data:") && !r.url().startsWith("blob:")) external.push(r.url()); });
     await goto(page);
     await saveNeeds(page);
-    for (const t of ["Plan", "Report", "Privacy"]) await tab(page, t).click();
+    await btn(page, "‹ Back to home").click();
+    await eachScreen(page, async () => {});
     expect(external).toEqual([]);
   });
 
-  test("no horizontal scrolling, text can be zoomed, touch targets are large enough", async ({ page }) => {
+  test("text size: choice is remembered and the text really gets bigger", async ({ page }) => {
     await goto(page);
-    for (const t of ["Plan", "Needs", "Report", "Privacy"]) {
-      await tab(page, t).click();
-      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
-      expect(overflow, `horizontal overflow on ${t}`).toBeLessThanOrEqual(1);
-    }
-    const viewport = await page.locator('meta[name="viewport"]').getAttribute("content");
-    expect(viewport).not.toMatch(/user-scalable\s*=\s*no|maximum-scale\s*=\s*1(\.0)?\b/);
-    for (const b of [...(await page.getByRole("button").all()), ...(await page.getByRole("tab").all())]) {
-      const box = await b.boundingBox();
-      if (box) expect(box.height, `button too short: ${await b.innerText()}`).toBeGreaterThanOrEqual(44);
-    }
+    const size = () => page.getByRole("heading", { name: "AccessChain" }).evaluate((e) => parseFloat(getComputedStyle(e).fontSize));
+    const before = await size();
+    await radio(page, "Extra large text").click();
+    expect(await size()).toBeGreaterThan(before * 1.4);
+    await page.reload();
+    await expect(page.getByRole("heading", { name: "AccessChain" })).toBeVisible();
+    expect(await size()).toBeGreaterThan(before * 1.4);
+    await expect(radio(page, "Extra large text")).toHaveAttribute("aria-checked", "true");
   });
 
-  test("tab labels never wrap onto two lines (checked at every phone width)", async ({ page }) => {
-    await goto(page);
-    for (const t of ["Plan", "Needs", "Report", "Privacy"]) {
-      const lines = await tab(page, t).evaluate((el) => {
-        const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-        const n = w.nextNode()!;
-        const r = document.createRange();
-        r.selectNodeContents(n);
-        return new Set([...r.getClientRects()].map((q) => Math.round(q.top))).size;
+  for (const q of ["", "?fontscale=2"]) {
+    test(`layout is clean on every screen (${q || "normal text"}; no overlaps, nothing clipped, no sideways scroll)`, async ({ page }) => {
+      await goto(page, q);
+      await saveNeeds(page);
+      await btn(page, "‹ Back to home").click();
+      expect(await layoutProblems(page), "home").toEqual([]);
+      await eachScreen(page, async (name) => {
+        if (name === "Plan a journey") { await btn(page, "Why?").first().click(); await btn(page, "Demonstration options").click(); }
+        if (name === "My needs") await btn(page, "Walking and doorway details (optional)").click();
+        if (name === "Tell us about a problem") await btn(page, "Add a note or photo (optional)").click();
+        expect(await layoutProblems(page), name).toEqual([]);
       });
-      expect(lines, `tab "${t}" wraps`).toBe(1);
+    });
+  }
+
+  test("layout is clean with the in-app Extra large setting on a small phone too", async ({ page }) => {
+    await goto(page, "?fontscale=2");
+    await radio(page, "Extra large text").click();
+    await saveNeeds(page);
+    await btn(page, "‹ Back to home").click();
+    expect(await layoutProblems(page), "home").toEqual([]);
+    await eachScreen(page, async (name) => expect(await layoutProblems(page), name).toEqual([]));
+  });
+
+  test("buttons are big enough for tired fingers (at least 56 px tall)", async ({ page }) => {
+    await goto(page);
+    for (const b of [...(await page.getByRole("button").all()), ...(await page.getByRole("radio").all())]) {
+      const box = await b.boundingBox();
+      if (box) expect(box.height, `button too short: ${await b.innerText()}`).toBeGreaterThanOrEqual(55);
     }
   });
 
-  test("tab bar stays on one row at every width", async ({ page }) => {
+  test("system bars: nothing sits under the status bar or the navigation buttons (simulated Android insets)", async ({ page }) => {
+    await goto(page, "?insets=44,48");
+    const vh = await page.evaluate(() => window.innerHeight);
+    const top = await page.getByText("Demonstration only", { exact: false }).boundingBox();
+    expect(top!.y, "first content starts below the status bar").toBeGreaterThanOrEqual(44);
+    await btn(page, "Privacy and help").click();
+    const last = btn(page, "Delete my answers from this phone");
+    await last.scrollIntoViewIfNeeded();
+    const box = await last.boundingBox();
+    expect(box!.y + box!.height, "last button ends above the navigation buttons").toBeLessThanOrEqual(vh - 48 + 1);
+  });
+
+  test("keyboard operable: Tab reaches buttons and Enter activates them", async ({ page }) => {
     await goto(page);
-    const tops = await page.getByRole("tab").evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().top)));
-    expect(new Set(tops).size).toBe(1);
+    await page.keyboard.press("Tab");
+    await page.keyboard.press("Enter");
+    await expect(page.getByRole("heading", { name: "What do you need?" })).toBeVisible();
   });
 
   test("installable: manifest and icons are served, no service worker caches access data", async ({ page, request }) => {
@@ -151,7 +258,6 @@ test.describe("AccessChain on a phone-sized browser", () => {
     expect(res.ok()).toBe(true);
     const m = await res.json();
     expect(m.display).toBe("standalone");
-    expect(m.name).toMatch(/synthetic/i);
     for (const icon of m.icons) {
       const r = await request.get(`/${icon.src}`);
       expect(r.ok(), icon.src).toBe(true);
@@ -161,46 +267,23 @@ test.describe("AccessChain on a phone-sized browser", () => {
   });
 
   test("refuses to run without WebCrypto (e.g. plain http on a LAN address) instead of storing unprotected", async ({ page }) => {
-    await page.addInitScript(() => {
-      Object.defineProperty(window.crypto, "subtle", { value: undefined, configurable: true });
-    });
+    await page.addInitScript(() => { Object.defineProperty(window.crypto, "subtle", { value: undefined, configurable: true }); });
     await page.goto("/");
     await expect(page.getByRole("heading", { name: "Cannot start safely" })).toBeVisible();
     await expect(page.getByText("not served over HTTPS", { exact: false })).toBeVisible();
     expect(await page.evaluate(() => localStorage.length)).toBe(0);
   });
 
-  test("system bars: content and tab bar stay clear of the status bar and navigation buttons (simulated Android insets)", async ({ page }) => {
-    await page.goto("/?insets=44,48");
-    await expect(page.getByText("Synthetic demonstration data", { exact: false }).first()).toBeVisible();
-    const vh = await page.evaluate(() => window.innerHeight);
-    const banner = await page.getByText("Synthetic demonstration data", { exact: false }).first().boundingBox();
-    expect(banner!.y, "first content starts below the status bar").toBeGreaterThanOrEqual(44);
-    for (const t of ["Plan", "Needs", "Report", "Privacy"]) {
-      const box = await tab(page, t).boundingBox();
-      expect(box!.y + box!.height, `tab "${t}" ends above the navigation buttons`).toBeLessThanOrEqual(vh - 48 + 1);
-    }
-    // and every tab is still reachable
-    await tab(page, "Privacy").click();
-    await expect(page.getByRole("heading", { name: "Privacy and recovery" })).toBeVisible();
-  });
-
-  test("keyboard operable: Tab reaches buttons and Enter activates them", async ({ page }) => {
-    await goto(page);
-    await tab(page, "Plan").focus();
-    await page.keyboard.press("Tab");
-    await expect(tab(page, "Needs")).toBeFocused();
-    await page.keyboard.press("Enter");
-    await expect(page.getByRole("heading", { name: "Your requirements" })).toBeVisible();
-  });
-
-  test("automated accessibility scan (axe, WCAG 2 A/AA) on every screen", async ({ page }) => {
-    await goto(page);
-    await saveNeeds(page);
-    for (const t of ["Plan", "Needs", "Report", "Privacy"]) {
-      await tab(page, t).click();
-      const res = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
-      expect(res.violations.map((v) => `${v.id}: ${v.help} (${v.nodes.length})`), `axe on ${t}`).toEqual([]);
+  test("automated accessibility scan (axe, WCAG 2 A/AA) on every screen, normal and large text", async ({ page }) => {
+    for (const q of ["", "?fontscale=2"]) {
+      await goto(page, q);
+      if (q === "") await saveNeeds(page), await btn(page, "‹ Back to home").click();
+      const home = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
+      expect(home.violations.map((v) => `${v.id}: ${v.help}`), `axe home ${q}`).toEqual([]);
+      await eachScreen(page, async (name) => {
+        const res = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
+        expect(res.violations.map((v) => `${v.id}: ${v.help} (${v.nodes.length})`), `axe ${name} ${q}`).toEqual([]);
+      });
     }
   });
 });

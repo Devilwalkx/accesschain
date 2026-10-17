@@ -2,47 +2,62 @@ import React, { useState } from "react";
 import { Platform, ScrollView, Text } from "react-native";
 import { generateRecoverySecret } from "@accesschain/core";
 import type { ProfileRepo } from "../profileRepo";
-import { Button } from "../ui";
-import { s } from "../theme";
+import { BackBar, Button, ConfirmCard } from "../ui";
+import { useS } from "../settings";
 
-export function PrivacyScreen({ repo, onErased }: { repo: ProfileRepo; onErased: () => void }) {
+export function PrivacyScreen({ repo, onErased, onHome }: { repo: ProfileRepo; onErased: () => void; onHome: () => void }) {
+  const s = useS();
   const [secret, setSecret] = useState<string | null>(null);
   const [msg, setMsg] = useState("");
+  const [asking, setAsking] = useState(false);
+  const web = Platform.OS === "web";
 
   return (
-    <ScrollView style={s.screen}>
-      <Text style={s.h1} accessibilityRole="header">Privacy and recovery</Text>
-      <Text style={s.p}>Your requirements are encrypted on this device. {Platform.OS === "web" ? "The key is kept in this browser's storage." : "The key is held in the phone's secure storage."} We do not hold that key and cannot read your requirements or reset access to them.</Text>
-      {Platform.OS === "web" && (
+    <ScrollView style={s.screen} contentContainerStyle={s.content} accessibilityLabel="Privacy and help">
+      <BackBar onHome={onHome} />
+      <Text style={s.h1} accessibilityRole="header">Privacy and help</Text>
+      <Text style={s.p}>What you tell us about your needs stays on this phone, locked with a key only this phone holds. We can't read it.</Text>
+      {web && (
         <Text style={s.p} accessibilityRole="alert">
-          You are using the browser version. Browsers have no hardware-backed key storage, so protection is weaker than the phone app: the key is kept in this browser's storage and clearing site data deletes it permanently. Create a recovery secret and keep it safe.
+          You are using the web version. Web browsers protect the key less well than the phone app, and clearing your browser data deletes it for good.
         </Text>
       )}
-      <Text style={s.h2} accessibilityRole="header">Recovery secret</Text>
-      <Text style={s.p}>If you lose this phone and have no recovery secret, your saved requirements are permanently unrecoverable. Write the secret down and keep it somewhere safe. Anyone who has it can decrypt a backup.</Text>
+
+      <Text style={s.h2} accessibilityRole="header">Recovery code</Text>
+      <Text style={s.p}>If you lose this phone, a recovery code is the only way to get your answers back. Write it down and keep it safe.</Text>
       <Button
-        label="Create a recovery secret"
+        label="Make my recovery code"
         onPress={async () => {
           const { secret: raw, display } = generateRecoverySecret();
-          await repo.recoveryBlob(raw); // the blob would be uploaded; the secret never is
+          await repo.recoveryBlob(raw);
           setSecret(display);
-          setMsg("Shown once. It is not stored by the app.");
+          setMsg("This is shown once. The app does not keep it.");
         }}
       />
-      {secret && <Text style={s.mono} selectable accessibilityLabel="Recovery secret, shown once">{secret}</Text>}
+      {secret && <Text style={s.mono} selectable accessibilityLabel="Recovery code, shown once">{secret}</Text>}
       {msg !== "" && <Text style={s.muted}>{msg}</Text>}
-      <Text style={s.h2} accessibilityRole="header">What leaves your phone</Text>
-      <Text style={s.p}>Nothing in this build: it uses synthetic data and has no server. In a real service, a route lookup would send an approximate start point and the venue to a route provider, which is not private from that provider.</Text>
-      <Text style={s.h2} accessibilityRole="header">Delete everything on this device</Text>
-      <Button
-        label="Erase requirements and key"
-        onPress={async () => {
-          await repo.erase();
-          setSecret(null);
-          setMsg("Erased from this device. Copies you exported elsewhere are not affected.");
-          onErased();
-        }}
-      />
+
+      <Text style={s.h2} accessibilityRole="header">Good to know</Text>
+      <Text style={s.p}>In this demonstration nothing leaves your phone. A real service would send a rough start point and the venue name to a route provider, which is not private from that provider.</Text>
+
+      <Text style={s.h2} accessibilityRole="header">Delete everything</Text>
+      {!asking ? (
+        <Button variant="danger" label="Delete my answers from this phone" onPress={() => setAsking(true)} />
+      ) : (
+        <ConfirmCard
+          question="Delete your needs and your key from this phone? This can't be undone."
+          yes="Yes, delete everything"
+          no="No, keep it"
+          onNo={() => setAsking(false)}
+          onYes={async () => {
+            await repo.erase();
+            setSecret(null);
+            setAsking(false);
+            setMsg("Deleted from this phone. Copies you saved elsewhere are not affected.");
+            onErased();
+          }}
+        />
+      )}
     </ScrollView>
   );
 }

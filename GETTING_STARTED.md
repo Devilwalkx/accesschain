@@ -23,17 +23,20 @@ You only need a phone and a GitHub login. You never have to use code, a command 
 
 ## Part 2: Use the app (about two minutes)
 
-1. On the **Plan** tab you will see **"Start here"**. Tap **Set my needs**.
-2. On **Needs**, tap a **Quick start** (for example **No steps**) or switch things on and off yourself. You can change anything. Nothing leaves your phone.
-3. Tap **Save and see journeys**.
-4. You will see two routes to the fictional hall:
-   - **route-main: Known barrier.** The main entrance has steps, so it does not fit "No steps".
-   - **route-side: Insufficient evidence.** The side entrance looks fine, but nobody has checked the pavement on the way. The app does **not** guess. It tells you it doesn't know.
-5. Tap **Show text itinerary** under a route to read each step, who reported it and how old the information is.
-6. Tap **Demo time: +45 min (lift feed expired)**. The station lift's live status is now out of date, so the answer changes to *insufficient evidence* instead of showing an old "all clear". This is the main idea of the app.
-7. Other tabs:
-   - **Report**: practise sending an observation. Try typing a phone number in the note and tap **Check report**; the app holds it back to protect your privacy. Nothing is sent anywhere.
-   - **Privacy**: create a **recovery secret** (write it down; it is shown once) or erase everything from the phone.
+The app is designed to be calm and simple: one thing at a time, big buttons, plain words. You can't get lost: every screen has a big **‹ Back to home** button at the top (and the phone's own back button also goes Home).
+
+1. On **Home**, tap **Tell us what you need**.
+2. Tap anything that applies, for example **I can't manage steps**. Each line shows ☑ Yes or ☐ No. Tap **Save and see my routes**.
+3. You will see two routes to the fictional hall, each with a clear answer:
+   - **✖ Does not suit your needs** (the main entrance has steps)
+   - **? We can't be sure yet** (the side entrance looks fine, but nobody has checked the pavement, so the app says so instead of guessing)
+   - **✔ Suits your needs** would appear when everything you asked for has been checked recently.
+4. Tap **Why?** under a route to see the reasons in plain sentences.
+5. Want everything bigger? On Home, under **Text size**, choose **Large text** or **Extra large text**. The app remembers.
+6. Want to see the main idea? Tap **Demonstration options**, then switch on **Pretend 45 minutes have passed**. The station lift's information is now out of date, so the answer changes to "We can't be sure yet" instead of showing an old all-clear.
+7. Other buttons on Home:
+   - **Tell us about a problem**: practise reporting what you saw. Try typing a phone number in the note and tap **Check my report**: the app holds it back to protect your privacy. Nothing is sent anywhere.
+   - **Privacy and help**: make a **recovery code** (shown once, write it down) or **delete everything** from the phone (it asks you to confirm first).
 
 ## Part 3: Getting a newer version
 

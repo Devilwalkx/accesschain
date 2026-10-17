@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Text, View } from "react-native";
+import { BackHandler, Platform, Text, View } from "react-native";
 import { SafeAreaInsetsContext, SafeAreaProvider, SafeAreaView, initialWindowMetrics, type EdgeInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import type { RequirementsProfile } from "@accesschain/core";
@@ -11,11 +11,10 @@ import { PlanScreen } from "./src/screens/PlanScreen";
 import { NeedsScreen } from "./src/screens/NeedsScreen";
 import { ReportScreen } from "./src/screens/ReportScreen";
 import { PrivacyScreen } from "./src/screens/PrivacyScreen";
-import { Button } from "./src/ui";
-import { s } from "./src/theme";
+import { TextSizeProvider, useS } from "./src/settings";
+import { HomeScreen } from "./src/screens/HomeScreen";
 
-type Tab = "plan" | "needs" | "report" | "privacy";
-const TABS: Array<[Tab, string]> = [["plan", "Plan"], ["needs", "Needs"], ["report", "Report"], ["privacy", "Privacy"]];
+type Screen = "home" | "plan" | "needs" | "report" | "privacy";
 
 let randomError: string | null = platformBlocker();
 if (!randomError) {
@@ -55,43 +54,62 @@ export default function App() {
 }
 
 function Root() {
-  const [tab, setTab] = useState<Tab>("plan");
+  return (
+    <TextSizeProvider>
+      <Shell />
+    </TextSizeProvider>
+  );
+}
+
+function Shell() {
+  const s = useS();
+  const [screen, setScreen] = useState<Screen>("home");
   const [profile, setProfile] = useState<RequirementsProfile | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   // Local demo account id; a real build derives this from the authenticated account.
   const repo = useMemo(() => new ProfileRepo(expoKeyStore, "local-demo-account"), []);
+  const home = () => setScreen("home");
 
   useEffect(() => {
     if (randomError) return;
-    repo.load().then(setProfile).catch(() => setLoadError("Your saved requirements could not be opened on this device. Recovery may be needed."));
+    repo.load().then(setProfile).catch(() => setLoadError("Your saved answers could not be opened on this phone. Recovery may be needed."));
   }, [repo]);
+
+  // Android back button: go to Home first, then leave the app.
+  useEffect(() => {
+    if (Platform.OS === "web") return;
+    const sub = BackHandler.addEventListener("hardwareBackPress", () => {
+      if (screen !== "home") {
+        setScreen("home");
+        return true;
+      }
+      return false;
+    });
+    return () => sub.remove();
+  }, [screen]);
 
   if (randomError) {
     return (
       <SafeAreaView style={s.screen} edges={["top", "bottom", "left", "right"]}>
-        <Text style={s.h1} accessibilityRole="header">Cannot start safely</Text>
-        <Text style={s.p}>Private storage is disabled on this device: {randomError}</Text>
+        <View style={s.content}>
+          <Text style={s.h1} accessibilityRole="header">Cannot start safely</Text>
+          <Text style={s.p}>Private storage is disabled on this device: {randomError}</Text>
+        </View>
       </SafeAreaView>
     );
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#ffffff" }} edges={["top", "bottom", "left", "right"]}>
-      <StatusBar style="auto" />
+    <SafeAreaView style={s.screen} edges={["top", "bottom", "left", "right"]}>
+      <StatusBar style="dark" />
       {loadError && <Text style={s.p} accessibilityRole="alert">{loadError}</Text>}
-      <View style={{ flex: 1 }}>
-        {tab === "plan" && <PlanScreen profile={profile} onSetNeeds={() => setTab("needs")} />}
-        {tab === "needs" && <NeedsScreen profile={profile} onSave={async (p) => { await repo.save(p); setProfile(p); }} onSaved={() => setTab("plan")} />}
-        {tab === "report" && <ReportScreen />}
-        {tab === "privacy" && <PrivacyScreen repo={repo} onErased={() => setProfile(null)} />}
-      </View>
-      <View accessibilityRole="tablist" style={{ flexDirection: "row", paddingHorizontal: 4 }}>
-        {TABS.map(([id, text]) => (
-          <View key={id} style={{ flex: 1, minWidth: 0 }}>
-            <Button role="tab" label={text} selected={tab === id} onPress={() => setTab(id)} />
-          </View>
-        ))}
-      </View>
+      {screen === "home" && <HomeScreen hasNeeds={!!profile} go={setScreen} />}
+      {screen === "plan" && <PlanScreen profile={profile} onHome={home} onNeeds={() => setScreen("needs")} />}
+      {screen === "needs" && (
+        <NeedsScreen profile={profile} onHome={home} onSave={async (p) => { await repo.save(p); setProfile(p); }} onSaved={() => setScreen("plan")} />
+      )}
+      {screen === "report" && <ReportScreen onHome={home} />}
+      {screen === "privacy" && <PrivacyScreen repo={repo} onHome={home} onErased={() => setProfile(null)} />}
     </SafeAreaView>
   );
 }

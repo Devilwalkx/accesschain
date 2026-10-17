@@ -25,7 +25,7 @@ Personalised access-information journey planner for **one London area and 50 fie
 ```bash
 npm install
 npm test            # 67 automated tests (core + database)
-npm run e2e         # 42 browser tests on phone-sized viewports (needs Chromium)
+npm run e2e         # 51 browser tests on phone-sized viewports (needs Chromium)
 npm run typecheck
 npm run demo        # regenerate docs/DEMO.md
 cd apps/mobile && npx expo export --platform android   # bundling check (no device needed)

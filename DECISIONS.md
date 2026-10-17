@@ -50,3 +50,6 @@ Browsers have no Keychain/Keystore. The web client keeps the content key in Inde
 
 ## D-017 Ciphertext in localStorage on web
 Only ciphertext envelopes and non-secrets go in `localStorage`; keys never do. An e2e test fails if plaintext profile fields appear there (and was verified to fail when one was deliberately leaked).
+
+## D-018 Senior-friendly interface (AccessChain only)
+AccessChain is intended for older people as well as everyone else, so: one level of navigation (Home + Back), no tab bar; large type and generous targets; in-app text size plus honouring the system font size; plain words ("Does not suit your needs", "We can't be sure yet") with a symbol and colour, never colour alone; detail behind "Why?"; confirmation for destructive actions; no jargon on the main path. The honest three-state result is unchanged (unknown is never a pass); only the wording changed. Accessibility is validated by axe and a layout audit in a desktop browser; real testing with older users and screen-reader users has not happened and is still required.
