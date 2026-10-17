@@ -6,16 +6,42 @@
     "orientation": "default",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "bundleIdentifier": "invalid.placeholder.accesschain",
-      "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "Optional: use your current location as the start of a journey. It is only read when you tap the button and is not tracked in the background."
-      }
+      "bundleIdentifier": "invalid.placeholder.accesschain"
     },
     "android": {
       "package": "invalid.placeholder.accesschain",
-      "permissions": ["ACCESS_COARSE_LOCATION"],
-      "blockedPermissions": ["ACCESS_BACKGROUND_LOCATION", "ACCESS_FINE_LOCATION"]
+      "permissions": [
+        "ACCESS_COARSE_LOCATION"
+      ],
+      "blockedPermissions": [
+        "ACCESS_BACKGROUND_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
-    "plugins": ["expo-secure-store"]
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Choose a photo to attach to your report. Metadata is removed before it is used.",
+          "cameraPermission": false,
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Optional: use your current location as the start of a journey. It is only read when you tap the button and is not tracked in the background.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false,
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false,
+          "isAndroidForegroundServiceEnabled": false
+        }
+      ]
+    ]
   }
 }
