@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="18.562" timestamp="2026-10-17T17:14:14">
+    <testcase id="System Back steps backwards through the journey flow, then Home, then leaves the app" name="System Back steps backwards through the journey flow, then Home, then leaves the app" classname="System Back steps backwards through the journey flow, then Home, then leaves the app" file="/home/runner/work/accesschain/accesschain/android-tests/flows/04-back-navigation.yaml" time="18.545" timestamp="2026-10-17T17:14:14" status="SUCCESS"/>
+  </testsuite>
+</testsuites>

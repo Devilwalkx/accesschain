@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="1" time="25.794" timestamp="2026-10-17T17:20:13">
+    <testcase id="Open the longest screen (the demonstration journey) so scrolling can be measured" name="Open the longest screen (the demonstration journey) so scrolling can be measured" classname="Open the longest screen (the demonstration journey) so scrolling can be measured" file="/home/runner/work/accesschain/accesschain/android-tests/flows/10-open-long-screen.yaml" time="25.782" timestamp="2026-10-17T17:20:13" status="ERROR">
+      <failure>Assertion is false: "Getting to Fictional Hall" is visible</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

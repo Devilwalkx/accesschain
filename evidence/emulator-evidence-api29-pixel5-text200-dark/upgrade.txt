@@ -1,0 +1,1 @@
+UPGRADE: NOT TESTED. The previous published APK does not have application id app.devilwalkx.accesschain (install said: Performing Streamed Install Success ).
