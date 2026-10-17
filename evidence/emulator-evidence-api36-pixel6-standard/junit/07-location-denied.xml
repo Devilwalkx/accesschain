@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="1" time="30.441" timestamp="2026-10-17T17:42:05">
+    <testcase id="INFORMATIONAL - location permission refused (also permanently), a clear message and a way forward" name="INFORMATIONAL - location permission refused (also permanently), a clear message and a way forward" classname="INFORMATIONAL - location permission refused (also permanently), a clear message and a way forward" file="/home/runner/work/accesschain/accesschain/android-tests/flows/07-location-denied.yaml" time="30.415" timestamp="2026-10-17T17:42:05" status="ERROR">
+      <failure>Assertion is false: "Your phone will ask permission once.*" is visible</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,98 @@
+== upgrade check
+UPGRADE: NOT TESTED. The previous published APK does not have application id app.devilwalkx.accesschain (install said: Performing Streamed Install Success ).
+== install
+Performing Streamed Install
+Success
+== baseline launch
+== flow 02-main-task-demo.yaml
+Anonymous analytics enabled. To opt out, set MAESTRO_CLI_NO_ANALYTICS environment variable to any value before running Maestro.
+
+
+Waiting for flows to complete...
+[Failed] MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts (47s) (Assertion is false: "Getting to Fictional Hall" is visible)
+
+1/1 Flow Failed
+
+== FLOW FAILED: 02-main-task-demo.yaml
+== flow 01-first-run.yaml
+
+Waiting for flows to complete...
+[Passed] First run shows one clear start and no demonstration label (6s)
+
+1/1 Flow Passed in 6s
+
+== flow 04-back-navigation.yaml
+
+Waiting for flows to complete...
+[Failed] System Back steps backwards through the journey flow, then Home, then leaves the app (38s) (Assertion is false: "Where are you starting from\?" is visible)
+
+1/1 Flow Failed
+
+== FLOW FAILED: 04-back-navigation.yaml
+== flow 05-keyboard-needs.yaml
+
+Waiting for flows to complete...
+[Failed] With the keyboard open the field and the Save button stay reachable (36s) (Element not found: Id matching regex: field-longest-walk-in-metres)
+
+1/1 Flow Failed
+
+== FLOW FAILED: 05-keyboard-needs.yaml
+== flow 06-settings-display.yaml
+
+Waiting for flows to complete...
+[Passed] Settings - colours, text size and the build identity (25s)
+
+1/1 Flow Passed in 25s
+
+== info flow 03-live-journey.yaml
+
+Waiting for flows to complete...
+[Failed] INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked (39s) (Assertion is false: "Where do you want to go\?" is visible)
+
+1/1 Flow Failed
+
+== INFORMATIONAL FLOW DID NOT PASS: 03-live-journey.yaml
+== info flow 07-location-denied.yaml
+
+Waiting for flows to complete...
+[Failed] INFORMATIONAL - location permission refused (also permanently), a clear message and a way forward (37s) (Assertion is false: "Your phone will ask permission once.*" is visible)
+
+1/1 Flow Failed
+
+== INFORMATIONAL FLOW DID NOT PASS: 07-location-denied.yaml
+== offline live flow
+== info flow 03-live-journey.yaml
+
+Waiting for flows to complete...
+[Failed] INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked (41s) (Assertion is false: "Where do you want to go\?" is visible)
+
+1/1 Flow Failed
+
+== INFORMATIONAL FLOW DID NOT PASS: 03-live-journey.yaml
+== flow 08-profile-survives-kill-write.yaml
+
+Waiting for flows to complete...
+[Failed] Save needs and choose the demonstration, then leave the app (the script kills the process) (42s) (Assertion is false: "Getting to Fictional Hall" is visible)
+
+1/1 Flow Failed
+
+== FLOW FAILED: 08-profile-survives-kill-write.yaml
+== flow 09-profile-survives-kill-check.yaml
+
+Waiting for flows to complete...
+[Failed] After process death the saved needs and the chosen mode are still there (21s) (Assertion is false: "My needs" is visible)
+
+1/1 Flow Failed
+
+== FLOW FAILED: 09-profile-survives-kill-check.yaml
+== rotation
+== startup
+== memory and scroll
+== flow 10-open-long-screen.yaml
+
+Waiting for flows to complete...
+[Passed] Open the longest screen (the demonstration journey) so scrolling can be measured (10s)
+
+1/1 Flow Passed in 10s
+
+== done fail=1
