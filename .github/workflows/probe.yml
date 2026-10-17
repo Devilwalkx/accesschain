@@ -1,6 +1,6 @@
 name: probe-live-apis
 
-# Manual, read-only probe of public data sources (round 4: exact trimmed samples for adapter tests).
+# Manual, read-only probe of public data sources (round 5: one exact journey sample + start station ids).
 on:
   workflow_dispatch:
 
@@ -14,44 +14,23 @@ jobs:
     env:
       UA: "AccessChainProbe/0.1 (research prototype; contact via GitHub Devilwalkx/accesschain)"
     steps:
-      - name: Q1 trimmed step-free journey sample (Southwark station coords to Tate Modern)
+      - name: R1 exact trimmed journey (London Bridge tube to Tate Modern, step-free)
         continue-on-error: true
         run: |
-          u="https://api.tfl.gov.uk/Journey/JourneyResults/51.5042,-0.1053/to/51.5074,-0.0993?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow"
+          u="https://api.tfl.gov.uk/Journey/JourneyResults/940GZZLULNB/to/51.5074,-0.0993?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow"
           curl -sS -m 60 -A "$UA" "$u" -o j.json -w "HTTP %{http_code}\n"
-          jq -c '{journeys:[.journeys[0:2][] | {startDateTime, arrivalDateTime, duration, legs:[.legs[] | {mode:.mode.id, distance, duration, isDisrupted, instruction:{summary:.instruction.summary, steps:[.instruction.steps[]? | {description, streetName, distance, turnDirection, trackType}]}, departurePoint:{commonName, naptanId, hubNaptanCode, icsCode, lat, lon}, arrivalPoint:{commonName, naptanId, hubNaptanCode, icsCode, lat, lon}, obstacles:[.obstacles[]?|{type,incline,position,stopId}], disruptions:[.disruptions[]?|{category,description:(.description|.[0:80])}]}]}]}' j.json | head -c 5000
-      - name: Q2 HTTP 300 disambiguation body (London Bridge hub as origin)
+          echo "FIXTURE_BEGIN"
+          jq -c '{journeys:[.journeys[0:1][] | {startDateTime, arrivalDateTime, duration, legs:[.legs[] | {mode:{id:.mode.id}, distance, duration, isDisrupted, instruction:{summary:.instruction.summary, steps:[.instruction.steps[0:2][]? | {description, streetName, distance, turnDirection, trackType}]}, departurePoint:{commonName, naptanId, hubNaptanCode, icsCode, lat, lon}, arrivalPoint:{commonName, naptanId, hubNaptanCode, icsCode, lat, lon}, obstacles:[.obstacles[]?|{type,incline,position,stopId}], disruptions:[.disruptions[]?|{category,description:(.description|.[0:80])}]}]}]}' j.json
+          echo "FIXTURE_END"
+      - name: R2 not-found body when no step-free journey exists
         continue-on-error: true
         run: |
-          u="https://api.tfl.gov.uk/Journey/JourneyResults/HUBLBG/to/51.5074,-0.0993?accessibilityPreference=StepFreeToVehicle"
-          curl -sS -m 60 -A "$UA" "$u" -o d.json -w "HTTP %{http_code}\n"
-          jq -c '{keys:keys, from:(.fromLocationDisambiguation|{matchStatus, opts:[.disambiguationOptions[0:3][]?|{parameterValue, place:{commonName:.place.commonName, naptanId:.place.naptanId, lat:.place.lat, lon:.place.lon}, matchQuality}]}), to:(.toLocationDisambiguation.matchStatus)}' d.json | head -c 1800
-      - name: Q3 origin stations by coordinates (names resolved by TfL)
+          curl -sS -m 60 -A "$UA" "https://api.tfl.gov.uk/Journey/JourneyResults/51.5042,-0.1053/to/51.5074,-0.0993?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow" -o e.json -w "HTTP %{http_code}\n"
+          jq -c '{type:.["$type"], exceptionType, httpStatusCode, message, relativeUri}' e.json
+      - name: R3 start station ids
         continue-on-error: true
         run: |
-          for pair in "Waterloo:51.5031,-0.1132" "London Bridge:51.5050,-0.0864" "Southwark:51.5042,-0.1053" "Blackfriars:51.5121,-0.1031" "Borough:51.5011,-0.0943"; do
-            n="${pair%%:*}"; c="${pair##*:}"
-            curl -sS -m 60 -A "$UA" "https://api.tfl.gov.uk/Journey/JourneyResults/$c/to/51.5074,-0.0993?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow" -o j.json -w "$n HTTP %{http_code} "
-            jq -c 'if .journeys then {n:(.journeys|length), best:[.journeys[0].legs[]|{m:.mode.id,d:.distance,ob:([.obstacles[]?.type]|unique)}], from:.journeys[0].legs[0].departurePoint.commonName} else {err:"no journeys", keys:keys} end' j.json
-          done
-      - name: Q4 lift feed station id formats
-        continue-on-error: true
-        run: |
-          curl -sS -m 40 -A "$UA" "https://api.tfl.gov.uk/Disruptions/Lifts/v2" -o l.json -w "HTTP %{http_code}\n"
-          jq -c '[.[]|.stationUniqueId]' l.json
-      - name: Q5 OSM edit timestamps via the OSM API (needed for data age)
-        continue-on-error: true
-        run: |
-          for p in way/24642569 relation/1239793 way/8614496 way/24282400; do
-            echo "== $p"; curl -sS -m 30 -A "$UA" -D h.txt "https://api.openstreetmap.org/api/0.6/$p.json" -o o.json -w "HTTP %{http_code}\n"
-            grep -i "access-control-allow-origin" h.txt || echo "(no ACAO header)"
-            jq -c '.elements[0] | {type,id,version,timestamp,wc:.tags.wheelchair,desc:.tags["wheelchair:description"],tw:.tags["toilets:wheelchair"]}' o.json
-          done
-      - name: Q6 more South Bank venue names via Nominatim
-        continue-on-error: true
-        run: |
-          for name in "National Theatre" "Southwark Cathedral" "Royal Festival Hall" "BFI Southbank" "Hayward Gallery" "The Old Vic" "Borough Market" "Science Gallery London" "Shakespeare's Globe"; do
-            curl -sS -m 30 -A "$UA" -G "https://nominatim.openstreetmap.org/search" --data-urlencode "q=$name" --data-urlencode "format=jsonv2" --data-urlencode "extratags=1" --data-urlencode "limit=1" --data-urlencode "viewbox=-0.25,51.60,0.10,51.40" --data-urlencode "bounded=1" -o n.json
-            jq -c --arg q "$name" '.[0] // {} | {q:$q, name, type, osm:"\(.osm_type)/\(.osm_id)", lat, lon, wc:.extratags.wheelchair, tw:.extratags["toilets:wheelchair"], desc:(.extratags["wheelchair:description"]|.[0:70]), checked:.extratags["check_date:wheelchair"]}' n.json
-            sleep 1.2
+          for id in 940GZZLUWLO 940GZZLULNB 940GZZLUSWK 940GZZLUBKF 940GZZLUBOR 940GZZLUWLO; do
+            curl -sS -m 60 -A "$UA" "https://api.tfl.gov.uk/Journey/JourneyResults/$id/to/51.5074,-0.0993?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow" -o j.json -w "$id HTTP %{http_code} "
+            jq -c 'if .journeys then {n:(.journeys|length), from:.journeys[0].legs[0].departurePoint.commonName, legs:[.journeys[0].legs[]|.mode.id]} else {msg:(.message // .httpStatusCode // "300?")} end' j.json
           done
