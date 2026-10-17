@@ -7,24 +7,24 @@ name: Save needs and choose the demonstration, then leave the app (the script ki
     element: "Tell us what you need"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Tell us what you need"
 - scrollUntilVisible:
     element: "Save and see my routes"
     direction: DOWN
     timeout: 60000
-    speed: 85
+    speed: 30
 - tapOn: "Save and see my routes"
 - scrollUntilVisible:
     element: "No, use the demonstration instead"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "No, use the demonstration instead"
 - scrollUntilVisible:
     element: "Getting to Fictional Hall"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "Getting to Fictional Hall"
 - pressKey: home

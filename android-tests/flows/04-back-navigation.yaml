@@ -7,52 +7,52 @@ name: System Back steps backwards through the journey flow, then Home, then leav
     element: "Plan a journey"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Plan a journey"
 - scrollUntilVisible:
     element: "Yes, use live information"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Yes, use live information"
 - scrollUntilVisible:
     element: "Tate Modern"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Tate Modern"
 - scrollUntilVisible:
     element: "Where are you starting from\\?"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "Where are you starting from\\?"
 - scrollUntilVisible:
     element: "London Bridge"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "London Bridge"
 - pressKey: back
 - scrollUntilVisible:
     element: "Where are you starting from\\?"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "Where are you starting from\\?"
 - pressKey: back
 - scrollUntilVisible:
     element: "Where do you want to go\\?"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "Where do you want to go\\?"
 - pressKey: back
 - scrollUntilVisible:
     element: "Find out if you can get there.*"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "Find out if you can get there.*"
 - pressKey: back
 - assertNotVisible: "Find out if you can get there.*"

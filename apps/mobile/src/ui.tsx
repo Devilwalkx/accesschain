@@ -29,6 +29,8 @@ export function Txt(p: { v?: Variant | Legacy; children: React.ReactNode; color?
       accessibilityLabel={p.label}
       accessibilityLiveRegion={p.live ? "polite" : undefined}
       selectable={p.selectable}
+      // The big headline sizes may stop growing with the phone's text size (a 32 sp word at 200% would break in the middle); body text always follows it.
+      maxFontSizeMultiplier={v === "display" ? 1.3 : v === "title" ? 1.6 : undefined}
       style={[{ color: p.color ?? c.text, fontSize: t.size * f, lineHeight: t.line * f, fontWeight: t.weight, textAlign: p.align }, WRAP, p.style]}
     >{p.children}</Text>
   );

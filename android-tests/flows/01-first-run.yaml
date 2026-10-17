@@ -8,7 +8,7 @@ name: First run shows one clear start and no demonstration label
     element: "Plan a journey"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "Plan a journey"
 - assertNotVisible: "Demonstration.*"
 - takeScreenshot: 01-first-run

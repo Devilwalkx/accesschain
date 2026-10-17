@@ -7,20 +7,20 @@ name: With the keyboard open the field and the Save button stay reachable
     element: "Tell us what you need"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Tell us what you need"
 - scrollUntilVisible:
     element: "Walking and doorway details.*"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Walking and doorway details.*"
 - scrollUntilVisible:
     element:
       id: "field-longest-walk-in-metres"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn:
     id: "field-longest-walk-in-metres"
 - inputText: "400"
@@ -30,11 +30,11 @@ name: With the keyboard open the field and the Save button stay reachable
     element: "Save and see my routes"
     direction: DOWN
     timeout: 60000
-    speed: 85
+    speed: 30
 - tapOn: "Save and see my routes"
 - scrollUntilVisible:
     element: "Use live information\\?"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "Use live information\\?"

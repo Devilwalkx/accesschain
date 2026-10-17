@@ -9,31 +9,31 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
     element: "Plan a journey"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Plan a journey"
 - scrollUntilVisible:
     element: "Yes, use live information"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Yes, use live information"
 - scrollUntilVisible:
     element: "Tate Modern"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Tate Modern"
 - scrollUntilVisible:
     element: "Your phone will ask permission once.*"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "Your phone will ask permission once.*"
 - scrollUntilVisible:
     element: "Where I am now"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Where I am now"
 - tapOn:
     text: "Don.t allow|Deny|DENY"
@@ -42,14 +42,14 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
     element: "Location was not allowed.*|Location is switched off.*|We couldn't find where you are.*"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "Location was not allowed.*|Location is switched off.*|We couldn't find where you are.*"
 - takeScreenshot: 40-location-denied-1
 - scrollUntilVisible:
     element: "Where I am now"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Where I am now"
 - tapOn:
     text: "Don.t allow|Deny|DENY"
@@ -58,7 +58,7 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
     element: "Where I am now"
     direction: DOWN
     timeout: 60000
-    speed: 60
+    speed: 30
 - tapOn: "Where I am now"
 - tapOn:
     text: "Don.t allow|Deny|DENY"
@@ -67,12 +67,12 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
     element: "London Bridge"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "London Bridge"
 - scrollUntilVisible:
     element: "Use this postcode"
     direction: DOWN
     timeout: 30000
-    speed: 60
+    speed: 30
 - assertVisible: "Use this postcode"
 - takeScreenshot: 41-location-denied-3
