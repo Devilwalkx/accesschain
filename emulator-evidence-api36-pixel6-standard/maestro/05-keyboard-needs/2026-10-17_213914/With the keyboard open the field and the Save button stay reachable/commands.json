@@ -1,0 +1,499 @@
+[ {
+  "command" : {
+    "defineVariablesCommand" : {
+      "env" : {
+        "MAESTRO_FILENAME" : "05-keyboard-needs",
+        "MAESTRO_DEVICE_UDID" : "emulator-5554",
+        "MAESTRO_SHARD_ID" : "1",
+        "MAESTRO_SHARD_INDEX" : "0"
+      },
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273159347,
+    "duration" : 3,
+    "sequenceNumber" : 0,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "defineVariablesCommand" : {
+        "env" : {
+          "MAESTRO_FILENAME" : "05-keyboard-needs",
+          "MAESTRO_DEVICE_UDID" : "emulator-5554",
+          "MAESTRO_SHARD_ID" : "1",
+          "MAESTRO_SHARD_INDEX" : "0"
+        },
+        "optional" : false
+      }
+    }
+  }
+}, {
+  "command" : {
+    "applyConfigurationCommand" : {
+      "config" : {
+        "appId" : "app.devilwalkx.accesschain",
+        "name" : "With the keyboard open the field and the Save button stay reachable"
+      },
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273159351,
+    "duration" : 0,
+    "sequenceNumber" : 1,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "applyConfigurationCommand" : {
+        "config" : {
+          "appId" : "app.devilwalkx.accesschain",
+          "name" : "With the keyboard open the field and the Save button stay reachable"
+        },
+        "optional" : false
+      }
+    }
+  }
+}, {
+  "command" : {
+    "launchAppCommand" : {
+      "appId" : "app.devilwalkx.accesschain",
+      "clearState" : true,
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273159351,
+    "duration" : 725,
+    "sequenceNumber" : 2,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "launchAppCommand" : {
+        "appId" : "app.devilwalkx.accesschain",
+        "clearState" : true,
+        "optional" : false
+      }
+    }
+  }
+}, {
+  "command" : {
+    "scrollUntilVisible" : {
+      "selector" : {
+        "textRegex" : "Tell us what you need",
+        "optional" : false
+      },
+      "direction" : "DOWN",
+      "scrollDuration" : "30",
+      "visibilityPercentage" : 100,
+      "timeout" : "60000",
+      "centerElement" : false,
+      "originalSpeedValue" : "30",
+      "optional" : false,
+      "visibilityPercentageNormalized" : 1.0
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273160077,
+    "duration" : 1146,
+    "sequenceNumber" : 3,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "scrollUntilVisible" : {
+        "selector" : {
+          "textRegex" : "Tell us what you need",
+          "optional" : false
+        },
+        "direction" : "DOWN",
+        "scrollDuration" : "701",
+        "visibilityPercentage" : 100,
+        "timeout" : "60000",
+        "centerElement" : false,
+        "originalSpeedValue" : "30",
+        "optional" : false,
+        "visibilityPercentageNormalized" : 1.0
+      }
+    }
+  }
+}, {
+  "command" : {
+    "tapOnElement" : {
+      "selector" : {
+        "textRegex" : "Tell us what you need",
+        "optional" : false
+      },
+      "retryIfNoChange" : false,
+      "waitUntilVisible" : false,
+      "longPress" : false,
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273161224,
+    "duration" : 2726,
+    "sequenceNumber" : 4,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "tapOnElement" : {
+        "selector" : {
+          "textRegex" : "Tell us what you need",
+          "optional" : false
+        },
+        "retryIfNoChange" : false,
+        "waitUntilVisible" : false,
+        "longPress" : false,
+        "optional" : false
+      }
+    }
+  }
+}, {
+  "command" : {
+    "scrollUntilVisible" : {
+      "selector" : {
+        "textRegex" : "Walking and doorway details.*",
+        "optional" : false
+      },
+      "direction" : "DOWN",
+      "scrollDuration" : "30",
+      "visibilityPercentage" : 100,
+      "timeout" : "60000",
+      "centerElement" : false,
+      "originalSpeedValue" : "30",
+      "optional" : false,
+      "visibilityPercentageNormalized" : 1.0
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273163950,
+    "duration" : 68,
+    "sequenceNumber" : 5,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "scrollUntilVisible" : {
+        "selector" : {
+          "textRegex" : "Walking and doorway details.*",
+          "optional" : false
+        },
+        "direction" : "DOWN",
+        "scrollDuration" : "701",
+        "visibilityPercentage" : 100,
+        "timeout" : "60000",
+        "centerElement" : false,
+        "originalSpeedValue" : "30",
+        "optional" : false,
+        "visibilityPercentageNormalized" : 1.0
+      }
+    }
+  }
+}, {
+  "command" : {
+    "tapOnElement" : {
+      "selector" : {
+        "textRegex" : "Walking and doorway details.*",
+        "optional" : false
+      },
+      "retryIfNoChange" : false,
+      "waitUntilVisible" : false,
+      "longPress" : false,
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273164018,
+    "duration" : 2143,
+    "sequenceNumber" : 6,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "tapOnElement" : {
+        "selector" : {
+          "textRegex" : "Walking and doorway details.*",
+          "optional" : false
+        },
+        "retryIfNoChange" : false,
+        "waitUntilVisible" : false,
+        "longPress" : false,
+        "optional" : false
+      }
+    }
+  }
+}, {
+  "command" : {
+    "scrollUntilVisible" : {
+      "selector" : {
+        "idRegex" : "field-longest-walk-in-metres",
+        "optional" : false
+      },
+      "direction" : "DOWN",
+      "scrollDuration" : "30",
+      "visibilityPercentage" : 100,
+      "timeout" : "60000",
+      "centerElement" : false,
+      "originalSpeedValue" : "30",
+      "optional" : false,
+      "visibilityPercentageNormalized" : 1.0
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273166161,
+    "duration" : 74,
+    "sequenceNumber" : 7,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "scrollUntilVisible" : {
+        "selector" : {
+          "idRegex" : "field-longest-walk-in-metres",
+          "optional" : false
+        },
+        "direction" : "DOWN",
+        "scrollDuration" : "701",
+        "visibilityPercentage" : 100,
+        "timeout" : "60000",
+        "centerElement" : false,
+        "originalSpeedValue" : "30",
+        "optional" : false,
+        "visibilityPercentageNormalized" : 1.0
+      }
+    }
+  }
+}, {
+  "command" : {
+    "tapOnElement" : {
+      "selector" : {
+        "idRegex" : "field-longest-walk-in-metres",
+        "optional" : false
+      },
+      "retryIfNoChange" : false,
+      "waitUntilVisible" : false,
+      "longPress" : false,
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273166235,
+    "duration" : 2322,
+    "sequenceNumber" : 8,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "tapOnElement" : {
+        "selector" : {
+          "idRegex" : "field-longest-walk-in-metres",
+          "optional" : false
+        },
+        "retryIfNoChange" : false,
+        "waitUntilVisible" : false,
+        "longPress" : false,
+        "optional" : false
+      }
+    }
+  }
+}, {
+  "command" : {
+    "inputTextCommand" : {
+      "text" : "400",
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273168557,
+    "duration" : 2040,
+    "sequenceNumber" : 9,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "inputTextCommand" : {
+        "text" : "400",
+        "optional" : false
+      }
+    }
+  }
+}, {
+  "command" : {
+    "takeScreenshotCommand" : {
+      "path" : "20-keyboard-open",
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273170598,
+    "duration" : 276,
+    "sequenceNumber" : 10,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "takeScreenshotCommand" : {
+        "path" : "20-keyboard-open",
+        "optional" : false
+      }
+    },
+    "artifacts" : [ {
+      "type" : "TAKE_SCREENSHOT",
+      "path" : "takeScreenshot/20-keyboard-open.png"
+    } ]
+  }
+}, {
+  "command" : {
+    "hideKeyboardCommand" : {
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273170874,
+    "duration" : 1034,
+    "sequenceNumber" : 11,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "hideKeyboardCommand" : {
+        "optional" : false
+      }
+    }
+  }
+}, {
+  "command" : {
+    "scrollUntilVisible" : {
+      "selector" : {
+        "textRegex" : "Save and see my routes",
+        "optional" : false
+      },
+      "direction" : "DOWN",
+      "scrollDuration" : "30",
+      "visibilityPercentage" : 100,
+      "timeout" : "60000",
+      "centerElement" : false,
+      "originalSpeedValue" : "30",
+      "optional" : false,
+      "visibilityPercentageNormalized" : 1.0
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273171908,
+    "duration" : 2545,
+    "sequenceNumber" : 12,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "scrollUntilVisible" : {
+        "selector" : {
+          "textRegex" : "Save and see my routes",
+          "optional" : false
+        },
+        "direction" : "DOWN",
+        "scrollDuration" : "701",
+        "visibilityPercentage" : 100,
+        "timeout" : "60000",
+        "centerElement" : false,
+        "originalSpeedValue" : "30",
+        "optional" : false,
+        "visibilityPercentageNormalized" : 1.0
+      }
+    }
+  }
+}, {
+  "command" : {
+    "tapOnElement" : {
+      "selector" : {
+        "textRegex" : "Save and see my routes",
+        "optional" : false
+      },
+      "retryIfNoChange" : false,
+      "waitUntilVisible" : false,
+      "longPress" : false,
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273174453,
+    "duration" : 2371,
+    "sequenceNumber" : 13,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "tapOnElement" : {
+        "selector" : {
+          "textRegex" : "Save and see my routes",
+          "optional" : false
+        },
+        "retryIfNoChange" : false,
+        "waitUntilVisible" : false,
+        "longPress" : false,
+        "optional" : false
+      }
+    }
+  }
+}, {
+  "command" : {
+    "scrollUntilVisible" : {
+      "selector" : {
+        "textRegex" : "Use live information\\?",
+        "optional" : false
+      },
+      "direction" : "DOWN",
+      "scrollDuration" : "30",
+      "visibilityPercentage" : 100,
+      "timeout" : "30000",
+      "centerElement" : false,
+      "originalSpeedValue" : "30",
+      "optional" : false,
+      "visibilityPercentageNormalized" : 1.0
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273176824,
+    "duration" : 104,
+    "sequenceNumber" : 14,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "scrollUntilVisible" : {
+        "selector" : {
+          "textRegex" : "Use live information\\?",
+          "optional" : false
+        },
+        "direction" : "DOWN",
+        "scrollDuration" : "701",
+        "visibilityPercentage" : 100,
+        "timeout" : "30000",
+        "centerElement" : false,
+        "originalSpeedValue" : "30",
+        "optional" : false,
+        "visibilityPercentageNormalized" : 1.0
+      }
+    }
+  }
+}, {
+  "command" : {
+    "assertConditionCommand" : {
+      "condition" : {
+        "visible" : {
+          "textRegex" : "Use live information\\?",
+          "optional" : false
+        }
+      },
+      "optional" : false
+    }
+  },
+  "metadata" : {
+    "status" : "COMPLETED",
+    "timestamp" : 1792273176928,
+    "duration" : 28,
+    "sequenceNumber" : 15,
+    "depth" : 0,
+    "evaluatedCommand" : {
+      "assertConditionCommand" : {
+        "condition" : {
+          "visible" : {
+            "textRegex" : "Use live information\\?",
+            "optional" : false
+          }
+        },
+        "optional" : false
+      }
+    }
+  }
+} ]

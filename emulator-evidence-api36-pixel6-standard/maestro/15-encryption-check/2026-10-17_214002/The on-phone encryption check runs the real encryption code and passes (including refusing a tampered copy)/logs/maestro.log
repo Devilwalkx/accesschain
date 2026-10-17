@@ -1,0 +1,62 @@
+21:40:07.159 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Define variables RUNNING
+21:40:07.162 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Define variables COMPLETED
+21:40:07.162 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Apply configuration RUNNING
+21:40:07.163 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Apply configuration COMPLETED
+21:40:07.163 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Launch app "app.devilwalkx.accesschain" with clear state RUNNING
+21:40:07.164 [ INFO] maestro.Maestro.clearAppState$lambda$8: Clearing app state app.devilwalkx.accesschain
+21:40:08.187 [ INFO] maestro.Maestro.launchApp$lambda$5: Launching app app.devilwalkx.accesschain
+21:40:08.188 [ INFO] maestro.Maestro.launchApp$lambda$5: Stopping app.devilwalkx.accesschain app during launch
+21:40:08.265 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Launch app "app.devilwalkx.accesschain" with clear state COMPLETED
+21:40:08.266 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until "Settings" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled RUNNING
+21:40:09.622 [ WARN] maestro.orchestra.Orchestra.scrollUntilVisible: Error: maestro.MaestroException$ElementNotFound: Element not found: Text matching regex: Settings
+21:40:09.628 [ INFO] maestro.Maestro.swipeFromCenter: Swiping UP from center
+21:40:10.865 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2400
+21:40:10.869 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=494, y=1251, width=180, height=66)
+21:40:10.870 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+21:40:10.889 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=Settings, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=60000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+21:40:10.889 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+21:40:10.889 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until "Settings" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled COMPLETED
+21:40:10.890 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on "Settings" RUNNING
+21:40:11.162 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=Settings, accessibilityText=, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[494,1251][674,1317], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.TextView, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=494, y=1251, width=180, height=66))
+21:40:12.347 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+21:40:12.351 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (584, 1284) using hierarchy based logic for wait
+21:40:13.294 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+21:40:13.295 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on "Settings" COMPLETED
+21:40:13.295 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until "Check encryption on this phone" is visible with speed 30, visibility percentage 100%, timeout 90000 ms, with centering disabled RUNNING
+21:40:13.881 [ WARN] maestro.orchestra.Orchestra.scrollUntilVisible: Error: maestro.MaestroException$ElementNotFound: Element not found: Text matching regex: Check encryption on this phone
+21:40:13.926 [ INFO] maestro.Maestro.swipeFromCenter: Swiping UP from center
+21:40:15.937 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2400
+21:40:15.938 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=199, y=2204, width=681, height=66)
+21:40:15.938 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+21:40:15.938 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=Check encryption on this phone, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=90000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+21:40:15.938 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+21:40:15.938 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until "Check encryption on this phone" is visible with speed 30, visibility percentage 100%, timeout 90000 ms, with centering disabled COMPLETED
+21:40:15.938 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on "Check encryption on this phone" RUNNING
+21:40:16.037 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=Check encryption on this phone, accessibilityText=, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[199,2204][880,2270], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.TextView, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=199, y=2204, width=681, height=66))
+21:40:17.212 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+21:40:17.213 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (539, 2237) using hierarchy based logic for wait
+21:40:18.165 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on "Check encryption on this phone" COMPLETED
+21:40:18.165 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until "Encryption check: .*" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled RUNNING
+21:40:18.768 [ WARN] maestro.orchestra.Orchestra.scrollUntilVisible: Error: maestro.MaestroException$ElementNotFound: Element not found: Text matching regex: Encryption check: .*
+21:40:18.810 [ INFO] maestro.Maestro.swipeFromCenter: Swiping UP from center
+21:40:20.414 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2400
+21:40:20.414 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=86, y=1493, width=908, height=79)
+21:40:20.414 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+21:40:20.414 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=Encryption check: .*, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=60000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+21:40:20.414 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+21:40:20.415 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until "Encryption check: .*" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled COMPLETED
+21:40:20.415 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that "Encryption check: passed" is visible RUNNING
+21:40:20.513 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that "Encryption check: passed" is visible COMPLETED
+21:40:20.514 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until ".*One changed character in the encrypted text is refused.*" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled RUNNING
+21:40:20.618 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2400
+21:40:20.618 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=86, y=2069, width=908, height=142)
+21:40:20.618 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+21:40:20.618 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=.*One changed character in the encrypted text is refused.*, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=60000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+21:40:20.619 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+21:40:20.619 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until ".*One changed character in the encrypted text is refused.*" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled COMPLETED
+21:40:20.619 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that ".*One changed character in the encrypted text is refused.*" is visible RUNNING
+21:40:20.642 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that ".*One changed character in the encrypted text is refused.*" is visible COMPLETED
+21:40:20.643 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot 15-encryption-check RUNNING
+21:40:20.645 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+21:40:20.646 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+21:40:20.890 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot 15-encryption-check COMPLETED

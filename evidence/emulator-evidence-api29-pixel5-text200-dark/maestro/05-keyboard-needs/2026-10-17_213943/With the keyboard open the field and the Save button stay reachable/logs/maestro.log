@@ -1,0 +1,90 @@
+21:39:49.848 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Define variables RUNNING
+21:39:49.851 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Define variables COMPLETED
+21:39:49.852 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Apply configuration RUNNING
+21:39:49.853 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Apply configuration COMPLETED
+21:39:49.853 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Launch app "app.devilwalkx.accesschain" with clear state RUNNING
+21:39:49.855 [ INFO] maestro.Maestro.clearAppState$lambda$8: Clearing app state app.devilwalkx.accesschain
+21:39:50.522 [ INFO] maestro.Maestro.launchApp$lambda$5: Launching app app.devilwalkx.accesschain
+21:39:50.522 [ INFO] maestro.Maestro.launchApp$lambda$5: Stopping app.devilwalkx.accesschain app during launch
+21:39:50.619 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Launch app "app.devilwalkx.accesschain" with clear state COMPLETED
+21:39:50.629 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until "Tell us what you need" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled RUNNING
+21:39:51.980 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2340
+21:39:51.983 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=192, y=1215, width=800, height=298)
+21:39:51.984 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+21:39:52.002 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=Tell us what you need, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=60000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+21:39:52.002 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+21:39:52.002 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until "Tell us what you need" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled COMPLETED
+21:39:52.003 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on "Tell us what you need" RUNNING
+21:39:52.288 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=Tell us what you need, accessibilityText=, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[192,1215][992,1513], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.TextView, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=192, y=1215, width=800, height=298))
+21:39:53.605 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+21:39:53.610 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (592, 1364) using hierarchy based logic for wait
+21:39:54.673 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+21:39:54.673 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on "Tell us what you need" COMPLETED
+21:39:54.673 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until "Walking and doorway details.*" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled RUNNING
+21:39:55.339 [ WARN] maestro.orchestra.Orchestra.scrollUntilVisible: Error: maestro.MaestroException$ElementNotFound: Element not found: Text matching regex: Walking and doorway details.*
+21:39:55.427 [ INFO] maestro.Maestro.swipeFromCenter: Swiping UP from center
+21:39:58.459 [ WARN] maestro.orchestra.Orchestra.scrollUntilVisible: Error: maestro.MaestroException$ElementNotFound: Element not found: Text matching regex: Walking and doorway details.*
+21:39:58.502 [ INFO] maestro.Maestro.swipeFromCenter: Swiping UP from center
+21:40:00.861 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2340
+21:40:00.862 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=44, y=1910, width=910, height=264)
+21:40:00.862 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+21:40:00.862 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=Walking and doorway details.*, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=60000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+21:40:00.862 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+21:40:00.862 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until "Walking and doorway details.*" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled COMPLETED
+21:40:00.863 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on "Walking and doorway details.*" RUNNING
+21:40:00.920 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=Walking and doorway details (optional), accessibilityText=, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[44,1910][954,2174], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.TextView, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=44, y=1910, width=910, height=264))
+21:40:02.099 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+21:40:02.100 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (499, 2042) using hierarchy based logic for wait
+21:40:02.999 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+21:40:02.999 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on "Walking and doorway details.*" COMPLETED
+21:40:02.999 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until id: field-longest-walk-in-metres is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled RUNNING
+21:40:03.705 [ WARN] maestro.orchestra.Orchestra.scrollUntilVisible: Error: maestro.MaestroException$ElementNotFound: Element not found: Id matching regex: field-longest-walk-in-metres
+21:40:03.749 [ INFO] maestro.Maestro.swipeFromCenter: Swiping UP from center
+21:40:05.902 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2340
+21:40:05.902 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=91, y=1477, width=900, height=198)
+21:40:05.902 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+21:40:05.902 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=null, idRegex=field-longest-walk-in-metres, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=60000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+21:40:05.903 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+21:40:05.903 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until id: field-longest-walk-in-metres is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled COMPLETED
+21:40:05.903 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on id: field-longest-walk-in-metres RUNNING
+21:40:05.962 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=, accessibilityText=Longest walk in metres, hintText=, ignoreBoundsFiltering=false, resource-id=field-longest-walk-in-metres, clickable=true, bounds=[91,1477][991,1675], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.EditText, important-for-accessibility=true, error=}, children=[], clickable=true, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=91, y=1477, width=900, height=198))
+21:40:07.141 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+21:40:07.143 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (541, 1576) using hierarchy based logic for wait
+21:40:09.272 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+21:40:09.272 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on id: field-longest-walk-in-metres COMPLETED
+21:40:09.272 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Input text 400 RUNNING
+21:40:09.273 [ INFO] maestro.Maestro.inputText: Inputting text: 400
+21:40:10.511 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Input text 400 COMPLETED
+21:40:10.512 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Take screenshot 20-keyboard-open RUNNING
+21:40:10.513 [ INFO] maestro.Maestro.takeScreenshot: Taking screenshot
+21:40:10.515 [TRACE] maestro.utils.ScreenshotUtils.takeScreenshot: Taking screenshot to output sink
+21:40:10.869 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Take screenshot 20-keyboard-open COMPLETED
+21:40:10.869 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Hide Keyboard RUNNING
+21:40:10.871 [ INFO] maestro.Maestro.hideKeyboard$lambda$12: Hiding Keyboard
+21:40:11.988 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Hide Keyboard COMPLETED
+21:40:11.989 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until "Save and see my routes" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled RUNNING
+21:40:12.559 [ WARN] maestro.orchestra.Orchestra.scrollUntilVisible: Error: maestro.MaestroException$ElementNotFound: Element not found: Text matching regex: Save and see my routes
+21:40:12.602 [ INFO] maestro.Maestro.swipeFromCenter: Swiping UP from center
+21:40:14.854 [ WARN] maestro.orchestra.Orchestra.scrollUntilVisible: Error: maestro.MaestroException$ElementNotFound: Element not found: Text matching regex: Save and see my routes
+21:40:14.897 [ INFO] maestro.Maestro.swipeFromCenter: Swiping UP from center
+21:40:17.009 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2340
+21:40:17.009 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=88, y=2019, width=904, height=189)
+21:40:17.009 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+21:40:17.009 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=Save and see my routes, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=60000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+21:40:17.010 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+21:40:17.010 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until "Save and see my routes" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled COMPLETED
+21:40:17.010 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on "Save and see my routes" RUNNING
+21:40:17.120 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=Save and see my routes, accessibilityText=, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[88,2019][992,2208], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.TextView, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=88, y=2019, width=904, height=189))
+21:40:18.338 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+21:40:18.339 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (540, 2113) using hierarchy based logic for wait
+21:40:19.388 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+21:40:19.389 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on "Save and see my routes" COMPLETED
+21:40:19.389 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until "Use live information\?" is visible with speed 30, visibility percentage 100%, timeout 30000 ms, with centering disabled RUNNING
+21:40:19.455 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2340
+21:40:19.455 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=44, y=306, width=992, height=396)
+21:40:19.455 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+21:40:19.455 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=Use live information\?, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=30000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+21:40:19.456 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+21:40:19.456 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until "Use live information\?" is visible with speed 30, visibility percentage 100%, timeout 30000 ms, with centering disabled COMPLETED
+21:40:19.456 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that "Use live information\?" is visible RUNNING
+21:40:19.519 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that "Use live information\?" is visible COMPLETED
