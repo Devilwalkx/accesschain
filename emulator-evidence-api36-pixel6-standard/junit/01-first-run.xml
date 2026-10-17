@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="6.744" timestamp="2026-10-17T18:50:38">
+    <testcase id="First run shows one clear start and no demonstration label" name="First run shows one clear start and no demonstration label" classname="First run shows one clear start and no demonstration label" file="/home/runner/work/accesschain/accesschain/android-tests/flows/01-first-run.yaml" time="6.722" timestamp="2026-10-17T18:50:38" status="SUCCESS"/>
+  </testsuite>
+</testsuites>
