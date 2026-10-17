@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="14.831" timestamp="2026-10-17T18:05:41">
+    <testcase id="Save needs and choose the demonstration, then leave the app (the script kills the process)" name="Save needs and choose the demonstration, then leave the app (the script kills the process)" classname="Save needs and choose the demonstration, then leave the app (the script kills the process)" file="/home/runner/work/accesschain/accesschain/android-tests/flows/08-profile-survives-kill-write.yaml" time="14.815" timestamp="2026-10-17T18:05:41" status="SUCCESS"/>
+  </testsuite>
+</testsuites>
