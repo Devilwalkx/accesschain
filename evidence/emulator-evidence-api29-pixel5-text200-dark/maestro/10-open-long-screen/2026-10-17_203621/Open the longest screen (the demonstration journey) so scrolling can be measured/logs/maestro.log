@@ -1,0 +1,32 @@
+20:36:28.911 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Define variables RUNNING
+20:36:28.915 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Define variables COMPLETED
+20:36:28.916 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Apply configuration RUNNING
+20:36:28.916 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Apply configuration COMPLETED
+20:36:28.916 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Launch app "app.devilwalkx.accesschain" RUNNING
+20:36:29.437 [ INFO] maestro.Maestro.launchApp$lambda$5: Launching app app.devilwalkx.accesschain
+20:36:29.438 [ INFO] maestro.Maestro.launchApp$lambda$5: Stopping app.devilwalkx.accesschain app during launch
+20:36:29.571 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Launch app "app.devilwalkx.accesschain" COMPLETED
+20:36:29.572 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until "Plan a journey" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled RUNNING
+20:36:31.517 [ WARN] maestro.orchestra.Orchestra.scrollUntilVisible: Error: maestro.MaestroException$ElementNotFound: Element not found: Text matching regex: Plan a journey
+20:36:31.533 [ INFO] maestro.Maestro.swipeFromCenter: Swiping UP from center
+20:36:33.943 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2340
+20:36:33.946 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=240, y=764, width=703, height=149)
+20:36:33.947 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+20:36:33.969 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=Plan a journey, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=60000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+20:36:33.970 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+20:36:33.970 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until "Plan a journey" is visible with speed 30, visibility percentage 100%, timeout 60000 ms, with centering disabled COMPLETED
+20:36:33.971 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Tap on "Plan a journey" RUNNING
+20:36:34.098 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tapping on element:  UiElement(treeNode=TreeNode(attributes={text=Plan a journey, accessibilityText=, hintText=, ignoreBoundsFiltering=false, resource-id=, clickable=false, bounds=[240,764][943,913], enabled=true, focused=false, checked=false, scrollable=false, selected=false, class=android.widget.TextView, important-for-accessibility=true, error=}, children=[], clickable=false, enabled=true, focused=false, checked=false, selected=false), bounds=Bounds(x=240, y=764, width=703, height=149))
+20:36:35.465 [ INFO] maestro.Maestro.tap-HgV9Ck0: Tap aimed via settled hierarchy
+20:36:35.476 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Tapping at (591, 838) using hierarchy based logic for wait
+20:36:36.847 [ INFO] maestro.Maestro.hierarchyBasedTap-ogj28Uc: Something has changed in the UI judging by view hierarchy. Proceed.
+20:36:36.847 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Tap on "Plan a journey" COMPLETED
+20:36:36.847 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Scrolling DOWN until "Getting to Fictional Hall" is visible with speed 30, visibility percentage 100%, timeout 30000 ms, with centering disabled RUNNING
+20:36:37.037 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Scrolling try count: 0, DeviceWidth: 1080, DeviceWidth: 2340
+20:36:37.038 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Element bounds: Bounds(x=44, y=922, width=992, height=396)
+20:36:37.038 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Visibility Percent: 1.0
+20:36:37.038 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: Command centerElement: ScrollUntilVisibleCommand(selector=ElementSelector(textRegex=Getting to Fictional Hall, idRegex=null, size=null, below=null, above=null, leftOf=null, rightOf=null, containsChild=null, containsDescendants=null, traits=null, index=null, enabled=null, optional=false, selected=null, checked=null, focused=null, childOf=null, css=null), direction=DOWN, scrollDuration=701, visibilityPercentage=100, timeout=30000, waitToSettleTimeoutMs=null, centerElement=false, originalSpeedValue=30, label=null, optional=false).centerElement
+20:36:37.038 [ INFO] maestro.orchestra.Orchestra.scrollUntilVisible: visibilityPercentageNormalized: 1.0
+20:36:37.038 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Scrolling DOWN until "Getting to Fictional Hall" is visible with speed 30, visibility percentage 100%, timeout 30000 ms, with centering disabled COMPLETED
+20:36:37.039 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandStart: Assert that "Getting to Fictional Hall" is visible RUNNING
+20:36:37.238 [ INFO] maestro.cli.runner.CliConsoleListener.onCommandFinished: Assert that "Getting to Fictional Hall" is visible COMPLETED

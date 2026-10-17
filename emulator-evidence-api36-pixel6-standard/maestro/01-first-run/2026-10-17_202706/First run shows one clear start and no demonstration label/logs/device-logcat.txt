@@ -1,0 +1,993 @@
+--------- beginning of main
+10-17 20:27:18.331 W/EasyUnlock( 3150): [HostValidator] Invalid account list. [CONTEXT service_id=234 ]
+10-17 20:27:18.344 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a9b538) locale list changing from [] to [en-US]
+10-17 20:27:18.360 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a98978) locale list changing from [] to [en-US]
+10-17 20:27:18.371 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a9b858) locale list changing from [] to [en-US]
+10-17 20:27:18.375 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a99f58) locale list changing from [] to [en-US]
+10-17 20:27:18.381 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a782b8) locale list changing from [] to [en-US]
+10-17 20:27:18.387 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a912b8) locale list changing from [] to [en-US]
+10-17 20:27:18.391 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a931f8) locale list changing from [] to [en-US]
+10-17 20:27:18.393 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a90638) locale list changing from [] to [en-US]
+10-17 20:27:18.401 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.401 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.402 I/AutofillFlagChangeInten( 1590): onHandleIntent() [CONTEXT service_id=177 ]
+10-17 20:27:18.402 I/SyncIntentOperation( 1590): Handling the intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) }. [CONTEXT service_id=80 ]
+10-17 20:27:18.403 I/fpnvgms ( 1590): [FpnvIntentOperation] Received intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) } [CONTEXT service_id=429 ]
+10-17 20:27:18.404 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.405 I/MdiSyncModule( 1590): flag handling is skipping irrelevant intent.
+10-17 20:27:18.406 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.406 I/MlBenchmarkInstaller( 1590): Intent: com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=340 ]
+10-17 20:27:18.406 I/MlBenchmarkInstaller( 1590): COMMITTED Extra package name: com.google.android.gms.findmydevice [CONTEXT service_id=340 ]
+10-17 20:27:18.407 I/GmsSyncPolicyEngine( 1590): Periodic sync 1 disabled by policy, cancelled.
+10-17 20:27:18.408 I/PTCommittedOperation( 3150): Receive new configuration for com.google.android.gms.findmydevice
+10-17 20:27:18.410 I/NearbyMediums( 3150): ModuleInitializer handles incoming intent com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.410 I/LocationHistory( 1590): [IntentOperation] Handling action com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=314 ]
+10-17 20:27:18.411 I/GmsSyncPolicyEngine( 1590): Periodic sync 2 disabled by policy, cancelled.
+10-17 20:27:18.413 I/GmsSyncPolicyEngine( 1590): Periodic sync 3 disabled by policy, cancelled.
+10-17 20:27:18.420 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a9b218) locale list changing from [] to [en-US]
+10-17 20:27:18.438 I/EnterpriseLoader( 1590): [ConditionsChecker] ZT config not present. [CONTEXT service_id=225 ]
+10-17 20:27:18.439 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a92578) locale list changing from [] to [en-US]
+10-17 20:27:18.443 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8dd98) locale list changing from [] to [en-US]
+10-17 20:27:18.446 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8e6f8) locale list changing from [] to [en-US]
+10-17 20:27:18.451 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a94e18) locale list changing from [] to [en-US]
+10-17 20:27:18.459 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.459 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.459 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8f058) locale list changing from [] to [en-US]
+10-17 20:27:18.460 I/AutofillFlagChangeInten( 1590): onHandleIntent() [CONTEXT service_id=177 ]
+10-17 20:27:18.460 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.461 I/SyncIntentOperation( 1590): Handling the intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) }. [CONTEXT service_id=80 ]
+10-17 20:27:18.463 I/fpnvgms ( 1590): [FpnvIntentOperation] Received intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) } [CONTEXT service_id=429 ]
+10-17 20:27:18.464 I/MdiSyncModule( 1590): flag handling is skipping irrelevant intent.
+10-17 20:27:18.464 I/MlBenchmarkInstaller( 1590): Intent: com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=340 ]
+10-17 20:27:18.464 I/MlBenchmarkInstaller( 1590): COMMITTED Extra package name: com.google.android.gms.checkin [CONTEXT service_id=340 ]
+10-17 20:27:18.468 I/PTCommittedOperation( 3150): Receive new configuration for com.google.android.gms.checkin
+10-17 20:27:18.469 I/NearbyMediums( 3150): ModuleInitializer handles incoming intent com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.471 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.472 I/LocationHistory( 1590): [IntentOperation] Handling action com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=314 ]
+10-17 20:27:18.472 I/GmsSyncPolicyEngine( 1590): Periodic sync 1 disabled by policy, cancelled.
+10-17 20:27:18.472 I/GmsSyncPolicyEngine( 1590): Periodic sync 2 disabled by policy, cancelled.
+10-17 20:27:18.473 I/GmsSyncPolicyEngine( 1590): Periodic sync 3 disabled by policy, cancelled.
+10-17 20:27:18.480 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a91f38) locale list changing from [] to [en-US]
+10-17 20:27:18.486 I/SettingsChangedIntentOp( 1590): telephonyspam phenotype flag changed [CONTEXT service_id=150 ]
+10-17 20:27:18.486 I/SpamListSync( 1590): schedulePeriodicTask [CONTEXT service_id=150 ]
+--------- beginning of system
+10-17 20:27:18.489 I/ActivityManager(  579): Force stopping app.devilwalkx.accesschain appid=10217 user=0: clear data
+10-17 20:27:18.490 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8ab98) locale list changing from [] to [en-US]
+10-17 20:27:18.492 I/ActivityManager(  579): Killing 4528:app.devilwalkx.accesschain/u0a217 (adj 0): stop app.devilwalkx.accesschain due to clear data
+10-17 20:27:18.494 W/ActivityTaskManager(  579): Force removing ActivityRecord{112375603 u0 app.devilwalkx.accesschain/.MainActivity t10 f}}: app died, no saved state
+10-17 20:27:18.497 D/BackgroundInstallControlService(  579): Package event received: 0
+10-17 20:27:18.501 D/WifiClientModeImpl[52667:wlan0](  579): updateLinkLayerStatsRssiSpeedFrequencyCapabilities rssi=-50 TxLinkspeed=2 freq=2437 RxLinkSpeed=2
+10-17 20:27:18.501 D/WifiDataStall(  579): tx tput in kbps: 37000
+10-17 20:27:18.503 V/WindowManagerShell( 1024): Transition requested (#18): android.os.BinderProxy@3abd6ee TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=10 effectiveUid=10217 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 pkg=app.devilwalkx.accesschain cmp=app.devilwalkx.accesschain/.MainActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity} numActivities=0 lastActiveTime=150484 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@5bb378f} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 0 - 0, 0) topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isTopActivityNoDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false isActivityStackTransparent=true lastNonFullscreenBounds=Rect(276, 692 - 804, 1772) capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=-9 topActivityRequestOpenInBrowserEducationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false eligibleForLetterboxEducation= false isLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false eligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActivityAppBounds=Rect(0, 0 - 0, 0) isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false hasMinAspectRatioOverride=false topActivityLetterboxBounds=null cameraCompatTaskInfo=CameraCompatTaskInfo { freeformCameraCompatMode=undefined}} topActivityMainWindowFrame=null}, pipChange = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 18 }
+10-17 20:27:18.505 D/WifiDataStall(  579): rx tput in kbps: 37000
+10-17 20:27:18.510 I/AppWidgetServiceImpl(  579): startListening() 0
+10-17 20:27:18.514 E/AppOps  (  579): package pm not found, can't check for attributionTag null
+10-17 20:27:18.516 D/StatsLog( 1306): LAUNCHER_ONRESUME
+10-17 20:27:18.517 E/AppOps  (  579): Bad call made by uid 1000. Package "pm" does not belong to uid 1000.
+10-17 20:27:18.517 D/VRI[NexusLauncherActivity]( 1306): visibilityChanged oldVisibility=false newVisibility=true
+10-17 20:27:18.522 V/WifiConfigManager(  579): Updating scan detail cache freq=2437 BSSID=02:15:b2:00:00:01 RSSI=-50 for "AndroidWifi"NONE
+10-17 20:27:18.522 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:18.522 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:18.522 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:18.522 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:18.522 I/BpBinder(  520): onLastStrongRef automatically unlinking death recipients: 
+10-17 20:27:18.528 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:18.528 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:18.528 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:18.528 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:18.528 D/WifiScoreCard(  579): BSSID update SIGNAL_POLL ID: 1356271939 SSID: "AndroidWifi", BSSID: 02:15:b2:00:00:01, MAC: 02:15:b2:00:00:00, IP: /10.0.2.16, Security type: 0, Supplicant state: COMPLETED, Wi-Fi standard: legacy, RSSI: -50, Link speed: 2Mbps, Tx Link speed: 2Mbps, Max Supported Tx Link speed: 54Mbps, Rx Link speed: 2Mbps, Max Supported Rx Link speed: 54Mbps, Frequency: 2437MHz, Net ID: 0, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: 1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none>"AndroidWifi"openMLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>
+10-17 20:27:18.528 D/WifiScoreCard(  579): txRate: 45 txSpeed: 2
+10-17 20:27:18.528 D/WifiScoreCard(  579): network update SIGNAL_POLL "AndroidWifi" ID: 1865056951 RSSI -50 txSpeed 2
+10-17 20:27:18.528 D/WifiClientModeImpl[52667:wlan0](  579):  ClientModeImpl$L2ConnectedState screen=on 1 0 "AndroidWifi" 02:15:b2:00:00:01 rssi=-50 f=2437 sc=60 link=2 tx=44.9, 0.0, 0.0 rx=267.6 bcn=0 [on:0 tx:0 rx:0 period:3028] from screen [on:0 period:1267476096] score=60
+10-17 20:27:18.529 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-17 20:27:18.529 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-17 20:27:18.529 D/InetDiagMessage(  579): Destroyed live tcp sockets for uids={10217} in 37ms
+10-17 20:27:18.530 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-17 20:27:18.530 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-17 20:27:18.531 D/NexusLauncherModelDelegate( 1306): notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-17 20:27:18.535 E/TaskPersister(  579): File error accessing recents directory (directory doesn't exist?).
+10-17 20:27:18.535 D/InetDiagMessage(  579): Destroyed live tcp sockets for uids={20217} in 1ms
+10-17 20:27:18.539 I/AppWidgetServiceImpl(  579): startListening() 0
+10-17 20:27:18.539 D/BackgroundInstallControlService(  579): Package event received: 0
+10-17 20:27:18.539 D/BackgroundInstallControlService(  579): Package event received: 0
+10-17 20:27:18.541 D/QuickstepModelDelegate( 1306): notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-17 20:27:18.546 E/AppOps  (  579): Cannot noteOperation: non-application UID 1000
+10-17 20:27:18.546 I/ActivityManager(  579): Force stopping app.devilwalkx.accesschain appid=10217 user=-1: clearApplicationUserData
+10-17 20:27:18.547 I/ImeTracker(  579): app.devilwalkx.accesschain:646cee07: onRequestHide at ORIGIN_SERVER reason HIDE_REMOVE_CLIENT fromUser false
+10-17 20:27:18.548 I/ImeTracker(  579): app.devilwalkx.accesschain:646cee07: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-17 20:27:18.548 W/Looper  ( 1024): Slow dispatch took 46ms wmshell.main app=com.android.systemui main=false group=FOREGROUND h=android.os.Handler c=com.android.wm.shell.transition.Transitions$ShellTransitionImpl$$ExternalSyntheticLambda1@33e6a1c m=0
+10-17 20:27:18.549 I/libprocessgroup(  579): Removed cgroup /sys/fs/cgroup/apps/uid_10217/pid_4528
+10-17 20:27:18.549 D/WindowManagerShell( 1024): setLauncherKeepClearAreaHeight: visible=false, height=527
+10-17 20:27:18.549 W/Looper  ( 1024): Slow delivery took 37ms wmshell.main app=com.android.systemui main=false group=FOREGROUND h=android.os.Handler c=com.android.wm.shell.common.ExternalInterfaceBinder$$ExternalSyntheticLambda0@38fe625 m=0
+10-17 20:27:18.549 I/Zygote  (  446): Process 4528 exited due to signal 9 (Killed)
+10-17 20:27:18.550 W/InputDispatcher(  579): channel 'd60e1dc app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity' ~ Consumer closed input channel or an error occurred.  events=0x9
+10-17 20:27:18.550 E/InputDispatcher(  579): channel 'd60e1dc app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity' ~ Channel is unrecoverably broken and will be disposed!
+10-17 20:27:18.551 I/WindowManager(  579): WINDOW DIED Window{d60e1dc u0 app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity}
+10-17 20:27:18.553 I/WindowManager(  579):   Force removing ActivityRecord{112375603 u0 app.devilwalkx.accesschain/.MainActivity t10 f} isExiting}
+10-17 20:27:18.553 W/WindowManager(  579): removeAppToken: Attempted to remove non-existing token: Token{e9d7338 ActivityRecord{112375603 u0 app.devilwalkx.accesschain/.MainActivity t10 f} isExiting}}
+10-17 20:27:18.553 I/WindowManager(  579): WIN DEATH: Window{d60e1dc u0 app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity EXITING}
+10-17 20:27:18.554 D/WindowManagerShell( 1024): setLauncherKeepClearAreaHeight: visible=true, height=527
+10-17 20:27:18.555 V/ActivityManager(  579): Got obituary of 4528:app.devilwalkx.accesschain
+10-17 20:27:18.560 V/WindowManager(  579): Unknown focus tokens, dropping reportFocusChanged
+10-17 20:27:18.560 I/SsCardPagerAdapter( 1306): [rmv] Rendering flag - enabled: true rmv: null
+10-17 20:27:18.560 I/SsCardPagerAdapter( 1306): Use UI template for the feature: 1
+10-17 20:27:18.564 W/Looper  ( 1024): Drained
+10-17 20:27:18.586 I/AiAiEcho( 1629): Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-17 20:27:18.586 I/keystore2(  234): system/security/keystore2/src/maintenance.rs:607 - clearNamespace(r#APP, nspace=10217)
+10-17 20:27:18.588 I/AiAiEcho( 1629): EchoTargets: 
+10-17 20:27:18.588 I/AiAiEcho( 1629): Filtered by AiAi flag check: 
+10-17 20:27:18.588 I/AiAiEcho( 1629): [CONTEXT ratelimit_period="10 SECONDS" ]
+10-17 20:27:18.589 I/AiAiEcho( 1629): #remoteViewsTwiddler: feature disabled.
+10-17 20:27:18.591 I/AiAiEcho( 1629): #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-17 20:27:18.593 W/ActivityTaskManager(  579): Unable to send transaction to client proc app.devilwalkx.accesschain: no app thread
+10-17 20:27:18.598 D/SsBaseTemplateCard( 1306): No text view can be set up
+10-17 20:27:18.598 W/ActivityManager(  579): setHasOverlayUi called on unknown pid: 4528
+10-17 20:27:18.598 D/SsBaseTemplateCard( 1306): Passed-in item info is null
+10-17 20:27:18.598 D/SsBaseTemplateCard( 1306): Passed-in item info is null
+10-17 20:27:18.598 D/SsBaseTemplateCard( 1306): Passed-in item info is null
+10-17 20:27:18.598 I/SsBaseTemplateCard( 1306): Secondary card pane is null
+10-17 20:27:18.600 I/AppsFilter(  579): interaction: PackageSetting{745a718 com.android.microdroid.empty_payload/10205} -> PackageSetting{f68dce app.devilwalkx.accesschain/10217} BLOCKED
+10-17 20:27:18.601 I/AppsFilter(  579): interaction: PackageSetting{745a718 com.android.microdroid.empty_payload/10205} -> PackageSetting{f68dce app.devilwalkx.accesschain/10217} BLOCKED
+10-17 20:27:18.603 D/ActivityManager(  579): sync unfroze 2623 com.google.android.documentsui for 3
+10-17 20:27:18.604 D/ActivityManager(  579): sync unfroze 3749 com.android.chrome for 3
+10-17 20:27:18.607 I/AppWidgetServiceImpl(  579): Received broadcast: android.intent.action.PACKAGE_DATA_CLEARED on user 0
+10-17 20:27:18.616 D/ShortcutService(  579): received package broadcast intent: Intent { act=android.intent.action.PACKAGE_DATA_CLEARED dat=package: flg=0x5000010 (has extras) }
+10-17 20:27:18.616 D/ShortcutService(  579): clearing data for package: app.devilwalkx.accesschain userId=0
+10-17 20:27:18.629 D/SafetySourceDataValidat(  579): No cert check requested for package com.google.android.permissioncontroller
+10-17 20:27:18.634 D/b/387844520( 1306): calling updateRingPath from onSizeChanged
+10-17 20:27:18.634 D/b/387844520( 1306): getOutlineOffsetX: measured width = 173, mNormalizedIconSize = 159, last updated width = 173
+10-17 20:27:18.646 D/BaseDepthController( 1306): setSurface:
+10-17 20:27:18.646 D/BaseDepthController( 1306): 	mWaitingOnSurfaceValidity: false
+10-17 20:27:18.646 D/BaseDepthController( 1306): 	mBaseSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0x72949bb
+10-17 20:27:18.655 W/ogle.android.as( 1629): Suspending all threads took: 15.242ms
+10-17 20:27:18.657 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a92258) locale list changing from [] to [en-US]
+10-17 20:27:18.657 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a915d8) locale list changing from [] to [en-US]
+10-17 20:27:18.659 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a895b8) locale list changing from [] to [en-US]
+10-17 20:27:18.683 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a9c4d8) locale list changing from [] to [en-US]
+10-17 20:27:18.703 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8a558) locale list changing from [] to [en-US]
+10-17 20:27:18.705 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a85d78) locale list changing from [] to [en-US]
+10-17 20:27:18.711 I/BpBinder(  520): onLastStrongRef automatically unlinking death recipients: 
+10-17 20:27:18.712 I/Blockstore( 1590): [PackageIntentOperation] Checking IS_RESTORE extra. [CONTEXT service_id=258 ]
+10-17 20:27:18.705 D/CarrierSvcBindHelper( 1190): onHandleForceStop: [app.devilwalkx.accesschain]
+10-17 20:27:18.715 D/CarrierSvcBindHelper( 1190): No carrier app for: 0
+10-17 20:27:18.719 I/PTCommittedOperation( 3150): Receive new configuration for com.google.android.gms.reachability
+10-17 20:27:18.720 I/AppWidgetServiceImpl(  579): Received broadcast: android.intent.action.PACKAGE_RESTARTED on user 0
+10-17 20:27:18.721 I/AppWidgetServiceImpl(  579): Updating package stopped masked state for uid 10217 package app.devilwalkx.accesschain isStopped false
+10-17 20:27:18.726 D/SsBaseTemplateCard( 1306): No text view can be set up
+10-17 20:27:18.726 D/SsBaseTemplateCard( 1306): Passed-in item info is null
+10-17 20:27:18.726 D/SsBaseTemplateCard( 1306): Passed-in item info is null
+10-17 20:27:18.726 D/SsBaseTemplateCard( 1306): Passed-in item info is null
+10-17 20:27:18.726 I/SsBaseTemplateCard( 1306): Secondary card pane is null
+10-17 20:27:18.728 I/NearbyMediums( 3150): ModuleInitializer handles incoming intent com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.735 V/WindowManagerShell( 1024): onTransitionReady(transaction=2486786065080)
+10-17 20:27:18.735 V/WindowManagerShell( 1024): onTransitionReady (#18) android.os.BinderProxy@3abd6ee: {id=18 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+10-17 20:27:18.735 V/WindowManagerShell( 1024):         {m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x20273fa sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},
+10-17 20:27:18.735 V/WindowManagerShell( 1024):         {m=CLOSE f=NONE leash=Surface(name=Task=10)/@0x7bdbdab sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},
+10-17 20:27:18.735 V/WindowManagerShell( 1024):         {m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{cd7ed1c showWhenLocked=false})/@0x8d60c08 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}
+10-17 20:27:18.735 V/WindowManagerShell( 1024):     ]}
+10-17 20:27:18.771 V/WindowManagerShell( 1024): Playing animation for (#18) android.os.BinderProxy@3abd6ee@0
+10-17 20:27:18.778 V/ShellRecents( 1024): RecentsTransitionHandler.startAnimation: no controller found
+10-17 20:27:18.779 V/WindowManagerShell( 1024): Transition doesn't have explicit remote, search filters for match for {id=18 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x20273fa sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},{m=CLOSE f=NONE leash=Surface(name=Task=10)/@0x7bdbdab sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},{m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{cd7ed1c showWhenLocked=false})/@0x8d60c08 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}]}
+10-17 20:27:18.780 V/WindowManagerShell( 1024):  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=undefined independent=true modes=[CLOSE,TO_BACK] flags=IN_TASK_WITH_EMBEDDED_ACTIVITY mustBeTask=false order=ANY topActivity=null launchCookie=null taskFragmentToken=android.os.BinderProxy@7188987 windowingMode=undefined}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@4c3e0b4, appThread = android.app.IApplicationThread$Stub$Proxy@515b4dd, debugName = overlayBackTransition }}
+10-17 20:27:18.780 V/WindowManagerShell( 1024):  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@7478852, appThread = android.app.IApplicationThread$Stub$Proxy@66a3723, debugName = LauncherToDream }}
+10-17 20:27:18.781 V/WindowManagerShell( 1024):  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity} launchCookie=null windowingMode=undefined},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined},{NOT atype=undefined independent=true modes=[] flags=NONE mustBeTask=true order=ANY topActivity=null launchCookie=null customAnim=true windowingMode=undefined}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@185420, appThread = android.app.IApplicationThread$Stub$Proxy@4bdc1d9, debugName = QuickstepLaunchHome }}
+10-17 20:27:18.782 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.782 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.783 I/AutofillFlagChangeInten( 1590): onHandleIntent() [CONTEXT service_id=177 ]
+10-17 20:27:18.787 I/fpnvgms ( 1590): [FpnvIntentOperation] Received intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) } [CONTEXT service_id=429 ]
+10-17 20:27:18.790 D/RemoteTransitionHandler( 1024): Found filterPair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity} launchCookie=null windowingMode=undefined},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined},{NOT atype=undefined independent=true modes=[] flags=NONE mustBeTask=true order=ANY topActivity=null launchCookie=null customAnim=true windowingMode=undefined}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@185420, appThread = android.app.IApplicationThread$Stub$Proxy@4bdc1d9, debugName = QuickstepLaunchHome }}
+10-17 20:27:18.791 V/WindowManagerShell( 1024):  Delegate animation for (#18) to RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@185420, appThread = android.app.IApplicationThread$Stub$Proxy@4bdc1d9, debugName = QuickstepLaunchHome }
+10-17 20:27:18.794 W/JobInfo (  579): Job 'com.google.android.providers.media.module/com.android.providers.media.MediaService#-300' has a deadline with no functional constraints. The deadline won't improve job execution latency. Consider removing the deadline.
+10-17 20:27:18.794 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.794 V/WindowManager(  579): Sent Transition (#18) createdAt=10-17 20:27:18.494 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=10 effectiveUid=10217 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 pkg=app.devilwalkx.accesschain cmp=app.devilwalkx.accesschain/.MainActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity} numActivities=0 lastActiveTime=150484 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{da6426a Task{aa05e95 #10 type=standard A=10217:app.devilwalkx.accesschain}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 0 - 0, 0) topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isTopActivityNoDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false isActivityStackTransparent=true lastNonFullscreenBounds=Rect(276, 692 - 804, 1772) capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=-9 topActivityRequestOpenInBrowserEducationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false eligibleForLetterboxEducation= false isLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false eligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActivityAppBounds=Rect(0, 0 - 0, 0) isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false hasMinAspectRatioOverride=false topActivityLetterboxBounds=null cameraCompatTaskInfo=CameraCompatTaskInfo { freeformCameraCompatMode=undefined}} topActivityMainWindowFrame=null}, pipChange = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 18 }
+10-17 20:27:18.795 V/WindowManager(  579):     startWCT=WindowContainerTransaction { changes= {} hops= [] errorCallbackToken=null taskFragmentOrganizer=null }
+10-17 20:27:18.795 V/WindowManager(  579):     info={id=18 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+10-17 20:27:18.795 V/WindowManager(  579):         {WCT{RemoteToken{bfb45e9 Task{a7f2284 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0xc58a3ea sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},
+10-17 20:27:18.795 V/WindowManager(  579):         {WCT{RemoteToken{da6426a Task{aa05e95 #10 type=standard A=10217:app.devilwalkx.accesschain}}} m=CLOSE f=NONE leash=Surface(name=Task=10)/@0xb529e5e sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},
+10-17 20:27:18.795 V/WindowManager(  579):         {m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{cd7ed1c showWhenLocked=false})/@0x68d4122 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}
+10-17 20:27:18.795 V/WindowManager(  579):     ]}
+10-17 20:27:18.826 V/WindowManagerShell( 1024):  animated by com.android.wm.shell.transition.RemoteTransitionHandler@a1d4b4
+10-17 20:27:18.826 W/Looper  ( 1024): Slow dispatch took 90ms wmshell.main app=com.android.systemui main=false group=FOREGROUND h=android.os.Handler c=com.android.wm.shell.transition.Transitions$TransitionPlayerImpl$$ExternalSyntheticLambda0@27e924c m=0
+10-17 20:27:18.826 W/Looper  ( 1024): Slow delivery took 77ms wmshell.main app=com.android.systemui main=false group=FOREGROUND h=android.os.Handler c=com.android.wm.shell.pip.phone.PipController$$ExternalSyntheticLambda3@33fa295 m=0
+10-17 20:27:18.830 I/SyncIntentOperation( 1590): Handling the intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) }. [CONTEXT service_id=80 ]
+10-17 20:27:18.831 I/MdiSyncModule( 1590): flag handling is skipping irrelevant intent.
+10-17 20:27:18.832 I/MlBenchmarkInstaller( 1590): Intent: com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=340 ]
+10-17 20:27:18.832 I/MlBenchmarkInstaller( 1590): COMMITTED Extra package name: com.google.android.gms.reachability [CONTEXT service_id=340 ]
+10-17 20:27:18.836 W/Looper  ( 1024): Drained
+10-17 20:27:18.836 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a866d8) locale list changing from [] to [en-US]
+10-17 20:27:18.837 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.837 I/GmsSyncPolicyEngine( 1590): Periodic sync 1 disabled by policy, cancelled.
+10-17 20:27:18.837 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a81598) locale list changing from [] to [en-US]
+10-17 20:27:18.837 I/GmsSyncPolicyEngine( 1590): Periodic sync 2 disabled by policy, cancelled.
+10-17 20:27:18.837 I/GmsSyncPolicyEngine( 1590): Periodic sync 3 disabled by policy, cancelled.
+10-17 20:27:18.838 I/LocationHistory( 1590): [IntentOperation] Handling action com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=314 ]
+10-17 20:27:18.842 D/StateManager( 1306): createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-17 20:27:18.842 D/StateManager( 1306): 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme 43e00d9cd0eb17b3d9dd30fc1741b1c71445c4c0f7c8c9b81300265c86c5b873:22)
+10-17 20:27:18.842 D/StateManager( 1306): 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme 43e00d9cd0eb17b3d9dd30fc1741b1c71445c4c0f7c8c9b81300265c86c5b873:11)
+10-17 20:27:18.842 D/StateManager( 1306): 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme 43e00d9cd0eb17b3d9dd30fc1741b1c71445c4c0f7c8c9b81300265c86c5b873:339)
+10-17 20:27:18.844 D/b/311077782( 1306): LauncherAnimationRunner.setAnimation
+10-17 20:27:18.848 D/WorkspaceRevealAnim( 1306): onAnimationEnd: workspace alpha = 1.0
+10-17 20:27:18.848 D/PersistedStoragePackageUninstalledReceiver( 1026): Received android.intent.action.PACKAGE_DATA_CLEARED for app.devilwalkx.accesschain for u0
+10-17 20:27:18.851 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7ca98) locale list changing from [] to [en-US]
+10-17 20:27:18.856 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7baf8) locale list changing from [] to [en-US]
+10-17 20:27:18.860 V/WindowManagerShell( 1024): Transition animation finished (aborted=false), notifying core (#18) android.os.BinderProxy@3abd6ee@0
+10-17 20:27:18.894 V/WindowManager(  579): Finish Transition (#18): created at 10-17 20:27:18.494 collect-started=0.023ms request-sent=0.132ms started=18.729ms ready=225.977ms sent=240.059ms commit=114.649ms finished=370.996ms
+10-17 20:27:18.898 I/Fitness ( 3150): FitCleanupIntentOperation received Intent android.intent.action.PACKAGE_DATA_CLEARED [CONTEXT service_id=17 ]
+--------- beginning of kernel
+10-17 20:27:19.015 I/binder  (    0): 1768:579 cannot find target node
+10-17 20:27:19.024 I/binder  (    0): 579:1768 transaction async to 0:0 failed 378958/29189/-22, size 64-0 line 3348
+10-17 20:27:18.919 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.920 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.920 I/AutofillFlagChangeInten( 1590): onHandleIntent() [CONTEXT service_id=177 ]
+10-17 20:27:18.921 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.921 I/SyncIntentOperation( 1590): Handling the intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) }. [CONTEXT service_id=80 ]
+10-17 20:27:18.923 I/MdiSyncModule( 1590): handling relevant flag change...
+10-17 20:27:18.923 I/fpnvgms ( 1590): [FpnvIntentOperation] Received intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) } [CONTEXT service_id=429 ]
+10-17 20:27:18.926 I/MlBenchmarkInstaller( 1590): Intent: com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=340 ]
+10-17 20:27:18.926 I/MlBenchmarkInstaller( 1590): COMMITTED Extra package name: com.google.android.gms.mdisync [CONTEXT service_id=340 ]
+10-17 20:27:18.927 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:18.927 I/GmsSyncPolicyEngine( 1590): Periodic sync 1 disabled by policy, cancelled.
+10-17 20:27:18.927 I/GmsSyncPolicyEngine( 1590): Periodic sync 2 disabled by policy, cancelled.
+10-17 20:27:18.927 I/GmsSyncPolicyEngine( 1590): Periodic sync 3 disabled by policy, cancelled.
+10-17 20:27:18.927 I/LocationHistory( 1590): [IntentOperation] Handling action com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=314 ]
+10-17 20:27:18.937 I/MdiSyncModule( 1590): flag handling completed
+10-17 20:27:18.954 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a76058) locale list changing from [] to [en-US]
+10-17 20:27:18.965 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a785d8) locale list changing from [] to [en-US]
+10-17 20:27:18.969 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a84798) locale list changing from [] to [en-US]
+10-17 20:27:18.974 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7d718) locale list changing from [] to [en-US]
+10-17 20:27:18.976 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7dd58) locale list changing from [] to [en-US]
+10-17 20:27:18.984 E/IPCThreadState(  579): Binder transaction failure. id: 378958, BR_*: 29189, error: -22 (Invalid argument)
+10-17 20:27:18.984 W/ActivityManager(  579): pid 579 system sent binder code 7 with flags 1 to frozen apps and got error -32
+10-17 20:27:18.989 W/WindowManager(  579): Exception thrown during dispatchAppVisibility Window{d60e1dc u0 app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity EXITING}
+10-17 20:27:18.989 W/WindowManager(  579): android.os.DeadObjectException
+10-17 20:27:18.989 W/WindowManager(  579): 	at android.os.BinderProxy.transactNative(Native Method)
+10-17 20:27:18.989 W/WindowManager(  579): 	at android.os.BinderProxy.transact(BinderProxy.java:592)
+10-17 20:27:18.989 W/WindowManager(  579): 	at android.view.IWindow$Stub$Proxy.dispatchAppVisibility(IWindow.java:557)
+10-17 20:27:18.989 W/WindowManager(  579): 	at com.android.server.wm.WindowState.sendAppVisibilityToClients(WindowState.java:3151)
+10-17 20:27:18.989 W/WindowManager(  579): 	at com.android.server.wm.WindowContainer.sendAppVisibilityToClients(WindowContainer.java:1311)
+10-17 20:27:18.989 W/WindowManager(  579): 	at com.android.server.wm.WindowToken.setClientVisible(WindowToken.java:389)
+10-17 20:27:18.989 W/WindowManager(  579): 	at com.android.server.wm.ActivityRecord.setClientVisible(ActivityRecord.java:6650)
+10-17 20:27:18.989 W/WindowManager(  579): 	at com.android.server.wm.ActivityRecord.commitVisibility(ActivityRecord.java:5561)
+10-17 20:27:18.989 W/WindowManager(  579): 	at com.android.server.wm.Transition.finishTransition(Transition.java:1391)
+10-17 20:27:18.989 W/WindowManager(  579): 	at com.android.server.wm.TransitionController.finishTransition(TransitionController.java:1029)
+10-17 20:27:18.989 W/WindowManager(  579): 	at com.android.server.wm.WindowOrganizerController.finishTransition(WindowOrganizerController.java:496)
+10-17 20:27:18.989 W/WindowManager(  579): 	at android.window.IWindowOrganizerController$Stub.onTransact(IWindowOrganizerController.java:261)
+10-17 20:27:18.989 W/WindowManager(  579): 	at com.android.server.wm.WindowOrganizerController.onTransact(WindowOrganizerController.java:223)
+10-17 20:27:18.989 W/WindowManager(  579): 	at android.os.Binder.execTransactInternal(Binder.java:1421)
+10-17 20:27:18.989 W/WindowManager(  579): 	at android.os.Binder.execTransact(Binder.java:1365)
+10-17 20:27:18.989 W/Process (  579): Unable to open /proc/4528/status
+10-17 20:27:18.996 I/ImeTracker(  579): system_server:1352323e: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-17 20:27:19.004 V/WindowManagerShell( 1024): Track 0 became idle
+10-17 20:27:19.004 V/WindowManagerShell( 1024): All active transition animations finished
+10-17 20:27:19.004 W/Looper  ( 1024): Slow dispatch took 144ms wmshell.main app=com.android.systemui main=false group=FOREGROUND h=android.os.Handler c=com.android.wm.shell.transition.RemoteTransitionHandler$1$$ExternalSyntheticLambda0@433c76 m=0
+10-17 20:27:19.004 I/ImeTracker(  579): com.google.android.apps.nexuslauncher:a570102a: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-17 20:27:19.021 I/GoogleInputMethodService( 1500): GoogleInputMethodService.onFinishInput():2043 
+10-17 20:27:19.021 I/Module  ( 1500): DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-17 20:27:19.022 I/GoogleInputMethodService( 1500): GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): EmojiCompatManager.getEmojiCompatIfLoaded():343 EmojiCompat.init() was never called.
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): java.lang.IllegalStateException: EmojiCompat is not initialized. Please call EmojiCompat.init() first
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at asx.p(PG:6)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at axb.b(PG:13)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at jnr.b(PG:2)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at jnr.c(PG:4)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at jnr.f(PG:3)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at jnx.c(PG:3)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at kif.cz(PG:47)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at lhl.run(PG:1025)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at jaf.execute(PG:12)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at nco.v(PG:13)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at lhn.m(PG:96)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at lhn.k(PG:25)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at kgn.onStartInput(PG:250)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at android.inputmethodservice.InputMethodService.doStartInput(InputMethodService.java:3521)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at android.inputmethodservice.InputMethodService$InputMethodImpl.startInput(InputMethodService.java:879)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at android.inputmethodservice.InputMethodService$InputMethodImpl.dispatchStartInput(InputMethodService.java:908)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at android.inputmethodservice.IInputMethodWrapper.executeMessage(IInputMethodWrapper.java:201)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at com.android.internal.os.HandlerCaller$MyHandler.handleMessage(HandlerCaller.java:44)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at android.os.Looper.loopOnce(Looper.java:248)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at android.os.Looper.loop(Looper.java:338)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at java.lang.reflect.Method.invoke(Native Method)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-17 20:27:19.028 I/EmojiCompatManager( 1500): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-17 20:27:19.029 I/Module  ( 1500): DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-17 20:27:19.031 W/PackageConfigPersister(  579): App-specific configuration not found for packageName: com.google.android.apps.nexuslauncher and userId: 0
+10-17 20:27:19.031 I/GoogleInputMethodService( 1500): GoogleInputMethodService.onStartInput():1329 Reset input view per cached request.
+10-17 20:27:19.031 I/GoogleInputMethodService( 1500): GoogleInputMethodService.clearInputMethodServiceData():1016 clearInputMethodServiceData for resetInputView
+10-17 20:27:19.031 I/ImeTracker(  579): system_server:420752d1: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-17 20:27:19.032 I/GoogleInputMethodService( 1500): GoogleInputMethodService.discardAllKeyboardViewAndInputView():1181 discardAllKeyboardViewAndInputView()
+10-17 20:27:19.032 I/AbstractOpenableExtension( 1500): AbstractOpenableExtension.maybeDestroyExistingKeyboardGroupManager():537 Destroy existing keyboard group manager in eay
+10-17 20:27:19.032 I/AbstractOpenableExtension( 1500): AbstractOpenableExtension.createKeyboardGroupManagerListenableFuture():121 Create keyboard group manager listenable future in eay
+10-17 20:27:19.032 I/AbstractOpenableExtension( 1500): AbstractOpenableExtension.maybeDestroyExistingKeyboardGroupManager():537 Destroy existing keyboard group manager in fso
+10-17 20:27:19.033 I/AbstractOpenableExtension( 1500): AbstractOpenableExtension.createKeyboardGroupManagerListenableFuture():121 Create keyboard group manager listenable future in fso
+10-17 20:27:19.033 I/AbstractOpenableExtension( 1500): AbstractOpenableExtension.maybeDestroyExistingKeyboardGroupManager():537 Destroy existing keyboard group manager in fve
+10-17 20:27:19.033 I/AbstractOpenableExtension( 1500): AbstractOpenableExtension.createKeyboardGroupManagerListenableFuture():121 Create keyboard group manager listenable future in fve
+10-17 20:27:19.033 I/GoogleInputMethodService( 1500): GoogleInputMethodService.initializeInputMethodServiceData():834 initializeInputMethodServiceData for kek{languageTag=en-US, variant=qwerty, hasLocalizedResources=true, conditionCacheKey=_app_first_start_timestamp=1792268682703_cache_additional_ime_defs_for_condition_change=false_cache_ime_defs_for_condition_change=false_deprecate_long_press_space_for_ime_picker=false_device=phone_device_size=default_enable_access_points_in_password_number=false_enable_flick_symbols=true_enable_more_candidates_view_for_multilingual=false_enable_number_row=false_enable_preemptive_decode=true_enable_premium_exp_tablet_layout_change=false_enable_secondary_digits=true_enable_secondary_symbols=false_expressions=normal_four_or_more_letter_rows=false_keyboard_mode=normal_language=en-US_layout_9key_split=false_orientation=portrait_physical_keyboard=qwerty_rtl_layout=false_show_secondary_digits=true_show_suggestions=true_split_with_duplicate_keys=true_variant=qwerty, imeDef.stringId=ime_english_united_states, imeDef.className=com.google.android.libraries.inputmethod.ime.experiment.ExperimentImeWrapper, imeDef.languageTag=en-US}
+10-17 20:27:19.051 D/FileUtils(  579): Rounded bytes from 2593071104 to 4000000000
+10-17 20:27:19.061 I/KeyboardThemeProvider( 1500): KeyboardThemeProvider.applyKeyboardTheme():27 Apply keyboard theme: theme_!gsf_!pgsans_!pgsf_!use_system_font_BORDER=true_FLAVOR_DPI=XXHDPI_KEYBOARD_WIDTH_CATEGORY=NORMAL_LIGHT_THEME=true_PHYSICAL_DIAGONAL=5.9895906_SCREEN_SHORTEST_WIDTH=411_SCREEN_SHORTEST_WIDTH_NO_SCALE=411_bottom4dp_enable_google_fonts_icons=true_enable_popup_on_keypress=true_keyboard_redesign_google_sans=true_noshadow_overlay_builtin_dynamic_color_light_base.binarypb:gm3-light-fffaf8ff-ff475d92-6dac7c28fa7faa76f8370bbfdbc77981_silkpopup_unify_function_key_color=true
+10-17 20:27:19.066 I/AndroidIME( 1500): InputBundleManager.loadActiveInputBundleId():483 loadActiveInputBundleId: und-Latn-x-password, password
+10-17 20:27:19.066 I/GoogleInputMethodService( 1500): GoogleInputMethodService.onCreateInputView():1233 onCreateInputView()
+10-17 20:27:19.145 I/ImeTracker(  579): system_server:1352323e: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-17 20:27:19.156 I/MediaProvider( 1606): Begin Intent { act=android.intent.action.PACKAGE_DATA_CLEARED dat=package: flg=0x5000010 cmp=com.google.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+10-17 20:27:19.156 D/MediaProvider( 1606): Deleted 0 Android/media items belonging to app.devilwalkx.accesschain on /data/user/0/com.google.android.providers.media.module/databases/external.db
+10-17 20:27:19.182 I/PTCommittedOperation( 3150): Receive new configuration for com.google.android.gms.mdisync
+10-17 20:27:19.189 W/AccessibilityManagerService(  579):  wait for adding window timeout: 38
+10-17 20:27:19.190 I/NearbyMediums( 3150): ModuleInitializer handles incoming intent com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.192 I/KeyboardGroupDefParser( 1500): KeyboardGroupDefParser.parseKeyboardGroupDef():86 parseKeyboardGroupDef() 2132214031 -> 0_resource_name_obfuscated : WaitTime = 71 ms : RunTime = 88 ms
+10-17 20:27:19.203 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a77318) locale list changing from [] to [en-US]
+10-17 20:27:19.210 I/ImeTracker(  579): system_server:420752d1: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-17 20:27:19.240 I/Icing   ( 1590): doRemovePackageData app.devilwalkx.accesschain
+10-17 20:27:19.262 E/BpTransactionCompletedListener(  520): Failed to transact (-32)
+10-17 20:27:19.272 I/FuseDaemon( 1606): Successfully deleted rows in leveldb for owner_id:  and ownerPackageIdentifier: app.devilwalkx.accesschain::0
+10-17 20:27:19.282 D/MediaGrants( 1606): Removed 0 media_grants for 0 user for [app.devilwalkx.accesschain, app.devilwalkx.accesschain]. Reason: Package orphaned
+10-17 20:27:19.282 I/MediaProvider( 1606): End Intent { act=android.intent.action.PACKAGE_DATA_CLEARED dat=package: flg=0x5000010 cmp=com.google.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+10-17 20:27:19.300 W/StyleResolver( 1500): StyleResolver.createParsedStyleRule():233 Only one descendant combinator is supported: .keytop.pill-variant-colored  .label:pressed
+10-17 20:27:19.310 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8cad8) locale list changing from [] to [en-US]
+10-17 20:27:19.319 D/InsetsController( 1306): hide(ime(), fromIme=false)
+10-17 20:27:19.319 I/ImeTracker( 1306): com.google.android.apps.nexuslauncher:a570102a: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-17 20:27:19.319 D/RecentsView( 1306): onTaskRemoved: 10, not handling task stack changes
+10-17 20:27:19.319 D/RecentsView( 1306): onTaskRemoved: 10, not handling task stack changes
+10-17 20:27:19.337 I/KeyboardGroupDefParser( 1500): KeyboardGroupDefParser.parseKeyboardGroupDef():86 parseKeyboardGroupDef() 2132214028 -> 0_resource_name_obfuscated : WaitTime = 99 ms : RunTime = 205 ms
+10-17 20:27:19.338 I/KeyboardGroupDefParser( 1500): KeyboardGroupDefParser.parseKeyboardGroupDef():86 parseKeyboardGroupDef() 2132214032 -> 0_resource_name_obfuscated : WaitTime = 159 ms : RunTime = 146 ms
+10-17 20:27:19.366 D/OomAdjuster(  579): Not killing cached processes
+10-17 20:27:19.533 W/IPCThreadState(  579): Sending oneway calls to frozen process.
+10-17 20:27:19.547 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a83b18) locale list changing from [] to [en-US]
+10-17 20:27:19.550 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8bb38) locale list changing from [] to [en-US]
+10-17 20:27:19.551 W/putmethod.latin( 1500): Long monitor contention with owner Light-P0-2 (1913) at android.content.res.XmlBlock android.content.res.AssetManager.openXmlBlockAsset(int, java.lang.String, boolean)(AssetManager.java:1237) waiters=0 in boolean android.content.res.AssetManager.getResourceValue(int, int, android.util.TypedValue, boolean) for 136ms
+10-17 20:27:19.552 I/AndroidIME( 1500): KeyboardViewManager.updateKeyboardBackgroundFrameVisibility():333 Set background frame visibility. old:8, new:8
+10-17 20:27:19.565 I/AbstractOpenableExtension( 1500): AbstractOpenableExtension$3.onSuccess():555 KeyboardGroupManager destroyed in eay.
+10-17 20:27:19.565 I/AbstractOpenableExtension( 1500): AbstractOpenableExtension$3.onSuccess():555 KeyboardGroupManager destroyed in fso.
+10-17 20:27:19.565 I/AbstractOpenableExtension( 1500): AbstractOpenableExtension$3.onSuccess():555 KeyboardGroupManager destroyed in fve.
+10-17 20:27:19.579 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a863b8) locale list changing from [] to [en-US]
+10-17 20:27:19.580 D/ActivityManager(  579): freezing 2021 android.process.media
+10-17 20:27:19.582 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-17 20:27:19.585 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-17 20:27:19.585 D/InetDiagMessage(  579): Destroyed live tcp sockets for uids={10106} in 5ms
+10-17 20:27:19.618 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8be58) locale list changing from [] to [en-US]
+10-17 20:27:19.669 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a869f8) locale list changing from [] to [en-US]
+10-17 20:27:19.688 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8cdf8) locale list changing from [] to [en-US]
+10-17 20:27:19.690 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.690 D/SatelliteController( 1190): iisInCarrierRoamingNbIotNtn: satellite is disabled
+10-17 20:27:19.690 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.703 I/AutofillFlagChangeInten( 1590): onHandleIntent() [CONTEXT service_id=177 ]
+10-17 20:27:19.703 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.712 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a77f98) locale list changing from [] to [en-US]
+10-17 20:27:19.735 I/SyncIntentOperation( 1590): Handling the intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) }. [CONTEXT service_id=80 ]
+10-17 20:27:19.737 I/fpnvgms ( 1590): [FpnvIntentOperation] Received intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) } [CONTEXT service_id=429 ]
+10-17 20:27:19.750 I/MdiSyncModule( 1590): flag handling is skipping irrelevant intent.
+10-17 20:27:19.750 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.751 I/LocationHistory( 1590): [IntentOperation] Handling action com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=314 ]
+10-17 20:27:19.751 I/GmsSyncPolicyEngine( 1590): Periodic sync 1 disabled by policy, cancelled.
+10-17 20:27:19.751 I/GmsSyncPolicyEngine( 1590): Periodic sync 2 disabled by policy, cancelled.
+10-17 20:27:19.751 I/GmsSyncPolicyEngine( 1590): Periodic sync 3 disabled by policy, cancelled.
+10-17 20:27:19.751 I/MlBenchmarkInstaller( 1590): Intent: com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=340 ]
+10-17 20:27:19.751 I/MlBenchmarkInstaller( 1590): COMMITTED Extra package name: com.google.android.gms.audit [CONTEXT service_id=340 ]
+10-17 20:27:19.753 I/PTCommittedOperation( 3150): Receive new configuration for com.google.android.gms.audit
+10-17 20:27:19.757 I/NearbyMediums( 3150): ModuleInitializer handles incoming intent com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.773 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8b1d8) locale list changing from [] to [en-US]
+10-17 20:27:19.793 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a882f8) locale list changing from [] to [en-US]
+10-17 20:27:19.825 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.830 I/AutofillFlagChangeInten( 1590): onHandleIntent() [CONTEXT service_id=177 ]
+10-17 20:27:19.830 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.830 I/SyncIntentOperation( 1590): Handling the intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) }. [CONTEXT service_id=80 ]
+10-17 20:27:19.831 I/fpnvgms ( 1590): [FpnvIntentOperation] Received intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) } [CONTEXT service_id=429 ]
+10-17 20:27:19.831 I/MdiSyncModule( 1590): flag handling is skipping irrelevant intent.
+10-17 20:27:19.840 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a89298) locale list changing from [] to [en-US]
+10-17 20:27:19.847 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.849 I/MlBenchmarkInstaller( 1590): Intent: com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=340 ]
+10-17 20:27:19.849 I/MlBenchmarkInstaller( 1590): COMMITTED Extra package name: com.google.android.gms.drive [CONTEXT service_id=340 ]
+10-17 20:27:19.849 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.852 I/PTCommittedOperation( 3150): Receive new configuration for com.google.android.gms.drive
+10-17 20:27:19.853 I/GmsSyncPolicyEngine( 1590): Periodic sync 1 disabled by policy, cancelled.
+10-17 20:27:19.854 I/LocationHistory( 1590): [IntentOperation] Handling action com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=314 ]
+10-17 20:27:19.856 I/NearbyMediums( 3150): ModuleInitializer handles incoming intent com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:19.863 I/GmsSyncPolicyEngine( 1590): Periodic sync 2 disabled by policy, cancelled.
+10-17 20:27:19.863 I/GmsSyncPolicyEngine( 1590): Periodic sync 3 disabled by policy, cancelled.
+10-17 20:27:19.867 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a88618) locale list changing from [] to [en-US]
+10-17 20:27:19.899 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7f978) locale list changing from [] to [en-US]
+10-17 20:27:19.910 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a80c38) locale list changing from [] to [en-US]
+10-17 20:27:19.912 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7a838) locale list changing from [] to [en-US]
+10-17 20:27:19.930 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a831b8) locale list changing from [] to [en-US]
+10-17 20:27:19.953 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a82538) locale list changing from [] to [en-US]
+10-17 20:27:19.962 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7c778) locale list changing from [] to [en-US]
+10-17 20:27:19.963 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8aeb8) locale list changing from [] to [en-US]
+10-17 20:27:19.969 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a81bd8) locale list changing from [] to [en-US]
+10-17 20:27:19.975 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a78f38) locale list changing from [] to [en-US]
+10-17 20:27:19.987 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7ffb8) locale list changing from [] to [en-US]
+10-17 20:27:19.991 I/Icing   ( 1590): updateResources: need to parse buqq{com.google.android.googlequicksearchbox}
+10-17 20:27:19.994 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8c498) locale list changing from [] to [en-US]
+10-17 20:27:19.999 I/gle.android.gms( 1590): AssetManager2(0x7b9f35a8f378) locale list changing from [] to [en-US]
+10-17 20:27:20.003 I/Icing   ( 1590): updateResources: need to parse buqq{com.google.android.gms}
+10-17 20:27:20.014 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7ae78) locale list changing from [] to [en-US]
+10-17 20:27:20.029 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a89bf8) locale list changing from [] to [en-US]
+10-17 20:27:20.041 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a79578) locale list changing from [] to [en-US]
+10-17 20:27:20.053 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7a1f8) locale list changing from [] to [en-US]
+10-17 20:27:20.064 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a75d38) locale list changing from [] to [en-US]
+10-17 20:27:20.081 I/Auth.Api.Credentials( 1590): [WebauthnCredentialDataClient#subscribe()] Operation started. [CONTEXT service_id=68 ]
+10-17 20:27:20.086 I/Auth.Api.Credentials( 1590): [WebauthnCredentialDataClient#subscribe()] Operation succeeded with result: null. [CONTEXT service_id=68 ]
+10-17 20:27:20.096 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7cdb8) locale list changing from [] to [en-US]
+10-17 20:27:20.107 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a84dd8) locale list changing from [] to [en-US]
+10-17 20:27:20.119 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a77638) locale list changing from [] to [en-US]
+10-17 20:27:20.125 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a84ab8) locale list changing from [] to [en-US]
+10-17 20:27:20.130 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a81ef8) locale list changing from [] to [en-US]
+10-17 20:27:20.132 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a76ff8) locale list changing from [] to [en-US]
+10-17 20:27:20.143 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7f338) locale list changing from [] to [en-US]
+10-17 20:27:20.144 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a77c78) locale list changing from [] to [en-US]
+10-17 20:27:20.151 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7b4b8) locale list changing from [] to [en-US]
+10-17 20:27:20.165 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7d3f8) locale list changing from [] to [en-US]
+10-17 20:27:20.181 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7e6b8) locale list changing from [] to [en-US]
+10-17 20:27:20.185 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a837f8) locale list changing from [] to [en-US]
+10-17 20:27:20.189 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7e9d8) locale list changing from [] to [en-US]
+10-17 20:27:20.214 I/PTCommittedOperation( 3150): Receive new configuration for com.google.android.gms.test_process_stable
+10-17 20:27:20.215 I/NearbyMediums( 3150): ModuleInitializer handles incoming intent com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:20.216 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a85418) locale list changing from [] to [en-US]
+10-17 20:27:20.234 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7f018) locale list changing from [] to [en-US]
+10-17 20:27:20.238 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:20.239 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:20.244 I/AutofillFlagChangeInten( 1590): onHandleIntent() [CONTEXT service_id=177 ]
+10-17 20:27:20.249 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:20.251 I/fpnvgms ( 1590): [FpnvIntentOperation] Received intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) } [CONTEXT service_id=429 ]
+10-17 20:27:20.254 I/SyncIntentOperation( 1590): Handling the intent: Intent { act=com.google.android.gms.phenotype.COMMITTED xflg=0x4 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService (has extras) }. [CONTEXT service_id=80 ]
+10-17 20:27:20.258 I/MdiSyncModule( 1590): flag handling is skipping irrelevant intent.
+10-17 20:27:20.258 I/MlBenchmarkInstaller( 1590): Intent: com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=340 ]
+10-17 20:27:20.258 I/MlBenchmarkInstaller( 1590): COMMITTED Extra package name: com.google.android.gms.test_process_stable [CONTEXT service_id=340 ]
+10-17 20:27:20.260 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a802d8) locale list changing from [] to [en-US]
+10-17 20:27:20.266 W/ModuleInitIntentOp( 1590): Dropping unexpected action com.google.android.gms.phenotype.COMMITTED
+10-17 20:27:20.266 I/GmsSyncPolicyEngine( 1590): Periodic sync 1 disabled by policy, cancelled.
+10-17 20:27:20.266 I/GmsSyncPolicyEngine( 1590): Periodic sync 2 disabled by policy, cancelled.
+10-17 20:27:20.266 I/GmsSyncPolicyEngine( 1590): Periodic sync 3 disabled by policy, cancelled.
+10-17 20:27:20.267 I/LocationHistory( 1590): [IntentOperation] Handling action com.google.android.gms.phenotype.COMMITTED [CONTEXT service_id=314 ]
+10-17 20:27:20.285 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7b198) locale list changing from [] to [en-US]
+10-17 20:27:20.317 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a79bb8) locale list changing from [] to [en-US]
+10-17 20:27:20.332 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a898d8) locale list changing from [] to [en-US]
+10-17 20:27:20.375 I/ActivityManager(  579): Force stopping app.devilwalkx.accesschain appid=10217 user=0: from pid 5744
+10-17 20:27:20.375 W/IPCThreadState(  579): Sending oneway calls to frozen process.
+10-17 20:27:20.376 W/ProcessStats(  579): Tracking association SourceState{4574dc3 com.google.android.apps.nexuslauncher/10182 BTop #7001} whose proc state 2 is better than process ProcessState{ea4144e com.google.android.apps.wellbeing/10139 pkg=com.google.android.apps.wellbeing} proc state 4 (35 skipped)
+10-17 20:27:20.376 I/AppsFilter(  579): interaction: PackageSetting{745a718 com.android.microdroid.empty_payload/10205} -> PackageSetting{bd84979 app.devilwalkx.accesschain/10217} BLOCKED
+10-17 20:27:20.378 D/CarrierSvcBindHelper( 1190): onHandleForceStop: [app.devilwalkx.accesschain]
+10-17 20:27:20.379 D/CarrierSvcBindHelper( 1190): No carrier app for: 0
+10-17 20:27:20.379 I/AppWidgetServiceImpl(  579): Received broadcast: android.intent.action.PACKAGE_RESTARTED on user 0
+10-17 20:27:20.379 I/AppWidgetServiceImpl(  579): Updating package stopped masked state for uid 10217 package app.devilwalkx.accesschain isStopped true
+10-17 20:27:20.428 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a979d8) locale list changing from [] to [en-US]
+10-17 20:27:20.429 V/GrammaticalInflectionUtils(  579): AttributionSource: AttributionSource { uid = 10217, packageName = null, attributionTag = null, token = android.os.Binder@79d81f, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-17 20:27:20.429 W/OptProp (  579): Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_USER_ASPECT_RATIO_OVERRIDE
+10-17 20:27:20.429 W/OptProp (  579): Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_USER_ASPECT_RATIO_FULLSCREEN_OVERRIDE
+10-17 20:27:20.430 W/OptProp (  579): Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_RESIZEABLE_ACTIVITY_OVERRIDES
+10-17 20:27:20.430 W/OptProp (  579): Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_MIN_ASPECT_RATIO_OVERRIDE
+10-17 20:27:20.431 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a95a98) locale list changing from [] to [en-US]
+10-17 20:27:20.436 I/BpBinder(  520): onLastStrongRef automatically unlinking death recipients: 
+10-17 20:27:20.437 W/OptProp (  579): Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_ORIENTATION_OVERRIDE
+10-17 20:27:20.440 I/ActivityTaskManager(  579): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 xflg=0x4 pkg=app.devilwalkx.accesschain cmp=app.devilwalkx.accesschain/.MainActivity} with LAUNCH_SINGLE_TASK from uid 10220 (BAL_ALLOW_PERMISSION) result code=0
+10-17 20:27:20.442 V/GrammaticalInflectionUtils(  579): AttributionSource: AttributionSource { uid = 10217, packageName = null, attributionTag = null, token = android.os.Binder@79d81f, deviceId = 0, next = null } does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-17 20:27:20.443 W/SplitSelectStateCtor( 1306): Missing session instanceIds
+10-17 20:27:20.443 D/StatsLog( 1306): LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-17 20:27:20.444 I/AppsFilter(  579): interaction: PackageSetting{745a718 com.android.microdroid.empty_payload/10205} -> PackageSetting{bd525d0 app.devilwalkx.accesschain/10217} BLOCKED
+10-17 20:27:20.450 D/BackgroundInstallControlService(  579): Package event received: 0
+10-17 20:27:20.458 D/WindowManagerShell( 1024): setLauncherKeepClearAreaHeight: visible=false, height=527
+10-17 20:27:20.460 V/WindowManagerShell( 1024): Transition requested (#19): android.os.BinderProxy@7adee4 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=11 effectiveUid=10217 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 pkg=app.devilwalkx.accesschain cmp=app.devilwalkx.accesschain/.MainActivity } baseActivity=ComponentInfo{app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity} topActivity=ComponentInfo{app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity} origActivity=null realActivity=ComponentInfo{app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity} numActivities=1 lastActiveTime=218773 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@c928f4d} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{49eaa02 app.devilwalkx.accesschain.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isTopActivityNoDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false isActivityStackTransparent=false lastNonFullscreenBounds=Rect(276, 692 - 804, 1772) capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=-9 topActivityRequestOpenInBrowserEducationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false eligibleForLetterboxEducation= false isLetterboxEducationEnabled= true isLetterboxDoubleTapEnabled= false eligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActivityAppBounds=Rect(0, 0 - 1080, 2400) isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false hasMinAspectRatioOverride=false topActivityLetterboxBounds=null cameraCompatTaskInfo=CameraCompatTaskInfo { freeformCameraCompatMode=inactive}} topActivityMainWindowFrame=null}, pipChange = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 19 }
+10-17 20:27:20.460 D/ShellSplitScreen( 1024): logExit: no-op, mLoggerSessionId is null
+10-17 20:27:20.462 D/Zygote  (  446): Forked child process 5753
+10-17 20:27:20.467 I/ActivityManager(  579): Start proc 5753:app.devilwalkx.accesschain/u0a217 for next-top-activity {app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity}
+10-17 20:27:20.467 I/ActivityManager(  579): ProcessObserver broadcast disabled
+10-17 20:27:20.468 I/AppWidgetServiceImpl(  579): Received broadcast: android.intent.action.PACKAGE_UNSTOPPED on user 0
+10-17 20:27:20.469 I/AppWidgetServiceImpl(  579): Updating package stopped masked state for uid 10217 package app.devilwalkx.accesschain isStopped false
+10-17 20:27:20.472 I/BpBinder(  520): onLastStrongRef automatically unlinking death recipients: 
+10-17 20:27:20.477 I/ndroid.systemui( 1024): AssetManager2(0x7b9f35abe178) locale list changing from [] to [en-US]
+10-17 20:27:20.481 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a95458) locale list changing from [] to [en-US]
+10-17 20:27:20.482 I/netd    (  443): tetherGetStats() -> {[]} <0.59ms>
+10-17 20:27:20.485 D/CompatChangeReporter(  579): Compat change id reported: 377864165; UID 10217; state: ENABLED
+10-17 20:27:20.501 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a98018) locale list changing from [] to [en-US]
+10-17 20:27:20.511 I/lkx.accesschain( 5753): Using CollectorTypeCMC GC.
+10-17 20:27:20.539 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a9c7f8) locale list changing from [] to [en-US]
+10-17 20:27:20.540 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a98c98) locale list changing from [] to [en-US]
+10-17 20:27:20.549 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a77638) locale list changing from [] to [en-US]
+10-17 20:27:20.558 D/SplashScreenView( 1024): Build android.window.SplashScreenView{305d349 V.E...... ......ID 0,0-0,0}
+10-17 20:27:20.558 D/SplashScreenView( 1024): Icon: view: null drawable: null size: 0
+10-17 20:27:20.558 D/SplashScreenView( 1024): Branding: view: android.view.View{351644e G.ED..... ......I. 0,0-0,0 #1020541 android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+10-17 20:27:20.567 W/lkx.accesschain( 5753): Unexpected CPU variant for x86: x86_64.
+10-17 20:27:20.567 W/lkx.accesschain( 5753): Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-17 20:27:20.571 E/lkx.accesschain( 5753): Not starting debugger since process cannot load the jdwp agent.
+10-17 20:27:20.583 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a76cd8) locale list changing from [] to [en-US]
+10-17 20:27:20.584 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a84dd8) locale list changing from [] to [en-US]
+10-17 20:27:20.587 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7d0d8) locale list changing from [] to [en-US]
+10-17 20:27:20.591 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7cdb8) locale list changing from [] to [en-US]
+10-17 20:27:20.592 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a834d8) locale list changing from [] to [en-US]
+10-17 20:27:20.592 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a75d38) locale list changing from [] to [en-US]
+10-17 20:27:20.592 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a84ab8) locale list changing from [] to [en-US]
+10-17 20:27:20.593 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a89bf8) locale list changing from [] to [en-US]
+10-17 20:27:20.594 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7ae78) locale list changing from [] to [en-US]
+10-17 20:27:20.595 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a82e98) locale list changing from [] to [en-US]
+10-17 20:27:20.595 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a79578) locale list changing from [] to [en-US]
+10-17 20:27:20.598 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7ffb8) locale list changing from [] to [en-US]
+10-17 20:27:20.598 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8c498) locale list changing from [] to [en-US]
+10-17 20:27:20.599 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7ab58) locale list changing from [] to [en-US]
+10-17 20:27:20.600 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a81bd8) locale list changing from [] to [en-US]
+10-17 20:27:20.600 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a805f8) locale list changing from [] to [en-US]
+10-17 20:27:20.605 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7c778) locale list changing from [] to [en-US]
+10-17 20:27:20.606 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a83e38) locale list changing from [] to [en-US]
+10-17 20:27:20.607 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a831b8) locale list changing from [] to [en-US]
+10-17 20:27:20.608 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7f658) locale list changing from [] to [en-US]
+10-17 20:27:20.610 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a82858) locale list changing from [] to [en-US]
+10-17 20:27:20.611 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a80c38) locale list changing from [] to [en-US]
+10-17 20:27:20.612 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a76698) locale list changing from [] to [en-US]
+10-17 20:27:20.612 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8b818) locale list changing from [] to [en-US]
+10-17 20:27:20.613 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a89298) locale list changing from [] to [en-US]
+10-17 20:27:20.617 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8b1d8) locale list changing from [] to [en-US]
+10-17 20:27:20.618 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a77f98) locale list changing from [] to [en-US]
+10-17 20:27:20.622 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a85738) locale list changing from [] to [en-US]
+10-17 20:27:20.623 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a788f8) locale list changing from [] to [en-US]
+10-17 20:27:20.624 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8be58) locale list changing from [] to [en-US]
+10-17 20:27:20.626 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8bb38) locale list changing from [] to [en-US]
+10-17 20:27:20.630 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a83b18) locale list changing from [] to [en-US]
+10-17 20:27:20.635 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a88f78) locale list changing from [] to [en-US]
+10-17 20:27:20.639 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7dd58) locale list changing from [] to [en-US]
+10-17 20:27:20.640 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7d718) locale list changing from [] to [en-US]
+10-17 20:27:20.641 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a84798) locale list changing from [] to [en-US]
+10-17 20:27:20.645 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7ecf8) locale list changing from [] to [en-US]
+10-17 20:27:20.646 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a77318) locale list changing from [] to [en-US]
+10-17 20:27:20.646 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7baf8) locale list changing from [] to [en-US]
+10-17 20:27:20.647 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a7ca98) locale list changing from [] to [en-US]
+10-17 20:27:20.648 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a85d78) locale list changing from [] to [en-US]
+10-17 20:27:20.648 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8b4f8) locale list changing from [] to [en-US]
+10-17 20:27:20.649 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a87fd8) locale list changing from [] to [en-US]
+10-17 20:27:20.650 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a866d8) locale list changing from [] to [en-US]
+10-17 20:27:20.651 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8a238) locale list changing from [] to [en-US]
+10-17 20:27:20.651 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a9c4d8) locale list changing from [] to [en-US]
+10-17 20:27:20.652 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a92258) locale list changing from [] to [en-US]
+10-17 20:27:20.654 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a915d8) locale list changing from [] to [en-US]
+10-17 20:27:20.654 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a91f38) locale list changing from [] to [en-US]
+10-17 20:27:20.655 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8a878) locale list changing from [] to [en-US]
+10-17 20:27:20.658 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a94e18) locale list changing from [] to [en-US]
+10-17 20:27:20.659 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a90318) locale list changing from [] to [en-US]
+10-17 20:27:20.659 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a8f058) locale list changing from [] to [en-US]
+10-17 20:27:20.660 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a92578) locale list changing from [] to [en-US]
+10-17 20:27:20.661 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a9b218) locale list changing from [] to [en-US]
+10-17 20:27:20.662 I/.apps.wellbeing( 1539): AssetManager2(0x7b9f35a9a278) locale list changing from [] to [en-US]
+10-17 20:27:20.669 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:20.679 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:20.679 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:20.690 W/UiDevice( 5656): Active window root not found.
+10-17 20:27:20.755 W/Looper  ( 1024): Slow dispatch took 177ms wmshell.main app=com.android.systemui main=false group=TOP_APP h=android.os.Handler c=com.android.wm.shell.common.ShellExecutor$$ExternalSyntheticLambda1@5895767 m=0
+10-17 20:27:20.758 W/Looper  ( 1024): Slow delivery took 97ms wmshell.main app=com.android.systemui main=false group=TOP_APP h=android.os.Handler c=com.android.wm.shell.pip.phone.PipController$$ExternalSyntheticLambda3@33fa295 m=0
+10-17 20:27:20.760 D/nativeloader( 5753): Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-17 20:27:20.953 V/WindowManagerShell( 1024): onTransitionReady(transaction=2486786065103)
+10-17 20:27:20.988 V/WindowManager(  579): Sent Transition (#19) createdAt=10-17 20:27:20.431 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=11 effectiveUid=10217 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 pkg=app.devilwalkx.accesschain cmp=app.devilwalkx.accesschain/.MainActivity } baseActivity=ComponentInfo{app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity} topActivity=ComponentInfo{app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity} origActivity=null realActivity=ComponentInfo{app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity} numActivities=1 lastActiveTime=218773 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{e9fa78a Task{b7df764 #11 type=standard A=10217:app.devilwalkx.accesschain}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{dc291fb app.devilwalkx.accesschain.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isTopActivityNoDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false isActivityStackTransparent=false lastNonFullscreenBounds=Rect(276, 692 - 804, 1772) capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=-9 topActivityRequestOpenInBrowserEducationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false eligibleForLetterboxEducation= false isLetterboxEducationEnabled= true isLetterboxDoubleTapEnabled= false eligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActivityAppBounds=Rect(0, 0 - 1080, 2400) isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false hasMinAspectRatioOverride=false topActivityLetterboxBounds=null cameraCompatTaskInfo=CameraCompatTaskInfo { freeformCameraCompatMode=inactive}} topActivityMainWindowFrame=null}, pipChange = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 19 }
+10-17 20:27:20.988 V/WindowManager(  579):     startWCT=WindowContainerTransaction { changes= {} hops= [] errorCallbackToken=null taskFragmentOrganizer=null }
+10-17 20:27:20.988 V/WindowManager(  579):     info={id=19 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+10-17 20:27:20.988 V/WindowManager(  579):         {WCT{RemoteToken{e9fa78a Task{b7df764 #11 type=standard A=10217:app.devilwalkx.accesschain}}} m=OPEN f=NONE leash=Surface(name=Task=11)/@0x5a5a300 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},
+10-17 20:27:20.988 V/WindowManager(  579):         {WCT{RemoteToken{bfb45e9 Task{a7f2284 #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xc58a3ea sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},
+10-17 20:27:20.988 V/WindowManager(  579):         {m=TO_BACK f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{cd7ed1c showWhenLocked=false})/@0x68d4122 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}
+10-17 20:27:20.988 V/WindowManager(  579):     ]}
+10-17 20:27:21.002 V/WindowManagerShell( 1024): onTransitionReady (#19) android.os.BinderProxy@7adee4: {id=19 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+10-17 20:27:21.002 V/WindowManagerShell( 1024):         {m=OPEN f=NONE leash=Surface(name=Task=11)/@0xa9997b2 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},
+10-17 20:27:21.002 V/WindowManagerShell( 1024):         {m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x54a0303 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},
+10-17 20:27:21.002 V/WindowManagerShell( 1024):         {m=TO_BACK f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{cd7ed1c showWhenLocked=false})/@0x4c06280 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}
+10-17 20:27:21.002 V/WindowManagerShell( 1024):     ]}
+10-17 20:27:21.003 V/WindowManagerShell( 1024): Playing animation for (#19) android.os.BinderProxy@7adee4@0
+10-17 20:27:21.003 V/ShellRecents( 1024): RecentsTransitionHandler.startAnimation: no controller found
+10-17 20:27:21.003 V/WindowManagerShell( 1024): Transition doesn't have explicit remote, search filters for match for {id=19 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{m=OPEN f=NONE leash=Surface(name=Task=11)/@0xa9997b2 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},{m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x54a0303 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},{m=TO_BACK f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{cd7ed1c showWhenLocked=false})/@0x4c06280 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}]}
+10-17 20:27:21.003 V/WindowManagerShell( 1024):  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=undefined independent=true modes=[CLOSE,TO_BACK] flags=IN_TASK_WITH_EMBEDDED_ACTIVITY mustBeTask=false order=ANY topActivity=null launchCookie=null taskFragmentToken=android.os.BinderProxy@7188987 windowingMode=undefined}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@4c3e0b4, appThread = android.app.IApplicationThread$Stub$Proxy@515b4dd, debugName = overlayBackTransition }}
+10-17 20:27:21.003 V/WindowManagerShell( 1024):  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@7478852, appThread = android.app.IApplicationThread$Stub$Proxy@66a3723, debugName = LauncherToDream }}
+10-17 20:27:21.003 V/WindowManagerShell( 1024):  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity} launchCookie=null windowingMode=undefined},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null windowingMode=undefined},{NOT atype=undefined independent=true modes=[] flags=NONE mustBeTask=true order=ANY topActivity=null launchCookie=null customAnim=true windowingMode=undefined}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@185420, appThread = android.app.IApplicationThread$Stub$Proxy@4bdc1d9, debugName = QuickstepLaunchHome }}
+10-17 20:27:21.003 V/WindowManagerShell( 1024):  Delegate animation for (#19) to null
+10-17 20:27:21.003 V/WindowManagerShell( 1024): start default transition animation, info = {id=19 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{m=OPEN f=NONE leash=Surface(name=Task=11)/@0xa9997b2 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},{m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x54a0303 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1},{m=TO_BACK f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{cd7ed1c showWhenLocked=false})/@0x4c06280 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0}]}
+10-17 20:27:21.003 V/WindowManagerShell( 1024): loadAnimation: anim=android.view.animation.AnimationSet@3dfcc5f animAttr=0x13 type=OPEN isEntrance=false
+10-17 20:27:21.004 V/WindowManagerShell( 1024): loadAnimation: anim=android.view.animation.AnimationSet@70926ac animAttr=0x12 type=OPEN isEntrance=true
+10-17 20:27:21.004 V/WindowManagerShell( 1024):  animated by com.android.wm.shell.transition.DefaultTransitionHandler@4e789fe
+10-17 20:27:21.030 D/BackgroundInstallControlService(  579): Package event received: 0
+10-17 20:27:21.109 D/WifiNetworkSelector(  579): Current connected network: 0
+10-17 20:27:21.113 V/WifiConnectivityManager(  579): No full band scan because current network is sufficient
+10-17 20:27:21.120 W/Looper  ( 1024): Slow dispatch took 113ms wmshell.anim app=com.android.systemui main=false group=TOP_APP h=android.os.Handler c=com.android.wm.shell.transition.DefaultTransitionHandler$$ExternalSyntheticLambda3@8380198 m=0
+10-17 20:27:21.132 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:21.137 D/Maestro ( 5656): View hierarchy received in 468 ms
+10-17 20:27:21.161 W/Looper  ( 1024): Slow delivery took 98ms wmshell.anim app=com.android.systemui main=false group=TOP_APP h=android.view.Choreographer$FrameHandler c=android.view.Choreographer$FrameDisplayEventReceiver@2230b29 m=0
+10-17 20:27:21.164 I/WifiScanningService(  579): Registering listener= com.android.server.wifi.scanner.WifiScannerInternal$ScanListener@5f0f7c4 uid=1000 packageName=null workSource=WorkSource{1000}
+10-17 20:27:21.164 I/WifiScanningService(  579): start scan: ClientInfo[uid=1000, package=null, attributionTag=null, com.android.server.wifi.scanner.WifiScannerInternal$ScanListener@5f0f7c4] package null AttributionTag null
+10-17 20:27:21.164 D/ApplicationLoaders( 5753): Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+10-17 20:27:21.164 D/ApplicationLoaders( 5753): Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+10-17 20:27:21.164 I/WifiScanningService(  579): addSingleScanRequest: ClientInfo[uid=1000, package=null, attributionTag=null, com.android.server.wifi.scanner.WifiScannerInternal$ScanListener@5f0f7c4],WorkSource{1010}, ScanSettings {  type:HIGH ACCURACY band:unspecified ignoreLocationSettings:false period:0 reportEvents:3 numBssidsPerScan:0 maxScansToCache:0 rnrSetting:2 6GhzPscOnlyEnabled:false channels:[ 2437  ]  } 
+10-17 20:27:21.177 V/WifiConnectivityManager(  579): schedulePeriodicScanTimer intervalMs 160000
+10-17 20:27:21.179 V/WindowManagerShell( 1024): Transition animation finished (aborted=false), notifying core (#19) android.os.BinderProxy@7adee4@0
+10-17 20:27:21.179 W/Looper  ( 1024): Slow dispatch took 41ms wmshell.anim app=com.android.systemui main=false group=TOP_APP h=android.view.Choreographer$FrameHandler c=android.view.Choreographer$FrameDisplayEventReceiver@2230b29 m=0
+10-17 20:27:21.192 V/WindowManager(  579): Finish Transition (#19): created at 10-17 20:27:20.431 collect-started=0.02ms request-sent=8.035ms started=35.501ms ready=520.284ms sent=521.542ms commit=107.411ms finished=759.404ms
+10-17 20:27:21.198 D/VRI[NexusLauncherActivity]( 1306): visibilityChanged oldVisibility=true newVisibility=false
+10-17 20:27:21.202 V/WindowManagerShell( 1024): Track 0 became idle
+10-17 20:27:21.202 V/WindowManagerShell( 1024): All active transition animations finished
+10-17 20:27:21.205 D/NexusLauncherModelDelegate( 1306): notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-17 20:27:21.213 D/nativeloader( 5753): Configuring clns-9 for other apk /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/lib/x86_64:/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/app.devilwalkx.accesschain
+10-17 20:27:21.231 W/Looper  ( 1024): Drained
+10-17 20:27:21.270 W/AccessibilityManagerService(  579):  wait for adding window timeout: 42
+10-17 20:27:21.344 I/lkx.accesschain( 5753): AssetManager2(0x7b9f35a71238) locale list changing from [] to [en-US]
+10-17 20:27:21.350 V/GraphicsEnvironment( 5753): Currently set values for:
+10-17 20:27:21.350 V/GraphicsEnvironment( 5753):   angle_gl_driver_selection_pkgs=[]
+10-17 20:27:21.350 V/GraphicsEnvironment( 5753):   angle_gl_driver_selection_values=[]
+10-17 20:27:21.350 V/GraphicsEnvironment( 5753): app.devilwalkx.accesschain is not listed in per-application setting
+10-17 20:27:21.350 V/GraphicsEnvironment( 5753): ANGLE allowlist from config: com.dreamgames.royalmatch com.dts.freefiremax com.dxx.firenow com.gramgames.mergedragons com.ludo.king com.mojang.minecraftpe com.my.defense com.nintendo.zaka com.os.airforce com.playrix.fishdomdd.gplay io.teslatech.callbreak jp.konami.prospia net.peakgames.toonblast
+10-17 20:27:21.350 V/GraphicsEnvironment( 5753): app.devilwalkx.accesschain is not listed in ANGLE allowlist or settings, returning default
+10-17 20:27:21.350 V/GraphicsEnvironment( 5753): Neither updatable production driver nor prerelease driver is supported.
+10-17 20:27:21.352 D/WifiScanningService(  579): replySucceeded onSuccess
+10-17 20:27:21.368 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:21.371 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:21.371 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:21.372 W/UiDevice( 5656): Active window root not found.
+10-17 20:27:21.373 W/SoLoader( 5753): Initializing SoLoader: 0
+10-17 20:27:21.375 W/SoLoader( 5753): Recording new base apk path: /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk
+10-17 20:27:21.375 W/SoLoader( 5753): Previously recorded 0 base apk paths.
+10-17 20:27:21.375 I/SoLoader( 5753): Preparing SO source: DirectorySoSource[root = /vendor/lib64 flags = 2]
+10-17 20:27:21.375 I/SoLoader( 5753): Preparing SO source: DirectorySoSource[root = /system/lib64 flags = 2]
+10-17 20:27:21.375 I/SoLoader( 5753): Preparing SO source: DirectApkSoSource[root = [/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64]]
+10-17 20:27:21.378 I/SoLoader( 5753): Preparing SO source: ApplicationSoSource[DirectorySoSource[root = /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/lib/x86_64 flags = 0]]
+10-17 20:27:21.378 I/SoLoader( 5753): init finish: 4 SO sources prepared
+10-17 20:27:21.379 W/SoLoader( 5753): SoLoader initialized: 8
+10-17 20:27:21.385 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libc++_shared.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:21.389 D/wpa_supplicant( 1257): nl80211: Drv Event 33 (NL80211_CMD_TRIGGER_SCAN) received for wlan0
+10-17 20:27:21.390 D/wpa_supplicant( 1257): wlan0: nl80211: Scan trigger
+10-17 20:27:21.390 D/wpa_supplicant( 1257): wlan0: Event SCAN_STARTED (47) received
+10-17 20:27:21.390 D/wpa_supplicant( 1257): wlan0: External program started a scan
+10-17 20:27:21.395 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:21.411 D/Maestro ( 5656): View hierarchy received in 43 ms
+10-17 20:27:21.433 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libjsi.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:21.436 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libfbjni.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:21.438 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libreactnative.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:21.438 D/jni_lib_merge( 5753): Entering merged library JNI_OnLoad.
+10-17 20:27:21.438 D/jni_lib_merge( 5753): Preparing 13 pre-merged libs (including stub)
+10-17 20:27:21.438 D/jni_lib_merge( 5753): Preparing to register libfabricjni_so.  onload_func: 0x7b9d6659ab00
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register libreact_devsupportjni_so.  onload_func: 0x7b9d666893c0
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register libreact_featureflagsjni_so.  onload_func: 0x7b9d6669b000
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register libreact_newarchdefaults_so.  onload_func: 0x7b9d666da7f0
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register libreact_tracingjni_so.  onload_func: 0x7b9d667e9c20
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register libreactnativeblob_so.  onload_func: 0x7b9d667eef90
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register libreactnativejni_so.  onload_func: 0x7b9d667fb510
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register libreactnativejni_common_so.  onload_func: 0x7b9d667ffc60
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register librninstance_so.  onload_func: 0x7b9d66827d90
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register libturbomodulejsijni_so.  onload_func: 0x7b9d668d0650
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register libuimanagerjni_so.  onload_func: 0x7b9d668d75b0
+10-17 20:27:21.439 D/jni_lib_merge( 5753): Preparing to register libyoga_so.  onload_func: 0x7b9d668df150
+10-17 20:27:21.439 D/jni_lib_merge( 5753): About to register 12 actual methods.
+10-17 20:27:21.441 D/wpa_supplicant( 1257): nl80211: Drv Event 34 (NL80211_CMD_NEW_SCAN_RESULTS) received for wlan0
+10-17 20:27:21.441 D/wpa_supplicant( 1257): wlan0: nl80211: New scan results available
+10-17 20:27:21.441 D/wpa_supplicant( 1257): nl80211: Scan probed for SSID ''
+10-17 20:27:21.441 D/wpa_supplicant( 1257): nl80211: Scan included frequencies: 2437
+10-17 20:27:21.441 D/wpa_supplicant( 1257): wlan0: Event SCAN_RESULTS (3) received
+10-17 20:27:21.442 D/wpa_supplicant( 1257): nl80211: Received scan results (1 BSSes)
+10-17 20:27:21.442 D/wpa_supplicant( 1257): nl80211: Scan results indicate BSS status with 02:15:b2:00:00:01 as associated
+10-17 20:27:21.442 D/WifiNl80211Manager(  579): Scan result ready event
+10-17 20:27:21.442 D/WifiNative(  579): Scan result ready event
+10-17 20:27:21.442 D/wpa_supplicant( 1257): wlan0: BSS: Start scan result update 7
+10-17 20:27:21.442 D/wpa_supplicant( 1257): BSS: last_scan_res_used=1/32
+10-17 20:27:21.442 D/wpa_supplicant( 1257): wlan0: New scan results available (own=0 ext=1)
+10-17 20:27:21.442 D/wpa_supplicant( 1257): wlan0: Do not use results from externally requested scan operation for network selection
+10-17 20:27:21.443 D/wpa_supplicant( 1257): p2p-dev-wlan0: Updating scan results from sibling
+10-17 20:27:21.443 D/wpa_supplicant( 1257): nl80211: Received scan results (1 BSSes)
+10-17 20:27:21.445 D/wpa_supplicant( 1257): p2p-dev-wlan0: BSS: Start scan result update 7
+10-17 20:27:21.445 D/wpa_supplicant( 1257): BSS: last_scan_res_used=1/32
+10-17 20:27:21.445 D/wpa_supplicant( 1257): p2p-dev-wlan0: New scan results available (own=0 ext=1)
+10-17 20:27:21.445 D/wpa_supplicant( 1257): p2p-dev-wlan0: Do not use results from externally requested scan operation for network selection
+10-17 20:27:21.446 D/WifiNl80211Manager(  579): get 1 scan results from wificond
+10-17 20:27:21.447 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libreact_codegen_rnsvg.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:21.447 D/jni_lib_merge( 5753): Entering merged library JNI_OnLoad.
+10-17 20:27:21.447 D/jni_lib_merge( 5753): Preparing 13 pre-merged libs (including stub)
+10-17 20:27:21.447 D/jni_lib_merge( 5753): Preparing to register libfabricjni_so.  onload_func: 0x7b9d6659ab00
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register libreact_devsupportjni_so.  onload_func: 0x7b9d666893c0
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register libreact_featureflagsjni_so.  onload_func: 0x7b9d6669b000
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register libreact_newarchdefaults_so.  onload_func: 0x7b9d666da7f0
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register libreact_tracingjni_so.  onload_func: 0x7b9d667e9c20
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register libreactnativeblob_so.  onload_func: 0x7b9d667eef90
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register libreactnativejni_so.  onload_func: 0x7b9d667fb510
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register libreactnativejni_common_so.  onload_func: 0x7b9d667ffc60
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register librninstance_so.  onload_func: 0x7b9d66827d90
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register libturbomodulejsijni_so.  onload_func: 0x7b9d668d0650
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register libuimanagerjni_so.  onload_func: 0x7b9d668d75b0
+10-17 20:27:21.448 D/jni_lib_merge( 5753): Preparing to register libyoga_so.  onload_func: 0x7b9d668df150
+10-17 20:27:21.448 D/jni_lib_merge( 5753): About to register 12 actual methods.
+10-17 20:27:21.448 D/WifiNative(  579): get 1 scan results from wificond
+10-17 20:27:21.448 I/WifiScanner( 3150): onFullResults
+10-17 20:27:21.448 I/WifiScanningService(  579): singleScanResults: ClientInfo[uid=1000, package=null, attributionTag=null, com.android.server.wifi.scanner.WifiScannerInternal$ScanListener@5f0f7c4],results=1
+10-17 20:27:21.448 I/WifiScanningService(  579): singleScanResults listener: ClientInfo[uid=1000, package=android, attributionTag=null, com.android.server.wifi.scanner.WifiScannerInternal$ScanListener@e7023ac],results=1
+10-17 20:27:21.449 I/WifiScanningService(  579): singleScanResults listener: ClientInfo[uid=1000, package=android, attributionTag=null, com.android.server.wifi.scanner.WifiScannerInternal$ScanListener@8213c44],results=1
+10-17 20:27:21.449 I/WifiScanningService(  579): singleScanResults listener: ClientInfo[uid=1000, package=android, attributionTag=null, com.android.server.wifi.scanner.WifiScannerInternal$ScanListener@6af51ef],results=1
+10-17 20:27:21.449 I/WifiScanningService(  579): singleScanResults listener: ClientInfo[uid=10147, package=com.google.android.gms, attributionTag=network_location_provider, android.net.wifi.IWifiScannerListener$Stub$Proxy@df1033f],results=1
+10-17 20:27:21.449 I/WifiScanningService(  579): Unregistering listener= com.android.server.wifi.scanner.WifiScannerInternal$ScanListener@5f0f7c4 uid=1000 packageName=null workSource=WorkSource{1000}
+10-17 20:27:21.452 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libreact_codegen_safeareacontext.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:21.453 D/WifiScanRequestProxy(  579): Scan results received
+10-17 20:27:21.453 D/WifiScanRequestProxy(  579): Received 1 scan results
+10-17 20:27:21.454 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libappmodules.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:21.461 I/HalDevMgr(  579): bestIfaceCreationProposal is null, requestIface=STA, existingIface=[name=wlan0 type=STA]
+10-17 20:27:21.462 W/OptProp (  579): Cannot read opt property android.window.PROPERTY_COMPAT_ENABLE_FAKE_FOCUS
+10-17 20:27:21.462 V/WifiConnectivityManager(  579): AllSingleScanListener onResults: start network selection
+10-17 20:27:21.463 V/WifiConfigManager(  579): getSavedNetworkFromScanResult Found "AndroidWifi"NONE for AndroidWifi[[ESS]]
+10-17 20:27:21.467 D/BackgroundInstallControlService(  579): Package event received: 0
+10-17 20:27:21.467 D/BackgroundInstallControlService(  579): Package event received: 0
+10-17 20:27:21.467 I/DisplayManager( 5753): Choreographer implicitly registered for the refresh rate.
+10-17 20:27:21.468 D/WifiNetworkSelector(  579): Current connected network: 0
+10-17 20:27:21.468 D/WifiNetworkSelector(  579): wlan0: Current connected network already sufficient. Skip network selection.
+10-17 20:27:21.468 V/WifiLastResortWatchdog(  579): updateAvailableNetworks: size = 0
+10-17 20:27:21.469 V/WifiLastResortWatchdog(  579): mWatchdogFeatureEnabled: true
+10-17 20:27:21.469 V/WifiLastResortWatchdog(  579): mWatchdogAllowedToTrigger: true
+10-17 20:27:21.469 V/WifiLastResortWatchdog(  579): mRecentAvailableNetworks: 1
+10-17 20:27:21.469 V/WifiLastResortWatchdog(  579):  02:15:b2:00:00:01: "AndroidWifi" HasEverConnected: false, Failures: {Assoc: 0, Auth: 0, Dhcp: 0}, Age: 6
+10-17 20:27:21.469 V/WifiLastResortWatchdog(  579): mSsidFailureCount:
+10-17 20:27:21.469 V/WifiLastResortWatchdog(  579): "AndroidWifi": 1, HasEverConnected: false, Failures: {Assoc: 0, Auth: 0, Dhcp: 0}
+10-17 20:27:21.469 V/WifiConnectivityManager(  579): AllSingleScanListener:  No candidates
+10-17 20:27:21.471 I/lkx.accesschain( 5753): AssetManager2(0x7b9f35a6e678) locale list changing from [] to [en-US]
+10-17 20:27:21.476 D/AppCompatDelegate( 5753): Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-17 20:27:21.476 I/lkx.accesschain( 5753): AssetManager2(0x7b9f35a79898) locale list changing from [] to [en-US]
+10-17 20:27:21.481 E/ashmem  ( 5753): Pinning is deprecated since Android Q. Please use trim or other methods.
+10-17 20:27:21.506 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:21.509 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:21.509 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:21.509 W/UiDevice( 5656): Active window root not found.
+10-17 20:27:21.519 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:21.520 D/Maestro ( 5656): View hierarchy received in 14 ms
+10-17 20:27:21.527 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libhermesvm.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:21.530 D/WifiClientModeImpl[52667:wlan0](  579): updateLinkLayerStatsRssiSpeedFrequencyCapabilities rssi=-50 TxLinkspeed=1 freq=2437 RxLinkSpeed=2
+10-17 20:27:21.530 D/WifiDataStall(  579): tx tput in kbps: 37000
+10-17 20:27:21.530 D/WifiDataStall(  579): rx tput in kbps: 37000
+10-17 20:27:21.530 V/WifiConfigManager(  579): Updating scan detail cache freq=2437 BSSID=02:15:b2:00:00:01 RSSI=-50 for "AndroidWifi"NONE
+10-17 20:27:21.530 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:21.530 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:21.530 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:21.530 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:21.530 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:21.530 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:21.530 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:21.530 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:21.530 D/WifiScoreCard(  579): BSSID update SIGNAL_POLL ID: 1356271939 SSID: "AndroidWifi", BSSID: 02:15:b2:00:00:01, MAC: 02:15:b2:00:00:00, IP: /10.0.2.16, Security type: 0, Supplicant state: COMPLETED, Wi-Fi standard: legacy, RSSI: -50, Link speed: 1Mbps, Tx Link speed: 1Mbps, Max Supported Tx Link speed: 54Mbps, Rx Link speed: 2Mbps, Max Supported Rx Link speed: 54Mbps, Frequency: 2437MHz, Net ID: 0, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: 1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none>"AndroidWifi"openMLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>
+10-17 20:27:21.530 D/WifiScoreCard(  579): txRate: 19 txSpeed: 1
+10-17 20:27:21.530 D/WifiScoreCard(  579): network update SIGNAL_POLL "AndroidWifi" ID: 1865056951 RSSI -50 txSpeed 1
+10-17 20:27:21.531 D/WifiClientModeImpl[52667:wlan0](  579):  ClientModeImpl$L2ConnectedState screen=on 1 0 "AndroidWifi" 02:15:b2:00:00:01 rssi=-50 f=2437 sc=60 link=1 tx=18.2, 0.0, 0.0 rx=100.0 bcn=0 [on:0 tx:0 rx:0 period:3003] from screen [on:0 period:1267479099] score=60
+10-17 20:27:21.535 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libhermestooling.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:21.536 D/jni_lib_merge( 5753): Entering merged library JNI_OnLoad.
+10-17 20:27:21.537 D/jni_lib_merge( 5753): Preparing 4 pre-merged libs (including stub)
+10-17 20:27:21.537 D/jni_lib_merge( 5753): Preparing to register libhermes_executor_so.  onload_func: 0x7b9d644572b0
+10-17 20:27:21.537 D/jni_lib_merge( 5753): Preparing to register libhermesinstancejni_so.  onload_func: 0x7b9d6445e990
+10-17 20:27:21.537 D/jni_lib_merge( 5753): Preparing to register libjsijniprofiler_so.  onload_func: 0x7b9d6445f1d0
+10-17 20:27:21.537 D/jni_lib_merge( 5753): About to register 3 actual methods.
+10-17 20:27:21.543 W/unknown:BridgelessReact( 5753): ReactHost{0}.startSurface(surfaceId = 0): Schedule
+10-17 20:27:21.544 W/unknown:BridgelessReact( 5753): ReactHost{0}.attachSurface(surfaceId = 0)
+10-17 20:27:21.545 W/unknown:BridgelessReact( 5753): ReactHost{0}.getOrCreateReactInstanceTask()
+10-17 20:27:21.546 W/unknown:BridgelessReact( 5753): ReactHost{0}.getOrCreateReactInstanceTask(): Start
+10-17 20:27:21.546 W/unknown:BridgelessReact( 5753): ReactHost{0}.getJSBundleLoader()
+10-17 20:27:21.546 D/CompatChangeReporter( 5753): Compat change id reported: 377864165; UID 10217; state: ENABLED
+10-17 20:27:21.546 W/unknown:BridgelessReact( 5753): ReactHost{0}.getOrCreateReactInstanceTask(): Creating BridgelessReactContext
+10-17 20:27:21.547 W/unknown:BridgelessReact( 5753): ReactHost{0}.getOrCreateReactInstanceTask(): Creating ReactInstance
+10-17 20:27:21.547 D/DesktopModeFlags( 5753): Toggle override initialized to: OVERRIDE_UNSET
+10-17 20:27:21.554 I/EGL_emulation( 5753): Opening libGLESv1_CM_emulation.so
+10-17 20:27:21.554 I/EGL_emulation( 5753): Opening libGLESv2_emulation.so
+10-17 20:27:21.557 W/unknown:BridgelessReact( 5753): ReactHost{0}.onHostResume(activity)
+10-17 20:27:21.557 W/unknown:BridgelessReact( 5753): ReactHost{0}.ReactContext.onHostResume()
+10-17 20:27:21.573 W/HWUI    ( 5753): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-17 20:27:21.574 W/HWUI    ( 5753): Unknown dataspace 0
+10-17 20:27:21.681 I/servicemanager(    0): Caller(pid=5753,uid=10217,sid=u:r:untrusted_app:s0:c217,c256,c512,c768) Found android.hardware.graphics.allocator.IAllocator/default in device VINTF manifest.
+10-17 20:27:21.690 I/servicemanager(    0): Caller(pid=5753,uid=10217,sid=u:r:untrusted_app:s0:c217,c256,c512,c768) Found android.hardware.graphics.allocator.IAllocator/default in device VINTF manifest.
+10-17 20:27:21.700 I/servicemanager(    0): Caller(pid=5753,uid=10217,sid=u:r:untrusted_app:s0:c217,c256,c512,c768) Found mapper/ranchu in device VINTF manifest.
+10-17 20:27:21.610 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-17 20:27:21.611 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-17 20:27:21.611 D/InetDiagMessage(  579): Destroyed live tcp sockets for uids={10135} in 2ms
+10-17 20:27:21.611 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-17 20:27:21.612 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-17 20:27:21.612 D/InetDiagMessage(  579): Destroyed live tcp sockets for uids={20135} in 1ms
+10-17 20:27:21.640 D/CoreBackPreview(  579): Window{481b2ea u0 app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@25d7f51, mPriority=-1, mIsAnimationCallback=false, mOverrideBehavior=0}
+10-17 20:27:21.640 D/CoreBackPreview(  579): Window{481b2ea u0 app.devilwalkx.accesschain/app.devilwalkx.accesschain.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@84013b6, mPriority=0, mIsAnimationCallback=true, mOverrideBehavior=0}
+10-17 20:27:21.650 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:21.651 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:21.651 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:21.695 I/ExpoModulesCore( 5753): ✅ AppContext was initialized
+10-17 20:27:21.805 W/unknown:BridgelessReact( 5753): ReactHost{0}.getOrCreateReactInstanceTask(): Loading JS Bundle
+10-17 20:27:21.810 W/unknown:BridgelessReact( 5753): ReactHost{0}.getOrCreateReactInstanceTask(): DevSupportManager.onNewReactContextCreated()
+10-17 20:27:21.810 W/unknown:BridgelessReact( 5753): ReactHost{0}.startSurface(surfaceId = 0): Execute
+10-17 20:27:21.822 W/unknown:BridgelessReact( 5753): ReactHost{0}.ReactContext.onHostResume()
+10-17 20:27:21.822 W/unknown:BridgelessReact( 5753): ReactHost{0}.getOrCreateReactInstanceTask(): Executing ReactInstanceEventListeners
+10-17 20:27:21.831 I/ActivityTaskManager(  579): Displayed app.devilwalkx.accesschain/.MainActivity for user 0: +1s374ms
+10-17 20:27:21.848 I/ImeTracker(  579): app.devilwalkx.accesschain:966a7a8c: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-17 20:27:21.854 D/BaseDepthController( 1306): setSurface:
+10-17 20:27:21.854 D/BaseDepthController( 1306): 	mWaitingOnSurfaceValidity: false
+10-17 20:27:21.854 D/BaseDepthController( 1306): 	mBaseSurface: null
+10-17 20:27:21.856 D/BaseDepthController( 1306): mSurface is null and mCurrentBlur is: 0
+10-17 20:27:21.857 D/StateManager( 1306): goToState - fromState: Normal, toState: Normal, partial trace:
+10-17 20:27:21.857 D/StateManager( 1306): 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 43e00d9cd0eb17b3d9dd30fc1741b1c71445c4c0f7c8c9b81300265c86c5b873:4)
+10-17 20:27:21.857 D/StateManager( 1306): 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme 43e00d9cd0eb17b3d9dd30fc1741b1c71445c4c0f7c8c9b81300265c86c5b873:1)
+10-17 20:27:21.857 D/StateManager( 1306): 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme 43e00d9cd0eb17b3d9dd30fc1741b1c71445c4c0f7c8c9b81300265c86c5b873:34)
+10-17 20:27:21.870 D/StatsLog( 1306): LAUNCHER_ONSTOP
+10-17 20:27:21.875 I/netd    (  443): tetherGetStats() -> {[]} <0.37ms>
+10-17 20:27:21.880 D/InsetsController( 5753): hide(ime(), fromIme=false)
+10-17 20:27:21.880 I/ImeTracker( 5753): app.devilwalkx.accesschain:966a7a8c: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-17 20:27:21.880 I/AppWidgetServiceImpl(  579): setAppWidgetHidden() 0
+10-17 20:27:21.890 I/GoogleInputMethodService( 1500): GoogleInputMethodService.onFinishInput():2043 
+10-17 20:27:21.892 I/ImeTracker(  579): system_server:560431b5: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-17 20:27:21.892 I/Module  ( 1500): DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-17 20:27:21.893 I/GoogleInputMethodService( 1500): GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=app.devilwalkx.accesschain, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): EmojiCompatManager.getEmojiCompatIfLoaded():343 EmojiCompat.init() was never called.
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): java.lang.IllegalStateException: EmojiCompat is not initialized. Please call EmojiCompat.init() first
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at asx.p(PG:6)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at axb.b(PG:13)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at jnr.b(PG:2)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at jnr.c(PG:4)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at jnr.f(PG:3)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at jnx.c(PG:3)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at kif.cz(PG:47)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at lhl.run(PG:1025)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at jaf.execute(PG:12)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at nco.v(PG:13)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at lhn.m(PG:96)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at lhn.k(PG:25)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at kgn.onStartInput(PG:250)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at android.inputmethodservice.InputMethodService.doStartInput(InputMethodService.java:3521)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at android.inputmethodservice.InputMethodService$InputMethodImpl.startInput(InputMethodService.java:879)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at android.inputmethodservice.InputMethodService$InputMethodImpl.dispatchStartInput(InputMethodService.java:908)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at android.inputmethodservice.IInputMethodWrapper.executeMessage(IInputMethodWrapper.java:201)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at com.android.internal.os.HandlerCaller$MyHandler.handleMessage(HandlerCaller.java:44)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at android.os.Looper.loopOnce(Looper.java:248)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at android.os.Looper.loop(Looper.java:338)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at java.lang.reflect.Method.invoke(Native Method)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-17 20:27:21.894 I/EmojiCompatManager( 1500): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-17 20:27:21.898 I/ImeTracker(  579): system_server:560431b5: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-17 20:27:21.902 D/StatsLog( 1306): LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-17 20:27:21.903 I/Module  ( 1500): DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-17 20:27:21.904 W/PackageConfigPersister(  579): App-specific configuration not found for packageName: app.devilwalkx.accesschain and userId: 0
+10-17 20:27:21.950 D/BackgroundInstallControlService(  579): Package event received: 0
+10-17 20:27:22.050 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libexpo-modules-jsi.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:22.052 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libexpo-modules-core.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:22.058 W/fl      ( 5753): [WARNING] Bridgeless doesn't support CatalystInstance. Accessing an API that's not part of the new architecture is not encouraged usage.
+10-17 20:27:22.060 I/ExpoModulesCore( 5753): ✅ JSI interop was installed
+10-17 20:27:22.090 D/nativeloader( 5753): Load /data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk!/lib/x86_64/libexpo-modules-v2.so using class loader ns clns-9 (caller=/data/app/~~ZAXav0Eew9qwmc4GHneePw==/app.devilwalkx.accesschain-oo8oEofLCUCUQ90Uy6tLDg==/base.apk): ok
+10-17 20:27:22.098 W/ExpoModulesV2( 5753): ia0 does not implement io.github.expo.modules.v2.Enumerable. It crosses to JavaScript here, but R8 keeps an enum's entries and its property only when it does, so a release build may fail on it or send its entry names instead
+10-17 20:27:22.099 I/ExpoModulesCore( 5753): ✅ Expo Modules v2 installed 2 module(s) on globalThis.expo.modules
+10-17 20:27:22.102 I/FontLog ( 3150): Received query Noto Color Emoji Compat, URI content://com.google.android.gms.fonts [CONTEXT service_id=132 ]
+10-17 20:27:22.102 I/FontLog ( 3150): Query [emojicompat-emoji-font] resolved to {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false}, isVf false} [CONTEXT service_id=132 ]
+10-17 20:27:22.113 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:22.114 I/ExpoModulesCore( 5753): ✅ Constants were exported
+10-17 20:27:22.119 I/FontLog ( 3150): Fetch {Noto Color Emoji Compat, wdth 100.0, wght 400, ital 0.0, bestEffort false}, isVf false} end status Status{statusCode=SUCCESS, resolution=null} [CONTEXT service_id=132 ]
+10-17 20:27:22.124 I/FontLog ( 3150): Pulling font file for id = 15, cache size = 12 [CONTEXT service_id=132 ]
+10-17 20:27:22.128 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaProviderManager
+10-17 20:27:22.132 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class dl1
+10-17 20:27:22.137 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class expo.modules.kotlin.views.GroupViewManagerWrapper
+10-17 20:27:22.138 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewManager
+10-17 20:27:22.139 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class jx2
+10-17 20:27:22.142 I/FontLog ( 3150): Pulling font file for id = 15, cache size = 12 [CONTEXT service_id=132 ]
+10-17 20:27:22.154 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$DefsViewManager
+10-17 20:27:22.155 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class vn3
+10-17 20:27:22.156 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeMergeManager
+10-17 20:27:22.158 D/Maestro ( 5656): View hierarchy received in 508 ms
+10-17 20:27:22.159 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewManager
+10-17 20:27:22.160 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$LinearGradientManager
+10-17 20:27:22.171 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeGaussianBlurManager
+10-17 20:27:22.174 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.progressbar.ReactProgressBarViewManager
+10-17 20:27:22.175 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollViewManager
+10-17 20:27:22.196 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.text.ReactTextViewManager
+10-17 20:27:22.200 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeColorMatrixManager
+10-17 20:27:22.202 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollContainerViewManager
+10-17 20:27:22.206 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ClipPathViewManager
+10-17 20:27:22.207 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$SymbolManager
+10-17 20:27:22.208 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$PatternManager
+10-17 20:27:22.209 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeBlendManager
+10-17 20:27:22.211 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.view.ReactViewManager
+10-17 20:27:22.212 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.SvgViewManager
+10-17 20:27:22.214 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager
+10-17 20:27:22.215 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$UseViewManager
+10-17 20:27:22.216 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$CircleViewManager
+10-17 20:27:22.217 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TSpanViewManager
+10-17 20:27:22.223 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FilterManager
+10-17 20:27:22.224 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$MarkerManager
+10-17 20:27:22.228 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.modal.ReactModalHostManager
+10-17 20:27:22.231 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ForeignObjectManager
+10-17 20:27:22.233 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$EllipseViewManager
+10-17 20:27:22.233 W/System  ( 1306): A resource failed to call release. 
+10-17 20:27:22.233 W/System  ( 1306): A resource failed to call release. 
+10-17 20:27:22.233 W/System  ( 1306): A resource failed to call release. 
+10-17 20:27:22.235 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$LineViewManager
+10-17 20:27:22.237 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeFloodManager
+10-17 20:27:22.239 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$GroupViewManager
+10-17 20:27:22.240 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TextViewManager
+10-17 20:27:22.251 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$ImageViewManager
+10-17 20:27:22.257 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeCompositeManager
+10-17 20:27:22.262 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.image.ReactImageManager
+10-17 20:27:22.271 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$RadialGradientManager
+10-17 20:27:22.273 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$MaskManager
+10-17 20:27:22.282 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager
+10-17 20:27:22.283 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$RectViewManager
+10-17 20:27:22.285 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$TextPathViewManager
+10-17 20:27:22.286 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.scroll.ReactScrollViewManager
+10-17 20:27:22.288 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$FeOffsetManager
+10-17 20:27:22.289 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.horcrux.svg.RenderableViewManager$PathViewManager
+10-17 20:27:22.291 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.drawer.ReactDrawerLayoutManager
+10-17 20:27:22.292 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
+10-17 20:27:22.294 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputManager
+10-17 20:27:22.296 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.text.SelectableTextViewManager
+10-17 20:27:22.297 W/unknown:ViewManagerPropertyUpdater( 5753): Could not find generated setter for class com.facebook.react.views.virtual.view.ReactVirtualViewManager
+10-17 20:27:22.301 W/ExpoModulesV2( 5753): ja0 does not implement io.github.expo.modules.v2.Enumerable. It crosses to JavaScript here, but R8 keeps an enum's entries and its property only when it does, so a release build may fail on it or send its entry names instead
+10-17 20:27:22.317 I/ReactNativeJS( 5753): Running "main"
+10-17 20:27:22.518 E/TaskPersister(  579): File error accessing recents directory (directory doesn't exist?).
+10-17 20:27:22.582 I/netd    (  443): tetherGetStats() -> {[]} <0.47ms>
+10-17 20:27:22.584 I/netd    (  443): bandwidthSetGlobalAlert(2097152) <0.14ms>
+10-17 20:27:22.785 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:22.786 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:22.787 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:22.788 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:22.842 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:22.866 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@1379f; boundsInParent: Rect(0, 0 - 908, 63); boundsInScreen: Rect(86, 2467 - 994, 2337); boundsInWindow: Rect(86, 2467 - 994, 2337); packageName: app.devilwalkx.accesschain; className: android.widget.TextView; text: This adds to your phone's own text size setting.; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: true; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:22.866 D/Maestro ( 5656): View hierarchy received in 80 ms
+10-17 20:27:23.325 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:23.326 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:23.326 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:23.334 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:23.348 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@1379f; boundsInParent: Rect(0, 0 - 908, 63); boundsInScreen: Rect(86, 2467 - 994, 2337); boundsInWindow: Rect(86, 2467 - 994, 2337); packageName: app.devilwalkx.accesschain; className: android.widget.TextView; text: This adds to your phone's own text size setting.; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: true; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:23.348 D/Maestro ( 5656): View hierarchy received in 23 ms
+10-17 20:27:23.439 D/ActivityManager(  579): freezing 2941 com.google.android.rkpdapp
+10-17 20:27:23.443 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-17 20:27:23.443 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-17 20:27:23.444 D/InetDiagMessage(  579): Destroyed live tcp sockets for uids={10207} in 1ms
+10-17 20:27:23.492 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:23.493 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:23.493 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:23.503 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:23.516 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@1379f; boundsInParent: Rect(0, 0 - 908, 63); boundsInScreen: Rect(86, 2467 - 994, 2337); boundsInWindow: Rect(86, 2467 - 994, 2337); packageName: app.devilwalkx.accesschain; className: android.widget.TextView; text: This adds to your phone's own text size setting.; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: true; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:23.517 D/Maestro ( 5656): View hierarchy received in 25 ms
+10-17 20:27:23.615 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:23.616 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:23.616 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:23.624 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:23.638 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@1379f; boundsInParent: Rect(0, 0 - 908, 63); boundsInScreen: Rect(86, 2467 - 994, 2337); boundsInWindow: Rect(86, 2467 - 994, 2337); packageName: app.devilwalkx.accesschain; className: android.widget.TextView; text: This adds to your phone's own text size setting.; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: true; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:23.638 D/Maestro ( 5656): View hierarchy received in 23 ms
+10-17 20:27:23.648 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-17 20:27:23.648 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-17 20:27:23.648 D/InetDiagMessage(  579): Destroyed live tcp sockets for uids={10160} in 1ms
+10-17 20:27:23.649 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-17 20:27:23.649 D/InetDiagMessage(  579): Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-17 20:27:23.649 D/InetDiagMessage(  579): Destroyed live tcp sockets for uids={20160} in 0ms
+10-17 20:27:23.735 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:23.735 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:23.735 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:23.745 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:23.751 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@1379f; boundsInParent: Rect(0, 0 - 908, 63); boundsInScreen: Rect(86, 2467 - 994, 2337); boundsInWindow: Rect(86, 2467 - 994, 2337); packageName: app.devilwalkx.accesschain; className: android.widget.TextView; text: This adds to your phone's own text size setting.; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: true; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:23.751 D/Maestro ( 5656): View hierarchy received in 16 ms
+10-17 20:27:23.848 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:23.849 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:23.849 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:23.864 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:23.866 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@1379f; boundsInParent: Rect(0, 0 - 908, 63); boundsInScreen: Rect(86, 2467 - 994, 2337); boundsInWindow: Rect(86, 2467 - 994, 2337); packageName: app.devilwalkx.accesschain; className: android.widget.TextView; text: This adds to your phone's own text size setting.; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: true; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:23.866 D/Maestro ( 5656): View hierarchy received in 18 ms
+10-17 20:27:24.067 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:24.073 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:24.074 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:24.251 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:24.267 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@1379f; boundsInParent: Rect(0, 0 - 908, 63); boundsInScreen: Rect(86, 2467 - 994, 2337); boundsInWindow: Rect(86, 2467 - 994, 2337); packageName: app.devilwalkx.accesschain; className: android.widget.TextView; text: This adds to your phone's own text size setting.; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: true; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:24.268 D/Maestro ( 5656): View hierarchy received in 201 ms
+10-17 20:27:24.361 D/Maestro ( 5656): Requesting view hierarchy
+10-17 20:27:24.361 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:24.362 W/QueryController( 5656): Could not detect idle state.
+10-17 20:27:24.379 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@879cb; boundsInParent: Rect(0, 0 - 0, 0); boundsInScreen: Rect(884, 64 - 884, 64); boundsInWindow: Rect(884, 64 - 884, 64); packageName: com.android.systemui; className: android.widget.FrameLayout; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:24.385 I/Maestro ( 5656): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@1379f; boundsInParent: Rect(0, 0 - 908, 63); boundsInScreen: Rect(86, 2467 - 994, 2337); boundsInWindow: Rect(86, 2467 - 994, 2337); packageName: app.devilwalkx.accesschain; className: android.widget.TextView; text: This adds to your phone's own text size setting.; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; containerTitle: null; viewIdResName: null; uniqueId: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; granularScrollingSupported: false; importantForAccessibility: true; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_NEXT_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY - null, AccessibilityAction: ACTION_SET_SELECTION - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]; isTextSelectable: false
+10-17 20:27:24.385 D/Maestro ( 5656): View hierarchy received in 24 ms
+10-17 20:27:24.448 D/WindowManager(  579): captureDisplay
+10-17 20:27:24.572 I/servicemanager(    0): Caller(pid=5656,uid=10220,sid=u:r:untrusted_app:s0:c220,c256,c512,c768) Found android.hardware.graphics.allocator.IAllocator/default in device VINTF manifest.
+10-17 20:27:24.577 I/servicemanager(    0): Caller(pid=5656,uid=10220,sid=u:r:untrusted_app:s0:c220,c256,c512,c768) Found android.hardware.graphics.allocator.IAllocator/default in device VINTF manifest.
+10-17 20:27:24.585 I/servicemanager(    0): Caller(pid=5656,uid=10220,sid=u:r:untrusted_app:s0:c220,c256,c512,c768) Found mapper/ranchu in device VINTF manifest.
+10-17 20:27:24.498 I/DisplayManager( 5656): Choreographer implicitly registered for the refresh rate.
+10-17 20:27:24.522 I/EGL_emulation( 5656): Opening libGLESv1_CM_emulation.so
+10-17 20:27:24.522 I/EGL_emulation( 5656): Opening libGLESv2_emulation.so
+10-17 20:27:24.528 W/HWUI    ( 5656): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-17 20:27:24.537 D/WifiClientModeImpl[52667:wlan0](  579): updateLinkLayerStatsRssiSpeedFrequencyCapabilities rssi=-50 TxLinkspeed=6 freq=2437 RxLinkSpeed=2
+10-17 20:27:24.538 D/WifiDataStall(  579): tx tput in kbps: 37000
+10-17 20:27:24.538 D/WifiDataStall(  579): rx tput in kbps: 37000
+10-17 20:27:24.538 V/WifiConfigManager(  579): Updating scan detail cache freq=2437 BSSID=02:15:b2:00:00:01 RSSI=-50 for "AndroidWifi"NONE
+10-17 20:27:24.538 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:24.538 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:24.538 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:24.538 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:24.538 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:24.538 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:24.538 D/WifiThroughputPredictor(  579):  utilization (LLS) 80 isBluetoothConnected: false final utilization: 80
+10-17 20:27:24.538 D/WifiThroughputPredictor(  579):  BW: 0 RSSI: -50 Nss: 1 Mode: 1 symDur: 4000 snrDb 30 bitPerTone: 4500 rate: 54 throughput: 37
+10-17 20:27:24.540 D/WifiScoreCard(  579): BSSID update SIGNAL_POLL ID: 1356271939 SSID: "AndroidWifi", BSSID: 02:15:b2:00:00:01, MAC: 02:15:b2:00:00:00, IP: /10.0.2.16, Security type: 0, Supplicant state: COMPLETED, Wi-Fi standard: legacy, RSSI: -50, Link speed: 6Mbps, Tx Link speed: 6Mbps, Max Supported Tx Link speed: 54Mbps, Rx Link speed: 2Mbps, Max Supported Rx Link speed: 54Mbps, Frequency: 2437MHz, Net ID: 0, Metered hint: false, score: 60, isUsable: true, CarrierMerged: false, SubscriptionId: -1, IsPrimary: 1, Trusted: true, Restricted: false, Ephemeral: false, OEM paid: false, OEM private: false, OSU AP: false, FQDN: <none>, Provider friendly name: <none>, Requesting package name: <none>"AndroidWifi"openMLO Information: , Is TID-To-Link negotiation supported by the AP: false, AP MLD Address: <none>, AP MLO Link Id: <none>, AP MLO Affiliated links: <none>, Vendor Data: <none>
+10-17 20:27:24.540 D/WifiScoreCard(  579): txRate: 7 txSpeed: 6
+10-17 20:27:24.540 D/WifiScoreCard(  579): network update SIGNAL_POLL "AndroidWifi" ID: 1865056951 RSSI -50 txSpeed 6
+10-17 20:27:24.540 D/WifiClientModeImpl[52667:wlan0](  579):  ClientModeImpl$L2ConnectedState screen=on 1 0 "AndroidWifi" 02:15:b2:00:00:01 rssi=-50 f=2437 sc=60 link=6 tx=6.7, 0.0, 0.0 rx=36.7 bcn=0 [on:0 tx:0 rx:0 period:3009] from screen [on:0 period:1267482108] score=60
+10-17 20:27:24.911 W/IPCThreadState(  579): Sending oneway calls to frozen process.
+10-17 20:27:24.911 W/IPCThreadState(  579): Sending oneway calls to frozen process.
+10-17 20:27:24.911 W/IPCThreadState(  579): Sending oneway calls to frozen process.
+10-17 20:27:25.455 I/logd    (    0): logdr: UID=2000 GID=2000 PID=5794 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
