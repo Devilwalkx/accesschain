@@ -1,0 +1,27 @@
+name: probe-origin-text
+
+# Manual, read-only: how the TfL journey planner treats a typed start place (postcode, ambiguous name, nonsense).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  origin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      UA: "AccessChainProbe/0.2 (research prototype; github.com/Devilwalkx/accesschain)"
+    steps:
+      - name: Typed start places
+        continue-on-error: true
+        run: |
+          for from in "SE1%209PX" "Elephant" "xyzzyqq" "SE1" "Waterloo%20station"; do
+            echo "##### FROM=$from"
+            curl -sS -m 60 -A "$UA" "https://api.tfl.gov.uk/Journey/JourneyResults/$from/to/51.5074,-0.0993?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow" -o o.json -w "HTTP %{http_code}\n"
+            echo "KEYS:"; jq -c 'keys' o.json || head -c 400 o.json
+            echo "FROMDIS:"; jq -c '.fromLocationDisambiguation // null | if . then {matchStatus, n:(.disambiguationOptions|length), opts:[.disambiguationOptions[0:4][]|{parameterValue, place:{commonName:.place.commonName, lat:.place.lat, lon:.place.lon, placeType:.place.placeType}, matchQuality}]} else null end' o.json || true
+            echo "JOURNEY0 start:"; jq -c 'if .journeys then {n:(.journeys|length), from:.journeys[0].legs[0].departurePoint.commonName, lat:.journeys[0].legs[0].departurePoint.lat, lon:.journeys[0].legs[0].departurePoint.lon} else null end' o.json || true
+            echo "MSG:"; jq -c '{message, httpStatusCode, exceptionType}' o.json 2>/dev/null | head -c 300 || true
+          done
