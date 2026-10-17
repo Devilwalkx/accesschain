@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="70.769" timestamp="2026-10-17T21:01:12">
+    <testcase id="MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts" name="MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts" classname="MAIN TASK (demonstration places) - say what you need, then read a journey as four separate parts" file="/home/runner/work/accesschain/accesschain/android-tests/flows/02-main-task-demo.yaml" time="70.746" timestamp="2026-10-17T21:01:12" status="SUCCESS"/>
+  </testsuite>
+</testsuites>
