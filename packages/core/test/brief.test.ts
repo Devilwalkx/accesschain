@@ -82,6 +82,15 @@ describe("journey brief: four separate parts", () => {
     expect(steps2.map((s) => s.text).join(" ")).toMatch(/we have not checked it/);
   });
 
+  it("a confirmed entrance still lists the contact details OpenStreetMap has, because the approach step points to them", () => {
+    const venue = { ...tate(), phone: "+44 20 7887 8888", website: null };
+    const r = routeOf(walkOnly, venue);
+    const [b] = buildBriefs([r], [assessRoute(r, steps, NOW)], ctx({ venue }));
+    expect(b!.parts[3]!.status).toBe("confirmed");
+    expect(b!.parts[3]!.nextSteps.some((s) => s.phone === "+44 20 7887 8888")).toBe(true);
+    expect(b!.parts[2]!.nextSteps.map((s) => s.text).join(" ")).toMatch(/Contact details are under/);
+  });
+
   it("demonstration data: same four parts, no contact details invented, ages are 'demonstration' ages", () => {
     const routes = syntheticRoutes();
     const profile: RequirementsProfile = { ...steps, maxWalkM: 400, minClearWidthMm: 800, needsAccessibleToilet: false };

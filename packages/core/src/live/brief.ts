@@ -274,6 +274,7 @@ export function buildBriefs(routes: RouteCandidate[], assessments: Array<Journey
         else if (contact.some((s) => s.kind !== "none")) next.push({ kind: "contact", text: `Ask ${c.venueName} how to get from the stop to the entrance without steps. Contact details are under “${TITLES.entrance}”.` });
         else if (c.live) next.push({ kind: "none", text: "No contact details are listed for this place, so we cannot suggest who to ask." });
       }
+      if (id === "entrance" && status === "confirmed") next.push(...contactSteps(c).filter((x) => x.kind !== "none"));
       if (c.live && (id === "transport" || id === "transfers") && (status === "unconfirmed" || status === "problem") && segs.length > 0) {
         next.push({ kind: "recheck", text: id === "transfers" && c.liftsUnavailable ? "Try again in a few minutes: TfL's lift list could not be loaded." : "Check again just before you leave. TfL's information is only trusted for 15 minutes." });
       }
