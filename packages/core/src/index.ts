@@ -10,3 +10,4 @@ export * from "./routes.js";
 export * from "./itinerary.js";
 export * from "./synthetic.js";
 export * from "./backup.js";
+export * from "./demo.js";

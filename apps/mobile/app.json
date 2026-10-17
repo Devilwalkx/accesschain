@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "AccessChain",
+    "slug": "accesschain",
+    "version": "0.0.0",
+    "orientation": "default",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "invalid.placeholder.accesschain",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Optional: use your current location as the start of a journey. It is only read when you tap the button and is not tracked in the background."
+      }
+    },
+    "android": {
+      "package": "invalid.placeholder.accesschain",
+      "permissions": ["ACCESS_COARSE_LOCATION"],
+      "blockedPermissions": ["ACCESS_BACKGROUND_LOCATION", "ACCESS_FINE_LOCATION"]
+    },
+    "plugins": ["expo-secure-store"]
+  }
+}
