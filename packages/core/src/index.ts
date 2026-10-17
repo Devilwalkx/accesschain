@@ -17,3 +17,5 @@ export * from "./live/osm.js";
 export * from "./live/summary.js";
 export * from "./live/client.js";
 export * from "./live/brief.js";
+export * from "./selfcheck.js";
+export * from "./live/useragent.js";

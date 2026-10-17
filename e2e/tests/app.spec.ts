@@ -253,6 +253,16 @@ test.describe("AccessChain on a phone-sized browser", () => {
     void bg;
   });
 
+  test("settings: the on-phone encryption check runs the real code and passes, and says what it does not prove", async ({ page }) => {
+    await goto(page);
+    await btn(page, "Settings").first().click();
+    await btn(page, "Check encryption on this phone").click();
+    await expect(heading(page, "Encryption check: passed")).toBeVisible();
+    await expect(page.getByText("One changed character in the encrypted text is refused", { exact: false })).toBeVisible();
+    await expect(page.getByText("does not prove the encryption is unbreakable", { exact: false })).toBeVisible();
+    await expect(page.getByText("readable by them", { exact: false }).or(page.getByText("TfL and OpenStreetMap", { exact: false })).first()).toBeVisible();
+  });
+
   test("automated accessibility scan (axe, WCAG 2 A/AA) on every screen: normal, large text and dark", async ({ page }) => {
     for (const q of ["", "?fontscale=2", "?theme=dark"]) {
       await goto(page, q);

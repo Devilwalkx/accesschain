@@ -1,0 +1,30 @@
+appId: app.devilwalkx.accesschain
+name: The on-phone encryption check runs the real encryption code and passes (including refusing a tampered copy)
+---
+- launchApp:
+    clearState: true
+- scrollUntilVisible:
+    element: "Settings"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- tapOn: "Settings"
+- scrollUntilVisible:
+    element: "Check encryption on this phone"
+    direction: DOWN
+    timeout: 90000
+    speed: 30
+- tapOn: "Check encryption on this phone"
+- scrollUntilVisible:
+    element: "Encryption check: .*"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- assertVisible: "Encryption check: passed"
+- scrollUntilVisible:
+    element: ".*One changed character in the encrypted text is refused.*"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- assertVisible: ".*One changed character in the encrypted text is refused.*"
+- takeScreenshot: 15-encryption-check

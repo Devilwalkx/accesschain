@@ -25,7 +25,7 @@ export function PrivacyScreen() {
       <Card>
         <Txt>
           {mode === "live"
-            ? "Live information is on. The app asks TfL for routes and lift news (your start station, rough location or typed postcode, and the place's position) and OpenStreetMap for the place's name and notes. They can see your internet address. Your needs are never sent."
+            ? "Live information is on. The app asks TfL for routes and lift news (your start station, rough location or typed postcode, and the place's position) and OpenStreetMap for the place's name and notes. They can see your internet address. Your needs are never sent. These lookups are not encrypted with the app's own key: they travel over HTTPS, and TfL and OpenStreetMap can read them."
             : "Live information is off. Nothing leaves your phone. The demonstration places are made up."}
         </Txt>
         {mode === "live" ? (

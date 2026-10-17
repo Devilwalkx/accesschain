@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 import * as Application from "expo-application";
 import Constants from "expo-constants";
+import { encryptionSelfCheck, type SelfCheckResult } from "@accesschain/core";
+import { expoKeyStore } from "../keystore";
 import { useApp } from "../store";
 import { useLive } from "../live";
 import { useTheme, useThemeMode, type ThemePref } from "../design/theme";
 import type { TextSize } from "../theme";
-import { Btn, Card, Gap, Txt } from "../ui";
+import { Btn, Card, Gap, Notice, Txt } from "../ui";
 
 export function buildInfo() {
   const x = (Constants.expoConfig?.extra ?? {}) as { commit?: string; builtAt?: string; channel?: string };
@@ -38,6 +40,7 @@ export function SettingsScreen() {
   const { pref } = useThemeMode();
   const { mode } = useLive();
   const info = buildInfo();
+  const [check, setCheck] = useState<SelfCheckResult | "running" | null>(null);
   const themeOpts: Array<[ThemePref, string]> = [["system", "Same as phone"], ["light", "Light"], ["dark", "Dark"]];
   return (
     <View>
@@ -65,8 +68,16 @@ export function SettingsScreen() {
         <Txt v="small">Version {info.version} (build {info.code})</Txt>
         <Txt v="small">App ID {info.id}</Txt>
         <Txt v="small">Commit {info.commit}{info.builtAt ? ` · built ${info.builtAt}` : ""}</Txt>
-        <Txt v="small" color={c.textMuted}>Test build. Signed with the public Android test key. Not reviewed by anyone independent. It has not been used by older or disabled users in a study, and not on a physical phone by us.</Txt>
+        <Txt v="small" color={c.textMuted}>{info.channel === "release" ? "Release build, signed with the owner's private key. Not reviewed by anyone independent. Not tested on a physical phone by its builders." : "Test build, signed with the public Android test key. Not reviewed by anyone independent. It has not been used by older or disabled users in a study, and not on a physical phone by its builders."}</Txt>
       </Card>
+      <Btn kind="secondary" label="Check encryption on this phone" onPress={async () => { setCheck("running"); setCheck(await encryptionSelfCheck(expoKeyStore)); }} />
+      {check === "running" ? <Notice tone="wait" text="Checking…" /> : check ? (
+        <Card accessibilityLabel="Encryption check result">
+          <Txt v="heading" header>{check.ok ? "Encryption check: passed" : "Encryption check: FAILED"}</Txt>
+          {check.steps.map((st) => <Txt key={st.label}>{`${st.ok ? "Passed" : "Failed"}: ${st.label}`}</Txt>)}
+          <Txt v="small" color={c.textMuted}>This runs the app's real encryption on made-up text. It shows none of your data and does not prove the encryption is unbreakable. Your journey lookups are not covered: they go to TfL and OpenStreetMap over HTTPS and are readable by them.</Txt>
+        </Card>
+      ) : null}
     </View>
   );
 }

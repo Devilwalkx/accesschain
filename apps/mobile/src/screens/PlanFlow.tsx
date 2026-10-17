@@ -215,6 +215,7 @@ function LiveResult(props: { venue: Venue; start: Start; state: TripState; onRet
     <View>
       <Txt v="title" header>{props.venue.name}</Txt>
       <Txt color={c.textMuted}>From {startName(props.start)}.</Txt>
+      {trip && !busy && <Txt v="small" color={c.textMuted}>Checked {ageText(trip.fetchedAt, nowIso)}.</Txt>}
       <NeedsLine profile={profile} onNeeds={() => go("needs")} />
 
       {busy && <Loading text="Checking the latest information…" />}

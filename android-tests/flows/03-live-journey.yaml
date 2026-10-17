@@ -52,15 +52,23 @@ name: INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies;
     notVisible: "Checking the latest information.*"
     timeout: 90000
 - takeScreenshot: 12-live-result-top
-- scrollUntilVisible:
-    element: "Correct entrance"
-    direction: DOWN
-    timeout: 60000
-    speed: 30
-- takeScreenshot: 13-live-entrance
+# Either real live content is shown or the honest not-checked state is shown. Never a confident route on failure: a fit is never offered.
+- assertVisible: "Checked (just now|[0-9]+ .* ago)\\."
+- assertVisible: ".*(Walk about|Tube|Train|Bus|DLR|Overground|Elizabeth|No step-free route found|couldn't|could not|too slow|not usable).*"
+- assertNotVisible: "Suits your needs"
 - scrollUntilVisible:
     element: "What answered"
     direction: DOWN
     timeout: 90000
     speed: 30
 - takeScreenshot: 14-live-what-answered
+- assertVisible: "TfL journey planner: .*"
+- assertVisible: "OpenStreetMap \\(the place\\): .*"
+- scrollUntilVisible:
+    element: "Transport information: Powered by TfL Open Data.*"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- assertVisible: "Transport information: Powered by TfL Open Data.*"
+- assertVisible: "Place information: © OpenStreetMap contributors.*"
+- takeScreenshot: 15-live-attribution

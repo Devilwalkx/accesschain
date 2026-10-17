@@ -1,0 +1,49 @@
+appId: app.devilwalkx.accesschain
+name: INFORMATIONAL - airplane mode ON (set by the script), live journey ends in the not-checked state with no invented route
+---
+- launchApp:
+    clearState: true
+- scrollUntilVisible:
+    element: "Plan a journey"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- tapOn: "Plan a journey"
+- scrollUntilVisible:
+    element: "Yes, use live information"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- tapOn: "Yes, use live information"
+- scrollUntilVisible:
+    element: "Tate Modern"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- tapOn: "Tate Modern"
+- scrollUntilVisible:
+    element: "London Bridge"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- tapOn: "London Bridge"
+- extendedWaitUntil:
+    notVisible: "Checking the latest information.*"
+    timeout: 90000
+- scrollUntilVisible:
+    element: "We couldn't reach.*"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- assertVisible: "We couldn't reach.*"
+- assertNotVisible: "Suits your needs"
+- assertNotVisible: "Walk about.*"
+- assertNotVisible: "Correct entrance"
+- takeScreenshot: 60-offline-notice
+- scrollUntilVisible:
+    element: "What answered"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- assertVisible: "OpenStreetMap \\(the place\\): no answer.*"
+- takeScreenshot: 61-offline-what-answered

@@ -1,16 +1,19 @@
 appId: app.devilwalkx.accesschain
-name: "INFORMATIONAL - location permission refused (also permanently), a clear message and a way forward"
+name: "INFORMATIONAL - location permanently denied (revoked with the do-not-ask-again flag by the script), a clear message and a manual start"
 ---
-- launchApp:
-    clearState: true
-    permissions:
-      location: deny
+- launchApp
 - scrollUntilVisible:
-    element: "Plan a journey"
+    element: "Tell us what you need"
     direction: DOWN
     timeout: 60000
     speed: 30
-- tapOn: "Plan a journey"
+- tapOn: "Tell us what you need"
+- scrollUntilVisible:
+    element: "Save and see my routes"
+    direction: DOWN
+    timeout: 60000
+    speed: 30
+- tapOn: "Save and see my routes"
 - scrollUntilVisible:
     element: "Yes, use live information"
     direction: DOWN
@@ -24,55 +27,31 @@ name: "INFORMATIONAL - location permission refused (also permanently), a clear m
     speed: 30
 - tapOn: "Tate Modern"
 - scrollUntilVisible:
-    element: "Your phone will ask permission once.*"
-    direction: DOWN
-    timeout: 30000
-    speed: 30
-- assertVisible: "Your phone will ask permission once.*"
-- scrollUntilVisible:
     element: "Where I am now"
     direction: DOWN
     timeout: 60000
     speed: 30
 - tapOn: "Where I am now"
+# permanent denial: no system dialog appears; the app explains and offers the phone's settings. A dialog, if the phone shows one, is declined.
 - tapOn:
     text: "Don.t allow|Deny|DENY"
     optional: true
 - scrollUntilVisible:
-    element: "Location was not allowed.*|Location is switched off.*|We couldn't find where you are.*"
-    direction: DOWN
-    timeout: 30000
-    speed: 30
-- assertVisible: "Location was not allowed.*|Location is switched off.*|We couldn't find where you are.*"
-- takeScreenshot: 40-location-denied-1
-- scrollUntilVisible:
-    element: "Where I am now"
+    element: "Location is switched off.*|Location was not allowed.*|We couldn't find where you are.*"
     direction: DOWN
     timeout: 60000
     speed: 30
-- tapOn: "Where I am now"
-- tapOn:
-    text: "Don.t allow|Deny|DENY"
-    optional: true
-- scrollUntilVisible:
-    element: "Where I am now"
-    direction: DOWN
-    timeout: 60000
-    speed: 30
-- tapOn: "Where I am now"
-- tapOn:
-    text: "Don.t allow|Deny|DENY"
-    optional: true
+- assertVisible: "Location is switched off.*|Location was not allowed.*|We couldn't find where you are.*"
+- takeScreenshot: 40-location-denied
+# the manual start still works
 - scrollUntilVisible:
     element: "London Bridge"
-    direction: DOWN
-    timeout: 30000
+    direction: UP
+    timeout: 60000
     speed: 30
-- assertVisible: "London Bridge"
-- scrollUntilVisible:
-    element: "Use this postcode"
-    direction: DOWN
-    timeout: 30000
-    speed: 30
-- assertVisible: "Use this postcode"
-- takeScreenshot: 41-location-denied-3
+- tapOn: "London Bridge"
+- extendedWaitUntil:
+    notVisible: "Checking the latest information.*"
+    timeout: 90000
+- assertNotVisible: "Suits your needs"
+- takeScreenshot: 41-manual-start-result

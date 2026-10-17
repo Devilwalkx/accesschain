@@ -52,6 +52,15 @@ jobs:
       - name: Live smoke test (real services)
         run: LIVE_SMOKE=1 npx playwright test tests/live.real.spec.ts --project=android-phone
         working-directory: e2e
+      - name: "Record what the app own client sends and what the real services return (status codes, headers)"
+        if: always()
+        run: npm run record:live -w @accesschain/core 2>&1 | tee live-requests.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-request-record
+          path: live-requests.txt
+          retention-days: 14
 
   android-apk:
     runs-on: ubuntu-latest
@@ -69,12 +78,28 @@ jobs:
       - run: npm ci
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      - name: "Detect the owner's private signing key (absent means the build stays a test build)"
+        env:
+          KS_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
+        run: |
+          if [ -n "$KS_B64" ]; then
+            echo "RELEASE_SIGNING=1" >> "$GITHUB_ENV"
+            echo "$KS_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            echo "ANDROID_KEYSTORE_PATH=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+            echo "Private signing key present: this build will be signed with it."
+          else
+            echo "No signing secrets: this build is signed with the public Android debug key (test build)."
+          fi
       - name: Generate native Android project
         working-directory: apps/mobile
         env:
           BUILD_COMMIT: ${{ github.sha }}
           BUILD_TIME: ${{ github.event.head_commit.timestamp }}
         run: npx expo prebuild --platform android --no-install
+      - name: "Point Gradle release build at the private key (only when present)"
+        if: ${{ env.RELEASE_SIGNING == '1' }}
+        working-directory: apps/mobile
+        run: node ../../scripts/configure-release-signing.mjs android/app/build.gradle
       - name: Check requested permissions
         working-directory: apps/mobile
         run: |
@@ -94,7 +119,27 @@ jobs:
           grep -q 'android:allowBackup="false"' android/app/src/main/AndroidManifest.xml
       - name: "Build release APK (signed with the Android debug key, for testing only)"
         working-directory: apps/mobile/android
+        env:
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: ./gradlew assembleRelease --no-daemon
+      - name: Check the permissions of the built APK (after all libraries are merged)
+        run: |
+          AAPT=$(ls -d "$ANDROID_HOME"/build-tools/*/aapt | sort -V | tail -1)
+          APK=$(ls apps/mobile/android/app/build/outputs/apk/release/*.apk | head -1)
+          "$AAPT" dump permissions "$APK" | tee apk-permissions.txt
+          "$AAPT" dump badging "$APK" | grep -E "^package:|sdkVersion|targetSdkVersion" | tee -a apk-permissions.txt
+          # allowed: INTERNET (live data), ACCESS_COARSE_LOCATION (one-shot, on tap) and the app's own signature-level receiver permission that AndroidX adds
+          if grep -E "uses-permission" apk-permissions.txt | grep -vE "DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION|android.permission.INTERNET|android.permission.ACCESS_COARSE_LOCATION"; then echo "The built APK requests a permission that is not allowed"; exit 1; fi
+          grep -q "name='app.devilwalkx.accesschain'" apk-permissions.txt
+      - name: Record what identifies this APK
+        run: BUILD_COMMIT=${{ github.sha }} bash scripts/apk-identity.sh apps/mobile/android/app/build/outputs/apk/release/*.apk | tee build-identity.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: accesschain-build-identity
+          path: build-identity.txt
+          retention-days: 14
       - uses: actions/upload-artifact@v4
         with:
           name: accesschain-android-test-apk
@@ -208,16 +253,23 @@ jobs:
         with:
           name: accesschain-web
           path: web
+      - uses: actions/download-artifact@v4
+        with:
+          name: accesschain-build-identity
+          path: identity
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
           set -e
-          mv out/*.apk AccessChain-test.apk
+          cp identity/build-identity.txt build-identity.txt
+          if grep -q "PRIVATE release key" build-identity.txt; then NAME=AccessChain.apk; KIND="Release build signed with the owner's private key."; else NAME=AccessChain-test.apk; KIND="Test build, signed with the public Android debug key (not a release key, not for the Play Store)."; fi
+          mv out/*.apk "$NAME"
           (cd web && zip -qr ../AccessChain-web.zip .)
+          { printf '%s\n\n' "Install $NAME on an Android phone (application id app.devilwalkx.accesschain: a one-time uninstall of any older AccessChain test build is needed). $KIND Live data from TfL and OpenStreetMap varies; the app also has a clearly labelled demonstration. Step by step: GETTING_STARTED.md. Commit ${{ github.sha }}, run ${{ github.run_number }}. Browser tests: ${{ needs.test-and-web.result }}. Android emulator tests (API 36 and API 29, emulators only): ${{ needs.android-emulator.result }}. This asset has NOT been run on a physical phone by anyone, TalkBack was not run, and no independent person has tested or reviewed it. See docs/ANDROID_PASS_REPORT.md for what is and is not tested."; echo 'Build identity (what identifies this exact file):'; echo; sed 's/^/    /' build-identity.txt; } > notes.md
           gh release delete latest-test-build --cleanup-tag --yes || true
-          gh release create latest-test-build AccessChain-test.apk AccessChain-web.zip \
+          gh release create latest-test-build "$NAME" build-identity.txt AccessChain-web.zip \
             --target "${{ github.sha }}" --prerelease \
-            --title "AccessChain test build" \
-            --notes "Install AccessChain-test.apk on an Android phone (application id app.devilwalkx.accesschain: a one-time uninstall of any older AccessChain test build is needed). Test build, signed with the public Android debug key (not a release key, not for the Play Store). Live data from TfL and OpenStreetMap varies; the app also has a clearly labelled demonstration. Step by step: GETTING_STARTED.md. Commit ${{ github.sha }}, run ${{ github.run_number }}. Browser tests: ${{ needs.test-and-web.result }}. Android emulator tests (API 36 and API 29, emulators only): ${{ needs.android-emulator.result }}. This asset has NOT been run on a physical phone by anyone, and TalkBack was not run. See docs/ANDROID_PASS_REPORT.md for what is and is not tested."
+            --title "AccessChain build" \
+            --notes-file notes.md
