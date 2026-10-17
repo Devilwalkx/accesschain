@@ -1,5 +1,11 @@
 # AccessChain – Status report
 
+## Phone delivery update (latest)
+- **CI (GitHub Actions, run 2 on commit 94bb3fd): passed.** Typecheck, 67 unit/database tests, web build, 36 browser tests (before the HTTPS guard was added) and the Android release build all succeeded on GitHub's runners. Artifacts produced: `accesschain-android-test-apk` (28 MB, debug-signed, testing only) and `accesschain-web`. Locally the browser suite is now 39 tests; the commit adding the last 3 is pushed after this note and is covered by the next CI run.
+- **Never run on a physical phone.** The APK builds but nobody has installed or launched it yet; native modules (secure store, secure random, image picker, location) are unproven on a device. iPhone: web version only; no installable iOS build.
+- Details: README "Run it on a phone", DECISIONS D-015 to D-017, SECURITY_TESTS T-35/T-36.
+
+
 Generated at the end of build stage 1–3 (design, vertical slice, negative tests). Synthetic data only.
 
 ## Implemented
