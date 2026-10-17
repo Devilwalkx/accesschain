@@ -1,7 +1,7 @@
 name: probe-live-apis
 
 # Manual, read-only probe of public data sources. Runs on GitHub's runners because the build sandbox
-# cannot reach these sites. Prints trimmed responses to the log so adapters are written against reality.
+# cannot reach these sites. Prints compact, trimmed responses so adapters are written against reality.
 on:
   workflow_dispatch:
 
@@ -15,56 +15,49 @@ jobs:
     env:
       UA: "AccessChainProbe/0.1 (research prototype; contact via GitHub Devilwalkx/accesschain)"
     steps:
-      - name: TfL API spec (Journey, lifts, StopPoint)
+      - name: A1 lift disruptions v2
+        continue-on-error: true
         run: |
-          curl -sS -m 40 -A "$UA" https://api.tfl.gov.uk/swagger/docs/v1 -o swagger.json || echo "swagger fetch failed"
-          ls -la swagger.json || true
-          jq -r '.paths | keys[] | select(test("Journey|Lift|Disruptions|StopPoint/\\{id\\}$|StopPoint/Search"))' swagger.json | head -40
-          echo "--- JourneyResults params"
-          jq -r '.paths["/Journey/JourneyResults/{from}/to/{to}"].get.parameters[] | "\(.name) [\(.in)] \(.type // "") \(.description // "" | .[0:90])"' swagger.json
-          echo "--- accessibilityPreference enum"
-          jq -r '.paths["/Journey/JourneyResults/{from}/to/{to}"].get.parameters[] | select(.name=="accessibilityPreference") | .items.enum // .enum' swagger.json
-          echo "--- mobilityProfile / walkingSpeed enums"
-          jq -c '.paths["/Journey/JourneyResults/{from}/to/{to}"].get.parameters[] | select(.name=="walkingSpeed" or .name=="mobilityProfile") | {name, enum:(.enum // .items.enum)}' swagger.json
-      - name: Live lift disruptions
+          code=$(curl -sS -m 40 -A "$UA" -o lifts.json -w "%{http_code}" "https://api.tfl.gov.uk/Disruptions/Lifts/v2" || true); echo "HTTP $code bytes $(wc -c < lifts.json)"
+          head -c 900 lifts.json; echo
+          jq -c 'if type=="array" then {count:length, keys:(.[0]|keys), sample:.[0:2]} else {keys:keys} end' lifts.json | head -c 1500
+      - name: A2 swagger summary
+        continue-on-error: true
         run: |
-          for u in "https://api.tfl.gov.uk/Disruptions/Lifts/v2" "https://api.tfl.gov.uk/Disruptions/Lifts"; do
-            echo "=== $u"
-            code=$(curl -sS -m 40 -A "$UA" -o lifts.json -w "%{http_code}" "$u" || true); echo "HTTP $code"
-            head -c 1500 lifts.json; echo
-            jq 'if type=="array" then {count:length, keys:(.[0]|keys)} else keys end' lifts.json 2>/dev/null || true
+          curl -sS -m 40 -A "$UA" https://api.tfl.gov.uk/swagger/docs/v1 -o swagger.json -w "HTTP %{http_code} bytes %{size_download}\n"
+          jq -r '.paths | keys[] | select(test("Lift|Disruptions/Lifts|JourneyResults"))' swagger.json | head
+          jq -c '.paths["/Journey/JourneyResults/{from}/to/{to}"].get.parameters[] | {n:.name, enum:(.enum // .items.enum // null)}' swagger.json
+      - name: A3 journey leg detail (obstacles, path, disruptions)
+        continue-on-error: true
+        run: |
+          u="https://api.tfl.gov.uk/Journey/JourneyResults/940GZZLULNB/to/51.5076,-0.0994?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow"
+          curl -sS -m 60 -A "$UA" "$u" -o j.json -w "HTTP %{http_code}\n"
+          jq -c '{njourneys:(.journeys|length), maxAge:.recommendedMaxAgeMinutes, crit:.searchCriteria}' j.json
+          jq -c '.journeys[0].legs[] | {mode:.mode.id, sum:.instruction.summary, dist:.distance, dur:.duration, from:.departurePoint.commonName, fromId:(.departurePoint.naptanId // .departurePoint.icsCode), to:.arrivalPoint.commonName, toId:(.arrivalPoint.naptanId // .arrivalPoint.icsCode), lat:.arrivalPoint.lat, lon:.arrivalPoint.lon, obstacles:.obstacles, disr:(.disruptions|length), pathStops:(.path.stopPoints|length), steps:(.instruction.steps|length), types:([.instruction.steps[]?.trackType]|unique)}' j.json
+          echo "--- first walking leg full steps"; jq -c '[.journeys[0].legs[]|select(.mode.id=="walking")][0].instruction.steps[0:6]' j.json
+          echo "--- journeys summary"; jq -c '.journeys[] | {dur:.duration, legs:[.legs[]|.mode.id]}' j.json
+      - name: A4 journey tube-based (Waterloo to Tate Modern coords, no pref vs step-free)
+        continue-on-error: true
+        run: |
+          for pref in "" "&accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform"; do
+            u="https://api.tfl.gov.uk/Journey/JourneyResults/940GZZLUHBN/to/51.5076,-0.0994?walkingSpeed=Slow$pref"
+            echo "== $pref"; curl -sS -m 60 -A "$UA" "$u" -o j.json -w "HTTP %{http_code}\n"
+            jq -c '.journeys[0:2][] | {dur:.duration, legs:[.legs[]|{m:.mode.id, d:.distance, f:.departurePoint.commonName, t:.arrivalPoint.commonName, ob:(.obstacles|length)}]}' j.json | head -c 1800; echo
           done
-      - name: Station accessibility (StopPoint)
-        run: |
-          for id in 940GZZLULNB 940GZZLUWLO 940GZZLUSWK; do
-            echo "=== StopPoint $id"
-            curl -sS -m 40 -A "$UA" "https://api.tfl.gov.uk/StopPoint/$id" -o sp.json -w "HTTP %{http_code}\n" || true
-            jq '{id, commonName, modes, keys:(keys), additionalCategories:([.additionalProperties[]?.category]|unique), accessibility:[.additionalProperties[]? | select(.category|test("Access|Lift|Step|Facilit";"i")) | {category,key,value}] | .[0:25], placeType, lat, lon}' sp.json
-          done
-      - name: Journey planner with step-free preference
-        run: |
-          u="https://api.tfl.gov.uk/Journey/JourneyResults/940GZZLUWLO/to/51.5076,-0.0994?accessibilityPreference=StepFreeToVehicle,StepFreeToPlatform&walkingSpeed=Slow"
-          echo "$u"
-          curl -sS -m 60 -A "$UA" "$u" -o j.json -w "HTTP %{http_code}\n" || true
-          jq 'keys' j.json | head -20
-          jq '.journeys[0] | {startDateTime, arrivalDateTime, duration, keys:(keys), legs:[.legs[] | {mode:.mode.id, summary:.instruction.summary, detailed:(.instruction.detailed|.[0:120]), distance, duration, isDisrupted, from:.departurePoint.commonName, to:.arrivalPoint.commonName, legKeys:(keys), steps:([.instruction.steps[]? | {d:.descriptionHeading, t:.description, trackType, skyDirection, streetName}] | .[0:3])}]}' j.json | head -150
-          echo "--- ambiguous/other"; jq '[.journeys|length, (.recommendedMaxAgeMinutes // null)]' j.json
-      - name: Journey with disambiguation test (coordinates both)
-        run: |
-          u="https://api.tfl.gov.uk/Journey/JourneyResults/51.5036,-0.1135/to/51.5076,-0.0994?accessibilityPreference=NoSolidStairs&walkingSpeed=Slow"
-          curl -sS -m 60 -A "$UA" "$u" -o j2.json -w "HTTP %{http_code}\n" || true
-          jq '.journeys[0] | {duration, legs:[.legs[] | {mode:.mode.id, summary:.instruction.summary, distance, steps:([.instruction.steps[]? | {t:.description, trackType, streetName, skyDirection}] | .[0:4])}]}' j2.json | head -60
-      - name: OpenStreetMap wheelchair tags near Bankside (Overpass)
+      - name: B1 OpenStreetMap wheelchair tags near Bankside
+        continue-on-error: true
         run: |
           q='[out:json][timeout:30];(nwr["wheelchair"]["name"](around:900,51.5045,-0.1000););out tags center meta 400;'
-          curl -sS -m 60 -A "$UA" --data-urlencode "data=$q" https://overpass-api.de/api/interpreter -o osm.json -w "HTTP %{http_code}\n" || true
-          jq '{count:(.elements|length), osm3s:.osm3s.copyright, wheelchair:([.elements[].tags.wheelchair]|group_by(.)|map({v:.[0],n:length})), withCheckDate:([.elements[]|select(.tags["check_date:wheelchair"] or .tags.check_date)]|length), withDesc:([.elements[]|select(.tags["wheelchair:description"])]|length), amenities:([.elements[].tags|(.tourism // .amenity // .shop // .leisure // "other")]|group_by(.)|map({k:.[0],n:length})|sort_by(-.n)|.[0:12])}' osm.json
-          echo "--- sample elements"; jq -c '[.elements[] | select(.tags.name) ][0:6][] | {type, id, ts:.timestamp, user:.user, name:.tags.name, wc:.tags.wheelchair, desc:.tags["wheelchair:description"], checked:(.tags["check_date:wheelchair"]), kind:(.tags.tourism // .tags.amenity // .tags.shop // .tags.leisure), lat:(.lat // .center.lat), lon:(.lat // .center.lon)}' osm.json
-          echo "--- elements with names, first 40 names"; jq -r '[.elements[].tags.name] | unique | .[0:40] | join(" | ")' osm.json
-      - name: Licence / terms text (TfL data, OpenStreetMap)
+          curl -sS -m 60 -A "$UA" --data-urlencode "data=$q" https://overpass-api.de/api/interpreter -o osm.json -w "HTTP %{http_code} bytes %{size_download}\n"
+          jq -c '{count:(.elements|length), wheelchair:([.elements[].tags.wheelchair]|group_by(.)|map({v:.[0],n:length})), withCheckDate:([.elements[]|select(.tags["check_date:wheelchair"] or .tags.check_date)]|length), withDesc:([.elements[]|select(.tags["wheelchair:description"])]|length), kinds:([.elements[].tags|(.tourism // .amenity // .shop // .leisure // "other")]|group_by(.)|map({k:.[0],n:length})|sort_by(-.n)|.[0:10])}' osm.json
+          echo "--- sample"; jq -c '[.elements[]|select(.tags.name)][0:8][] | {t:.type, id, ts:.timestamp, name:.tags.name, wc:.tags.wheelchair, desc:.tags["wheelchair:description"], kind:(.tags.tourism // .tags.amenity // .tags.shop // .tags.leisure), lat:(.lat // .center.lat), lon:(.lon // .center.lon)}' osm.json
+          echo "--- ages (years since last edit)"; jq -c '[.elements[]|select(.timestamp)|((now - (.timestamp|fromdateiso8601))/31557600)|floor]|group_by(.)|map({y:.[0],n:length})' osm.json
+          echo "--- names"; jq -r '[.elements[].tags.name]|unique|.[0:30]|join(" | ")' osm.json
+      - name: C1 licence and terms text
+        continue-on-error: true
         run: |
-          for u in "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service" "https://api.tfl.gov.uk/" "https://www.openstreetmap.org/copyright"; do
+          for u in "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service" "https://www.openstreetmap.org/copyright"; do
             echo "=== $u"
-            code=$(curl -sSL -m 40 -A "$UA" -o page.html -w "%{http_code}" "$u" || true); echo "HTTP $code"
-            sed -e 's/<script[^>]*>.*<\/script>//g' -e 's/<[^>]*>/ /g' page.html | tr -s ' \n' | grep -iE "licen[cs]e|attribution|redistribut|powered by|rate limit|app_key|commercial|open government|ODbL|share" | head -20
+            code=$(curl -sSL -m 40 -A "$UA" -o page.html -w "%{http_code}" "$u" || true); echo "HTTP $code bytes $(wc -c < page.html)"
+            sed -e 's/<script[^>]*>[^<]*<\/script>//g' -e 's/<[^>]*>/ /g' page.html | tr -s ' \n\t' ' ' | fold -w 200 | grep -iE "licen[cs]e|attribut|redistribut|powered by|rate limit|app_key|commercial|ODbL|share|derivative" | head -14
           done
