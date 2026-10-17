@@ -364,6 +364,22 @@ test.describe("live information (TfL and OpenStreetMap, mocked with recorded rea
     });
   }
 
+  test("a new view starts at the top: choosing the last place in a long list shows the start question, not the middle of the page", async ({ page }) => {
+    await mock(page);
+    await goto(page, "?fontscale=2");
+    await saveNeeds(page);
+    await btn(page, "Yes, use live information").click();
+    const last = btn(page, "Imperial War Museum");
+    await last.scrollIntoViewIfNeeded();
+    await last.click();
+    const h = heading(page, "Where are you starting from?");
+    await expect(h).toBeVisible();
+    const box = await h.boundingBox();
+    expect(box!.y, "the question is on screen, below the app bar").toBeGreaterThan(40);
+    const scrolled = await page.evaluate(() => Math.max(0, ...[...document.querySelectorAll("*")].filter((e) => e.scrollHeight > e.clientHeight + 20 && /(auto|scroll)/.test(getComputedStyle(e).overflowY)).map((e) => e.scrollTop)));
+    expect(scrolled, "the page is back at its top").toBe(0);
+  });
+
   test("results stay clear of the status bar and navigation buttons", async ({ page }) => {
     await mock(page);
     await goto(page, "?insets=44,48");

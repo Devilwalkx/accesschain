@@ -15,6 +15,9 @@ interface Ctx {
   go(s: Screen): void;
   /** Changes on every navigation, including tapping the screen you are already on (which returns to its first view). */
   navNonce: number;
+  /** Changes when a screen shows a different view of itself (for example place, start, result): the page scrolls back to its top. */
+  scrollNonce: number;
+  scrollTop(): void;
   /** Where Back goes: unwinds a sub-view first, then Home, then (false) lets the system leave the app. */
   back(): boolean;
   registerBack(fn: (() => boolean) | null): void;
@@ -41,6 +44,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const repo = useMemo(() => new ProfileRepo(expoKeyStore), []);
   const [screen, setScreen] = useState<Screen>("home");
   const [nonce, setNonce] = useState(0);
+  const [scrollNonce, setScrollNonce] = useState(0);
   const [profile, setProfile] = useState<RequirementsProfile | null>(null);
   const [loaded, setLoaded] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -74,7 +78,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const value: Ctx = {
-    screen, go, navNonce: nonce,
+    screen, go, navNonce: nonce, scrollNonce, scrollTop: () => setScrollNonce((n) => n + 1),
     back: () => {
       if (subBack.current && subBack.current()) return true;
       if (screenRef.current !== "home") { go("home"); return true; }

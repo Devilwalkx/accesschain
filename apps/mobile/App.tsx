@@ -106,6 +106,9 @@ function Root() {
     return () => clearTimeout(t);
   }, [app.screen, app.navNonce]);
 
+  // A screen that swaps one view for another (place, start, result) starts the new view at the top.
+  useEffect(() => { scroller.current?.scrollTo({ y: 0, animated: false }); }, [app.scrollNonce]);
+
   if (randomError) {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: c.bg, padding: space.m }} edges={["top", "bottom", "left", "right"]}>

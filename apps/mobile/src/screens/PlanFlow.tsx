@@ -14,6 +14,9 @@ import { Btn, Card, Chip, Collapsible, DemoStrip, Field, Gap, Loading, Notice, T
 
 export function PlanFlow() {
   const { mode } = useLive();
+  const { scrollTop } = useApp();
+  useEffect(() => { scrollTop(); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
   if (mode === "unset") return <Consent />;
   if (mode === "demo") return <DemoPlan />;
   return <LivePlan />;
@@ -66,6 +69,8 @@ function LivePlan() {
     return () => app.registerBack(null);
   });
   useEffect(() => () => runner.current.cancel(), []);
+  useEffect(() => { app.scrollTop(); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [view.k]);
 
   const go = (v: Venue, s: Start) => {
     setStart(s);
