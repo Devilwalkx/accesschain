@@ -270,7 +270,7 @@ export function buildBriefs(routes: RouteCandidate[], assessments: Array<Journey
       if (c.live && (id === "transport" || id === "transfers") && (status === "unconfirmed" || status === "problem") && segs.length > 0) {
         next.push({ kind: "recheck", text: id === "transfers" && c.liftsUnavailable ? "Try again in a few minutes: TfL's lift list could not be loaded." : "Check again just before you leave. TfL's information is only trusted for 15 minutes." });
       }
-      return { id, title: TITLES[id], about: ABOUT[id], status, statusText: STATUS_TEXT[status], legs: segs.map((s) => s.label), known, missing, age: ageFor(id, segs, c), nextSteps: next };
+      return { id, title: TITLES[id], about: ABOUT[id], status, statusText: STATUS_TEXT[status], legs: segs.map((s) => s.label), known, missing, age: status === "not_needed" ? "Nothing to date: this part is not needed." : ageFor(id, segs, c), nextSteps: next };
     });
 
     const problems = parts.filter((p) => p.status === "problem").map((p) => p.title);

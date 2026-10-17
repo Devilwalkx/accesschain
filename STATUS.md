@@ -1,10 +1,19 @@
 # AccessChain – Status report
 
+## Android quality pass (2026-10-17, build 0.2.0). Full detail: docs/ANDROID_PASS_REPORT.md
+- **Identity:** application id `app.devilwalkx.accesschain` (one-time uninstall of older test builds), version 0.2.0, build number from the CI run, commit and build time in Settings > About this build.
+- **Journey shown as four parts** (Transport, Transfers, Final approach, Correct entrance), each with what is known, what is missing, how old it is and what to do next. Next steps use only data that is present (an OpenStreetMap page link, a phone/website OpenStreetMap itself lists, another route in the same result, or "check again"). **No map is built.**
+- **Services audited** against their current published terms (docs/SERVICE_TERMS_AUDIT.md). Changes: no use of the OSM editing API; Nominatim limited to 1 request/second with caching; TfL Ordnance Survey attribution and non-endorsement line added. **Open:** Nominatim needs a proxy to meet its "switch without an app update" rule; the TfL live licence page could not be read (archived copy used); TfL branding guidelines unread.
+- **Honest states:** live vs demonstration labelled on every screen; per-service "what answered" with ages; partial failures; slow/offline; retry cannot duplicate requests; results older than 15 minutes stop counting.
+- **Fixed:** `busy` could stick if planning threw (now tested); the "recovery code" could not restore anything and was removed (the app says answers cannot be restored); the account id was a fixed string (now random per install, older data still opens).
+- **Not run:** usability sessions with older or disabled people (plan in docs/USABILITY_SESSION_PLAN.md), TalkBack, any physical device. Emulator results are in the report and are not physical-device results.
+
+
 ## Real data (latest)
 - **Real now:** TfL step-free journey planning (routes, walking distances, lifts and stairs on the route, turn-by-turn steps), TfL's list of broken lifts, and OpenStreetMap place notes for 10 South Bank venues (looked up live, shown with their age and author type).
 - **Not real / not claimed:** nothing has been field-checked by us; the pavement between a station and a venue is never evidenced (so results are usually "We can't be sure yet" with a plain checked / not-checked list); venue notes are community-written and often undated or old; only 5 start stations and 10 venues.
 - **Checked against reality:** adapters were written from responses recorded on GitHub's servers on 2026-10-17 (the sandbox cannot reach these sites). Unit/e2e tests use those recordings (one fixture is assembled from observed shapes and is labelled). A CI job (`live-smoke`) calls the real services from a browser; it is informational.
-- **Unverified:** TfL data licence and API terms, Nominatim usage policy for apps, anonymous rate limits. **Needs a person to read them.**
+- **Unverified:** TfL's current live licence page (read from an archived copy), TfL branding guidelines, anonymous rate limits. Nominatim, OSM API and OSM attribution policies were read on 2026-10-17 (see the audit).
 - **Privacy changed:** live mode contacts TfL and OpenStreetMap (they see the IP address and the request). A consent screen precedes the first request; the needs profile is never sent.
 
 
@@ -26,7 +35,7 @@ Generated at the end of build stage 1–3 (design, vertical slice, negative test
 
 ## Implemented
 - Domain logic: evidence resolution with source/observed/retrieved/expiry, conflict handling, deterministic three-state matching (steps, lift, width, walking distance, rest gaps, toilet, assistance), journey completeness, evidence-backed alternatives, saved itinerary snapshots with live-change diff, screen-reader-first text itinerary.
-- Private vault: XChaCha20-Poly1305 with account/item/version binding, user-held 256-bit recovery secret, tombstone-aware restore logic.
+- Private vault: XChaCha20-Poly1305 with account/item/version binding, key-wrapping functions for a future recovery design (not used by the app; the app offers no recovery), tombstone-aware restore logic.
 - Privacy helpers: coordinate minimisation, log redaction, JPEG metadata stripping/verification.
 - Public-fact rules: append-only fact store, partner/moderator/feed/intake rules, verification badges, subscription-independent ranking.
 - Report intake: strict schema, rate limit, duplicates, PII flagging, moderated approval that drops contributor identity.
