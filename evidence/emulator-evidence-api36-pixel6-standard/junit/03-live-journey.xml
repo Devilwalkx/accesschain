@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="test" tests="1" failures="0" time="51.086" timestamp="2026-10-18T06:04:03">
+    <testcase id="INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked" name="INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked" classname="INFORMATIONAL - live journey (real TfL and OpenStreetMap). Content varies; only that the app shows an answer or a clear notice is checked" file="/home/runner/work/accesschain/accesschain/android-tests/flows/03-live-journey.yaml" time="51.067" timestamp="2026-10-18T06:04:03" status="SUCCESS"/>
+  </testsuite>
+</testsuites>
